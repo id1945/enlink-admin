@@ -1,0 +1,112 @@
+.ant-card {
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
+    color: $body-color;
+    background: $card-bg;
+    border-radius: $card-border-radius;
+    font-size: $font-size-base;
+    margin-bottom: 1.25rem;
+}   
+
+.ant-card-bordered {
+    border: 1px solid $card-border-color;
+}
+
+.ant-card-head {
+    background: $card-head-bg;
+    padding: 0 $card-spacer-x;
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    margin-bottom: -1px;
+    min-height: $card-head-min-height;
+    border-bottom: 1px solid $card-border-color;
+    color: $gray-dark;
+
+    .ant-tabs-nav {
+        border-bottom: 1px solid $card-border-color;
+    }
+
+    .ant-tabs {
+        margin-bottom: -17px;
+    }
+}
+
+.ant-card-body {
+    padding: $card-spacer-y  $card-spacer-x;
+}
+
+.ant-card-meta-description {
+    color: $gray-light;
+}
+
+.ant-card-type-inner {
+
+    .ant-card-head {
+        padding: 0 $card-spacer-x;
+        background: $gray-lightest;
+    }
+
+    .ant-card-body {
+        padding: $card-spacer-y $card-spacer-x;
+    }
+}
+
+.ant-card-grid {
+    border-radius: 0;
+    border: 0;
+    box-shadow: 1px 0 0 0 $card-border-color,
+                0 1px 0 0 $card-border-color,
+                1px 1px 0 0 $card-border-color,
+                1px 0 0 0 $card-border-color inset,
+                0 1px 0 0 $card-border-color inset;
+    width: auto;
+    padding: $card-spacer-y $card-spacer-x;
+}    
+
+.ant-card-actions {
+    border-top: 1px solid $card-border-color;
+    background: $card-action-bg;
+
+    > li {
+        float: left;
+        text-align: center;
+        margin: 15px 0;
+        color: $body-color;
+
+        & :not(:last-child) {
+            border-right: 1px solid $card-border-color;
+        }
+        
+        > span {
+
+            .anticon {
+                font-size: 16px;
+                line-height: $line-height-base;;
+            }  
+            
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.ant-card-hoverable {
+
+    &:hover {
+        box-shadow: $card-hover-shadow;
+        border-color: $card-border-color;
+    }
+}
+
+.off-gutter-x {
+    margin-left: -$card-spacer-x;
+    margin-right: -$card-spacer-x;
+}
+
+.off-gutter-top {
+    margin-top: -$card-spacer-y;
+}
+
+.off-gutter-bottom {
+    margin-bottom: -$card-spacer-y;
+}

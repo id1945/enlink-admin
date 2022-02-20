@@ -1,0 +1,26 @@
+.ant-descriptions-title {
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    font-size: 16px;
+    line-height: $line-height-base;
+}
+
+.ant-descriptions-item-label {
+    color: $gray-dark;
+    font-size: $font-size-base;
+}
+
+.ant-descriptions-item-content, 
+.ant-divider {
+    color:$gray-light;
+    font-size: $font-size-base;
+}
+
+.ant-descriptions.bordered {
+
+    .ant-descriptions-item-content,
+    .ant-descriptions-item-label {
+        border-right: 1px solid $border-color;
+    }
+}
+

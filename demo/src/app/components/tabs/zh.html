@@ -1,0 +1,435 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tabs-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-tabs-demo-disabled" nzTitle="禁用"></nz-link><nz-link nzHref="#components-tabs-demo-icon" nzTitle="图标"></nz-link><nz-link nzHref="#components-tabs-demo-slide" nzTitle="滑动"></nz-link><nz-link nzHref="#components-tabs-demo-extra" nzTitle="附加内容"></nz-link><nz-link nzHref="#components-tabs-demo-size" nzTitle="大小"></nz-link><nz-link nzHref="#components-tabs-demo-position" nzTitle="位置"></nz-link><nz-link nzHref="#components-tabs-demo-card" nzTitle="卡片式页签"></nz-link><nz-link nzHref="#components-tabs-demo-editable-card" nzTitle="新增和关闭页签"></nz-link><nz-link nzHref="#components-tabs-demo-card-top" nzTitle="卡片式页签容器"></nz-link><nz-link nzHref="#components-tabs-demo-custom-add-trigger" nzTitle="自定义新增页签触发器"></nz-link><nz-link nzHref="#components-tabs-demo-lazy" nzTitle="懒加载"></nz-link><nz-link nzHref="#components-tabs-demo-link-router" nzTitle="路由联动"></nz-link><nz-link nzHref="#components-tabs-demo-guard" nzTitle="标签守卫"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Tabs<span class="subtitle">标签页</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>选项卡切换组件。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>提供平级的区域将大块内容进行收纳和展现，保持界面整洁。</p>
+<p>Ant Design 依次提供了三级选项卡，分别用于不同的场景。</p>
+<ul>
+<li>卡片式的页签，提供可关闭的样式，常用于容器顶部。</li>
+<li>标准线条式页签，用于容器内部的主功能切换，这是最常用的 Tabs。</li>
+<li><a href="/components/radio/zh/#components-radio-demo-radiobutton">RadioButton</a> 可作为更次级的页签来使用。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTabsModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tabs'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-tabs-demo-basic'"
+  nzSelector="nz-demo-tabs-basic"
+  [nzLink]="'components-tabs-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-basic <name>"
+  nzComponentName="NzDemoTabsBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/basic.md'">
+	<nz-demo-tabs-basic demo></nz-demo-tabs-basic>
+	<div intro ngNonBindable>
+		<p>默认选中第一项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="禁用"
+  [nzId]="'components-tabs-demo-disabled'"
+  nzSelector="nz-demo-tabs-disabled"
+  [nzLink]="'components-tabs-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-disabled <name>"
+  nzComponentName="NzDemoTabsDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/disabled.md'">
+	<nz-demo-tabs-disabled demo></nz-demo-tabs-disabled>
+	<div intro ngNonBindable>
+		<p>禁用某一项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="图标"
+  [nzId]="'components-tabs-demo-icon'"
+  nzSelector="nz-demo-tabs-icon"
+  [nzLink]="'components-tabs-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-icon <name>"
+  nzComponentName="NzDemoTabsIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/icon.md'">
+	<nz-demo-tabs-icon demo></nz-demo-tabs-icon>
+	<div intro ngNonBindable>
+		<p>有图标的标签。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="滑动"
+  [nzId]="'components-tabs-demo-slide'"
+  nzSelector="nz-demo-tabs-slide"
+  [nzLink]="'components-tabs-demo-slide'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-slide <name>"
+  nzComponentName="NzDemoTabsSlideComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/slide.md'">
+	<nz-demo-tabs-slide demo></nz-demo-tabs-slide>
+	<div intro ngNonBindable>
+		<p>可以左右、上下滑动，容纳更多标签。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="附加内容"
+  [nzId]="'components-tabs-demo-extra'"
+  nzSelector="nz-demo-tabs-extra"
+  [nzLink]="'components-tabs-demo-extra'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-extra <name>"
+  nzComponentName="NzDemoTabsExtraComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/extra.md'">
+	<nz-demo-tabs-extra demo></nz-demo-tabs-extra>
+	<div intro ngNonBindable>
+		<p>可以在页签右边添加附加操作。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="大小"
+  [nzId]="'components-tabs-demo-size'"
+  nzSelector="nz-demo-tabs-size"
+  [nzLink]="'components-tabs-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-size <name>"
+  nzComponentName="NzDemoTabsSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/size.md'">
+	<nz-demo-tabs-size demo></nz-demo-tabs-size>
+	<div intro ngNonBindable>
+		<p>大号页签用在页头区域，小号用在弹出框等较狭窄的容器内。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="位置"
+  [nzId]="'components-tabs-demo-position'"
+  nzSelector="nz-demo-tabs-position"
+  [nzLink]="'components-tabs-demo-position'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-position <name>"
+  nzComponentName="NzDemoTabsPositionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/position.md'">
+	<nz-demo-tabs-position demo></nz-demo-tabs-position>
+	<div intro ngNonBindable>
+		<p>有四个位置，<code>nzTabPosition=&quot;left|right|top|bottom&quot;</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="卡片式页签"
+  [nzId]="'components-tabs-demo-card'"
+  nzSelector="nz-demo-tabs-card"
+  [nzLink]="'components-tabs-demo-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-card <name>"
+  nzComponentName="NzDemoTabsCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/card.md'">
+	<nz-demo-tabs-card demo></nz-demo-tabs-card>
+	<div intro ngNonBindable>
+		<p>另一种样式的页签，不提供对应的垂直样式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="新增和关闭页签"
+  [nzId]="'components-tabs-demo-editable-card'"
+  nzSelector="nz-demo-tabs-editable-card"
+  [nzLink]="'components-tabs-demo-editable-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-editable-card <name>"
+  nzComponentName="NzDemoTabsEditableCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/editable-card.md'">
+	<nz-demo-tabs-editable-card demo></nz-demo-tabs-editable-card>
+	<div intro ngNonBindable>
+		<p>只有卡片样式的页签支持新增和关闭选项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="卡片式页签容器"
+  [nzId]="'components-tabs-demo-card-top'"
+  nzSelector="nz-demo-tabs-card-top"
+  [nzLink]="'components-tabs-demo-card-top'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-card-top <name>"
+  nzComponentName="NzDemoTabsCardTopComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/card-top.md'">
+	<nz-demo-tabs-card-top demo></nz-demo-tabs-card-top>
+	<div intro ngNonBindable>
+		<p>用于容器顶部，需要一点额外的样式覆盖。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义新增页签触发器"
+  [nzId]="'components-tabs-demo-custom-add-trigger'"
+  nzSelector="nz-demo-tabs-custom-add-trigger"
+  [nzLink]="'components-tabs-demo-custom-add-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-custom-add-trigger <name>"
+  nzComponentName="NzDemoTabsCustomAddTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/custom-add-trigger.md'">
+	<nz-demo-tabs-custom-add-trigger demo></nz-demo-tabs-custom-add-trigger>
+	<div intro ngNonBindable>
+		<p>给自定义触发器绑定事件。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="懒加载"
+  [nzId]="'components-tabs-demo-lazy'"
+  nzSelector="nz-demo-tabs-lazy"
+  [nzLink]="'components-tabs-demo-lazy'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-lazy <name>"
+  nzComponentName="NzDemoTabsLazyComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/lazy.md'">
+	<nz-demo-tabs-lazy demo></nz-demo-tabs-lazy>
+	<div intro ngNonBindable>
+		<p>默认情况下，<code>nz-tab</code> 中的组件的 <code>ngOnInit</code> 会提前触发，如果希望当 Tab 被激活时再触发 <code>ngOnInit</code>，可以使用该示例中的懒加载方式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="路由联动"
+  [nzId]="'components-tabs-demo-link-router'"
+  nzSelector="nz-demo-tabs-link-router"
+  [nzLink]="'components-tabs-demo-link-router'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-link-router <name>"
+  nzComponentName="NzDemoTabsLinkRouterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/link-router.md'">
+	<nz-demo-tabs-link-router demo></nz-demo-tabs-link-router>
+	<div intro ngNonBindable>
+		<p>与路由联动，点击 tab 更改路由，并且在路由改变时自动切换 tab。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="标签守卫"
+  [nzId]="'components-tabs-demo-guard'"
+  nzSelector="nz-demo-tabs-guard"
+  [nzLink]="'components-tabs-demo-guard'"
+  nzGenerateCommand="ng g ng-zorro-antd:tabs-guard <name>"
+  nzComponentName="NzDemoTabsGuardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tabs/demo/guard.md'">
+	<nz-demo-tabs-guard demo></nz-demo-tabs-guard>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzCanDeactivate</code> 决定一个 tab 是否可以被切换。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-tabset"><span>nz-tabset</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tabset'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSelectedIndex]</code></td>
+<td>当前激活 tab 面板的 序列号，可双向绑定</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAnimated]</code></td>
+<td>是否使用动画切换 Tabs，在 nzTabPosition=top | bottom 时有效</td>
+<td><code>boolean | &#123;inkBar:boolean, tabPane:boolean&#125;</code></td>
+<td><code>true</code>, 当 <code>type=&quot;card&quot;</code> 时为 <code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>大小，提供 <code>large</code> <code>default</code> 和 <code>small</code> 三种大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzTabBarExtraContent]</code></td>
+<td>tab bar 上额外的元素</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTabBarStyle]</code></td>
+<td>tab bar 的样式对象</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTabPosition]</code></td>
+<td>页签位置，可选值有 <code>top</code> <code>right</code> <code>bottom</code> <code>left</code></td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;top&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>页签的基本样式，可选 <code>line</code>、<code>card</code> 类型</td>
+<td><code>&#39;line&#39; | &#39;card&#39;</code></td>
+<td><code>&#39;line&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzTabBarGutter]</code></td>
+<td>tabs 之间的间隙</td>
+<td><code>number</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzHideAll]</code></td>
+<td>是否隐藏所有tab内容</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowPagination]</code></td>
+<td>是否超出范围时显示pre和next按钮</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLinkRouter]</code></td>
+<td>与 Angular 路由联动</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLinkExact]</code></td>
+<td>以严格匹配模式确定联动的路由</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCanDeactivate]</code></td>
+<td>决定一个 tab 是否可以被切换</td>
+<td><code>NzTabsCanDeactivateFn</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzSelectedIndexChange)</code></td>
+<td>当前激活 tab 面板的 序列号变更回调函数</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzSelectChange)</code></td>
+<td>当前激活 tab 面板变更回调函数</td>
+<td><code>EventEmitter&lt;&#123;nzSelectedIndex: number,tab: NzTabComponent&#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnNextClick)</code></td>
+<td>next 按钮被点击的回调</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnPrevClick)</code></td>
+<td>prev 按钮被点击的回调</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nz-tab"><span>nz-tab</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tab'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTitle]</code></td>
+<td>选项卡头显示文字</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzForceRender]</code></td>
+<td>被隐藏时是否渲染 DOM 结构</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>是否禁用</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzClick)</code></td>
+<td>title被点击的回调函数</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzSelect)</code></td>
+<td>tab被选中的回调函数</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzDeselect)</code></td>
+<td>tab被取消选中的回调函数</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-tab]"><span>[nz-tab]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-tab]'" class="anchor">#</a></h3><p>与 <code>ng-template</code> 一同使用，用于标记需要懒加载的 <code>tab</code> 内容，具体用法见示例。</p>
+<h3 id="[nz-tab-link]"><span>[nz-tab-link]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-tab-link]'" class="anchor">#</a></h3><p>选项卡头显示链接，在路由联动模式下使用。</p>
+<h3 id="路由联动"><span>路由联动</span><a onclick="window.location.hash = '路由联动'" class="anchor">#</a></h3><p>路由联动可以让 tab 的切换和路由行为相一致。使用此功能时，title 必须通过 <code>nz-tab-link</code> 组件指定。</p>
+</section></article>

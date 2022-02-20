@@ -1,0 +1,249 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-input-number-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-input-number-demo-size" nzTitle="Sizes"></nz-link><nz-link nzHref="#components-input-number-demo-disabled" nzTitle="Disabled"></nz-link><nz-link nzHref="#components-input-number-demo-digit" nzTitle="Decimals"></nz-link><nz-link nzHref="#components-input-number-demo-formatter" nzTitle="Formatter"></nz-link><nz-link nzHref="#components-input-number-demo-precision" nzTitle="Precision"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>InputNumber<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Enter a number within certain range with the mouse or keyboard.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When a numeric value needs to be provided.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzInputNumberModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/input-number'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-input-number-demo-basic'"
+  nzSelector="nz-demo-input-number-basic"
+  [nzLink]="'components-input-number-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-basic <name>"
+  nzComponentName="NzDemoInputNumberBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/basic.md'">
+	<nz-demo-input-number-basic demo></nz-demo-input-number-basic>
+	<div intro ngNonBindable>
+		<p>Numeric-only input box.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Disabled"
+  [nzId]="'components-input-number-demo-disabled'"
+  nzSelector="nz-demo-input-number-disabled"
+  [nzLink]="'components-input-number-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-disabled <name>"
+  nzComponentName="NzDemoInputNumberDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/disabled.md'">
+	<nz-demo-input-number-disabled demo></nz-demo-input-number-disabled>
+	<div intro ngNonBindable>
+		<p>Click the button to toggle between available and disabled states.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Formatter"
+  [nzId]="'components-input-number-demo-formatter'"
+  nzSelector="nz-demo-input-number-formatter"
+  [nzLink]="'components-input-number-demo-formatter'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-formatter <name>"
+  nzComponentName="NzDemoInputNumberFormatterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/formatter.md'">
+	<nz-demo-input-number-formatter demo></nz-demo-input-number-formatter>
+	<div intro ngNonBindable>
+		<p>Display value within it&#39;s situation with <code>nzFormatter</code>, and we usually use <code>nzParser</code> at the same time.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Sizes"
+  [nzId]="'components-input-number-demo-size'"
+  nzSelector="nz-demo-input-number-size"
+  [nzLink]="'components-input-number-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-size <name>"
+  nzComponentName="NzDemoInputNumberSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/size.md'">
+	<nz-demo-input-number-size demo></nz-demo-input-number-size>
+	<div intro ngNonBindable>
+		<p>There are three sizes available to a numeric input box. By default, the <code>nzSize</code> is <code>32px</code>. The two additional sizes are <code>large</code> and <code>small</code> which means <code>40px</code> and <code>24px</code>, respectively.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Decimals"
+  [nzId]="'components-input-number-demo-digit'"
+  nzSelector="nz-demo-input-number-digit"
+  [nzLink]="'components-input-number-demo-digit'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-digit <name>"
+  nzComponentName="NzDemoInputNumberDigitComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/digit.md'">
+	<nz-demo-input-number-digit demo></nz-demo-input-number-digit>
+	<div intro ngNonBindable>
+		<p>A numeric-only input box whose values can be increased or decreased using a decimal step. The number of decimals (also known as precision) is determined by the <code>nzStep</code> prop.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Precision"
+  [nzId]="'components-input-number-demo-precision'"
+  nzSelector="nz-demo-input-number-precision"
+  [nzLink]="'components-input-number-demo-precision'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-precision <name>"
+  nzComponentName="NzDemoInputNumberPrecisionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/precision.md'">
+	<nz-demo-input-number-precision demo></nz-demo-input-number-precision>
+	<div intro ngNonBindable>
+		<p>Set precision of the value</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-input-number"><span>nz-input-number</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-input-number'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>property</th>
+<th>description</th>
+<th>type</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>current value, double binding</td>
+<td><code>number | string</code>  |  <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>get focus when component mounted</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>disable the input</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMax]</code></td>
+<td>max value</td>
+<td><code>number</code></td>
+<td><code>Infinity</code></td>
+</tr>
+<tr>
+<td><code>[nzMin]</code></td>
+<td>min value</td>
+<td><code>number</code></td>
+<td><code>-Infinity</code></td>
+</tr>
+<tr>
+<td><code>[nzFormatter]</code></td>
+<td>Specifies the format of the value presented</td>
+<td><code>(value: number | string) =&gt; string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzParser]</code></td>
+<td>Specifies the value extracted from nzFormatter</td>
+<td><code>(value: string) =&gt; string | number</code></td>
+<td><code>(value: string) =&gt; value.trim().replace(/。/g, &#39;.&#39;).replace(/[^\w\.-]+/g, &#39;&#39;)</code></td>
+</tr>
+<tr>
+<td><code>[nzPrecision]</code></td>
+<td>precision of input value</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPrecisionMode]</code></td>
+<td>The method for calculating the precision of input value</td>
+<td><code>&#39;cut&#39; | &#39;toFixed&#39; | ((value: number | string, precision?: number) =&gt; number)</code></td>
+<td><code>&#39;toFixed&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>width of input box</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStep]</code></td>
+<td>The number to which the current value is increased or decreased. It can be an integer or decimal.</td>
+<td><code>number | string</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>Placeholder of select</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzId]</code></td>
+<td>input id attribute inside the component</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>The callback triggered when the value is changed</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzFocus)</code></td>
+<td>focus callback</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzBlur)</code></td>
+<td>blur callback</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><p>You can get instance by <code>ViewChild</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>focus()</td>
+<td>get focus</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>remove focus</td>
+</tr>
+</tbody></table>
+</section></article>

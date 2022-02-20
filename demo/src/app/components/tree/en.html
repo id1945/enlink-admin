@@ -1,0 +1,811 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tree-demo-basic" nzTitle="basic"></nz-link><nz-link nzHref="#components-tree-demo-basic-controlled" nzTitle="basic controlled example"></nz-link><nz-link nzHref="#components-tree-demo-draggable" nzTitle="draggable"></nz-link><nz-link nzHref="#components-tree-demo-draggable-confirm" nzTitle="draggable-with-two-confirmation"></nz-link><nz-link nzHref="#components-tree-demo-dynamic" nzTitle="load data asynchronously"></nz-link><nz-link nzHref="#components-tree-demo-search" nzTitle="Searchable"></nz-link><nz-link nzHref="#components-tree-demo-line" nzTitle="Tree With Line"></nz-link><nz-link nzHref="#components-tree-demo-customized-icon" nzTitle="Customize Icon"></nz-link><nz-link nzHref="#components-tree-demo-directory" nzTitle="directory"></nz-link><nz-link nzHref="#components-tree-demo-virtual-scroll" nzTitle="Virtual Scroll"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Tree<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>Almost anything can be represented in a tree structure. Examples include directories, organization hierarchies, biological classifications, countries, etc. The <code>Tree</code> component is a way of representing the hierarchical relationship between these things. You can also  expand, collapse, and select a treeNode within a <code>Tree</code>.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTreeModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tree'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="basic"
+  [nzId]="'components-tree-demo-basic'"
+  nzSelector="nz-demo-tree-basic"
+  [nzLink]="'components-tree-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-basic <name>"
+  nzComponentName="NzDemoTreeBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/basic.md'">
+	<nz-demo-tree-basic demo></nz-demo-tree-basic>
+	<div intro ngNonBindable>
+		<p>The most basic usage, tell you how to use checkable, selectable, disabled, defaultExpandKeys, and etc.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="draggable"
+  [nzId]="'components-tree-demo-draggable'"
+  nzSelector="nz-demo-tree-draggable"
+  [nzLink]="'components-tree-demo-draggable'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-draggable <name>"
+  nzComponentName="NzDemoTreeDraggableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/draggable.md'">
+	<nz-demo-tree-draggable demo></nz-demo-tree-draggable>
+	<div intro ngNonBindable>
+		<p>Drag treeNode to insert after the other treeNode or insert into the other parent TreeNode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="load data asynchronously"
+  [nzId]="'components-tree-demo-dynamic'"
+  nzSelector="nz-demo-tree-dynamic"
+  [nzLink]="'components-tree-demo-dynamic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-dynamic <name>"
+  nzComponentName="NzDemoTreeDynamicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/dynamic.md'">
+	<nz-demo-tree-dynamic demo></nz-demo-tree-dynamic>
+	<div intro ngNonBindable>
+		<p>To load data asynchronously when click to expand a treeNode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Tree With Line"
+  [nzId]="'components-tree-demo-line'"
+  nzSelector="nz-demo-tree-line"
+  [nzLink]="'components-tree-demo-line'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-line <name>"
+  nzComponentName="NzDemoTreeLineComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/line.md'">
+	<nz-demo-tree-line demo></nz-demo-tree-line>
+	<div intro ngNonBindable>
+		<p>Tree With Line.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="directory"
+  [nzId]="'components-tree-demo-directory'"
+  nzSelector="nz-demo-tree-directory"
+  [nzLink]="'components-tree-demo-directory'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-directory <name>"
+  nzComponentName="NzDemoTreeDirectoryComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/directory.md'">
+	<nz-demo-tree-directory demo></nz-demo-tree-directory>
+	<div intro ngNonBindable>
+		<p>Customize directory tree with <code>nzTreeTemplate</code>, get data from <code>let-origin=&quot;origin&quot;</code>, get node status from <code>let-node</code>.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="basic controlled example"
+  [nzId]="'components-tree-demo-basic-controlled'"
+  nzSelector="nz-demo-tree-basic-controlled"
+  [nzLink]="'components-tree-demo-basic-controlled'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-basic-controlled <name>"
+  nzComponentName="NzDemoTreeBasicControlledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/basic-controlled.md'">
+	<nz-demo-tree-basic-controlled demo></nz-demo-tree-basic-controlled>
+	<div intro ngNonBindable>
+		<p>basic controlled example.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="draggable-with-two-confirmation"
+  [nzId]="'components-tree-demo-draggable-confirm'"
+  nzSelector="nz-demo-tree-draggable-confirm"
+  [nzLink]="'components-tree-demo-draggable-confirm'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-draggable-confirm <name>"
+  nzComponentName="NzDemoTreeDraggableConfirmComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/draggable-confirm.md'">
+	<nz-demo-tree-draggable-confirm demo></nz-demo-tree-draggable-confirm>
+	<div intro ngNonBindable>
+		<p>nzBeforeDrop: Validate before drop event, for example: only allow to drag inside(delay 1s)、 validate using modal .etc.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Searchable"
+  [nzId]="'components-tree-demo-search'"
+  nzSelector="nz-demo-tree-search"
+  [nzLink]="'components-tree-demo-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-search <name>"
+  nzComponentName="NzDemoTreeSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/search.md'">
+	<nz-demo-tree-search demo></nz-demo-tree-search>
+	<div intro ngNonBindable>
+		<p>Searchable Tree.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize Icon"
+  [nzId]="'components-tree-demo-customized-icon'"
+  nzSelector="nz-demo-tree-customized-icon"
+  [nzLink]="'components-tree-demo-customized-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-customized-icon <name>"
+  nzComponentName="NzDemoTreeCustomizedIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/customized-icon.md'">
+	<nz-demo-tree-customized-icon demo></nz-demo-tree-customized-icon>
+	<div intro ngNonBindable>
+		<p>You can customize icons for different nodes.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Virtual Scroll"
+  [nzId]="'components-tree-demo-virtual-scroll'"
+  nzSelector="nz-demo-tree-virtual-scroll"
+  [nzLink]="'components-tree-demo-virtual-scroll'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-virtual-scroll <name>"
+  nzComponentName="NzDemoTreeVirtualScrollComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree/demo/virtual-scroll.md'">
+	<nz-demo-tree-virtual-scroll demo></nz-demo-tree-virtual-scroll>
+	<div intro ngNonBindable>
+		<p>Set <code>nzVirtualHeight</code> to enable virtual scroll.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-tree"><span>nz-tree</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tree'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzData]</code></td>
+<td>Tree data (Reference NzTreeNode)</td>
+<td><code>NzTreeNodeOptions[] | NzTreeNode[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBlockNode]</code></td>
+<td>Whether treeNode fill remaining horizontal space</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCheckable]</code></td>
+<td>Adds a Checkbox before the treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowExpand]</code></td>
+<td>Show a Expand Icon before the treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowLine]</code></td>
+<td>Shows a connecting line</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandedIcon]</code></td>
+<td>Customize an expand icon</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzTreeNode &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowIcon]</code></td>
+<td>Shows the icon before a TreeNode&#39;s title. There is no default style</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAsyncData]</code></td>
+<td>Load data asynchronously (should be used with NzTreeNode.addChildren(...))</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDraggable]</code></td>
+<td>Specifies whether this Tree is draggable (IE &gt; 8)</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMultiple]</code></td>
+<td>Allows selecting multiple treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHideUnMatched]</code></td>
+<td>Hide unmatched nodes while searching</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCheckStrictly]</code></td>
+<td>Check treeNode precisely; parent treeNode and children treeNodes are not associated</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTreeTemplate]</code></td>
+<td>Custom Nodes</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzTreeNode &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandAll]</code></td>
+<td>Whether to expand all treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandedKeys]</code></td>
+<td>Specify the keys of the default expanded treeNodes</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCheckedKeys]</code></td>
+<td>Specifies the keys of the default checked treeNodes</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSelectedKeys]</code></td>
+<td>Specifies the keys of the default selected treeNodes</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSearchValue]</code></td>
+<td>Filter (highlight) treeNodes (see demo <code>Searchable</code>), two-way binding</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSearchFunc]</code></td>
+<td>Custom matching method, used with nzSearchValue</td>
+<td><code>(node: NzTreeNodeOptions) =&gt; boolean</code></td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBeforeDrop]</code></td>
+<td>Drop before the second check, allowing the user to decide whether to allow placement</td>
+<td><code>(confirm: NzFormatBeforeDropEvent) =&gt; Observable&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualHeight]</code></td>
+<td>The height of virtual scroll</td>
+<td><code>string</code></td>
+<td><code>-</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualItemSize]</code></td>
+<td>The size of the items in the list, same as <a href="https://material.angular.io/cdk/scrolling/api">cdk itemSize</a></td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualMaxBufferPx]</code></td>
+<td>The number of pixels worth of buffer to render for when rendering new items, same as <a href="https://material.angular.io/cdk/scrolling/api">cdk maxBufferPx</a></td>
+<td><code>number</code></td>
+<td><code>200</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualMinBufferPx]</code></td>
+<td>The minimum amount of buffer rendered beyond the viewport (in pixels),same as <a href="https://material.angular.io/cdk/scrolling/api">cdk minBufferPx</a></td>
+<td><code>number</code></td>
+<td><code>100</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzClick)</code></td>
+<td>Callback function for when the user clicks a treeNode</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzDblClick)</code></td>
+<td>Callback function for when the user double clicks a treeNode</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzContextMenu)</code></td>
+<td>Callback function for when the user right clicks a treeNode</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzCheckBoxChange)</code></td>
+<td>Callback function for when user clicks the Checkbox</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>Callback function for when a treeNode is expanded or collapsed</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzSearchValueChange)</code></td>
+<td>Callback function for when filter treeNodes(used with nzSearchValue)</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDragStart)</code></td>
+<td>Callback function for when the onDragStart event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDragEnter)</code></td>
+<td>Callback function for when the onDragEnter event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDragOver)</code></td>
+<td>Callback function for when the onDragOver event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDragLeave)</code></td>
+<td>Callback function for when the onDragLeave event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDrop)</code></td>
+<td>Callback function for when the onDrop event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnDragEnd)</code></td>
+<td>Callback function for when the onDragEnd event occurs</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getTreeNodes</td>
+<td>get all nodes(NzTreeNode)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getTreeNodeByKey</td>
+<td>get NzTreeNode with key</td>
+<td><code>NzTreeNode</code></td>
+</tr>
+<tr>
+<td>getCheckedNodeList</td>
+<td>get checked nodes(merged)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getSelectedNodeList</td>
+<td>get selected nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getHalfCheckedNodeList</td>
+<td>get half checked nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getExpandedNodeList</td>
+<td>get expanded nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getMatchedNodeList</td>
+<td>get matched nodes(if nzSearchValue is not null)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+</tbody></table>
+<h4 id="nztreenodeoptions-props"><span>NzTreeNodeOptions props</span><a onclick="window.location.hash = 'nztreenodeoptions-props'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Title</td>
+<td><code>string</code></td>
+<td><code>&#39;---&#39;</code></td>
+</tr>
+<tr>
+<td>key</td>
+<td>Must be unique！</td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>icon</td>
+<td>icon before the treeNode，used with <code>nzShowIcon</code></td>
+<td><code>string</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>children</td>
+<td>TreeNode&#39;s children</td>
+<td><code>NzTreeNodeOptions[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>isLeaf</td>
+<td>Determines if this is a leaf node(can not be dropped to)</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>checked</td>
+<td>Set the treeNode be checked</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>selected</td>
+<td>Set the treeNode be selected</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>expanded</td>
+<td>Set the treeNode be expanded ()</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>selectable</td>
+<td>Set whether the treeNode can be selected</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>Disables the treeNode</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>disableCheckbox</td>
+<td>Disables the checkbox of the treeNode</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>[key: string]</td>
+<td>Indexable Types, can be used with NzTreeNode.origin</td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="nzformatemitevent-props"><span>NzFormatEmitEvent props</span><a onclick="window.location.hash = 'nzformatemitevent-props'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>eventName</td>
+<td>Event Name</td>
+<td>enum: <code>click</code> <code>dblclick</code> <code>contextmenu</code> <code>check</code> <code>expand</code> <code>search</code> &amp; <code>dragstart</code> <code>dragenter</code> <code>dragover</code> <code>dragleave</code> <code>drop</code> <code>dragend</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>node</td>
+<td>The current operation node (such as the target node to drop while dragging)</td>
+<td><code>NzTreeNode</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>event</td>
+<td>MouseEvent or DragEvent</td>
+<td><code>&#39;MouseEvent&#39; | &#39;DragEvent&#39;</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>dragNode?</td>
+<td>Current drag node (existing if dragged)</td>
+<td><code>NzTreeNode</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>selectedKeys?</td>
+<td>Selected nodes list</td>
+<td><code>NzTreeNode[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>checkedKeys?</td>
+<td>Checked nodes list</td>
+<td><code>NzTreeNode[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>matchedKeys?</td>
+<td>Matched keys list while searching</td>
+<td><code>NzTreeNode[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>keys?</td>
+<td>All nodes&#39;s keys list related event(except drag events)</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>nodes?</td>
+<td>All nodes related event(except drag events)</td>
+<td><code>NzTreeNode[]</code></td>
+<td><code>[]</code></td>
+</tr>
+</tbody></table>
+<h4 id="nzformatbeforedropevent-props"><span>NzFormatBeforeDropEvent props</span><a onclick="window.location.hash = 'nzformatbeforedropevent-props'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dragNode</td>
+<td>Current drag node (existing when dragged)</td>
+<td><code>NzTreeNode</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>node</td>
+<td>The current operation node (such as the target node to drop while dragging)</td>
+<td><code>NzTreeNode</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>pos</td>
+<td>position to drop(-1: before the target node, 0: inside the target node, 1: behind the target node)</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="nztreenode-props"><span>NzTreeNode props</span><a onclick="window.location.hash = 'nztreenode-props'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Title</td>
+<td><code>string</code></td>
+<td>NzTreeNodeOptions.title</td>
+</tr>
+<tr>
+<td>key</td>
+<td>Key</td>
+<td><code>string</code></td>
+<td>NzTreeNodeOptions.key</td>
+</tr>
+<tr>
+<td>level</td>
+<td>TreeNode&#39;s level relative to the root node</td>
+<td><code>number</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>children</td>
+<td>Children</td>
+<td>NzTreeNode[]</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td>origin</td>
+<td>treeNode&#39;s raw data of NzTreeNodeOptions(user provided to show more datas)</td>
+<td>NzTreeNodeOptions</td>
+<td>-</td>
+</tr>
+<tr>
+<td>getParentNode</td>
+<td>Get parentNode</td>
+<td>function</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td>isLeaf</td>
+<td>Whether treeNode is a Leaf Node</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isExpanded</td>
+<td>Whether treeNode is expanded</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isDisabled</td>
+<td>Whether treeNode is disabled</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isDisableCheckbox</td>
+<td>Whether treeNode&#39;s checkbox can not be clicked</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isSelectable</td>
+<td>Set whether the treeNode can be selected</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>isChecked</td>
+<td>Whether treeNode is checked</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isHalfChecked</td>
+<td>Part of treeNode&#39;s children are checked</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isSelected</td>
+<td>Whether treeNode is selected</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isLoading</td>
+<td>Whether treeNode is loading(when nzAsyncData is true)</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>isMatched</td>
+<td>Whether treeNode&#39;s title contains nzSearchValue</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>setSyncChecked</td>
+<td>set isChecked value and sync other nodes&#39; state of checkBox</td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>getChildren</td>
+<td>Get all children</td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>addChildren</td>
+<td>Add child nodes, receive NzTreeNode or NzTreeNodeOptions array, the second parameter is the inserted index position</td>
+<td>(children: array, index?: number )=&gt;&#123;&#125;</td>
+<td>-</td>
+</tr>
+<tr>
+<td>clearChildren</td>
+<td>Clear the treeNode&#39;s children</td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>remove</td>
+<td>Clear current node(not root node)</td>
+<td>function</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="note"><span>Note</span><a onclick="window.location.hash = 'note'" class="anchor">#</a></h2><ul>
+<li><code>NzTreeNodeOptions</code> accepts your customized properties，use NzTreeNode.origin to get them.</li>
+<li>If Tree Methods used with ViewChild, should be used in ngAfterViewInit.</li>
+<li>Setting NzData with NzTreeNodeOptions[] is better，if you set nzData with NzTreeNode[], it will be deprecated in next major version(8.x).</li>
+</ul>
+</section></article>

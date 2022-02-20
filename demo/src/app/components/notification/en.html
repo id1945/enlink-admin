@@ -1,0 +1,332 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-notification-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-notification-demo-duration" nzTitle="Duration after which the notification box is closed"></nz-link><nz-link nzHref="#components-notification-demo-with-icon" nzTitle="Notification with icon"></nz-link><nz-link nzHref="#components-notification-demo-with-btn" nzTitle="Custom close button"></nz-link><nz-link nzHref="#components-notification-demo-custom-icon" nzTitle="Customized Icon"></nz-link><nz-link nzHref="#components-notification-demo-placement" nzTitle="Placement"></nz-link><nz-link nzHref="#components-notification-demo-custom-style" nzTitle="Customized style"></nz-link><nz-link nzHref="#components-notification-demo-update" nzTitle="Update Notification Content"></nz-link><nz-link nzHref="#components-notification-demo-template" nzTitle="Use a template"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Notification<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Display a notification message globally.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>To display a notification message at any of the four corners of the viewport. Typically it can be
+used in the following cases:</p>
+<ul>
+<li>A notification with complex content.</li>
+<li>A notification providing a feedback based on the user interaction. Or it may show some details
+about upcoming steps the user may have to follow.</li>
+<li>A notification that is pushed by the application.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzNotificationModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/notification'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-notification-demo-basic'"
+  nzSelector="nz-demo-notification-basic"
+  [nzLink]="'components-notification-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-basic <name>"
+  nzComponentName="NzDemoNotificationBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/basic.md'">
+	<nz-demo-notification-basic demo></nz-demo-notification-basic>
+	<div intro ngNonBindable>
+		<p>The simplest usage that close the notification box after 4.5s.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Notification with icon"
+  [nzId]="'components-notification-demo-with-icon'"
+  nzSelector="nz-demo-notification-with-icon"
+  [nzLink]="'components-notification-demo-with-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-with-icon <name>"
+  nzComponentName="NzDemoNotificationWithIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/with-icon.md'">
+	<nz-demo-notification-with-icon demo></nz-demo-notification-with-icon>
+	<div intro ngNonBindable>
+		<p>A notification box with a icon at the left side.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized Icon"
+  [nzId]="'components-notification-demo-custom-icon'"
+  nzSelector="nz-demo-notification-custom-icon"
+  [nzLink]="'components-notification-demo-custom-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-custom-icon <name>"
+  nzComponentName="NzDemoNotificationCustomIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/custom-icon.md'">
+	<nz-demo-notification-custom-icon demo></nz-demo-notification-custom-icon>
+	<div intro ngNonBindable>
+		<p>The icon can be customized to any <code>TemplateRef&lt;void&gt;</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized style"
+  [nzId]="'components-notification-demo-custom-style'"
+  nzSelector="nz-demo-notification-custom-style"
+  [nzLink]="'components-notification-demo-custom-style'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-custom-style <name>"
+  nzComponentName="NzDemoNotificationCustomStyleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/custom-style.md'">
+	<nz-demo-notification-custom-style demo></nz-demo-notification-custom-style>
+	<div intro ngNonBindable>
+		<p>The nzStyle and nzClass are available to customize Notification.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Use a template"
+  [nzId]="'components-notification-demo-template'"
+  nzSelector="nz-demo-notification-template"
+  [nzLink]="'components-notification-demo-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-template <name>"
+  nzComponentName="NzDemoNotificationTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/template.md'">
+	<nz-demo-notification-template demo></nz-demo-notification-template>
+	<div intro ngNonBindable>
+		<p>Use template to implement more complex interactions.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Duration after which the notification box is closed"
+  [nzId]="'components-notification-demo-duration'"
+  nzSelector="nz-demo-notification-duration"
+  [nzLink]="'components-notification-demo-duration'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-duration <name>"
+  nzComponentName="NzDemoNotificationDurationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/duration.md'">
+	<nz-demo-notification-duration demo></nz-demo-notification-duration>
+	<div intro ngNonBindable>
+		<p><code>nzDuration</code> can be used to specify how long the notification stays open. After the duration time elapses,
+the notification closes automatically. If not specified, default value is 4.5 seconds. If you set the value to 0,
+the notification box will never close automatically.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom close button"
+  [nzId]="'components-notification-demo-with-btn'"
+  nzSelector="nz-demo-notification-with-btn"
+  [nzLink]="'components-notification-demo-with-btn'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-with-btn <name>"
+  nzComponentName="NzDemoNotificationWithBtnComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/with-btn.md'">
+	<nz-demo-notification-with-btn demo></nz-demo-notification-with-btn>
+	<div intro ngNonBindable>
+		<p>To customize the style or font of the close button.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Placement"
+  [nzId]="'components-notification-demo-placement'"
+  nzSelector="nz-demo-notification-placement"
+  [nzLink]="'components-notification-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-placement <name>"
+  nzComponentName="NzDemoNotificationPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/placement.md'">
+	<nz-demo-notification-placement demo></nz-demo-notification-placement>
+	<div intro ngNonBindable>
+		<p>A notification box can pop up from <code>topRight</code> or <code>bottomRight</code> or <code>bottomLeft</code> or <code>topLeft</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Update Notification Content"
+  [nzId]="'components-notification-demo-update'"
+  nzSelector="nz-demo-notification-update"
+  [nzLink]="'components-notification-demo-update'"
+  nzGenerateCommand="ng g ng-zorro-antd:notification-update <name>"
+  nzComponentName="NzDemoNotificationUpdateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/notification/demo/update.md'">
+	<nz-demo-notification-update demo></nz-demo-notification-update>
+	<div intro ngNonBindable>
+		<p>Update content with unique <code>nzKey</code>.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nznotificationservice"><span>NzNotificationService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nznotificationservice'" class="anchor">#</a></h3><p>The component provides a number of service methods using the following methods and parameters:</p>
+<ul>
+<li><code>NzNotificationService.blank(title, content, [options])</code> // Notification without icon</li>
+<li><code>NzNotificationService.success(title, content, [options])</code></li>
+<li><code>NzNotificationService.error(title, content, [options])</code></li>
+<li><code>NzNotificationService.info(title, content, [options])</code></li>
+<li><code>NzNotificationService.warning(title, content, [options])</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Title</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>content</td>
+<td>Notification content</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>options</td>
+<td>Support setting the parameters for the current notification box, see the table below</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>The parameters that are set by the <code>options</code> support are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzKey</td>
+<td>The unique identifier of the Notification</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>nzDuration</td>
+<td>Duration (milliseconds), does not disappear when set to 0</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>Do not remove automatically when mouse is over while setting to <code>true</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>Whether to turn on animation</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzStyle</td>
+<td>Custom inline style</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzClass</td>
+<td>Custom CSS class</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzData</td>
+<td>Anything that would be used as template context</td>
+<td><code>any</code></td>
+</tr>
+<tr>
+<td>nzCloseIcon</td>
+<td>Custom close icon</td>
+<td><code>TemplateRef&lt;void&gt; | string</code></td>
+</tr>
+</tbody></table>
+<p>Methods for destruction are also provided:</p>
+<ul>
+<li><code>NzNotificationService.remove(id)</code> // Remove the notification with the specified id. When the id is empty, remove all notifications (the notification id is returned by the above method)</li>
+</ul>
+<h3 id="global-configuration"><span>Global Configuration</span><a onclick="window.location.hash = 'global-configuration'" class="anchor">#</a></h3><p>You can use <code>NzConfigService</code> to configure this component globally.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzDuration</td>
+<td>Duration (milliseconds), does not disappear when set to 0</td>
+<td><code>number</code></td>
+<td>4500</td>
+</tr>
+<tr>
+<td>nzMaxStack</td>
+<td>The maximum number of notifications that can be displayed at the same time</td>
+<td><code>number</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>Do not remove automatically when mouse is over while setting to <code>true</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>Whether to turn on animation</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzTop</td>
+<td>The top of the notification when it pops up from the top.</td>
+<td><code>string</code></td>
+<td>24px</td>
+</tr>
+<tr>
+<td>nzBottom</td>
+<td>The bottom of the notification when it pops up from the bottom.</td>
+<td><code>string</code></td>
+<td>24px</td>
+</tr>
+<tr>
+<td>nzPlacement</td>
+<td>Popup position, optional <code>topLeft</code> <code>topRight</code> <code>bottomLeft</code> <code>bottomRight</code></td>
+<td><code>string</code></td>
+<td><code>topRight</code></td>
+</tr>
+</tbody></table>
+<h3 id="nznotificationref"><span>NzNotificationRef</span><a onclick="window.location.hash = 'nznotificationref'" class="anchor">#</a></h3><p>It&#39;s the object that returned when you call <code>NzNotificationService.success</code> and others.</p>
+<pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">NzNotificationRef</span> <span class="token punctuation">&#123;</span>
+  messageId<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  onClose<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">boolean</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// It would emit an event when the notification is closed, and emit a `true` if it's closed by user</span>
+  onClick<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span>MouseEvent<span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

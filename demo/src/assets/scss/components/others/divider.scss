@@ -1,0 +1,22 @@
+.ant-divider {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background: $border-color;
+}
+
+.ant-divider-horizontal {
+
+    &.ant-divider-with-text,
+    &.ant-divider-with-text-left,
+    &.ant-divider-with-text-right {
+        color: $body-color;
+        background: 0 0;
+
+        &:before,
+        &:after {
+            border-top: 1px solid $border-color;
+        }
+    }
+}

@@ -1,0 +1,608 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-modal-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-modal-demo-async" nzTitle="Asynchronously close"></nz-link><nz-link nzHref="#components-modal-demo-footer" nzTitle="Customized Footer"></nz-link><nz-link nzHref="#components-modal-demo-footer2" nzTitle="Customized Footer(2)"></nz-link><nz-link nzHref="#components-modal-demo-confirm" nzTitle="Confirmation modal dialog"></nz-link><nz-link nzHref="#components-modal-demo-confirm-promise" nzTitle="Confirmation modal dialog"></nz-link><nz-link nzHref="#components-modal-demo-info" nzTitle="Information modal dialog"></nz-link><nz-link nzHref="#components-modal-demo-locale" nzTitle="Internationalization"></nz-link><nz-link nzHref="#components-modal-demo-manual" nzTitle="Manual to destroy"></nz-link><nz-link nzHref="#components-modal-demo-position" nzTitle="To customize the position of modal"></nz-link><nz-link nzHref="#components-modal-demo-service" nzTitle="Modal's service"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Modal<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Modal dialogs.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When requiring users to interact with application, but without jumping to a new page to interrupt
+the user&#39;s workflow, you can use <code>Modal</code> to create a new floating layer over the current page for user
+getting feedback or information purposes.
+Additionally, if you need show a simple confirmation dialog, you can use <code>NzModalService.confirm()</code>,
+and so on.</p>
+<p>It is recommended to use the <code>Component</code> way to pop up the Modal, so that the component logic of the popup layer can be completely isolated from the outer component, and can be reused at any time. In the popup layer component, you can obtain Modal&#39;s component instance by injecting <code>NzModalRef</code> to control the behavior of the modal box.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzModalModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/modal'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-modal-demo-basic'"
+  nzSelector="nz-demo-modal-basic"
+  [nzLink]="'components-modal-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-basic <name>"
+  nzComponentName="NzDemoModalBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/basic.md'">
+	<nz-demo-modal-basic demo></nz-demo-modal-basic>
+	<div intro ngNonBindable>
+		<p>Basic modal.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized Footer"
+  [nzId]="'components-modal-demo-footer'"
+  nzSelector="nz-demo-modal-footer"
+  [nzLink]="'components-modal-demo-footer'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-footer <name>"
+  nzComponentName="NzDemoModalFooterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/footer.md'">
+	<nz-demo-modal-footer demo></nz-demo-modal-footer>
+	<div intro ngNonBindable>
+		<p>A more complex example which define a customized footer button bar,
+the dialog will change to loading state after clicking submit button, when the loading is over,
+the modal dialog will be closed.</p>
+<p>You could set <code>nzFooter</code> to <code>null</code> if you don&#39;t need default footer buttons.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Confirmation modal dialog"
+  [nzId]="'components-modal-demo-confirm'"
+  nzSelector="nz-demo-modal-confirm"
+  [nzLink]="'components-modal-demo-confirm'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-confirm <name>"
+  nzComponentName="NzDemoModalConfirmComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/confirm.md'">
+	<nz-demo-modal-confirm demo></nz-demo-modal-confirm>
+	<div intro ngNonBindable>
+		<p>To use <code>NzModalService.confirm()</code> to popup a confirmation modal dialog.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Information modal dialog"
+  [nzId]="'components-modal-demo-info'"
+  nzSelector="nz-demo-modal-info"
+  [nzLink]="'components-modal-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-info <name>"
+  nzComponentName="NzDemoModalInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/info.md'">
+	<nz-demo-modal-info demo></nz-demo-modal-info>
+	<div intro ngNonBindable>
+		<p>In the various types of information modal dialog, only one button to close dialog is provided.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Manual to destroy"
+  [nzId]="'components-modal-demo-manual'"
+  nzSelector="nz-demo-modal-manual"
+  [nzLink]="'components-modal-demo-manual'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-manual <name>"
+  nzComponentName="NzDemoModalManualComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/manual.md'">
+	<nz-demo-modal-manual demo></nz-demo-modal-manual>
+	<div intro ngNonBindable>
+		<p>Manually destroying a modal.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Modal's service"
+  [nzId]="'components-modal-demo-service'"
+  nzSelector="nz-demo-modal-service"
+  [nzLink]="'components-modal-demo-service'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-service <name>"
+  nzComponentName="NzDemoModalServiceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/service.md'">
+	<nz-demo-modal-service demo></nz-demo-modal-service>
+	<div intro ngNonBindable>
+		<p>Usage of Modal&#39;s service, examples demonstrate user-defined templates, custom components, and methods for injecting modal instances.</p>
+<p>The template context is <code>&#123; $implicit: nzComponentParams, modalRef: NzModalRef &#125;</code> when the content is templates.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Asynchronously close"
+  [nzId]="'components-modal-demo-async'"
+  nzSelector="nz-demo-modal-async"
+  [nzLink]="'components-modal-demo-async'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-async <name>"
+  nzComponentName="NzDemoModalAsyncComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/async.md'">
+	<nz-demo-modal-async demo></nz-demo-modal-async>
+	<div intro ngNonBindable>
+		<p>Asynchronously close a modal dialog when a user clicked OK button, for example,
+you can use this pattern when you submit a form.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized Footer(2)"
+  [nzId]="'components-modal-demo-footer2'"
+  nzSelector="nz-demo-modal-footer2"
+  [nzLink]="'components-modal-demo-footer2'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-footer2 <name>"
+  nzComponentName="NzDemoModalFooter2Component"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/footer2.md'">
+	<nz-demo-modal-footer2 demo></nz-demo-modal-footer2>
+	<div intro ngNonBindable>
+		<p>use <code>nzModalFooter</code> directive to customized footer button bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Confirmation modal dialog"
+  [nzId]="'components-modal-demo-confirm-promise'"
+  nzSelector="nz-demo-modal-confirm-promise"
+  [nzLink]="'components-modal-demo-confirm-promise'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-confirm-promise <name>"
+  nzComponentName="NzDemoModalConfirmPromiseComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/confirm-promise.md'">
+	<nz-demo-modal-confirm-promise demo></nz-demo-modal-confirm-promise>
+	<div intro ngNonBindable>
+		<p>To use <code>NzModalService.confirm()</code> to popup confirmation modal dialog. Let NzOnCancel/NzOnOk function return a promise object to
+delay closing the dialog.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Internationalization"
+  [nzId]="'components-modal-demo-locale'"
+  nzSelector="nz-demo-modal-locale"
+  [nzLink]="'components-modal-demo-locale'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-locale <name>"
+  nzComponentName="NzDemoModalLocaleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/locale.md'">
+	<nz-demo-modal-locale demo></nz-demo-modal-locale>
+	<div intro ngNonBindable>
+		<p>To customize the text of the buttons, you need to set <code>nzOkText</code> and <code>nzCancelText</code> props.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="To customize the position of modal"
+  [nzId]="'components-modal-demo-position'"
+  nzSelector="nz-demo-modal-position"
+  [nzLink]="'components-modal-demo-position'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-position <name>"
+  nzComponentName="NzDemoModalPositionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/position.md'">
+	<nz-demo-modal-position demo></nz-demo-modal-position>
+	<div intro ngNonBindable>
+		<p>You can use <code>nzStyle.top</code> or other styles to set position of modal dialog.</p>
+<blockquote>
+<p><strong>NOTE</strong> Due to Angular&#39;s style isolation, you may need to override the NgZorro style with <code>:: ng-deep</code> within a custom style if <code>encapsulation: ViewEncapsulation.None</code> is not included in the Component</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nzmodalservice"><span>NzModalService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzmodalservice'" class="anchor">#</a></h3><p>The dialog is currently divided into 2 modes, <code>normal mode</code> and <code>confirm box mode</code> (ie the <code>Confirm</code> dialog, which is called by calling <code>confirm/info/success/error/warning</code>). The degree of API support for the two modes is slightly different.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzAfterOpen</td>
+<td>Specify a EventEmitter that will be emitted when modal opened</td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzAfterClose</td>
+<td>Specify a EventEmitter that will be emitted when modal is closed completely (Can listen for parameters passed in the close/destroy method)</td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Body style for modal body element. Such as height, padding etc.</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelText</td>
+<td>Text of the Cancel button. <i>Set to null to show no cancel button (this value is invalid if the nzFooter parameter is used in normal mode)</i></td>
+<td><code>string</code></td>
+<td>Cancel</td>
+<td></td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>Whether a close (x) button is visible on top right of the modal dialog or not. <i>Invalid value in confirm box mode (default will be hidden)</i></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkLoading</td>
+<td>Whether to apply loading visual effect for OK button or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelLoading</td>
+<td>Whether to apply loading visual effect for Cancel button or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkDisabled</td>
+<td>Whether to disable Ok button or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelDisabled</td>
+<td>Whether to disable Cancel button or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzFooter</td>
+<td>Footer content, set as footer=null when you don&#39;t need default buttons. <i>1. Only valid in normal mode.<br>2. You can customize the buttons to the maximum extent by passing a <code>ModalButtonOptions</code> configuration (see the case or the instructions below).</i></td>
+<td>string<br>TemplateRef<br>ModalButtonOptions</td>
+<td>OK and Cancel buttons</td>
+<td></td>
+</tr>
+<tr>
+<td>nzGetContainer</td>
+<td>The mount node for Modal</td>
+<td>HTMLElement / () =&gt; HTMLElement</td>
+<td>A default container</td>
+<td></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>Whether support press esc to close</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>Whether show mask or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>Whether to close the modal dialog when the mask (area outside the modal) is clicked</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>Style for modal&#39;s mask element.</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkText</td>
+<td>Text of the OK button. <i>Set to null to show no ok button (this value is invalid if the nzFooter parameter is used in normal mode)</i></td>
+<td><code>string</code></td>
+<td>OK</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkType</td>
+<td>Button type of the OK button. <i>Consistent with the type of the <code>nz-button</code>.</i></td>
+<td><code>string</code></td>
+<td>primary</td>
+<td></td>
+</tr>
+<tr>
+<td>nzStyle</td>
+<td>Style of floating layer, typically used at least for adjusting the position.</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzCloseIcon</td>
+<td>Custom close icon</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>The modal dialog&#39;s title. <i>Leave blank to show no title. The usage of TemplateRef can refer to the case</i></td>
+<td>string / TemplateRef</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzVisible</td>
+<td>Whether the modal dialog is visible or not. <i>When using the <code>&lt;nz-modal&gt;</code> tag, be sure to use two-way binding, for example: <code>[(nzVisible)]=&quot;visible&quot;</code>.</i></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>Width of the modal dialog. <i>When using numbers, the default unit is <code>px</code></i></td>
+<td>string<br>number</td>
+<td>520</td>
+<td></td>
+</tr>
+<tr>
+<td>nzClassName</td>
+<td>The class name of the modal dialog</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>The class name of the container of the modal dialog</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>The z-index of the Modal</td>
+<td><code>number</code></td>
+<td>1000</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>Specify a function that will be called when a user clicks mask, close button on top right or Cancel button (If nzContent is Component, the Component instance will be put in as an argument). <i>Note: When created with <code>NzModalService.create</code>, this parameter should be passed into the type of function (callback function). This function returns a promise, which is automatically closed when the execution is complete or the promise ends (return <code>false</code> to prevent closing)</i></td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOnOk</td>
+<td>Specify a EventEmitter that will be emitted when a user clicks the OK button (If nzContent is Component, the Component instance will be put in as an argument). <i>Note: When created with <code>NzModalService.create</code>, this parameter should be passed into the type of function (callback function). This function returns a promise, which is automatically closed when the execution is complete or the promise ends (return <code>false</code> to prevent closing)</i></td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzContent</td>
+<td>Content</td>
+<td>string / TemplateRef / Component / ng-content</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzComponentParams</td>
+<td>When nzContent is a Component, the attributes in this parameter will be passed to the nzContent instance</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzIconType</td>
+<td>Icon type of the Icon component. <i>Only valid in confirm box mode</i></td>
+<td><code>string</code></td>
+<td>question-circle</td>
+<td></td>
+</tr>
+<tr>
+<td>nzAutofocus</td>
+<td>autofocus and the position，disabled when is <code>null</code></td>
+<td><code>&#39;ok&#39; | &#39;cancel&#39; | &#39;auto&#39; | null</code></td>
+<td><code>&#39;auto&#39;</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="attentions"><span>Attentions</span><a onclick="window.location.hash = 'attentions'" class="anchor">#</a></h4><blockquote>
+<p>The default state of <code>&lt;nz-modal&gt;</code> will not be automatically cleared. If you wish to open new content each time, use the <code>NzModalService</code> service to create modals (when created as a service, the <code>nzAfterClose</code> event will be listened by default aim to destroy the modal).</p>
+</blockquote>
+<blockquote>
+<p>Modals created through the <code>NzModalService</code> service need you to manage their own life cycle. For example, when you switch the page route, the modal box created by service will not be destroyed automatically. You need to use the modal box&#39;s reference to manually destroy it (<code>NzModalRef.close()</code> or <code>NzModalRef.destroy()</code>).</p>
+</blockquote>
+<h4 id="using-service-to-create-normal-mode-modal"><span>Using service to create Normal Mode modal</span><a onclick="window.location.hash = 'using-service-to-create-normal-mode-modal'" class="anchor">#</a></h4><blockquote>
+<p>You can call <code>NzModalService.create(options)</code> to dynamically create <strong>normal mode</strong> modals, where <code>options</code> is an object that supports the support given in the API above <strong>normal mode</strong> parameters</p>
+</blockquote>
+<h3 id="confirm-box-mode---nzmodalservice-method()"><span>Confirm box mode - NzModalService.method()</span><a onclick="window.location.hash = 'confirm-box-mode---nzmodalservice-method()'" class="anchor">#</a></h3><p>There are five ways to display the information based on the content&#39;s nature:</p>
+<ul>
+<li><code>NzModalService.info</code></li>
+<li><code>NzModalService.success</code></li>
+<li><code>NzModalService.error</code></li>
+<li><code>NzModalService.warning</code></li>
+<li><code>NzModalService.confirm</code></li>
+</ul>
+<p>The items listed above are all functions, expecting a settings object as parameter.
+Consistent with the above API, some property types or initial values are different as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzOnOk</td>
+<td>Specify a EventEmitter that will be emitted when a user clicks the OK button (If nzContent is Component, the Component instance will be put in as an argument.). <i>This function returns a promise, which is automatically closed when the execution is complete or the promise ends (return <code>false</code> to prevent closing)</i></td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>Specify a function that will be called when a user clicks mask, close button on top right or Cancel button (If nzContent is Component, the Component instance will be put in as an argument.). <i>This function returns a promise, which is automatically closed when the execution is complete or the promise ends (return <code>false</code> to prevent closing)</i></td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>Width of the modal dialog</td>
+<td>string / number</td>
+<td>416</td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>Whether to close the modal dialog when the mask (area outside the modal) is clicked</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<p>All the <code>NzModalService.method</code>s will return a reference, and then we can close the popup by the reference.</p>
+<pre class="language-ts"><code><span class="token keyword">constructor</span><span class="token punctuation">(</span>modal<span class="token punctuation">:</span> NzModalService<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> ref<span class="token punctuation">:</span> NzModalRef <span class="token operator">=</span> modal<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ref<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Or ref.destroy(); This dialog will be destroyed directly</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="related-type-definition"><span>Related type definition</span><a onclick="window.location.hash = 'related-type-definition'" class="anchor">#</a></h3><h4 id="other-methods/attributes-for-nzmodalservice"><span>Other Methods/Attributes for NzModalService</span><a onclick="window.location.hash = 'other-methods/attributes-for-nzmodalservice'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Methods/Attributes</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>openModals</td>
+<td>All currently open Modal list</td>
+<td>NzModalRef[]</td>
+</tr>
+<tr>
+<td>afterAllClose</td>
+<td>Callback called after all Modals closed completely</td>
+<td>Observable&lt;void&gt;</td>
+</tr>
+<tr>
+<td>closeAll()</td>
+<td>Close all modals</td>
+<td>function</td>
+</tr>
+</tbody></table>
+<h4 id="nzmodalref"><span>NzModalRef</span><a onclick="window.location.hash = 'nzmodalref'" class="anchor">#</a></h4><blockquote>
+<p>NzModalRef object is used to control dialogs and communicate with inside content</p>
+</blockquote>
+<p>The dialog created by the service method <code>NzModalService.xxx()</code> will return a <code>NzModalRef</code> object that is used to manipulate the dialog (this object can also be obtained by dependency injection <code>NzModalRef</code> if <code>nzContent</code> is used as Component) , This object has the following methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>afterOpen</td>
+<td>Same as nzAfterOpen but of type Observable&lt;void&gt;</td>
+</tr>
+<tr>
+<td>afterClose</td>
+<td>Same as nzAfterClose, but of type Observable&lt;result:any&gt;</td>
+</tr>
+<tr>
+<td>open()</td>
+<td>Open (display) dialog box. <i>Calling this function will fail if the dialog is already destroyed</i></td>
+</tr>
+<tr>
+<td>close()</td>
+<td>Close (hide) the dialog. <i>Note: When used for a dialog created as a service, this method will destroy the dialog directly (as with the destroy method)</i></td>
+</tr>
+<tr>
+<td>destroy()</td>
+<td>Destroy the dialog. <i>Note: Used only for dialogs created by the service (non-service created dialogs, this method only hides the dialog)</i></td>
+</tr>
+<tr>
+<td>getContentComponent()</td>
+<td>Gets the Component instance in the contents of the dialog for <code>nzContent</code>. <i> Note: When the dialog is not initialized (<code>ngOnInit</code> is not executed), this function will return <code>undefined</code></i></td>
+</tr>
+<tr>
+<td>triggerOk()</td>
+<td>Manually trigger nzOnOk</td>
+</tr>
+<tr>
+<td>triggerCancel()</td>
+<td>Manually trigger nzOnCancel</td>
+</tr>
+</tbody></table>
+<h3 id="modalbuttonoptions-(used-to-customize-the-bottom-button)"><span>ModalButtonOptions (used to customize the bottom button)</span><a onclick="window.location.hash = 'modalbuttonoptions-(used-to-customize-the-bottom-button)'" class="anchor">#</a></h3><p>An array of <code>ModalButtonOptions</code> type can be passed to <code>nzFooter</code> for custom bottom buttons.</p>
+<p>The button configuration items are as follows (along with the button component):</p>
+<pre class="language-ts"><code>nzFooter<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+  label<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Button text</span>
+  type<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Types</span>
+  shape<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Shape</span>
+  ghost<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Whether ghost</span>
+  size<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// Size</span>
+  autoLoading<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// The default is true. If true, this button will automatically be set to the loading state when onClick returns a promise.</span>
+
+  <span class="token comment" spellcheck="true">// Tip: The `this` of below methods points to the configuration object itself. When nzContent is a component class, the contentComponentInstance parameter passed in by the method below is an instance of the component class</span>
+  <span class="token comment" spellcheck="true">// Whether to show this button</span>
+  show<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// Whether to display loading</span>
+  loading<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// Is it disabled</span>
+  disabled<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// Callback of clicking</span>
+  onClick<span class="token operator">?</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token operator">|</span> Promise<span class="token operator">&amp;</span>lt<span class="token punctuation">;</span><span class="token keyword">void</span><span class="token operator">&amp;</span>gt<span class="token punctuation">;</span> <span class="token operator">|</span> <span class="token keyword">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span></code></pre>
+<p>The above configuration items can also be changed in real-time to trigger the button behavior change.</p>
+<h3 id="[nzmodalfooter]"><span>[nzModalFooter]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nzmodalfooter]'" class="anchor">#</a></h3><p>Another way to customize the footer button.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">*nzModalFooter</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleCancel()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Callback<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleOk()<span class="token punctuation">"</span></span> <span class="token attr-name">[nzLoading]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isConfirmLoading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- or --></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">[nzModalFooter]</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleCancel()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Callback<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleOk()<span class="token punctuation">"</span></span> <span class="token attr-name">[nzLoading]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isConfirmLoading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+</section></article>

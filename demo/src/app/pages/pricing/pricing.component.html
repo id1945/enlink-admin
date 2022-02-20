@@ -1,0 +1,243 @@
+<div class="container">
+    <div class="text-center m-t-30 m-b-40">
+        <h2>Subscription plans</h2>
+        <p class="w-45 m-h-auto m-b-30">Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face.</p>
+        <nz-radio-group [(ngModel)]="plans">
+            <label nz-radio-button nzValue="monthly" (click)="planChange()">Monthly</label>
+            <label nz-radio-button nzValue="annually" (click)="planChange()">Annually</label>
+        </nz-radio-group>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-4">
+            <nz-card>
+                <div class="d-flex justify-content-between p-b-20 border-bottom">
+                    <div class="media align-items-center">
+                        <nz-avatar nzIcon="coffee" [nzSize]="55" class="ant-avatar-blue"></nz-avatar>
+                        <div class="m-l-15">
+                            <h2 class="font-weight-bold font-size-30 m-b-0">
+                                ${{feesBasic}}
+                                <span class="font-size-13 font-weight-semibold">/ {{duration}}</span>
+                            </h2>
+                            <h4 class="m-b-0">Basic Plan</h4>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-unstyled m-v-30">
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">200 MB of Spaces</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Unlimited Bandwidth</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">5 Add on Domains</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Free Microsoft Office 365</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Smart Sync</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">24/7 Support</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">1 Cloud Power</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <button nz-button nzType="primary">Get Started</button>
+                </div>
+            </nz-card>
+        </div>
+        <div class="col-md-4">
+            <nz-card>
+                <div class="d-flex justify-content-between p-b-20 border-bottom">
+                    <div class="media align-items-center">
+                        <nz-avatar nzIcon="shop" [nzSize]="55" class="ant-avatar-cyan"></nz-avatar>
+                        <div class="m-l-15">
+                            <h2 class="font-weight-bold font-size-30 m-b-0">
+                                ${{feesStandard}}
+                                <span class="font-size-13 font-weight-semibold">/ {{duration}}</span>
+                            </h2>
+                            <h4 class="m-b-0">Standard Plan</h4>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-unstyled m-v-30">
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">500 MB of Spaces</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Unlimited Bandwidth</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">10 Add on Domains</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Free Microsoft Office 365</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Smart Sync</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">24/7 Support</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">5 Cloud Power</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <button nz-button nzType="primary">Get Started</button>
+                </div>
+            </nz-card>    
+        </div>
+        <div class="col-md-4">
+            <nz-card>
+                <div class="d-flex justify-content-between p-b-20 border-bottom">
+                    <div class="media align-items-center">
+                        <nz-avatar nzIcon="experiment" [nzSize]="55" class="ant-avatar-gold"></nz-avatar>
+                        <div class="m-l-15">
+                            <h2 class="font-weight-bold font-size-30 m-b-0">
+                                ${{feesPremium}}
+                                <span class="font-size-13 font-weight-semibold">/ {{duration}}</span>
+                            </h2>
+                            <h4 class="m-b-0">Premium Plan</h4>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-unstyled m-v-30">
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Unlimited of Spaces</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Unlimited Bandwidth</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">10 Add on Domains</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Free Microsoft Office 365</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">Smart Sync</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">24/7 Support</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="m-b-20">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-dark font-weight-semibold">5 Cloud Power</span>
+                            <div class="text-success font-size-16">
+                                <i nz-icon nzType="check" theme="outline"></i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center">
+                    <button nz-button nzType="primary">Get Started</button>
+                </div>
+            </nz-card>
+        </div>
+    </div>
+</div>

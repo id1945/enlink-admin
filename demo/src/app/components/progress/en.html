@@ -1,0 +1,379 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-progress-demo-line" nzTitle="Progress bar"></nz-link><nz-link nzHref="#components-progress-demo-circle" nzTitle="Circular progress bar"></nz-link><nz-link nzHref="#components-progress-demo-line-mini" nzTitle="Mini size progress bar"></nz-link><nz-link nzHref="#components-progress-demo-circle-mini" nzTitle="Mini size circular progress bar"></nz-link><nz-link nzHref="#components-progress-demo-circle-dynamic" nzTitle="Dynamic circular progress bar"></nz-link><nz-link nzHref="#components-progress-demo-dynamic" nzTitle="Dynamic"></nz-link><nz-link nzHref="#components-progress-demo-format" nzTitle="Custom text format"></nz-link><nz-link nzHref="#components-progress-demo-dashboard" nzTitle="Dashboard"></nz-link><nz-link nzHref="#components-progress-demo-segment" nzTitle="Progress bar with success segment"></nz-link><nz-link nzHref="#components-progress-demo-round" nzTitle="Square linecaps"></nz-link><nz-link nzHref="#components-progress-demo-gradient" nzTitle="Custom line gradient"></nz-link><nz-link nzHref="#components-progress-demo-step" nzTitle="Progress bar with steps"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Progress<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Display the current progress of an operation flow.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>If it will take a long time to complete an operation, you can use <code>Progress</code> to show the current progress and status.</p>
+<ul>
+<li>When an operation will interrupt the current interface, or it needs to run in the background for more than 2 seconds.</li>
+<li>When you need to display the completion percentage of an operation.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzProgressModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/progress'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Progress bar"
+  [nzId]="'components-progress-demo-line'"
+  nzSelector="nz-demo-progress-line"
+  [nzLink]="'components-progress-demo-line'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-line <name>"
+  nzComponentName="NzDemoProgressLineComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/line.md'">
+	<nz-demo-progress-line demo></nz-demo-progress-line>
+	<div intro ngNonBindable>
+		<p>A standard progress bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Mini size progress bar"
+  [nzId]="'components-progress-demo-line-mini'"
+  nzSelector="nz-demo-progress-line-mini"
+  [nzLink]="'components-progress-demo-line-mini'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-line-mini <name>"
+  nzComponentName="NzDemoProgressLineMiniComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/line-mini.md'">
+	<nz-demo-progress-line-mini demo></nz-demo-progress-line-mini>
+	<div intro ngNonBindable>
+		<p>Appropriate for a narrow area.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dynamic circular progress bar"
+  [nzId]="'components-progress-demo-circle-dynamic'"
+  nzSelector="nz-demo-progress-circle-dynamic"
+  [nzLink]="'components-progress-demo-circle-dynamic'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-circle-dynamic <name>"
+  nzComponentName="NzDemoProgressCircleDynamicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/circle-dynamic.md'">
+	<nz-demo-progress-circle-dynamic demo></nz-demo-progress-circle-dynamic>
+	<div intro ngNonBindable>
+		<p>A dynamic progress bar is better.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom text format"
+  [nzId]="'components-progress-demo-format'"
+  nzSelector="nz-demo-progress-format"
+  [nzLink]="'components-progress-demo-format'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-format <name>"
+  nzComponentName="NzDemoProgressFormatComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/format.md'">
+	<nz-demo-progress-format demo></nz-demo-progress-format>
+	<div intro ngNonBindable>
+		<p>You can custom text format by setting <code>nzFormat</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Progress bar with success segment"
+  [nzId]="'components-progress-demo-segment'"
+  nzSelector="nz-demo-progress-segment"
+  [nzLink]="'components-progress-demo-segment'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-segment <name>"
+  nzComponentName="NzDemoProgressSegmentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/segment.md'">
+	<nz-demo-progress-segment demo></nz-demo-progress-segment>
+	<div intro ngNonBindable>
+		<p>A standard progress bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom line gradient"
+  [nzId]="'components-progress-demo-gradient'"
+  nzSelector="nz-demo-progress-gradient"
+  [nzLink]="'components-progress-demo-gradient'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-gradient <name>"
+  nzComponentName="NzDemoProgressGradientComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/gradient.md'">
+	<nz-demo-progress-gradient demo></nz-demo-progress-gradient>
+	<div intro ngNonBindable>
+		<p>A package of <code>linear-gradient</code>. It is recommended to only pass two colors.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Circular progress bar"
+  [nzId]="'components-progress-demo-circle'"
+  nzSelector="nz-demo-progress-circle"
+  [nzLink]="'components-progress-demo-circle'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-circle <name>"
+  nzComponentName="NzDemoProgressCircleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/circle.md'">
+	<nz-demo-progress-circle demo></nz-demo-progress-circle>
+	<div intro ngNonBindable>
+		<p>A circular progress bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Mini size circular progress bar"
+  [nzId]="'components-progress-demo-circle-mini'"
+  nzSelector="nz-demo-progress-circle-mini"
+  [nzLink]="'components-progress-demo-circle-mini'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-circle-mini <name>"
+  nzComponentName="NzDemoProgressCircleMiniComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/circle-mini.md'">
+	<nz-demo-progress-circle-mini demo></nz-demo-progress-circle-mini>
+	<div intro ngNonBindable>
+		<p>A smaller circular progress bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dynamic"
+  [nzId]="'components-progress-demo-dynamic'"
+  nzSelector="nz-demo-progress-dynamic"
+  [nzLink]="'components-progress-demo-dynamic'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-dynamic <name>"
+  nzComponentName="NzDemoProgressDynamicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/dynamic.md'">
+	<nz-demo-progress-dynamic demo></nz-demo-progress-dynamic>
+	<div intro ngNonBindable>
+		<p>A dynamic progress bar is better.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dashboard"
+  [nzId]="'components-progress-demo-dashboard'"
+  nzSelector="nz-demo-progress-dashboard"
+  [nzLink]="'components-progress-demo-dashboard'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-dashboard <name>"
+  nzComponentName="NzDemoProgressDashboardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/dashboard.md'">
+	<nz-demo-progress-dashboard demo></nz-demo-progress-dashboard>
+	<div intro ngNonBindable>
+		<p>By setting <code>nzType=&quot;dashboard&quot;</code>, you can get a dashboard style of progress easily.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Square linecaps"
+  [nzId]="'components-progress-demo-round'"
+  nzSelector="nz-demo-progress-round"
+  [nzLink]="'components-progress-demo-round'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-round <name>"
+  nzComponentName="NzDemoProgressRoundComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/round.md'">
+	<nz-demo-progress-round demo></nz-demo-progress-round>
+	<div intro ngNonBindable>
+		<p>By setting <code>nzStrokeLinecap=&#39;square&#39;</code>, you can change the linecaps from round to square.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Progress bar with steps"
+  [nzId]="'components-progress-demo-step'"
+  nzSelector="nz-demo-progress-step"
+  [nzLink]="'components-progress-demo-step'"
+  nzGenerateCommand="ng g ng-zorro-antd:progress-step <name>"
+  nzComponentName="NzDemoProgressStepComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/progress/demo/step.md'">
+	<nz-demo-progress-step demo></nz-demo-progress-step>
+	<div intro ngNonBindable>
+		<p>A progress bar with steps.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-progress"><span>nz-progress</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-progress'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzType]</code></td>
+<td>to set the type</td>
+<td><code>&#39;line&#39; | &#39;circle&#39; | &#39;dashboard&#39;</code></td>
+<td><code>&#39;line&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFormat]</code></td>
+<td>template function of the content</td>
+<td><code>(percent: number) =&gt; string | TemplateRef&lt;&#123; $implicit: number &#125;&gt;</code></td>
+<td><code>percent =&gt; percent + &#39;%&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPercent]</code></td>
+<td>to set the completion percentage</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowInfo]</code></td>
+<td>whether to display the progress value and the status icon</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>to set the status of the Progress</td>
+<td><code>&#39;success&#39; | &#39;exception&#39; | &#39;active&#39; | &#39;normal&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzStrokeLinecap]</code></td>
+<td>to set the style of the progress linecap</td>
+<td><code>&#39;round&#39; | &#39;square&#39;</code></td>
+<td><code>&#39;round&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzStrokeColor]</code></td>
+<td>color of progress bar, render linear-gradient when passing an object</td>
+<td><code>string | &#123; from: string; to: string: direction: string; [percent: string]: string &#125;</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSuccessPercent]</code></td>
+<td>segmented success percent</td>
+<td><code>number</code></td>
+<td>0</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="<code>nztype=&quot;line&quot;</code>"><span><code>nzType=&quot;line&quot;</code></span><a onclick="window.location.hash = '<code>nztype=&quot;line&quot;</code>'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzStrokeWidth]</code></td>
+<td>to set the width of the progress bar, unit: <code>px</code></td>
+<td><code>number</code></td>
+<td><code>8</code></td>
+</tr>
+<tr>
+<td><code>[nzSteps]</code></td>
+<td>the total step count</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="<code>nztype=&quot;circle&quot;</code>"><span><code>nzType=&quot;circle&quot;</code></span><a onclick="window.location.hash = '<code>nztype=&quot;circle&quot;</code>'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzWidth]</code></td>
+<td>to set the canvas width of the circular progress bar, unit: <code>px</code></td>
+<td><code>number</code></td>
+<td><code>132</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzStrokeWidth]</code></td>
+<td>to set the width of the circular progress bar, unit: percentage of the canvas width</td>
+<td><code>number</code></td>
+<td><code>6</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="<code>nztype=&quot;dashboard&quot;</code>"><span><code>nzType=&quot;dashboard&quot;</code></span><a onclick="window.location.hash = '<code>nztype=&quot;dashboard&quot;</code>'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzWidth]</code></td>
+<td>to set the canvas width of the dashboard progress bar, unit: <code>px</code></td>
+<td><code>number</code></td>
+<td><code>132</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzStrokeWidth]</code></td>
+<td>to set the width of the dashboard progress bar, unit: percentage of the canvas width</td>
+<td><code>number</code></td>
+<td><code>6</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzGapDegree]</code></td>
+<td>the gap degree of half circle, 0 ~ 360</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzGapPosition]</code></td>
+<td>the gap position</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;top&#39;</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+</section></article>

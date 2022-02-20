@@ -1,0 +1,1161 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-table-demo-basic" nzTitle="基本用法"></nz-link><nz-link nzHref="#components-table-demo-row-selection-and-operation" nzTitle="选择和操作"></nz-link><nz-link nzHref="#components-table-demo-row-selection-custom" nzTitle="自定义选择项"></nz-link><nz-link nzHref="#components-table-demo-sort-filter" nzTitle="筛选和排序"></nz-link><nz-link nzHref="#components-table-demo-multiple-sorter" nzTitle="多列排序"></nz-link><nz-link nzHref="#components-table-demo-reset-filter" nzTitle="可控的筛选和排序"></nz-link><nz-link nzHref="#components-table-demo-custom-filter-panel" nzTitle="自定义筛选菜单"></nz-link><nz-link nzHref="#components-table-demo-ajax" nzTitle="远程加载数据"></nz-link><nz-link nzHref="#components-table-demo-size" nzTitle="紧凑型"></nz-link><nz-link nzHref="#components-table-demo-bordered" nzTitle="带边框"></nz-link><nz-link nzHref="#components-table-demo-expand" nzTitle="可展开"></nz-link><nz-link nzHref="#components-table-demo-colspan-rowspan" nzTitle="表格行/列合并"></nz-link><nz-link nzHref="#components-table-demo-expand-children" nzTitle="树形数据展示"></nz-link><nz-link nzHref="#components-table-demo-fixed-header" nzTitle="固定表头"></nz-link><nz-link nzHref="#components-table-demo-fixed-columns" nzTitle="固定列"></nz-link><nz-link nzHref="#components-table-demo-fixed-columns-header" nzTitle="固定头和列"></nz-link><nz-link nzHref="#components-table-demo-grouping-columns" nzTitle="表头分组"></nz-link><nz-link nzHref="#components-table-demo-edit-cell" nzTitle="可编辑单元格"></nz-link><nz-link nzHref="#components-table-demo-edit-row" nzTitle="可编辑行"></nz-link><nz-link nzHref="#components-table-demo-nested-table" nzTitle="嵌套子表格"></nz-link><nz-link nzHref="#components-table-demo-virtual" nzTitle="虚拟滚动"></nz-link><nz-link nzHref="#components-table-demo-drag-sorting" nzTitle="拖拽排序"></nz-link><nz-link nzHref="#components-table-demo-template" nzTitle="模板用法"></nz-link><nz-link nzHref="#components-table-demo-break-word" nzTitle="折行显示"></nz-link><nz-link nzHref="#components-table-demo-ellipsis" nzTitle="单元格自动省略"></nz-link><nz-link nzHref="#components-table-demo-dynamic-settings" nzTitle="动态控制表格属性"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Table<span class="subtitle">表格</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>展示行列数据。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当有大量结构化的数据需要展现时；</li>
+<li>当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTableModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/table'</span><span class="token punctuation">;</span></code></pre>
+<h2 id="如何使用"><span>如何使用</span><a onclick="window.location.hash = '如何使用'" class="anchor">#</a></h2><p>Table 组件同时具备了易用性和高度可定制性</p>
+<h3 id="高度定制"><span>高度定制</span><a onclick="window.location.hash = '高度定制'" class="anchor">#</a></h3><p>在 <code>nz-table</code> 组件中完整的暴露了 <a href="https://www.w3.org/TR/html401/struct/tables.html"><code>W3C标准 &lt;table&gt;</code></a> 的所有组成部分，你可以像使用 <code>table</code> 元素一样使用 <code>nz-table</code> ，根据依据业务需求，使用者可以自由的控制任何一个部分的样式、内容、逻辑和事件绑定。</p>
+<h3 id="组件增强"><span>组件增强</span><a onclick="window.location.hash = '组件增强'" class="anchor">#</a></h3><p>在 <code>nz-table</code>, <code>thead</code>, <code>th</code>, <code>td</code> 等多个暴露的元素上，组件提供了增强语法，经过配置之后可以很方便的实现多选、过滤、排序、固定列、固定表头、服务端分页等功能。</p>
+<h3 id="数据处理"><span>数据处理</span><a onclick="window.location.hash = '数据处理'" class="anchor">#</a></h3><p>将数据传入<code>[nzData]</code>，经过组件处理之后（包括分页、排序、筛选等），通过 <a href="https://angular.io/guide/template-syntax#statement-context">模板变量</a> 获取当前展示表格部分的数据，使用 <code>*ngFor</code> 依据需求将数据渲染。</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-table</span> <span class="token attr-name">#basicTable</span> <span class="token attr-name">[nzData]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dataSet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>thead</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Age<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Address<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>th</span><span class="token punctuation">></span></span>Action<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>th</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>thead</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tbody</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>tr</span> <span class="token attr-name">*ngFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>let data of basicTable.data<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;data.name&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;data.age&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>&#123;&#123;data.address&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>td</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>Action 一 &#123;&#123;data.name&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-divider</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>vertical<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-divider</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span><span class="token punctuation">></span></span>Delete<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>td</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tr</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>tbody</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-table</span><span class="token punctuation">></span></span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本用法"
+  [nzId]="'components-table-demo-basic'"
+  nzSelector="nz-demo-table-basic"
+  [nzLink]="'components-table-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-basic <name>"
+  nzComponentName="NzDemoTableBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/basic.md'">
+	<nz-demo-table-basic demo></nz-demo-table-basic>
+	<div intro ngNonBindable>
+		<p>简单的表格，最后一列是各种操作。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="选择和操作"
+  [nzId]="'components-table-demo-row-selection-and-operation'"
+  nzSelector="nz-demo-table-row-selection-and-operation"
+  [nzLink]="'components-table-demo-row-selection-and-operation'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-row-selection-and-operation <name>"
+  nzComponentName="NzDemoTableRowSelectionAndOperationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/row-selection-and-operation.md'">
+	<nz-demo-table-row-selection-and-operation demo></nz-demo-table-row-selection-and-operation>
+	<div intro ngNonBindable>
+		<p>第一列是联动的选择框，增加 <code>[nzChecked]</code> 后，<code>th</code> 获得和 <code>nz-checkbox</code> 一样的功能，选择后进行操作，完成后清空选择，请注意：数据逻辑需要自行控制。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义选择项"
+  [nzId]="'components-table-demo-row-selection-custom'"
+  nzSelector="nz-demo-table-row-selection-custom"
+  [nzLink]="'components-table-demo-row-selection-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-row-selection-custom <name>"
+  nzComponentName="NzDemoTableRowSelectionCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/row-selection-custom.md'">
+	<nz-demo-table-row-selection-custom demo></nz-demo-table-row-selection-custom>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzSelections</code> 自定义选择项.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="筛选和排序"
+  [nzId]="'components-table-demo-sort-filter'"
+  nzSelector="nz-demo-table-sort-filter"
+  [nzLink]="'components-table-demo-sort-filter'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-sort-filter <name>"
+  nzComponentName="NzDemoTableSortFilterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/sort-filter.md'">
+	<nz-demo-table-sort-filter demo></nz-demo-table-sort-filter>
+	<div intro ngNonBindable>
+		<p>筛选：对某一列数据进行筛选，通过指定 <code>[nzFilters]</code> 属性来指定筛选菜单，<code>[nzFilterFn]</code> 指定筛选函数，<code>[nzFilterMultiple]</code> 用于指定多选和单选，通过设置 <code>[nzFilters]</code> 中的 <code>&#123; byDefault: true &#125;</code> 属性来默认启用一个筛选器。</p>
+<p>排序：对某一列数据进行排序，通过指定 <code>[nzSortOrder]</code> 来指定默认排序顺序，<code>[nzSortFn]</code> 指定排序函数 <code>[nzSortDirections]</code> 改变每列可用的排序方式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多列排序"
+  [nzId]="'components-table-demo-multiple-sorter'"
+  nzSelector="nz-demo-table-multiple-sorter"
+  [nzLink]="'components-table-demo-multiple-sorter'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-multiple-sorter <name>"
+  nzComponentName="NzDemoTableMultipleSorterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/multiple-sorter.md'">
+	<nz-demo-table-multiple-sorter demo></nz-demo-table-multiple-sorter>
+	<div intro ngNonBindable>
+		<p>使用 <code>[nzSortPriority]</code> 字段以配置多列排序优先级。通过 <code>[nzSortFn]</code> 配置排序逻辑。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可控的筛选和排序"
+  [nzId]="'components-table-demo-reset-filter'"
+  nzSelector="nz-demo-table-reset-filter"
+  [nzLink]="'components-table-demo-reset-filter'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-reset-filter <name>"
+  nzComponentName="NzDemoTableResetFilterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/reset-filter.md'">
+	<nz-demo-table-reset-filter demo></nz-demo-table-reset-filter>
+	<div intro ngNonBindable>
+		<p>修改 <code>[nzSortOrder]</code> 和 <code>[nzFilters]</code> 来指定当前列的排序与筛选状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义筛选菜单"
+  [nzId]="'components-table-demo-custom-filter-panel'"
+  nzSelector="nz-demo-table-custom-filter-panel"
+  [nzLink]="'components-table-demo-custom-filter-panel'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-custom-filter-panel <name>"
+  nzComponentName="NzDemoTableCustomFilterPanelComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/custom-filter-panel.md'">
+	<nz-demo-table-custom-filter-panel demo></nz-demo-table-custom-filter-panel>
+	<div intro ngNonBindable>
+		<p>通过 <code>&lt;nz-filter-trigger&gt;</code> 组件定义自定义的列筛选功能，并实现一个搜索列的示例。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="远程加载数据"
+  [nzId]="'components-table-demo-ajax'"
+  nzSelector="nz-demo-table-ajax"
+  [nzLink]="'components-table-demo-ajax'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-ajax <name>"
+  nzComponentName="NzDemoTableAjaxComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/ajax.md'">
+	<nz-demo-table-ajax demo></nz-demo-table-ajax>
+	<div intro ngNonBindable>
+		<p>这个例子通过简单的 ajax 读取方式，演示了如何从服务端读取并展现数据，具有筛选、排序等功能以及页面 loading 效果。开发者可以自行接入其他数据处理方式。</p>
+<ul>
+<li>分页：使用 <code>[nzFrontPagination]=&quot;false&quot;</code> 指定由服务端分页。</li>
+<li>排序：使用 <code>[nzSortFn]=&quot;true&quot;</code> 指定由服务端排序，如果需要多列排序可使用 <code>[nzSortPriority]=&quot;true&quot;</code>。</li>
+<li>筛选：使用 <code>[nzFilters]</code> 来指定筛选项，使用 <code>[nzFilterFn]=&quot;true&quot;</code> 指定由服务端筛选</li>
+<li>参数传输：通过 <code>(nzQueryParams)</code> 服务端需要的参数，数据结构为</li>
+</ul>
+<pre class="language-typescript"><code><span class="token punctuation">&#123;</span>
+  pageIndex<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  pageSize<span class="token punctuation">:</span> <span class="token keyword">number</span><span class="token punctuation">;</span>
+  sort<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token punctuation">&#123;</span> key<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> value<span class="token punctuation">:</span> <span class="token string">'ascend'</span> <span class="token operator">|</span> <span class="token string">'descend'</span> <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">&#125;</span><span class="token operator">></span><span class="token punctuation">;</span>
+  filter<span class="token punctuation">:</span> <span class="token keyword">Array</span><span class="token operator">&lt;</span><span class="token punctuation">&#123;</span> key<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> value<span class="token punctuation">:</span> <span class="token keyword">any</span> <span class="token operator">|</span> <span class="token keyword">any</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">&#125;</span><span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p><strong>注意，此示例使用 <a href="https://randomuser.me">模拟接口</a>，展示数据可能不准确，请打开网络面板查看请求。</strong></p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="紧凑型"
+  [nzId]="'components-table-demo-size'"
+  nzSelector="nz-demo-table-size"
+  [nzLink]="'components-table-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-size <name>"
+  nzComponentName="NzDemoTableSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/size.md'">
+	<nz-demo-table-size demo></nz-demo-table-size>
+	<div intro ngNonBindable>
+		<p>两种紧凑型的列表，小型列表只用于对话框内。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带边框"
+  [nzId]="'components-table-demo-bordered'"
+  nzSelector="nz-demo-table-bordered"
+  [nzLink]="'components-table-demo-bordered'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-bordered <name>"
+  nzComponentName="NzDemoTableBorderedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/bordered.md'">
+	<nz-demo-table-bordered demo></nz-demo-table-bordered>
+	<div intro ngNonBindable>
+		<p>添加表格边框线，页头和页脚。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可展开"
+  [nzId]="'components-table-demo-expand'"
+  nzSelector="nz-demo-table-expand"
+  [nzLink]="'components-table-demo-expand'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-expand <name>"
+  nzComponentName="NzDemoTableExpandComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/expand.md'">
+	<nz-demo-table-expand demo></nz-demo-table-expand>
+	<div intro ngNonBindable>
+		<p>当表格内容较多不能一次性完全展示时，可以通过 <code>td</code> 上的 <code>nzExpand</code> 属性展开。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="表格行/列合并"
+  [nzId]="'components-table-demo-colspan-rowspan'"
+  nzSelector="nz-demo-table-colspan-rowspan"
+  [nzLink]="'components-table-demo-colspan-rowspan'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-colspan-rowspan <name>"
+  nzComponentName="NzDemoTableColspanRowspanComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/colspan-rowspan.md'">
+	<nz-demo-table-colspan-rowspan demo></nz-demo-table-colspan-rowspan>
+	<div intro ngNonBindable>
+		<p>像 <a href="https://www.w3.org/TR/html401/struct/tables.html"><code>W3C标准 &lt;table&gt;</code></a> 一样，使用 <code>colspan</code> 和 <code>rowspan</code> 合并行/列。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="树形数据展示"
+  [nzId]="'components-table-demo-expand-children'"
+  nzSelector="nz-demo-table-expand-children"
+  [nzLink]="'components-table-demo-expand-children'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-expand-children <name>"
+  nzComponentName="NzDemoTableExpandChildrenComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/expand-children.md'">
+	<nz-demo-table-expand-children demo></nz-demo-table-expand-children>
+	<div intro ngNonBindable>
+		<p>表格支持树形数据的展示，可以通过设置 <code>nzIndentSize</code> 以控制每一层的缩进宽度，本例子中提供了树与数组之间的转换函数，实际业务中请根据需求修改。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="固定表头"
+  [nzId]="'components-table-demo-fixed-header'"
+  nzSelector="nz-demo-table-fixed-header"
+  [nzLink]="'components-table-demo-fixed-header'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-fixed-header <name>"
+  nzComponentName="NzDemoTableFixedHeaderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/fixed-header.md'">
+	<nz-demo-table-fixed-header demo></nz-demo-table-fixed-header>
+	<div intro ngNonBindable>
+		<p>指定 <code>[nzScroll]</code> 的 <code>y</code> 数值 方便一页内展示大量数据，每一列的宽度可以由 <code>[nzWidth]</code> 指定。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="固定列"
+  [nzId]="'components-table-demo-fixed-columns'"
+  nzSelector="nz-demo-table-fixed-columns"
+  [nzLink]="'components-table-demo-fixed-columns'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-fixed-columns <name>"
+  nzComponentName="NzDemoTableFixedColumnsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/fixed-columns.md'">
+	<nz-demo-table-fixed-columns demo></nz-demo-table-fixed-columns>
+	<div intro ngNonBindable>
+		<p>对于列数很多的数据，可以使用 <code>[nzLeft]</code> 和 <code>[nzRight]</code> 固定前后的列，横向滚动查看其它数据，需要和 <code>[nzScroll].x</code> 配合使用。</p>
+<blockquote>
+<p>列头与内容不对齐或出现列重复，请指定固定列的宽度 <code>[nzWidth]</code>。如果指定 width 不生效或出现白色垂直空隙，请尝试建议留一列不设宽度以适应弹性布局，或者检查是否有超长连续字段破坏布局。
+建议指定 <code>nzScroll.x</code> 为大于表格宽度的固定值或百分比。注意，且非固定列宽度之和不要超过 <code>nzScroll.x</code>。
+注意：固定列通过 sticky 实现，IE 11 会降级成横向滚动。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="固定头和列"
+  [nzId]="'components-table-demo-fixed-columns-header'"
+  nzSelector="nz-demo-table-fixed-columns-header"
+  [nzLink]="'components-table-demo-fixed-columns-header'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-fixed-columns-header <name>"
+  nzComponentName="NzDemoTableFixedColumnsHeaderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/fixed-columns-header.md'">
+	<nz-demo-table-fixed-columns-header demo></nz-demo-table-fixed-columns-header>
+	<div intro ngNonBindable>
+		<p>同时固定头和列，适合同时展示有大量数据和数据列。</p>
+<blockquote>
+<p>列头与内容不对齐或出现列重复，请指定固定列的宽度 <code>[nzWidth]</code>。如果指定 width 不生效或出现白色垂直空隙，请尝试建议留一列不设宽度以适应弹性布局，或者检查是否有超长连续字段破坏布局。
+建议指定 <code>nzScroll.x</code> 为大于表格宽度的固定值或百分比。注意，且非固定列宽度之和不要超过 <code>nzScroll.x</code>。
+注意：固定列通过 sticky 实现，IE 11 会降级成横向滚动。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="表头分组"
+  [nzId]="'components-table-demo-grouping-columns'"
+  nzSelector="nz-demo-table-grouping-columns"
+  [nzLink]="'components-table-demo-grouping-columns'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-grouping-columns <name>"
+  nzComponentName="NzDemoTableGroupingColumnsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/grouping-columns.md'">
+	<nz-demo-table-grouping-columns demo></nz-demo-table-grouping-columns>
+	<div intro ngNonBindable>
+		<p>固定列与分组表头联合使用。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可编辑单元格"
+  [nzId]="'components-table-demo-edit-cell'"
+  nzSelector="nz-demo-table-edit-cell"
+  [nzLink]="'components-table-demo-edit-cell'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-edit-cell <name>"
+  nzComponentName="NzDemoTableEditCellComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/edit-cell.md'">
+	<nz-demo-table-edit-cell demo></nz-demo-table-edit-cell>
+	<div intro ngNonBindable>
+		<p>定制带单元格编辑功能的表格，自由操作单元格内容。</p>
+<blockquote>
+<p>为了获得更好的性能，NG-ZORRO 所有组件都运行在 <a href="https://angular.io/api/core/ChangeDetectionStrategy">OnPush</a> 模式下，这意味着对 <code>@Input()</code> 数据的 mutate 将不会生效，请使用 immutable 方式操作数组或者对象。</p>
+</blockquote>
+<blockquote>
+<p>开发者可以参照该例子根据自己需求自由定制表格的编辑功能。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可编辑行"
+  [nzId]="'components-table-demo-edit-row'"
+  nzSelector="nz-demo-table-edit-row"
+  [nzLink]="'components-table-demo-edit-row'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-edit-row <name>"
+  nzComponentName="NzDemoTableEditRowComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/edit-row.md'">
+	<nz-demo-table-edit-row demo></nz-demo-table-edit-row>
+	<div intro ngNonBindable>
+		<p>定制带行编辑功能的表格，自由操作行内容。</p>
+<blockquote>
+<p>为了获得更好的性能，NG-ZORRO 所有组件都运行在 <a href="https://angular.io/api/core/ChangeDetectionStrategy">OnPush</a> 模式下，这意味着对 <code>@Input()</code> 数据的 mutate 将不会生效，请使用 immutable 方式操作数组或者对象。</p>
+</blockquote>
+<blockquote>
+<p>开发者可以参照该例子根据自己需求自由定制表格的编辑功能。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="嵌套子表格"
+  [nzId]="'components-table-demo-nested-table'"
+  nzSelector="nz-demo-table-nested-table"
+  [nzLink]="'components-table-demo-nested-table'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-nested-table <name>"
+  nzComponentName="NzDemoTableNestedTableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/nested-table.md'">
+	<nz-demo-table-nested-table demo></nz-demo-table-nested-table>
+	<div intro ngNonBindable>
+		<p>展示每行数据更详细的信息。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="虚拟滚动"
+  [nzId]="'components-table-demo-virtual'"
+  nzSelector="nz-demo-table-virtual"
+  [nzLink]="'components-table-demo-virtual'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-virtual <name>"
+  nzComponentName="NzDemoTableVirtualComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/virtual.md'">
+	<nz-demo-table-virtual demo></nz-demo-table-virtual>
+	<div intro ngNonBindable>
+		<p>虚拟滚动，结合 <a href="https://material.angular.io/cdk/scrolling/overview">cdk scrolling</a> 的虚拟滚动，用于巨量数据加载。可以通过获得 <code>cdkVirtualScrollViewport</code> 进行进一步操作，见本示例及 <a href="https://material.angular.io/cdk/scrolling/api#CdkVirtualScrollViewport">API</a>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="拖拽排序"
+  [nzId]="'components-table-demo-drag-sorting'"
+  nzSelector="nz-demo-table-drag-sorting"
+  [nzLink]="'components-table-demo-drag-sorting'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-drag-sorting <name>"
+  nzComponentName="NzDemoTableDragSortingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/drag-sorting.md'">
+	<nz-demo-table-drag-sorting demo></nz-demo-table-drag-sorting>
+	<div intro ngNonBindable>
+		<p>使用自定义元素，用户可以导入 <a href="https://material.angular.io/cdk/drag-drop/overview">@angular/cdk/drag-drop</a> 来实现拖拽排序。</p>
+<blockquote>
+<p>注意：需要手动导入 <code>import &#123;DragDropModule&#125; from &#39;@angular/cdk/drag-drop&#39;</code>;</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="模板用法"
+  [nzId]="'components-table-demo-template'"
+  nzSelector="nz-demo-table-template"
+  [nzLink]="'components-table-demo-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-template <name>"
+  nzComponentName="NzDemoTableTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/template.md'">
+	<nz-demo-table-template demo></nz-demo-table-template>
+	<div intro ngNonBindable>
+		<p>模板模式，显示内容仅由模板内容控制，不再需要向 <code>nzData</code> 传入数据，完全像普通 <code>table</code> 一样使用，使用 ant-design 的样式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="折行显示"
+  [nzId]="'components-table-demo-break-word'"
+  nzSelector="nz-demo-table-break-word"
+  [nzLink]="'components-table-demo-break-word'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-break-word <name>"
+  nzComponentName="NzDemoTableBreakWordComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/break-word.md'">
+	<nz-demo-table-break-word demo></nz-demo-table-break-word>
+	<div intro ngNonBindable>
+		<p>当有连续超长字符串时，可以使用 <code>nzBreakWord</code> 来折行显示</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="单元格自动省略"
+  [nzId]="'components-table-demo-ellipsis'"
+  nzSelector="nz-demo-table-ellipsis"
+  [nzLink]="'components-table-demo-ellipsis'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-ellipsis <name>"
+  nzComponentName="NzDemoTableEllipsisComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/ellipsis.md'">
+	<nz-demo-table-ellipsis demo></nz-demo-table-ellipsis>
+	<div intro ngNonBindable>
+		<p>设置 <code>nzTableLayout=&quot;fixed&quot;</code> 与 <code>nzEllipsis</code> 可以让单元格内容根据宽度自动省略。</p>
+<blockquote>
+<p>列头缩略暂不支持和排序筛选一起使用。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态控制表格属性"
+  [nzId]="'components-table-demo-dynamic-settings'"
+  nzSelector="nz-demo-table-dynamic-settings"
+  [nzLink]="'components-table-demo-dynamic-settings'"
+  nzGenerateCommand="ng g ng-zorro-antd:table-dynamic-settings <name>"
+  nzComponentName="NzDemoTableDynamicSettingsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/table/demo/dynamic-settings.md'">
+	<nz-demo-table-dynamic-settings demo></nz-demo-table-dynamic-settings>
+	<div intro ngNonBindable>
+		<p>选择不同配置组合查看效果。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-table"><span>nz-table</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-table'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzData]</code></td>
+<td>数据数组</td>
+<td><code>any[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFrontPagination]</code></td>
+<td>是否在前端对数据进行分页，如果在服务器分页数据或者需要在前端显示全部数据时传入 false</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTotal]</code></td>
+<td>当前总数据，在服务器渲染时需要传入</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPageIndex]</code></td>
+<td>当前页码，可双向绑定</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPageSize]</code></td>
+<td>每页展示多少数据，可双向绑定</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowPagination]</code></td>
+<td>是否显示分页器</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPaginationPosition]</code></td>
+<td>指定分页显示的位置</td>
+<td><code>&#39;top&#39; | &#39;bottom&#39; | &#39;both&#39;</code></td>
+<td><code>bottom</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBordered]</code></td>
+<td>是否展示外边框和列边框</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzWidthConfig]</code></td>
+<td>表头分组时指定每列宽度，与 <code>th</code> 的 <code>[nzWidth]</code> 不可混用</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>正常或迷你类型</td>
+<td><code>&#39;middle&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>页面是否加载中</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLoadingIndicator]</code></td>
+<td>加载指示符</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLoadingDelay]</code></td>
+<td>延迟显示加载效果的时间（防止闪烁）</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzScroll]</code></td>
+<td>横向或纵向支持滚动，也可用于指定滚动区域的宽高度：<code>&#123; x: &quot;300px&quot;, y: &quot;300px&quot; &#125;</code></td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>表格标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFooter]</code></td>
+<td>表格尾部</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNoResult]</code></td>
+<td>无数据时显示内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPageSizeOptions]</code></td>
+<td>页数选择器可选值</td>
+<td><code>number[]</code></td>
+<td><code>[ 10, 20, 30, 40, 50 ]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowQuickJumper]</code></td>
+<td>是否可以快速跳转至某页</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzShowSizeChanger]</code></td>
+<td>是否可以改变 <code>nzPageSize</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzShowTotal]</code></td>
+<td>用于显示数据总量和当前数据范围，用法参照 Pagination 组件</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number, range: [ number, number ] &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzItemRender]</code></td>
+<td>用于自定义页码的结构，用法参照 Pagination 组件</td>
+<td><code>TemplateRef&lt;&#123; $implicit: &#39;page&#39; | &#39;prev&#39; | &#39;next&#39;, page: number &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHideOnSinglePage]</code></td>
+<td>只有一页时是否隐藏分页器</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSimple]</code></td>
+<td>当添加该属性时，显示为简单分页</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzVirtualItemSize]</code></td>
+<td>虚拟滚动时每一列的高度，与 <a href="https://material.angular.io/cdk/scrolling/api">cdk itemSize</a> 相同</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualMaxBufferPx]</code></td>
+<td>缓冲区最大像素高度，与 <a href="https://material.angular.io/cdk/scrolling/api">cdk maxBufferPx</a> 相同</td>
+<td><code>number</code></td>
+<td><code>200</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualMinBufferPx]</code></td>
+<td>缓冲区最小像素高度，低于该值时将加载新结构，与 <a href="https://material.angular.io/cdk/scrolling/api">cdk minBufferPx</a> 相同</td>
+<td><code>number</code></td>
+<td><code>100</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVirtualForTrackBy]</code></td>
+<td>虚拟滚动数据 <code>TrackByFunction</code> 函数</td>
+<td><code>TrackByFunction&lt;T&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzPageIndexChange)</code></td>
+<td>当前页码改变时的回调函数</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzPageSizeChange)</code></td>
+<td>页数改变时的回调函数</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzCurrentPageDataChange)</code></td>
+<td>当前页面展示数据改变的回调函数</td>
+<td><code>EventEmitter&lt;any[]&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzQueryParams)</code></td>
+<td>当服务端分页、筛选、排序时，用于获得参数，具体见示例</td>
+<td><code>EventEmitter&lt;NzTableQueryParams&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="th"><span>th</span><a onclick="window.location.hash = 'th'" class="anchor">#</a></h3><p>勾选属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowCheckbox]</code></td>
+<td>是否添加checkbox</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>checkbox 是否禁用</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIndeterminate]</code></td>
+<td>checkbox indeterminate 状态</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzChecked]</code></td>
+<td>checkbox 是否被选中，可双向绑定</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCheckedChange)</code></td>
+<td>选中的回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>下拉选择属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowRowSelection]</code></td>
+<td>是否显示下拉选择</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSelections]</code></td>
+<td>下拉选择的内容 <code>text</code> 及回调函数 <code>onSelect</code></td>
+<td><code>Array&lt;&#123; text: string, onSelect: any &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>排序属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowSort]</code></td>
+<td>是否显示排序</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSortFn]</code></td>
+<td>排序函数，前端排序使用一个函数(参考 Array.sort 的 compareFunction)，服务端排序时传入 true</td>
+<td>`((a: any, b: any, sortOrder?: string) =&gt; number)</td>
+<td>boolean`</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSortDirections]</code></td>
+<td>支持的排序方式，取值为 <code>&#39;ascend&#39;</code>, <code>&#39;descend&#39;</code>, <code>null</code></td>
+<td><code>Array&lt;&#39;ascend&#39; | &#39;descend&#39; | null&gt;</code></td>
+<td><code>[&#39;ascend&#39;, &#39;descend&#39;, null]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSortOrder]</code></td>
+<td>当前排序状态，可双向绑定</td>
+<td>&#39;descend&#39; | &#39;ascend&#39; | null</td>
+<td>null</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzSortOrderChange)</code></td>
+<td>排序状态改变回调</td>
+<td><code>EventEmitter&lt;&#39;descend&#39; | &#39;ascend&#39; | null&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>过滤属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowFilter]</code></td>
+<td>是否显示过滤</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFilterFn]</code></td>
+<td>前端排序时，确定筛选的运行函数，服务端排序时，传入 true</td>
+<td>`((value: any, data: any) =&gt; boolean;)</td>
+<td>boolean`</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzFilters]</code></td>
+<td>过滤器内容, 显示数据 <code>text</code>，回调函数传出 <code>value</code>，设置 <code>byDefault</code> 以默认应用过滤规则</td>
+<td><code>Array&lt;&#123; text: string; value: any; byDefault?: boolean &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFilterMultiple]</code></td>
+<td>是否为多选过滤器</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzFilterChange)</code></td>
+<td>过滤器内容选择的 value 数据回调</td>
+<td><code>EventEmitter&lt;any[] | any&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>样式属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzWidth]</code></td>
+<td>指定该列宽度，表头未分组时可用</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzLeft]</code></td>
+<td>左侧距离，用于固定左侧列，当为 <code>true</code> 时自动计算，为 <code>false</code> 时停止固定</td>
+<td><code>string | boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzRight]</code></td>
+<td>右侧距离，用于固定右侧列，当为 <code>true</code> 时自动计算，为 <code>false</code> 时停止固定</td>
+<td><code>string | boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzAlign]</code></td>
+<td>设置列内容的对齐方式</td>
+<td><code>&#39;left&#39; | &#39;right&#39; | &#39;center&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzBreakWord]</code></td>
+<td>是否折行显示</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzEllipsis]</code></td>
+<td>超过宽度将自动省略，暂不支持和排序筛选一起使用。仅当表格布局将为 <code>nzTableLayout=&quot;fixed&quot;</code>时可用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<p>其他</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzColumnKey]</code></td>
+<td>当前列的key，用于服务端筛选和排序使用</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="td"><span>td</span><a onclick="window.location.hash = 'td'" class="anchor">#</a></h3><p>勾选属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowCheckbox]</code></td>
+<td>是否添加checkbox</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>checkbox 是否禁用</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIndeterminate]</code></td>
+<td>checkbox indeterminate 状态</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzChecked]</code></td>
+<td>checkbox 是否被选中，可双向绑定</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCheckedChange)</code></td>
+<td>选中的回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>展开属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzShowExpand]</code></td>
+<td>是否显示展开按钮</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzExpand]</code></td>
+<td>当前展开按钮状态，可双向绑定</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>当前展开按钮状态改变回调函数</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>样式属性</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzLeft]</code></td>
+<td>左侧距离，用于固定左侧列，当为 <code>true</code> 时自动计算，为 <code>false</code> 时停止固定</td>
+<td><code>string | boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzRight]</code></td>
+<td>右侧距离，用于固定右侧列，当为 <code>true</code> 时自动计算，为 <code>false</code> 时停止固定</td>
+<td><code>string | boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzAlign]</code></td>
+<td>设置列内容的对齐方式</td>
+<td><code>&#39;left&#39; | &#39;right&#39; | &#39;center&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzBreakWord]</code></td>
+<td>是否折行显示</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzEllipsis]</code></td>
+<td>超过宽度将自动省略，暂不支持和排序筛选一起使用。仅当表格布局将为 <code>nzTableLayout=&quot;fixed&quot;</code>时可用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<p>其他</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzIndentSize]</code></td>
+<td>展示树形数据时，每层缩进的宽度，以 px 为单位</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="tr"><span>tr</span><a onclick="window.location.hash = 'tr'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzExpand]</code></td>
+<td>当前列是否展开，与 <code>td</code> 上的 <code>nzExpand</code> 属性配合使用</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-filter-trigger"><span>nz-filter-trigger</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-filter-trigger'" class="anchor">#</a></h3><p>用于自定义筛选功能</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDropdownMenu]</code></td>
+<td>Dropdown 下拉菜单组件</td>
+<td><code>NzDropdownMenuComponent</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>菜单是否显示，可双向绑定</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzActive]</code></td>
+<td>是否激活选中图标效果</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(nzVisibleChange)</code></td>
+<td>菜单显示状态改变时调用，参数为 nzVisible</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-virtual-scroll]"><span>[nz-virtual-scroll]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-virtual-scroll]'" class="anchor">#</a></h3><p>虚拟滚动时配合 <code>ng-template</code> 使用, 格式为： <code>TemplateRef&lt;&#123; $implicit: any, index: number &#125;&gt;</code>.</p>
+<h2 id="注意"><span>注意</span><a onclick="window.location.hash = '注意'" class="anchor">#</a></h2><p>为了获得更好的性能，NG-ZORRO 所有组件都运行在 <a href="https://angular.io/api/core/ChangeDetectionStrategy">OnPush</a> 模式下，这意味着对 <code>@Input()</code> 数据的 mutate 将不会生效，请使用 immutable 方式操作数组或者对象。</p>
+<pre class="language-typescript"><code><span class="token comment" spellcheck="true">// 增加数据</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>dataSet <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>dataSet<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+  key    <span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>i<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+  name   <span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`Edward King </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>i<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">`</span></span><span class="token punctuation">,</span>
+  age    <span class="token punctuation">:</span> <span class="token string">'32'</span><span class="token punctuation">,</span>
+  address<span class="token punctuation">:</span> <span class="token template-string"><span class="token string">`London, Park Lane no. </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>i<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">`</span></span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 删除数据</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>dataSet <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>dataSet<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span>d <span class="token operator">=</span><span class="token operator">></span> d<span class="token punctuation">.</span>key <span class="token operator">!==</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>开发者也可以使用 <a href="https://immerjs.github.io/immer/docs/introduction">immer</a> 获得更好的操作体验</p>
+</section></article>

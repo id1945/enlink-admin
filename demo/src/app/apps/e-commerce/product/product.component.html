@@ -1,0 +1,285 @@
+<div class="page-header has-tab">
+    <div class="d-md-flex m-b-15 align-items-center justify-content-between">
+        <div class="media align-items-center m-b-15">
+            <nz-avatar nzShape="square" [nzSize]="70" nzSrc="assets/images/others/thumb-16.jpg"></nz-avatar>
+            <div class="m-l-15">
+                <h4 class="m-b-0">{{productEditForm.controls.productName.value}}</h4>
+                <p class="text-muted m-b-0">Code: #5325</p>
+            </div>
+        </div>
+        <div class="m-b-15">
+            <button nz-button nzType="primary" *ngIf="!isEdit" (click)="edit()">
+                <i nz-icon nzType="edit" theme="outline"></i>
+                <span>Edit</span>
+            </button>
+            <button nz-button nzType="default" *ngIf="isEdit" (click)="save()">
+                <i nz-icon nzType="save" theme="outline"></i>
+                <span>Save</span>
+            </button>
+        </div>
+    </div>
+</div>
+<nz-tabset class="page-header-tab" *ngIf="!isEdit">
+    <nz-tab nzTitle="Overview">
+        <div class="row">
+            <div class="col-md-3">
+                <nz-card>
+                    <div class="media align-items-center">
+                        <i class="font-size-40 text-success" nz-icon nzType="smile" theme="outline"></i>
+                        <div class="m-l-15">
+                            <p class="m-b-0 text-muted">10 ratings</p>
+                            <nz-rate [ngModel]="4.5" nzDisabled></nz-rate>
+                        </div>
+                    </div>
+                </nz-card>
+            </div>
+            <div class="col-md-3">
+                <nz-card>
+                    <div class="media align-items-center">
+                        <i class="font-size-40 text-primary" nz-icon nzType="shopping-cart" theme="outline"></i>
+                        <div class="m-l-15">
+                            <p class="m-b-0 text-muted">Sales</p>
+                            <h3 class="m-b-0 ls-1">1,521</h3>
+                        </div>
+                    </div>
+                </nz-card>
+            </div>
+            <div class="col-md-3">
+                <nz-card>
+                    <div class="media align-items-center">
+                        <i class="font-size-40 text-primary" nz-icon nzType="message" theme="outline"></i>
+                        <div class="m-l-15">
+                            <p class="m-b-0 text-muted">Reviews</p>
+                            <h3 class="m-b-0 ls-1">27</h3>
+                        </div>
+                    </div>
+                </nz-card>
+            </div>
+            <div class="col-md-3">
+                <nz-card>
+                    <div class="media align-items-center">
+                        <i class="font-size-40 text-primary" nz-icon nzType="stock" theme="outline"></i>
+                        <div class="m-l-15">
+                            <p class="m-b-0 text-muted">Available Stock</p>
+                            <h3 class="m-b-0 ls-1">152</h3>
+                        </div>
+                    </div>
+                </nz-card>
+            </div>
+        </div>
+        <nz-card>
+            <h5>Basic Info</h5>
+            <table class="product-info-table m-t-20">
+                <tbody>
+                    <tr>
+                        <td>Price:</td>
+                        <td class="text-dark font-weight-semibold">${{productEditForm.controls.price.value}}.00</td>
+                    </tr>
+                    <tr>
+                        <td>Category:</td>
+                        <td>{{productEditForm.controls.category.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Brand:</td>
+                        <td>{{productEditForm.controls.brand.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Tax Rate:</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td>
+                            <nz-tag *ngIf="productEditForm.controls.status.value == 'In Stock'" [nzColor]="'cyan'">{{productEditForm.controls.status.value}}</nz-tag>
+                            <nz-tag *ngIf="productEditForm.controls.status.value == 'Out of Stock'" [nzColor]="'red'">{{productEditForm.controls.status.value}}</nz-tag>
+                            <nz-tag *ngIf="productEditForm.controls.status.value == 'Pending'" [nzColor]="'gold'">{{productEditForm.controls.status.value}}</nz-tag>
+                        </td>
+                    </tr>
+                </tbody>
+            </table> 
+        </nz-card>
+        <nz-card>
+            <h5>Option Info</h5>
+            <table class="product-info-table m-t-20">
+                <tbody>
+                    <tr>
+                        <td>Sizes:</td>
+                        <td>{{productEditForm.controls.size.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Colors:</td>
+                        <td>
+                            <span class="m-r-20" *ngFor="let item of productEditForm.controls.colors.value">
+                                <span class="product-color">
+                                    <nz-badge *ngIf="item == 'Dark Blue'" nzStatus="default" nzColor="#4c4e69"></nz-badge>
+                                    <nz-badge *ngIf="item == 'Gray'" nzStatus="default" nzColor="#868686"></nz-badge>
+                                    <nz-badge *ngIf="item == 'Gray Blue'" nzStatus="default" nzColor="#8498c7"></nz-badge>
+                                </span>
+                                <span>{{item}}</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fit:</td>
+                        <td>{{productEditForm.controls.fit.value}} Fit</td>
+                    </tr>
+                    <tr>
+                        <td>Material:</td>
+                        <td>{{productEditForm.controls.material.value}}</td>
+                    </tr>
+                    <tr>
+                        <td>Ship From:</td>
+                        <td>{{productEditForm.controls.shipFrom.value}}</td>
+                    </tr>
+                </tbody>
+            </table> 
+        </nz-card>
+        <nz-card nzTitle="Product Description">
+            <div [innerHTML]="productEditForm.controls.description.value"></div>
+        </nz-card>    
+    </nz-tab>
+    <nz-tab nzTitle="Product Images">
+        <nz-card>
+            <div class="row">
+                <div *ngFor="let item of fileList" class="col-md-3">
+                    <img class="img-fluid" [src]="item.url == null ? 'assets/images/others/local-image.jpg' : item.url" [alt]="item.name">
+                </div>
+            </div>
+        </nz-card>
+    </nz-tab>
+</nz-tabset>
+<form nz-form nzLayout="vertical" [formGroup]="productEditForm" *ngIf="isEdit">
+    <nz-tabset class="page-header-tab">
+        <nz-tab nzTitle="Basic Info">
+            <nz-card>
+                <nz-form-item>
+                    <nz-form-label nzFor="productName">Product Name</nz-form-label>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <input nz-input formControlName="productName" type="text">
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label nzFor="price">Price</nz-form-label>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-input-group [nzPrefix]="pricePrefix">
+                            <input nz-input formControlName="price" type="text">
+                        </nz-input-group>
+                        <ng-template #pricePrefix>
+                            <span>$</span>
+                        </ng-template>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label nzFor="category">Category</nz-form-label>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-select formControlName="category" class="w-100">
+                            <nz-option nzLabel="Cloths" nzValue="Cloths"></nz-option>
+                            <nz-option nzLabel="Home Decoration" nzValue="Home Decoration"></nz-option>
+                            <nz-option nzLabel="Eletronic" nzValue="Eletronic"></nz-option>
+                            <nz-option nzLabel="Jewellery" nzValue="Jewellery"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label nzFor="brand">Brand</nz-form-label>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <input nz-input formControlName="brand" type="text">
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label nzFor="status">Status</nz-form-label>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-select formControlName="status" class="w-100">
+                            <nz-option nzLabel="In Stock" nzValue="In Stock"></nz-option>
+                            <nz-option nzLabel="Out of Stock" nzValue="Out of Stock"></nz-option>
+                            <nz-option nzLabel="Pending" nzValue="Pending"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-card>
+        </nz-tab>
+        <nz-tab nzTitle="Option Info">
+            <nz-card >
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-form-label nzFor="size">Status</nz-form-label>
+                        <nz-select formControlName="size" class="w-100" nzMode="multiple">
+                            <nz-option nzLabel="40" nzValue="40"></nz-option>
+                            <nz-option nzLabel="42" nzValue="42"></nz-option>
+                            <nz-option nzLabel="44" nzValue="44"></nz-option>
+                            <nz-option nzLabel="46" nzValue="46"></nz-option>
+                            <nz-option nzLabel="48" nzValue="48"></nz-option>
+                            <nz-option nzLabel="50" nzValue="50"></nz-option>
+                            <nz-option nzLabel="50" nzValue="50"></nz-option>
+                            <nz-option nzLabel="52" nzValue="52"></nz-option>
+                            <nz-option nzLabel="54" nzValue="54"></nz-option>
+                            <nz-option nzLabel="56" nzValue="56"></nz-option>
+                            <nz-option nzLabel="58" nzValue="58"></nz-option>
+                            <nz-option nzLabel="60" nzValue="60"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-form-label nzFor="colors">Colors</nz-form-label>
+                        <nz-select formControlName="colors" class="w-100" nzMode="multiple">
+                            <nz-option nzLabel="Dark Blue" nzValue="Dark Blue"></nz-option>
+                            <nz-option nzLabel="Gray" nzValue="Gray"></nz-option>
+                            <nz-option nzLabel="Gray Blue" nzValue="Gray Blue"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-form-label nzFor="fit">Fit</nz-form-label>
+                        <nz-select formControlName="fit" class="w-100">
+                            <nz-option nzLabel="Skinny" nzValue="Skinny"></nz-option>
+                            <nz-option nzLabel="Slim" nzValue="Slim"></nz-option>
+                            <nz-option nzLabel="Regular" nzValue="Regular"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-form-label nzFor="material">Material</nz-form-label>
+                        <nz-select formControlName="material" class="w-100" nzMode="tags"></nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzErrorTip="Please input this field!">
+                        <nz-form-label nzFor="shipFrom">Ship From</nz-form-label>
+                        <nz-select formControlName="shipFrom" class="w-100">
+                            <nz-option nzLabel="Columbia" nzValue="Columbia"></nz-option>
+                            <nz-option nzLabel="Brazil" nzValue="Brazil"></nz-option>
+                            <nz-option nzLabel="Chile" nzValue="Chile"></nz-option>
+                            <nz-option nzLabel="Argentina" nzValue="Argentina"></nz-option>
+                        </nz-select>
+                    </nz-form-control>
+                </nz-form-item>
+            </nz-card>
+        </nz-tab>
+        <nz-tab nzTitle="Description">
+            <nz-card>
+                <quill-editor formControlName="description" [style]="{height: '250px'}" [modules]="editorConfig" placeholder=""></quill-editor>
+            </nz-card>
+        </nz-tab>
+        <nz-tab nzTitle="Product Images">
+            <nz-card>
+                <nz-upload
+                    nzAction="https://jsonplaceholder.typicode.com/posts/"
+                    nzListType="picture-card"
+                    [(nzFileList)]="fileList"
+                    [nzShowButton]="fileList.length < 15"
+                    [nzPreview]="handlePreview">
+                    <i nz-icon nzType="plus"></i>
+                    <div class="ant-upload-text">Upload</div>
+                </nz-upload>
+                <nz-modal [nzVisible]="previewVisible" [nzContent]="modalContent" [nzFooter]="null" (nzOnCancel)="previewVisible=false">
+                    <ng-template #modalContent>
+                        <img [src]="previewImage" [ngStyle]="{ 'width': '100%' }" />
+                    </ng-template>
+                </nz-modal>
+            </nz-card>
+        </nz-tab>
+    </nz-tabset>  
+</form>  

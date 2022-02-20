@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-lg-11 mx-auto">
+        <div class="row">
+            <div class="col-md-4" *ngFor="let item of blogs">
+                <nz-card [nzCover]="coverTemplate">
+                    <nz-skeleton [nzLoading]="loading" [nzActive]="loading">
+                        <h4 class="m-b-15">{{item.title}}</h4>
+                        <p class="lh-1-8 m-b-20">
+                            <span>{{item.desc | slice:0:90}}</span>
+                            <span *ngIf="item.desc.length > 90">...</span>
+                        </p>
+                        <div class="d-flex align-items-center justify-content-between m-b-20">
+                            <p class="m-b-0 text-dark font-weight-semibold font-size-15">{{item.date}}</p>
+                            <a [routerLink]="['/pages/blog/blog-post']" class="text-primary" nz-button nzType="link" nzSize="small">Read More</a>
+                        </div>
+                        <div class="border-top off-gutter-x off-gutter-bottom p-v-15 p-h-25">
+                            <div class="d-flex align-items-center">
+                                <nz-avatar nzSize="small" [nzSrc]="item.authorImg"></nz-avatar>
+                                <div class="m-l-10">
+                                    <span class="font-weight-semibold">{{item.authorName}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #coverTemplate>
+                            <img [alt]="item.title" [src]="item.image"/>
+                        </ng-template>
+                    </nz-skeleton>
+                </nz-card>
+            </div>
+        </div>
+        <div class="m-t-30 text-center">
+            <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+        </div>
+    </div>
+</div>

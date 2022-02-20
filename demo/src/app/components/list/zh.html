@@ -1,0 +1,267 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-list-demo-simple" nzTitle="简单列表"></nz-link><nz-link nzHref="#components-list-demo-basic" nzTitle="基础列表"></nz-link><nz-link nzHref="#components-list-demo-loadmore" nzTitle="加载更多"></nz-link><nz-link nzHref="#components-list-demo-vertical" nzTitle="竖排列表样式"></nz-link><nz-link nzHref="#components-list-demo-grid" nzTitle="栅格列表"></nz-link><nz-link nzHref="#components-list-demo-resposive" nzTitle="响应式的栅格列表"></nz-link><nz-link nzHref="#components-list-demo-infinite-load" nzTitle="滚动加载无限长列表"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>List<span class="subtitle">列表</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>通用列表。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>最基础的列表展示，可承载文字、列表、图片、段落，常用于后台数据展示页面。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzListModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/list'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="简单列表"
+  [nzId]="'components-list-demo-simple'"
+  nzSelector="nz-demo-list-simple"
+  [nzLink]="'components-list-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-simple <name>"
+  nzComponentName="NzDemoListSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/simple.md'">
+	<nz-demo-list-simple demo></nz-demo-list-simple>
+	<div intro ngNonBindable>
+		<p>列表拥有大、中、小三种尺寸。</p>
+<p>通过设置 <code>size</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>size</code>，则尺寸为中。</p>
+<p>可通过设置 <code>nzHeader</code> 和 <code>nzFooter</code>，来自定义列表头部和尾部。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="基础列表"
+  [nzId]="'components-list-demo-basic'"
+  nzSelector="nz-demo-list-basic"
+  [nzLink]="'components-list-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-basic <name>"
+  nzComponentName="NzDemoListBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/basic.md'">
+	<nz-demo-list-basic demo></nz-demo-list-basic>
+	<div intro ngNonBindable>
+		<p>基础列表。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="加载更多"
+  [nzId]="'components-list-demo-loadmore'"
+  nzSelector="nz-demo-list-loadmore"
+  [nzLink]="'components-list-demo-loadmore'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-loadmore <name>"
+  nzComponentName="NzDemoListLoadmoreComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/loadmore.md'">
+	<nz-demo-list-loadmore demo></nz-demo-list-loadmore>
+	<div intro ngNonBindable>
+		<p>可通过 <code>loadMore</code> 属性实现加载更多功能。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="竖排列表样式"
+  [nzId]="'components-list-demo-vertical'"
+  nzSelector="nz-demo-list-vertical"
+  [nzLink]="'components-list-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-vertical <name>"
+  nzComponentName="NzDemoListVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/vertical.md'">
+	<nz-demo-list-vertical demo></nz-demo-list-vertical>
+	<div intro ngNonBindable>
+		<p>通过设置 <code>nzItemLayout</code> 属性为 <code>vertical</code> 可实现竖排列表样式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="栅格列表"
+  [nzId]="'components-list-demo-grid'"
+  nzSelector="nz-demo-list-grid"
+  [nzLink]="'components-list-demo-grid'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-grid <name>"
+  nzComponentName="NzDemoListGridComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/grid.md'">
+	<nz-demo-list-grid demo></nz-demo-list-grid>
+	<div intro ngNonBindable>
+		<p>可以通过设置 <code>nz-list</code> 的 <code>grid</code> 属性来实现栅格列表，<code>column</code> 可设置期望显示的列数。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应式的栅格列表"
+  [nzId]="'components-list-demo-resposive'"
+  nzSelector="nz-demo-list-resposive"
+  [nzLink]="'components-list-demo-resposive'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-resposive <name>"
+  nzComponentName="NzDemoListResposiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/resposive.md'">
+	<nz-demo-list-resposive demo></nz-demo-list-resposive>
+	<div intro ngNonBindable>
+		<p>响应式的栅格列表。尺寸与 <a href="https://ant.design/components/grid-cn/#Col">Layout Grid</a> 保持一致。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="滚动加载无限长列表"
+  [nzId]="'components-list-demo-infinite-load'"
+  nzSelector="nz-demo-list-infinite-load"
+  [nzLink]="'components-list-demo-infinite-load'"
+  nzGenerateCommand="ng g ng-zorro-antd:list-infinite-load <name>"
+  nzComponentName="NzDemoListInfiniteLoadComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/list/demo/infinite-load.md'">
+	<nz-demo-list-infinite-load demo></nz-demo-list-infinite-load>
+	<div intro ngNonBindable>
+		<p>结合 <a href="https://material.angular.io/cdk/scrolling/overview">cdk-virtual-scroll</a> 实现滚动加载无限长列表，带有虚拟化 virtualization 功能，能够提高数据量大时候长列表的性能。</p>
+<p><code>Virtualized</code> 是在大数据列表中应用的一种技术，主要是为了减少不可见区域不必要的渲染从而提高性能，特别是数据量在成千上万条效果尤为明显。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-list"><span>nz-list</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzBordered]</code></td>
+<td>是否展示边框</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzFooter]</code></td>
+<td>列表底部</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzHeader]</code></td>
+<td>列表头部</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzItemLayout]</code></td>
+<td>设置 <code>nz-list-item</code> 布局, 设置成 <code>vertical</code> 则竖直样式显示, 默认横排</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39;</code></td>
+<td><code>&#39;horizontal&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>当卡片内容还在加载中时，可以用 <code>loading</code> 展示一个占位</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>list 的尺寸</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSplit]</code></td>
+<td>是否展示分割线</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-list-empty"><span>nz-list-empty</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-empty'" class="anchor">#</a></h3><p>列表空内容组件</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzNoResult]</code></td>
+<td>空内容显示内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-list[nzgrid]"><span>nz-list[nzGrid]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list[nzgrid]'" class="anchor">#</a></h3><p>使用栅格布局</p>
+<h3 id="nz-list-header"><span>nz-list-header</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-header'" class="anchor">#</a></h3><p>列表头部位置组件</p>
+<h3 id="nz-list-footer"><span>nz-list-footer</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-footer'" class="anchor">#</a></h3><p>列表脚部位置组件</p>
+<h3 id="nz-list-pagination"><span>nz-list-pagination</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-pagination'" class="anchor">#</a></h3><p>列表分页位置组件</p>
+<h3 id="nz-list-load-more"><span>nz-list-load-more</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-load-more'" class="anchor">#</a></h3><p>列表加载更多位置组件</p>
+<hr>
+<h3 id="nz-list-item"><span>nz-list-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzNoFlex]</code></td>
+<td>是否非 <code>flex</code> 布局渲染</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id="ul[nz-list-item-actions]"><span>ul[nz-list-item-actions]</span><a onclick="window.location.hash = 'ul[nz-list-item-actions]'" class="anchor">#</a></h3><p>列表项操作项容器组件</p>
+<h3 id="nz-list-item-action"><span>nz-list-item-action</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-action'" class="anchor">#</a></h3><p>列表项操作项组件</p>
+<h3 id="nz-list-item-extra"><span>nz-list-item-extra</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-extra'" class="anchor">#</a></h3><hr>
+<p>列表项扩展内容位置组件</p>
+<h3 id="nz-list-item-meta"><span>nz-list-item-meta</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-meta'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAvatar]</code></td>
+<td>列表元素的图标</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDescription]</code></td>
+<td>列表元素的描述内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>列表元素的标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-list-item-meta-title"><span>nz-list-item-meta-title</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-meta-title'" class="anchor">#</a></h3><p>列表项元信息标题部分组件</p>
+<h3 id="nz-list-item-meta-description"><span>nz-list-item-meta-description</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-meta-description'" class="anchor">#</a></h3><p>列表项元信息描述部分组件</p>
+<h3 id="nz-list-item-meta-avatar"><span>nz-list-item-meta-avatar</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-list-item-meta-avatar'" class="anchor">#</a></h3><p>列表项元信息头像部分组件</p>
+</section></article>

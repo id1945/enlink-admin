@@ -1,0 +1,195 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-spin-demo-basic" nzTitle="基本用法"></nz-link><nz-link nzHref="#components-spin-demo-size" nzTitle="各种大小"></nz-link><nz-link nzHref="#components-spin-demo-inside" nzTitle="容器"></nz-link><nz-link nzHref="#components-spin-demo-nested" nzTitle="卡片加载中"></nz-link><nz-link nzHref="#components-spin-demo-tip" nzTitle="自定义描述文案"></nz-link><nz-link nzHref="#components-spin-demo-delay-and-debounce" nzTitle="延迟"></nz-link><nz-link nzHref="#components-spin-demo-custom-indicator" nzTitle="自定义指示符"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Spin<span class="subtitle">加载中</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>用于页面和区块的加载中状态。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>页面局部处于等待异步数据或正在渲染过程时，合适的加载动效会有效缓解用户的焦虑。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSpinModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/spin'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本用法"
+  [nzId]="'components-spin-demo-basic'"
+  nzSelector="nz-demo-spin-basic"
+  [nzLink]="'components-spin-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-basic <name>"
+  nzComponentName="NzDemoSpinBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/basic.md'">
+	<nz-demo-spin-basic demo></nz-demo-spin-basic>
+	<div intro ngNonBindable>
+		<p>一个简单的 loading 状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="容器"
+  [nzId]="'components-spin-demo-inside'"
+  nzSelector="nz-demo-spin-inside"
+  [nzLink]="'components-spin-demo-inside'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-inside <name>"
+  nzComponentName="NzDemoSpinInsideComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/inside.md'">
+	<nz-demo-spin-inside demo></nz-demo-spin-inside>
+	<div intro ngNonBindable>
+		<p>放入一个容器中。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义描述文案"
+  [nzId]="'components-spin-demo-tip'"
+  nzSelector="nz-demo-spin-tip"
+  [nzLink]="'components-spin-demo-tip'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-tip <name>"
+  nzComponentName="NzDemoSpinTipComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/tip.md'">
+	<nz-demo-spin-tip demo></nz-demo-spin-tip>
+	<div intro ngNonBindable>
+		<p>自定义描述文案。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义指示符"
+  [nzId]="'components-spin-demo-custom-indicator'"
+  nzSelector="nz-demo-spin-custom-indicator"
+  [nzLink]="'components-spin-demo-custom-indicator'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-custom-indicator <name>"
+  nzComponentName="NzDemoSpinCustomIndicatorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/custom-indicator.md'">
+	<nz-demo-spin-custom-indicator demo></nz-demo-spin-custom-indicator>
+	<div intro ngNonBindable>
+		<p>使用自定义指示符。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="各种大小"
+  [nzId]="'components-spin-demo-size'"
+  nzSelector="nz-demo-spin-size"
+  [nzLink]="'components-spin-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-size <name>"
+  nzComponentName="NzDemoSpinSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/size.md'">
+	<nz-demo-spin-size demo></nz-demo-spin-size>
+	<div intro ngNonBindable>
+		<p>小的用于文本加载，默认用于卡片容器级加载，大的用于<strong>页面级</strong>加载。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="卡片加载中"
+  [nzId]="'components-spin-demo-nested'"
+  nzSelector="nz-demo-spin-nested"
+  [nzLink]="'components-spin-demo-nested'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-nested <name>"
+  nzComponentName="NzDemoSpinNestedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/nested.md'">
+	<nz-demo-spin-nested demo></nz-demo-spin-nested>
+	<div intro ngNonBindable>
+		<p>可以直接把内容内嵌到 <code>nz-spin</code> 中，将现有容器变为加载状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="延迟"
+  [nzId]="'components-spin-demo-delay-and-debounce'"
+  nzSelector="nz-demo-spin-delay-and-debounce"
+  [nzLink]="'components-spin-demo-delay-and-debounce'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-delay-and-debounce <name>"
+  nzComponentName="NzDemoSpinDelayAndDebounceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/delay-and-debounce.md'">
+	<nz-demo-spin-delay-and-debounce demo></nz-demo-spin-delay-and-debounce>
+	<div intro ngNonBindable>
+		<p>延迟显示 loading 效果。当 spinning 状态在 <code>nzDelay</code> 时间内结束，则不显示 loading 状态。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-spin"><span>nz-spin</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-spin'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDelay]</code></td>
+<td>延迟显示加载效果的时间（防止闪烁），单位：毫秒</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzIndicator]</code></td>
+<td>加载指示符</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>组件大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSpinning]</code></td>
+<td>是否旋转</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSimple]</code></td>
+<td>是否包裹元素</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTip]</code></td>
+<td>当作为包裹元素时，可以自定义描述文案</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

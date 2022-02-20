@@ -1,0 +1,214 @@
+.ant-steps { 
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+}    
+
+.ant-steps-item-icon {
+    border: $step-line-width solid $border-color;
+    width: $step-icon-size;
+    height: $step-icon-size;
+    line-height: $step-icon-size;
+    text-align: center;
+    border-radius: $step-icon-size;
+    font-size: 16px;
+    font-family: $font-family-base;
+
+    > .ant-steps-icon {
+        top: 0px;
+    }
+}
+
+.ant-steps-item-title {
+    color: $gray-dark;
+}
+
+.ant-steps-item-description, 
+.ant-steps-item-subtitle {
+    color: $gray-light;
+}
+
+.ant-steps-item-wait {
+
+    .ant-steps-item-icon {
+        border-color: $border-color;
+
+        > .ant-steps-icon {
+            color: $gray-light;
+        }
+    }
+    >.ant-steps-item-container {
+        > .ant-steps-item-content {
+
+            > .ant-steps-item-description {
+                color: $gray-light;
+            }
+
+            > .ant-steps-item-title {
+                color: $gray-light;
+            }
+        }
+    }
+}
+
+.ant-steps-item-process {
+
+    .ant-steps-item-icon {
+        background-color: $step-theme-colors;
+        background: $step-theme-colors;
+        border-color: $step-theme-colors;
+
+        > .ant-steps-icon {
+
+            .ant-steps-icon-dot {
+                background: $step-theme-colors;
+            }
+        }
+    }
+
+    > .ant-steps-item-content {
+
+        > .ant-steps-item-title {
+            color: $gray-dark;
+
+            &:after {
+                background-color: $border-color;
+            }
+        }
+
+        > .ant-steps-item-tail {
+            &:after {
+                background-color: $border-color;
+            }
+        }
+
+        > .ant-steps-item-description {
+            color: $gray;
+        }
+    }
+    
+    >.ant-steps-item-container {
+        >.ant-steps-item-content>.ant-steps-item-title:after,
+        >.ant-steps-item-tail:after {
+            background-color: $border-color;
+        }
+    }
+} 
+
+.ant-steps-item-finish {
+
+    .ant-steps-item-icon {
+        border-color: $step-theme-colors;
+        border-color: $step-theme-colors;
+        background-color: transparent;
+
+        > .ant-steps-icon {
+            color: $step-theme-colors;
+
+            .ant-steps-icon-dot {
+                background: $step-theme-colors;
+            }
+        }
+    }
+
+    >.ant-steps-item-container {
+
+        > .ant-steps-item-content {
+
+            .ant-steps-item-title {
+                color: $gray-dark;
+
+                &:after {
+                    background-color: $step-theme-colors;
+                }
+            }
+        }
+
+        > .ant-steps-item-tail {
+            &:after {
+                background-color: $step-theme-colors;
+            }
+        }
+    }
+}
+
+.ant-steps-item-error {
+
+    .ant-steps-item-icon {
+        border-color: $brand-danger;
+        background-color: transparent;
+
+        > .ant-steps-icon {
+            color: $brand-danger;
+        }
+    }
+
+    >.ant-steps-item-container {
+        > .ant-steps-item-content {
+
+            > .ant-steps-item-description,
+            > .ant-steps-item-title {
+                color:$brand-danger;
+            }
+        }
+    }
+}    
+
+.ant-steps-item {
+
+    &.ant-steps-next-error {
+
+        .ant-steps-item-title {
+
+            &:after {
+                background: $brand-danger;
+            }
+        }
+    }
+}   
+
+.ant-steps-item-tail,
+.ant-steps-item-title {
+    &::after {
+        height: $step-line-width;
+    }
+}
+
+.ant-steps-small {
+
+    .ant-steps-item-icon {
+        width: $step-icon-size-sm;
+        height: $step-icon-size-sm;
+        line-height: $step-icon-size-sm;
+        text-align: center;
+        border-radius: $step-icon-size-sm;
+        font-size: 12px;
+    }
+}
+
+.ant-steps-vertical {
+
+    >.ant-steps-item {
+
+        >.ant-steps-item-tail {
+
+            &:after {
+                width: $step-line-width;
+            }
+        }
+    }
+}
+
+.ant-steps-dot {
+
+    .ant-steps-item-tail {
+        top: 3px;
+    }
+}
+
+.ant-steps-navigation {
+    .ant-steps-item {
+        &:before {
+            background-color: $step-theme-colors;
+        }
+    }
+}

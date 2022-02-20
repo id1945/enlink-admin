@@ -1,0 +1,321 @@
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="media align-items-center">
+                <nz-avatar [nzSize]="60" nzIcon="dollar" class="ant-avatar-blue"  ></nz-avatar>
+                <div class="m-l-15">
+                    <h2 class="m-b-0">$23,523</h2>
+                    <p class="m-b-0 text-muted">Profit</p>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="media align-items-center">
+                <nz-avatar [nzSize]="50" nzIcon="line-chart" class="ant-avatar-cyan"  ></nz-avatar>
+                <div class="m-l-15">
+                    <h2 class="m-b-0">+ 17.21%</h2>
+                    <p class="m-b-0 text-muted">Growth</p>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="media align-items-center">
+                <nz-avatar [nzSize]="50" nzIcon="profile" class="ant-avatar-gold"  ></nz-avatar>
+                <div class="m-l-15">
+                    <h2 class="m-b-0">3,685</h2>
+                    <p class="m-b-0 text-muted">Orders</p>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="media align-items-center">
+                <nz-avatar [nzSize]="50" nzIcon="user" class="ant-avatar-purple"  ></nz-avatar>
+                <div class="m-l-15">
+                    <h2 class="m-b-0">1,832</h2>
+                    <p class="m-b-0 text-muted">Customers</p>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Total Revenue</h5>
+                <div>
+                    <nz-radio-group [(ngModel)]="revenueChartFormat">
+                        <label nz-radio-button nzValue="revenueMonth">Month</label>
+                        <label nz-radio-button nzValue="revenueYear">Year</label>
+                    </nz-radio-group>
+                </div>
+            </div>
+            <div class="m-t-50" style="height: 330px">
+                <canvas ngChartjs 
+                    [datasets]="revenueChartData" 
+                    [labels]="revenueChartLabels"
+                    [options]="revenueChartOptions" 
+                    [colors]="revenueChartColors" 
+                    [legend]="false"
+                    [chartType]="revenueChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-12 col-lg-4">
+        <nz-card>
+            <h5 class="m-b-0">Customers</h5>
+            <div class="m-v-60 text-center" style="height: 200px">
+                <canvas ngChartjs 
+                    [data]="customersChartData" 
+                    [labels]="customersChartLabels" 
+                    [chartType]="customersChartType"
+                    [colors]="customersChartColors"
+                    [options]="customersChartOptions"
+                    [legend]="false">
+                </canvas>
+            </div>
+            <div class="row border-top p-t-25">
+                <div class="col-4">
+                    <div class="d-flex justify-content-center">
+                        <div class="media align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="cyan"></nz-badge>
+                            <div class="m-l-5">
+                                <h4 class="m-b-0">350</h4>
+                                <p class="m-b-0 muted">New</p>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex justify-content-center">
+                        <div class="media align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="purple"></nz-badge>
+                            <div class="m-l-5">
+                                <h4 class="m-b-0">450</h4>
+                                <p class="m-b-0 muted">Returning</p>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex justify-content-center">
+                        <div class="media align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="gold"></nz-badge>
+                            <div class="m-l-5">
+                                <h4 class="m-b-0">100</h4>
+                                <p class="m-b-0 muted">Others</p>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h2 class="m-b-0">$17,267</h2>
+                    <p class="m-b-0 text-muted">Avg.Profit</p>
+                </div>
+                <div>
+                    <nz-tag [nzColor]="'cyan'">+ 5.7%</nz-tag>
+                </div>
+            </div>
+            <div class="m-t-50" style="height: 360px">
+                <canvas ngChartjs 
+                    [datasets]="avgProfitChartData" 
+                    [labels]="avgProfitChartLabels"
+                    [options]="avgProfitChartOptions" 
+                    [colors]="avgProfitChartColors"
+                    [legend]="avgProfitChartLegend" 
+                    [chartType]="avgProfitChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-12 col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Top Product</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-table #productTable [nzData]="productsList" [nzShowPagination]="false" class="no-border-last">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Sales</th>
+                            <th>Earning</th>
+                            <th>Stock Left</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of productTable.data">
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <nz-avatar nzShape="square"  nzIcon="picture" [nzSrc]="item.avatar"></nz-avatar>
+                                    <span class="m-l-10">{{item.name}}</span>
+                                </div>
+                            </td>
+                            <td>{{item.sales}}</td>
+                            <td>${{item.earn | number:'3.2-5'}}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <div class="w-90 p-r-10">
+                                        <nz-progress *ngIf="item.stock > 60" [nzStrokeColor]="cyan" [nzPercent]="item.stock" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                                        <nz-progress *ngIf="item.stock > 40 && item.stock < 60" [nzStrokeColor]="gold" [nzPercent]="item.stock" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                                        <nz-progress *ngIf="item.stock < 40" [nzStrokeColor]="red" [nzPercent]="item.stock" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                                    </div>
+                                    <span>{{item.stock}}</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-b-0">Latest Upload</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <div [ngClass]="{'m-b-25': !last}" *ngFor="let item of fileList; let last = last">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="media align-items-center">
+                            <div class="font-size-35">
+                                <i nz-icon [nzType]="item.icon" theme="twotone" [twoToneColor]="item.color"></i>
+                            </div>
+                            <div class="m-l-15">
+                                <h6 class="m-b-0"><a class="text-dark">{{item.name}}</a></h6>
+                                <p class="text-muted m-b-0">{{item.size}}</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="text-dark font-size-20" nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="latestUploadDropDown">
+                                <i nz-icon nzType="ellipsis" theme="outline"></i>
+                            </a>
+                            <nz-dropdown-menu #latestUploadDropDown="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item>
+                                        <i nz-icon nzType="eye" theme="outline"></i>
+                                        <span class="m-l-5">View</span>
+                                    </li>
+                                    <li nz-menu-item>
+                                        <i nz-icon nzType="download" theme="outline"></i>
+                                        <span class="m-l-5">Download</span>
+                                    </li>
+                                    <li nz-menu-item>
+                                        <i nz-icon nzType="delete" theme="outline"></i>
+                                        <span class="m-l-5">Remove</span>
+                                    </li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nz-card>      
+    </div>
+    <div class="col-md-12 col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="m-b-0">Activity</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <perfect-scrollbar class="overflow-y-auto" style="height: 437px">
+                    <div class=" p-l-10 p-t-15">
+                        <nz-timeline>
+                            <nz-timeline-item *ngFor="let item of activityList" [nzDot]="dotTemplate">
+                                <div class="m-l-20">
+                                    <h5 class="m-b-5">{{item.name}}</h5>
+                                    <p class="m-b-0">
+                                        <span class="font-weight-semibold">{{item.action}} </span> 
+                                        <span class="m-l-5"> {{item.target}}</span>
+                                    </p>
+                                    <span class="text-muted font-size-13">
+                                        <i nz-icon nzType="clock-circle" theme="outline"></i>
+                                        <span class="m-l-5">{{item.date}}</span>
+                                    </span>
+                                </div>
+                                <ng-template #dotTemplate>
+                                    <nz-avatar nzSize="small" [style.background-color]="item.avatar" nzText="{{item.name | slice:0:1}}"></nz-avatar>
+                                </ng-template>
+                            </nz-timeline-item>
+                        </nz-timeline>
+                    </div>
+                </perfect-scrollbar>
+            </div>
+        </nz-card>    
+    </div>
+    <div class="col-md-12 col-lg-4">
+        <nz-card [nzTitle]="tasksHeader">
+           <ng-template #tasksHeader>
+                <div class="d-flex justify-content-between align-items-center m-t-10">
+                    <h5 class="m-b-0">Task</h5>
+                    <div>
+                        <a nz-button nzType="default" nzSize="small">View All</a>
+                    </div>
+                </div>
+           </ng-template>
+            <nz-card-tab >
+                <nz-tabset class="m-t-20" [(nzSelectedIndex)]="taskListIndex">
+                    <nz-tab nzTitle="Today"></nz-tab>
+                    <nz-tab nzTitle="Week"></nz-tab>
+                    <nz-tab nzTitle="Month"></nz-tab>
+                </nz-tabset>
+            </nz-card-tab>
+            <div class="p-v-15" *ngIf="taskListIndex == 0">
+                <div [ngClass]="last? 'm-b-10': 'm-b-25'" *ngFor="let item of taskListToday; let last = last">
+                    <label class="d-flex align-items-center" nz-checkbox [(ngModel)]="item.checked">
+                        <span class="d-inline-block p-l-15">
+                            <h5 class="m-b-0">{{item.title}}</h5>
+                            <p class="m-b-0 text-muted font-size-13">{{item.desc}}</p>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="p-v-15" *ngIf="taskListIndex == 1">
+                <div [ngClass]="last? 'm-b-10': 'm-b-25'" *ngFor="let item of taskListWeek; let last = last">
+                    <label class="d-flex align-items-center" nz-checkbox [(ngModel)]="item.checked">
+                        <span class="d-inline-block p-l-15">
+                            <h5 class="m-b-0">{{item.title}}</h5>
+                            <p class="m-b-0 text-muted font-size-13">{{item.desc}}</p>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="p-v-15" *ngIf="taskListIndex == 2">
+                <div [ngClass]="last? 'm-b-10': 'm-b-25'" *ngFor="let item of taskListMonth; let last = last">
+                    <label class="d-flex align-items-center" nz-checkbox [(ngModel)]="item.checked">
+                        <span class="d-inline-block p-l-15">
+                            <h5 class="m-b-0">{{item.title}}</h5>
+                            <p class="m-b-0 text-muted font-size-13">{{item.desc}}</p>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </nz-card>
+    </div>    
+</div>

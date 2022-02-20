@@ -1,0 +1,44 @@
+<nz-input-group [nzPrefix]="prefixTemplate">
+    <input type="text" nz-input placeholder="Search" [(ngModel)]="search">
+</nz-input-group>
+<div class="m-t-30">
+    <ng-container *ngFor="let item of files | search:'title':search as count ;  let i=index">
+        <h5 class="m-b-20"  *ngIf="i < 1 && count.length !== 0">Files</h5>
+        <div class="d-flex m-b-30">
+            <nz-avatar [nzIcon]="item.icon" [ngClass]="item.color"></nz-avatar>
+            <div class="m-l-15">
+                <a class="text-dark m-b-0 font-weight-semibold">{{item.title}}</a>
+                <p class="m-b-0 text-muted font-size-13">{{item.desc}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="m-t-30">
+    <ng-container class="d-flex m-b-30" *ngFor="let item of members | search:'title':search as count ;  let i=index">
+        <h5 class="m-b-20"  *ngIf="i < 1 && count.length !== 0">Members</h5>
+        <div class="d-flex m-b-30">
+            <nz-avatar [nzSrc]="item.img"></nz-avatar>
+            <div class="m-l-15">
+                <a class="m-b-0 text-dark font-weight-semibold">{{item.title}}</a>
+                <p class="m-b-0 text-muted font-size-13">{{item.desc}}</p>
+            </div>
+        </div>
+    </ng-container>
+</div>
+<div class="m-t-30">
+    <ng-container class="d-flex m-b-30" *ngFor="let item of feeds | search:'title':search as count ;  let i=index">
+        <h5 class="m-b-20"  *ngIf="i < 1 && count.length !== 0">News</h5>
+        <div class="d-flex m-b-30">
+            <nz-avatar [nzSrc]="item.img"></nz-avatar>
+            <div class="m-l-15">
+                <a class="m-b-0 text-dark font-weight-semibold">{{item.title}}</a>
+                <p class="m-b-0 text-muted font-size-13">
+                    <i nz-icon nzType="clock-circle" theme="outline"></i>
+                    <span class="m-l-10">{{item.desc}}</span>
+                </p>
+            </div>
+        </div>
+    </ng-container>
+</div>
+
+<ng-template #prefixTemplate><i nz-icon nzType="search"></i></ng-template>

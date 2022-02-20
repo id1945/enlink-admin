@@ -1,0 +1,289 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-button-demo-basic" nzTitle="按钮类型"></nz-link><nz-link nzHref="#components-button-demo-icon" nzTitle="图标按钮"></nz-link><nz-link nzHref="#components-button-demo-size" nzTitle="按钮尺寸"></nz-link><nz-link nzHref="#components-button-demo-disabled" nzTitle="不可用状态"></nz-link><nz-link nzHref="#components-button-demo-loading" nzTitle="加载中状态"></nz-link><nz-link nzHref="#components-button-demo-multiple" nzTitle="多个按钮组合"></nz-link><nz-link nzHref="#components-button-demo-button-group" nzTitle="按钮组合"></nz-link><nz-link nzHref="#components-button-demo-ghost" nzTitle="幽灵按钮"></nz-link><nz-link nzHref="#components-button-demo-block" nzTitle="Block 按钮"></nz-link><nz-link nzHref="#components-button-demo-danger" nzTitle="危险按钮"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Button<span class="subtitle">按钮</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>按钮用于开始一个即时操作。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</p>
+<p>在 Ant Design 中，我们有四种按钮。</p>
+<ul>
+<li>主按钮：用于主行动点，一个操作区域只能有一个主按钮。</li>
+<li>默认按钮：用于没有主次之分的一组行动点。</li>
+<li>虚线按钮：常用于添加操作。</li>
+<li>链接按钮：用于次要或外链的行动点。</li>
+</ul>
+<p>以及四种状态属性与上面配合使用。</p>
+<ul>
+<li>危险：删除/移动/修改权限等危险操作，一般需要二次确认。</li>
+<li>幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。</li>
+<li>禁用：行动点不可用的时候，一般需要文案解释。</li>
+<li>加载中：用于异步操作等待反馈的时候，也可以避免多次提交。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzButtonModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/button'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="按钮类型"
+  [nzId]="'components-button-demo-basic'"
+  nzSelector="nz-demo-button-basic"
+  [nzLink]="'components-button-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-basic <name>"
+  nzComponentName="NzDemoButtonBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/basic.md'">
+	<nz-demo-button-basic demo></nz-demo-button-basic>
+	<div intro ngNonBindable>
+		<p>按钮有四种类型：主按钮、次按钮、虚线按钮和链接按钮。主按钮在同一个操作区域最多出现一次。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="按钮尺寸"
+  [nzId]="'components-button-demo-size'"
+  nzSelector="nz-demo-button-size"
+  [nzLink]="'components-button-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-size <name>"
+  nzComponentName="NzDemoButtonSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/size.md'">
+	<nz-demo-button-size demo></nz-demo-button-size>
+	<div intro ngNonBindable>
+		<p>按钮有大、中、小三种尺寸。</p>
+<p>通过设置 <code>nzSize</code> 为 <code>large</code> <code>small</code> 分别把按钮设为大、小尺寸。若不设置 <code>nzSize</code>，则尺寸为中。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="加载中状态"
+  [nzId]="'components-button-demo-loading'"
+  nzSelector="nz-demo-button-loading"
+  [nzLink]="'components-button-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-loading <name>"
+  nzComponentName="NzDemoButtonLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/loading.md'">
+	<nz-demo-button-loading demo></nz-demo-button-loading>
+	<div intro ngNonBindable>
+		<p>添加 <code>nzLoading</code> 属性即可让按钮处于加载状态，最后两个按钮演示点击后进入加载状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="按钮组合"
+  [nzId]="'components-button-demo-button-group'"
+  nzSelector="nz-demo-button-button-group"
+  [nzLink]="'components-button-demo-button-group'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-button-group <name>"
+  nzComponentName="NzDemoButtonButtonGroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/button-group.md'">
+	<nz-demo-button-button-group demo></nz-demo-button-button-group>
+	<div intro ngNonBindable>
+		<p>可以将多个 <code>nz-button</code> 放入 <code>nz-button-group</code> 的容器中。</p>
+<p>通过设置 <code>nzSize</code> 为 <code>large</code> <code>small</code> 分别把按钮组合设为大、小尺寸。若不设置 <code>nzSize</code>，则尺寸为中。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Block 按钮"
+  [nzId]="'components-button-demo-block'"
+  nzSelector="nz-demo-button-block"
+  [nzLink]="'components-button-demo-block'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-block <name>"
+  nzComponentName="NzDemoButtonBlockComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/block.md'">
+	<nz-demo-button-block demo></nz-demo-button-block>
+	<div intro ngNonBindable>
+		<p><code>nzBlock</code> 属性将使按钮适合其父宽度。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="图标按钮"
+  [nzId]="'components-button-demo-icon'"
+  nzSelector="nz-demo-button-icon"
+  [nzLink]="'components-button-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-icon <name>"
+  nzComponentName="NzDemoButtonIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/icon.md'">
+	<nz-demo-button-icon demo></nz-demo-button-icon>
+	<div intro ngNonBindable>
+		<p>当需要在 <code>nz-button</code> 内嵌入图标时，可以直接在 <code>nz-button</code> 内嵌入对应的 <code>icon</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="不可用状态"
+  [nzId]="'components-button-demo-disabled'"
+  nzSelector="nz-demo-button-disabled"
+  [nzLink]="'components-button-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-disabled <name>"
+  nzComponentName="NzDemoButtonDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/disabled.md'">
+	<nz-demo-button-disabled demo></nz-demo-button-disabled>
+	<div intro ngNonBindable>
+		<p>添加 <code>disabled</code> 属性即可让按钮处于不可用状态，同时按钮样式也会改变。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多个按钮组合"
+  [nzId]="'components-button-demo-multiple'"
+  nzSelector="nz-demo-button-multiple"
+  [nzLink]="'components-button-demo-multiple'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-multiple <name>"
+  nzComponentName="NzDemoButtonMultipleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/multiple.md'">
+	<nz-demo-button-multiple demo></nz-demo-button-multiple>
+	<div intro ngNonBindable>
+		<p>按钮组合使用时，推荐使用1个主操作 + n 个次操作，3个以上操作时把更多操作放到 <code>nz-dropdown</code> 中组合使用。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="幽灵按钮"
+  [nzId]="'components-button-demo-ghost'"
+  nzSelector="nz-demo-button-ghost"
+  [nzLink]="'components-button-demo-ghost'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-ghost <name>"
+  nzComponentName="NzDemoButtonGhostComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/ghost.md'">
+	<nz-demo-button-ghost demo></nz-demo-button-ghost>
+	<div intro ngNonBindable>
+		<p>添加 <code>nzGhost</code> 属性后，幽灵按钮将其他按钮的内容反色，背景变为透明，常用在有色背景上。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="危险按钮"
+  [nzId]="'components-button-demo-danger'"
+  nzSelector="nz-demo-button-danger"
+  [nzLink]="'components-button-demo-danger'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-danger <name>"
+  nzComponentName="NzDemoButtonDangerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/danger.md'">
+	<nz-demo-button-danger demo></nz-demo-button-danger>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzDanger</code> 将按钮标识为危险状态。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-button]"><span>[nz-button]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-button]'" class="anchor">#</a></h3><blockquote>
+<p>注意：nz-button 是一个 Directive，除以下表格之外还支持例如 disabled 等原生 button 的<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/button">所有属性</a>。</p>
+</blockquote>
+<p>通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：<code>nzType</code> -&gt; <code>nzShape</code> -&gt; <code>nzSize</code> -&gt; <code>nzLoading</code> -&gt; <code>disabled</code></p>
+<p>按钮的属性说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzGhost]</code></td>
+<td>幽灵属性，使按钮背景透明</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>设置按钮载入状态</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>设置按钮形状，可选值为 <code>circle</code> <code>round</code> 或者不设</td>
+<td><code>&#39;circle&#39;|&#39;round&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>设置按钮大小，可选值为 <code>small</code> <code>large</code> 或者不设</td>
+<td><code>&#39;large&#39;|&#39;small&#39;|&#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>设置按钮类型，可选值为 <code>primary</code> <code>dashed</code> <code>link</code> 或者不设</td>
+<td><code>&#39;primary&#39;|&#39;dashed&#39;|&#39;link&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBlock]</code></td>
+<td>将按钮宽度调整为其父宽度的选项</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDanger]</code></td>
+<td>设置危险按钮</td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nz-button-group"><span>nz-button-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-button-group'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSize]</code></td>
+<td>设置按钮大小，可选值为 <code>small</code> <code>large</code> 或者不设</td>
+<td><code>&#39;large&#39;|&#39;small&#39;|&#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

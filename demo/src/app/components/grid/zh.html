@@ -1,0 +1,376 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-grid-demo-basic" nzTitle="基础栅格"></nz-link><nz-link nzHref="#components-grid-demo-gutter" nzTitle="区块间隔"></nz-link><nz-link nzHref="#components-grid-demo-offset" nzTitle="左右偏移"></nz-link><nz-link nzHref="#components-grid-demo-sort" nzTitle="栅格排序"></nz-link><nz-link nzHref="#components-grid-demo-flex" nzTitle="排版"></nz-link><nz-link nzHref="#components-grid-demo-flex-align" nzTitle="对齐"></nz-link><nz-link nzHref="#components-grid-demo-flex-order" nzTitle="排序"></nz-link><nz-link nzHref="#components-grid-demo-flex-stretch" nzTitle="Flex 填充"></nz-link><nz-link nzHref="#components-grid-demo-responsive" nzTitle="响应式布局"></nz-link><nz-link nzHref="#components-grid-demo-responsive-more" nzTitle="其他属性的响应式"></nz-link><nz-link nzHref="#components-grid-demo-playground" nzTitle="栅格配置器"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Grid<span class="subtitle">栅格</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>24 栅格系统。</p>
+<h2 id="设计理念"><span>设计理念</span><a onclick="window.location.hash = '设计理念'" class="anchor">#</a></h2><div class="grid-demo">
+<div class="ant-row demo-row">
+  <div class="ant-col-24 demo-col demo-col-1">
+    100%
+  </div>
+</div>
+<div class="ant-row demo-row">
+  <div class="ant-col-6 demo-col demo-col-2">
+    25%
+  </div>
+  <div class="ant-col-6 demo-col demo-col-3">
+    25%
+  </div>
+  <div class="ant-col-6 demo-col demo-col-2">
+    25%
+  </div>
+  <div class="ant-col-6 demo-col demo-col-3">
+    25%
+  </div>
+</div>
+<div class="ant-row demo-row">
+  <div class="ant-col-8 demo-col demo-col-4">
+    33.33%
+  </div>
+  <div class="ant-col-8 demo-col demo-col-5">
+    33.33%
+  </div>
+  <div class="ant-col-8 demo-col demo-col-4">
+    33.33%
+  </div>
+</div>
+<div class="ant-row demo-row">
+  <div class="ant-col-12 demo-col demo-col-1">
+    50%
+  </div>
+  <div class="ant-col-12 demo-col demo-col-3">
+    50%
+  </div>
+</div>
+<div class="ant-row demo-row">
+  <div class="ant-col-16 demo-col demo-col-4">
+    66.66%
+  </div>
+  <div class="ant-col-8 demo-col demo-col-5">
+    33.33%
+  </div>
+</div>
+</div><p>在多数业务情况下，Ant Design 需要在设计区域内解决大量信息收纳的问题，因此在 12 栅格系统的基础上，我们将整个设计建议区域按照 24 等分的原则进行划分。</p>
+<p>划分之后的信息区块我们称之为『盒子』。建议横向排列的盒子数量最多四个，最少一个。『盒子』在整个屏幕上占比见上图。设计部分基于盒子的单位定制盒子内部的排版规则，以保证视觉层面的舒适感。</p>
+<h2 id="概述"><span>概述</span><a onclick="window.location.hash = '概述'" class="anchor">#</a></h2><p>布局的栅格化系统，我们是基于行（row）和列（col）来定义信息区块的外部框架，以保证页面的每个区域能够稳健地排布起来。下面简单介绍一下它的工作原理：</p>
+<ul>
+<li>通过 <code>row</code> 在水平方向建立一组 <code>column</code>（简写 col）</li>
+<li>你的内容应当放置于 <code>col</code> 内，并且，只有 <code>col</code> 可以作为 <code>row</code> 的直接元素</li>
+<li>栅格系统中的列是指 1 到 24 的值来表示其跨越的范围。例如，三个等宽的列可以使用 <code>&lt;div nz-col [nzSpan]=&quot;8&quot; /&gt;</code> 来创建</li>
+<li>如果一个 <code>row</code> 中的 <code>col</code> 总和超过 24，那么多余的 <code>col</code> 会作为一个整体另起一行排列</li>
+</ul>
+<p>我们的栅格化系统基于 Flex 布局，允许子元素在父节点内的水平对齐方式 - 居左、居中、居右、等宽排列、分散排列。子元素与子元素之间，支持顶部对齐、垂直居中对齐、底部对齐的方式。同时，支持使用 order 来定义元素的排列顺序。</p>
+<p>布局是基于 24 栅格来定义每一个『盒子』的宽度，但不拘泥于栅格。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzGridModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/grid'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基础栅格"
+  [nzId]="'components-grid-demo-basic'"
+  nzSelector="nz-demo-grid-basic"
+  [nzLink]="'components-grid-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-basic <name>"
+  nzComponentName="NzDemoGridBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/basic.md'">
+	<nz-demo-grid-basic demo></nz-demo-grid-basic>
+	<div intro ngNonBindable>
+		<p>从堆叠到水平排列。</p>
+<p>使用单一的一组 <code>nz-row</code> 和 <code>nz-col</code> 栅格组件，就可以创建一个基本的栅格系统，所有列（<code>nz-col</code>）必须放在 <code>nz-row</code> 内。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="区块间隔"
+  [nzId]="'components-grid-demo-gutter'"
+  nzSelector="nz-demo-grid-gutter"
+  [nzLink]="'components-grid-demo-gutter'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-gutter <name>"
+  nzComponentName="NzDemoGridGutterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/gutter.md'">
+	<nz-demo-grid-gutter demo></nz-demo-grid-gutter>
+	<div intro ngNonBindable>
+		<p>栅格常常需要和间隔进行配合，你可以使用 <code>nz-row</code> 的 <code>nzGutter</code> 属性，我们推荐使用 <code>(16+8n)px</code> 作为栅格间隔。(n 是自然数)</p>
+<p>如果要支持响应式，可以写成 <code>&#123; xs: 8, sm: 16, md: 24, lg: 32, xl: 32, xxl: 32 &#125;</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="左右偏移"
+  [nzId]="'components-grid-demo-offset'"
+  nzSelector="nz-demo-grid-offset"
+  [nzLink]="'components-grid-demo-offset'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-offset <name>"
+  nzComponentName="NzDemoGridOffsetComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/offset.md'">
+	<nz-demo-grid-offset demo></nz-demo-grid-offset>
+	<div intro ngNonBindable>
+		<p>列偏移。</p>
+<p>使用 <code>nzOffset</code> 可以将列向右侧偏。例如，<code>nzOffset=&quot;4&quot;</code> 将元素向右侧偏移了 4 个列（column）的宽度。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="栅格排序"
+  [nzId]="'components-grid-demo-sort'"
+  nzSelector="nz-demo-grid-sort"
+  [nzLink]="'components-grid-demo-sort'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-sort <name>"
+  nzComponentName="NzDemoGridSortComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/sort.md'">
+	<nz-demo-grid-sort demo></nz-demo-grid-sort>
+	<div intro ngNonBindable>
+		<p>列排序。</p>
+<p>通过使用 <code>nzPush</code> 和 <code>nzPull</code> 类就可以很容易的改变列（column）的顺序。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="排版"
+  [nzId]="'components-grid-demo-flex'"
+  nzSelector="nz-demo-grid-flex"
+  [nzLink]="'components-grid-demo-flex'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-flex <name>"
+  nzComponentName="NzDemoGridFlexComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/flex.md'">
+	<nz-demo-grid-flex demo></nz-demo-grid-flex>
+	<div intro ngNonBindable>
+		<p>布局基础。</p>
+<p>子元素根据不同的值 <code>start</code>,<code>center</code>,<code>end</code>,<code>space-between</code>,<code>space-around</code>，分别定义其在父节点里面的排版方式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="对齐"
+  [nzId]="'components-grid-demo-flex-align'"
+  nzSelector="nz-demo-grid-flex-align"
+  [nzLink]="'components-grid-demo-flex-align'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-flex-align <name>"
+  nzComponentName="NzDemoGridFlexAlignComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/flex-align.md'">
+	<nz-demo-grid-flex-align demo></nz-demo-grid-flex-align>
+	<div intro ngNonBindable>
+		<p>子元素垂直对齐。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="排序"
+  [nzId]="'components-grid-demo-flex-order'"
+  nzSelector="nz-demo-grid-flex-order"
+  [nzLink]="'components-grid-demo-flex-order'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-flex-order <name>"
+  nzComponentName="NzDemoGridFlexOrderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/flex-order.md'">
+	<nz-demo-grid-flex-order demo></nz-demo-grid-flex-order>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzOrder</code> 来改变元素的排序。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Flex 填充"
+  [nzId]="'components-grid-demo-flex-stretch'"
+  nzSelector="nz-demo-grid-flex-stretch"
+  [nzLink]="'components-grid-demo-flex-stretch'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-flex-stretch <name>"
+  nzComponentName="NzDemoGridFlexStretchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/flex-stretch.md'">
+	<nz-demo-grid-flex-stretch demo></nz-demo-grid-flex-stretch>
+	<div intro ngNonBindable>
+		<p><code>nz-col</code> 提供 <code>nzFlex</code> 属性以支持填充。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应式布局"
+  [nzId]="'components-grid-demo-responsive'"
+  nzSelector="nz-demo-grid-responsive"
+  [nzLink]="'components-grid-demo-responsive'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-responsive <name>"
+  nzComponentName="NzDemoGridResponsiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/responsive.md'">
+	<nz-demo-grid-responsive demo></nz-demo-grid-responsive>
+	<div intro ngNonBindable>
+		<p>参照 Bootstrap 的 <a href="http://getbootstrap.com/css/#grid-media-queries">响应式设计</a>，预设五个响应尺寸：<code>xs</code> <code>sm</code> <code>md</code> <code>lg</code> <code>xl</code>  <code>xxl</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="其他属性的响应式"
+  [nzId]="'components-grid-demo-responsive-more'"
+  nzSelector="nz-demo-grid-responsive-more"
+  [nzLink]="'components-grid-demo-responsive-more'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-responsive-more <name>"
+  nzComponentName="NzDemoGridResponsiveMoreComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/responsive-more.md'">
+	<nz-demo-grid-responsive-more demo></nz-demo-grid-responsive-more>
+	<div intro ngNonBindable>
+		<p><code>span</code> <code>pull</code> <code>push</code> <code>offset</code> <code>order</code> 属性可以通过内嵌到 <code>nzXs</code> <code>nzSm</code> <code>nzMd</code> <code>nzLg</code> <code>nzXl</code> <code>nzXXl</code> 属性中来使用。</p>
+<p>其中 <code>nzXs=&quot;6&quot;</code> 相当于 <code>[nzXs]=&quot;&#123; span: 6 &#125;&quot;</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="栅格配置器"
+  [nzId]="'components-grid-demo-playground'"
+  nzSelector="nz-demo-grid-playground"
+  [nzLink]="'components-grid-demo-playground'"
+  nzGenerateCommand="ng g ng-zorro-antd:grid-playground <name>"
+  nzComponentName="NzDemoGridPlaygroundComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/grid/demo/playground.md'">
+	<nz-demo-grid-playground demo></nz-demo-grid-playground>
+	<div intro ngNonBindable>
+		<p>可以简单配置几种等分栅格和间距。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-row]"><span>[nz-row]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-row]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAlign]</code></td>
+<td>垂直对齐方式</td>
+<td><code>&#39;top&#39; | &#39;middle&#39; | &#39;bottom&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzGutter]</code></td>
+<td>栅格间隔，可以写成像素值或支持响应式的对象写法来设置水平间隔 <code>&#123; xs: 8, sm: 16, md: 24&#125;</code>。或者使用数组形式同时设置 <code>[水平间距, 垂直间距]</code>。</td>
+<td><code>number|object|[number, number]|[object, object]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzJustify]</code></td>
+<td>水平排列方式</td>
+<td><code>&#39;start&#39; | &#39;end&#39; | &#39;center&#39; | &#39;space-around&#39; | &#39;space-between&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-col]"><span>[nz-col]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-col]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzFlex]</code></td>
+<td>flex 布局属性</td>
+<td><code>string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOffset]</code></td>
+<td>栅格左侧的间隔格数，间隔内不可以有栅格</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOrder]</code></td>
+<td>栅格顺序</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPull]</code></td>
+<td>栅格向左移动格数</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPush]</code></td>
+<td>栅格向右移动格数</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSpan]</code></td>
+<td>栅格占位格数，为 0 时相当于 <code>display: none</code></td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzXs]</code></td>
+<td><code>&lt;576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSm]</code></td>
+<td><code>≥576px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMd]</code></td>
+<td><code>≥768px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzLg]</code></td>
+<td><code>≥992px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzXl]</code></td>
+<td><code>≥1200px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzXXl]</code></td>
+<td><code>≥1600px</code> 响应式栅格，可为栅格数或一个包含其他属性的对象</td>
+<td><code>number | object</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>响应式栅格的断点扩展自 <a href="https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints">BootStrap 4 的规则</a>（不包含链接里 <code>occasionally</code> 的部分)。</p>
+</section></article>

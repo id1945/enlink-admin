@@ -1,0 +1,305 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-skeleton-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-skeleton-demo-complex" nzTitle="复杂的组合"></nz-link><nz-link nzHref="#components-skeleton-demo-active" nzTitle="动画效果"></nz-link><nz-link nzHref="#components-skeleton-demo-element" nzTitle="骨架按钮、头像和输入框。"></nz-link><nz-link nzHref="#components-skeleton-demo-children" nzTitle="包含子组件"></nz-link><nz-link nzHref="#components-skeleton-demo-list" nzTitle="列表样例"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Skeleton<span class="subtitle">骨架屏</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>在需要等待加载内容的位置提供一个占位图形组合。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>网络较慢，需要长时间等待加载处理的情况下。</li>
+<li>图文信息内容较多的列表/卡片中。</li>
+<li>只适合用在第一次加载数据的场景。</li>
+<li>可以被 Spin 完全代替，但是在可用的场景下可以比 Spin 提供更好的视觉效果和用户体验</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSkeletonModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/skeleton'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-skeleton-demo-basic'"
+  nzSelector="nz-demo-skeleton-basic"
+  [nzLink]="'components-skeleton-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-basic <name>"
+  nzComponentName="NzDemoSkeletonBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/basic.md'">
+	<nz-demo-skeleton-basic demo></nz-demo-skeleton-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="复杂的组合"
+  [nzId]="'components-skeleton-demo-complex'"
+  nzSelector="nz-demo-skeleton-complex"
+  [nzLink]="'components-skeleton-demo-complex'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-complex <name>"
+  nzComponentName="NzDemoSkeletonComplexComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/complex.md'">
+	<nz-demo-skeleton-complex demo></nz-demo-skeleton-complex>
+	<div intro ngNonBindable>
+		<p>更复杂的组合。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动画效果"
+  [nzId]="'components-skeleton-demo-active'"
+  nzSelector="nz-demo-skeleton-active"
+  [nzLink]="'components-skeleton-demo-active'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-active <name>"
+  nzComponentName="NzDemoSkeletonActiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/active.md'">
+	<nz-demo-skeleton-active demo></nz-demo-skeleton-active>
+	<div intro ngNonBindable>
+		<p> 显示动画效果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="骨架按钮、头像和输入框。"
+  [nzId]="'components-skeleton-demo-element'"
+  nzSelector="nz-demo-skeleton-element"
+  [nzLink]="'components-skeleton-demo-element'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-element <name>"
+  nzComponentName="NzDemoSkeletonElementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/element.md'">
+	<nz-demo-skeleton-element demo></nz-demo-skeleton-element>
+	<div intro ngNonBindable>
+		<p>骨架按钮、头像和输入框。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="包含子组件"
+  [nzId]="'components-skeleton-demo-children'"
+  nzSelector="nz-demo-skeleton-children"
+  [nzLink]="'components-skeleton-demo-children'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-children <name>"
+  nzComponentName="NzDemoSkeletonChildrenComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/children.md'">
+	<nz-demo-skeleton-children demo></nz-demo-skeleton-children>
+	<div intro ngNonBindable>
+		<p> 加载占位图包含子组件。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="列表样例"
+  [nzId]="'components-skeleton-demo-list'"
+  nzSelector="nz-demo-skeleton-list"
+  [nzLink]="'components-skeleton-demo-list'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-list <name>"
+  nzComponentName="NzDemoSkeletonListComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/list.md'">
+	<nz-demo-skeleton-list demo></nz-demo-skeleton-list>
+	<div intro ngNonBindable>
+		<p>在列表组件中使用加载占位符。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-skeleton"><span>nz-skeleton</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>是否展示动画效果</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzAvatar]</code></td>
+<td>是否显示头像占位图</td>
+<td><code>boolean | NzSkeletonAvatar</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>为 <code>true</code> 时，显示占位图。反之则直接展示子组件</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzParagraph]</code></td>
+<td>是否显示段落占位图</td>
+<td><code>boolean | NzSkeletonParagraph</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>是否显示标题占位图</td>
+<td><code>boolean | NzSkeletonTitle</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletonavatar"><span>NzSkeletonAvatar</span><a onclick="window.location.hash = 'nzskeletonavatar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>size</code></td>
+<td>设置头像占位图的大小</td>
+<td><code>number | &#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>shape</code></td>
+<td>指定头像的形状</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletontitle"><span>NzSkeletonTitle</span><a onclick="window.location.hash = 'nzskeletontitle'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>width</code></td>
+<td>设置标题占位图的宽度</td>
+<td><code>number | string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletonparagraph"><span>NzSkeletonParagraph</span><a onclick="window.location.hash = 'nzskeletonparagraph'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rows</code></td>
+<td>设置段落占位图的行数</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>设置标题占位图的宽度，若为数组时则为对应的每行宽度，反之则是最后一行的宽度</td>
+<td><code>number | string | Array&lt;number | string&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;button&quot;]"><span>nz-skeleton-element [nzType=&quot;button&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;button&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>是否展示动画效果</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>形状</td>
+<td><code>&#39;circle&#39; | &#39;round&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;avatar&quot;]"><span>nz-skeleton-element [nzType=&quot;avatar&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;avatar&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>是否展示动画效果</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>大小</td>
+<td><code>number | &#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>形状</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td><code>&#39;square&#39;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;input&quot;]"><span>nz-skeleton-element [nzType=&quot;input&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;input&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>是否展示动画效果</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+</tbody></table>
+</section></article>

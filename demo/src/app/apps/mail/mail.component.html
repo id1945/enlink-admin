@@ -1,0 +1,193 @@
+<div class="mail-wrapper">
+    <div class="mail-nav" [ngClass]="{'nav-open': isNavOpen}">
+        <div class="p-h-25 m-t-25">
+            <div class="p-b-15 d-md-none d-inline-block">
+                <a class="text-dark font-size-18" (click)="openNav()">
+                    <i nz-icon nzType="menu-fold" theme="outline"></i>
+                </a>
+            </div>
+            <button nz-button nzType="primary" nzBlock (click)="compose()">
+                <i nz-icon nzType="edit" theme="outline"></i>
+                <span class="m-l-5">Compose</span>
+            </button>
+        </div>
+        <div class="p-v-15">
+            <ul nz-menu [nzMode]="'inline'">
+                <li nz-menu-item (click)="closeMail()">
+                    <i nz-icon nzType="inbox" theme="outline"></i>
+                    <span>Inbox</span>
+                </li>
+                <li nz-menu-item>
+                    <i nz-icon nzType="mail" theme="outline"></i>
+                    <span>Sent Mail</span>
+                </li>
+                <li nz-menu-item>
+                    <i nz-icon nzType="file-done" theme="outline"></i>
+                    <span>Drafts</span>
+                </li>
+                <li nz-menu-item>
+                    <i nz-icon nzType="star" theme="outline"></i>
+                    <span>Favorite</span>
+                </li>
+                <li nz-menu-item>
+                    <i nz-icon nzType="delete" theme="outline"></i>
+                    <span>Deleted</span>
+                </li>
+                <li class="m-t-25" nz-menu-group>
+                    <h6 title class="p-l-10 ">Labels</h6>
+                    <ul>
+                        <li nz-menu-item>
+                            <nz-badge nzStatus="success"></nz-badge>
+                            <span>Works</span>
+                        </li>
+                        <li nz-menu-item>
+                            <nz-badge nzStatus="error"></nz-badge>
+                            <span>Private</span>
+                        </li>
+                        <li nz-menu-item>
+                            <nz-badge nzStatus="warning"></nz-badge>
+                            <span>Important</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mail-content" *ngIf="isMailListOpen">
+        <div class="p-h-10 p-v-5 d-md-none d-inline-block">
+            <a class="text-dark font-size-18" (click)="openNav()">
+                <i nz-icon nzType="menu-unfold" theme="outline"></i>
+            </a>
+        </div>
+        <div class="d-flex align-items-center justify-content-between p-10">
+            <div>
+                <label class="m-r-15" nz-checkbox [(ngModel)]="allChecked" (ngModelChange)="updateAllChecked()" [nzIndeterminate]="indeterminate"></label>
+                <nz-select class="d-none d-lg-inline-block" style="width: 150px" [(ngModel)]="filter" nzSize="small" nzPlaceHolder="Filter by">
+                    <nz-option nzValue="all" nzLabel="All"></nz-option>
+                    <nz-option nzValue="unread" nzLabel="Unread"></nz-option>
+                    <nz-option nzValue="date" nzLabel="Date"></nz-option>
+                    <nz-option nzValue="name" nzLabel="Name"></nz-option>
+                </nz-select>
+            </div>
+            <div class="d-flex">
+                <nz-input-group [nzPrefix]="prefiXTemplate">
+                    <input nz-input placeholder="Search" nzSize="small">
+                </nz-input-group>
+                <ng-template #prefiXTemplate>
+                    <i nz-icon nzType="search" theme="outline"></i>
+                </ng-template>
+                <div class="m-l-10">
+                    <button nz-button nzType="default" nz-tooltip nzTooltipTitle="Refresh" nzTooltipPlacement="bottom">
+                        <i nz-icon nzType="reload" theme="outline"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mail-list" *ngFor="let item of mails">
+                <label class="m-r-15" nz-checkbox [(ngModel)]="item.checked" (ngModelChange)="updateSingleChecked()"></label>
+                <table class="list-info" (click)="openMail(item.name)">
+                    <tr>
+                        <td class="list-sender">
+                            <div class="media align-items-center">
+                                <nz-avatar nzIcon="user" [nzSrc]="item.avatar" nzSize="small"></nz-avatar>
+                                <h6 class="m-l-10 m-b-0">{{item.name}}</h6>
+                            </div>
+                        </td>
+                        <td class="list-content">
+                            <div class="list-msg">
+                                <span class="list-title">{{item.title}}</span>
+                                <span class="m-h-5 d-none d-lg-inline-block"> - </span>
+                                <span class="list-text text-gray">{{formatBody(item.content)}}</span>
+                            </div>
+                        </td>
+                        <td class="list-date">
+                            <span>{{item.date}}</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="m-t-20 text-center text-md-right">
+            <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+        </div>
+    </div>
+    <ng-container *ngFor="let item of mails">
+        <div class="mail-content" *ngIf="selectedMail == item.name">
+            <div class="d-lg-flex align-items-center justify-content-between">
+                <div class="media align-items-center m-b-15">
+                    <a class="text-gray m-r-15 font-size-18" (click)="closeMail()">
+                        <i nz-icon nzType="left-circle" theme="outline"></i>
+                    </a>
+                    <nz-avatar nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                    <div class="m-l-10">
+                        <h6 class="m-b-0">{{item.name}}</h6>
+                        <span class="text-muted font-size-13">To: {{item.to}}</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center m-b-15 p-l-30">
+                    <span class="text-gray m-r-15">{{item.date}}</span>
+                    <a class="text-gray font-size-18 m-r-20" nz-tooltip nzTooltipTitle="Reply" nzTooltipPlacement="bottom">
+                        <i class="fas fa-reply"></i>
+                    </a>
+                    <a class="text-gray font-size-18 m-r-20" nz-tooltip nzTooltipTitle="Star" nzTooltipPlacement="bottom">
+                        <i class="far fa-star"></i>
+                    </a>
+                    <a class="text-gray font-size-18 m-r-20" nz-tooltip nzTooltipTitle="Delete" nzTooltipPlacement="bottom">
+                        <i class="far fa-trash-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="m-t-30 p-h-30">
+                <h4>{{item.title}}</h4>
+                <div class="m-t-30">
+                    <div [innerHTML]="item.content"></div>
+                </div>
+                <div class="m-t-30" *ngIf="item.attachment.length > 0">
+                    <a class="file" *ngFor="let item of item.attachment" style="min-width: 200px">
+                        <div class="media align-items-center">
+                            <div class="m-r-15 font-size-30">
+                                <i *ngIf="item.type == 'pdf'" [twoToneColor]="colorRed" nz-icon nzType="file-pdf" theme="twotone"></i>
+                                <i *ngIf="item.type == 'doc'" [twoToneColor]="colorBlue" nz-icon nzType="file-word" theme="twotone"></i>
+                                <i *ngIf="item.type == 'xls'" [twoToneColor]="colorCyan" nz-icon nzType="file-excel" theme="twotone"></i>
+                                <i *ngIf="item.type == 'ppt'" [twoToneColor]="colorVolcano" nz-icon nzType="file-ppt" theme="twotone"></i>
+                                <i *ngIf="item.type == 'image'" [twoToneColor]="colorGold" nz-icon nzType="picture" theme="twotone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0">{{item.file}}</h6>
+                                <span class="font-size-13 text-muted">{{item.size}}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div class="mail-content" *ngIf="isCompose">
+        <div class="p-b-15 m-r-15 d-md-none d-inline-block">
+            <a class="text-dark font-size-18" (click)="openNav()">
+                <i nz-icon nzType="menu-unfold" theme="outline"></i>
+            </a>
+        </div>
+        <h5 class="m-b-20">New Message</h5>
+        <form nz-form>
+            <nz-form-item>
+                <nz-form-control>
+                    <input nz-input placeholder="To:">
+                </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+                <nz-form-control>
+                    <input nz-input placeholder="Subject:">
+                </nz-form-control>
+            </nz-form-item>        
+            <nz-form-item>
+                <quill-editor class="w-100" [style]="{height: '150px'}" [modules]="editorConfig" placeholder=""></quill-editor>
+            </nz-form-item>
+        </form>
+        <div class="text-right">
+            <button class="m-r-10" nz-button nzType="default" (click)="closeMail()">Discard</button>
+            <button nz-button nzType="primary">Send</button>
+        </div>
+    </div>
+</div>

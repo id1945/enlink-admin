@@ -1,0 +1,120 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <nz-card>
+                <div class="d-flex justify-content-between">
+                    <div class="media align-items-center">
+                        <nz-avatar nzShape="square" nzSrc="assets/images/others/thumb-3.jpg"></nz-avatar>
+                        <div class="m-l-10">
+                            <h4 class="m-b-0">Eastern Sack</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <nz-tag class="m-b-0" [nzColor]="'blue'">In Progress</nz-tag>
+                    </div>
+                </div>
+                <div class="m-t-40">
+                    <h6>Description:</h6>
+                    <p>I've made a huge tiny mistake. Don't worry, these young beauties have been nowhere near the bananas. You don't want a hungry dove down your pants. Caw ca caw, caw ca caw, caw ca caw, caw ca caw. I'm in Vegas this week and would like to point out the Blue Man Group is *actually* hiring. The support group? Oh, like when they say "poofter" to mean "tourist", yes.</p>
+                    <p>Ah, it is a rock, though. Should beat everything. Gob: There's not a lot of logic to it. Let's make Ann the backup, okay? Very good way to think about her, as a backup.</p>
+                </div>
+                <div class="d-md-flex m-t-30 align-items-center justify-content-between">
+                    <div class="d-flex align-items-center m-t-10">
+                        <span class="text-dark font-weight-semibold m-r-10 m-b-5">Team: </span>
+                        <a class="m-r-5 m-b-5" *ngFor="let item of memberList">
+                            <nz-avatar [nzSize]="30" [nzSrc]="item.avatar" nz-tooltip [nzTooltipTitle]="item.name"></nz-avatar>
+                        </a>
+                    </div>
+                    <div class="m-t-10">
+                        <span class="font-weight-semibold m-r-10 m-b-5 text-dark">Due Date: </span>
+                        <span>10 Feb 2019</span>
+                    </div>
+                </div>
+                <div class="off-gutter-x m-t-30">
+                    <nz-tabset>
+                        <nz-tab nzTitle="Tasks (8)">
+                            <div class="p-h-30 p-v-25">
+                                <div class="m-b-25" *ngFor="let item of taskList">
+                                    <label class="d-flex align-items-center" nz-checkbox [(ngModel)]="item.checked">
+                                        <p class="m-b-0 d-inline-block">{{item.task}} </p>
+                                    </label>
+                                </div>
+                            </div>
+                        </nz-tab>
+                        <nz-tab nzTitle="Comments">
+                            <div class="p-h-30 p-v-25">
+                                <nz-list [nzDataSource]="commentList" [nzRenderItem]="review" [nzItemLayout]="'vertical'" [nzPagination]="pagination">
+                                    <ng-template #review let-item>
+                                        <nz-list-item class="d-block" [nzContent]="item.review">
+                                            <nz-list-item-meta
+                                                [nzTitle]="reviewTitle"
+                                                [nzAvatar]="item.img"
+                                                [nzDescription]="item.date">
+                                                <ng-template #reviewTitle>
+                                                    <a class="font-size-15" href="">{{item.name}}</a>
+                                                </ng-template>
+                                            </nz-list-item-meta>
+                                        </nz-list-item>
+                                    </ng-template>
+                                    <ng-template #pagination>
+                                        <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+                                    </ng-template>
+                                </nz-list>
+                            </div>
+                        </nz-tab>
+                        <nz-tab nzTitle="Attachment">
+                            <div class="p-h-30 p-v-25">
+                                <a class="file p-15" *ngFor="let item of fileList" style="min-width: 200px">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="media">
+                                            <nz-avatar *ngIf="item.type == 'zip'" nzShape="square" nzIcon="file-exclamation" class="ant-avatar-cyan font-size-20"></nz-avatar>
+                                            <nz-avatar *ngIf="item.type == 'doc'" nzShape="square" nzIcon="file-word" class="ant-avatar-blue font-size-20"></nz-avatar>
+                                            <nz-avatar *ngIf="item.type == 'image'" nzShape="square" nzIcon="picture" class="ant-avatar-gold font-size-20"></nz-avatar>
+                                            <div class="m-l-10">
+                                                <h6 class="m-b-0">{{item.name}}</h6>
+                                                <span class="text-muted font-size-13">{{item.size}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </nz-tab>
+                    </nz-tabset>
+                </div>
+            </nz-card>
+        </div>
+        <div class="col-md-4">
+            <nz-card nzTitle="Activities">
+                <nz-timeline>
+                    <nz-timeline-item *ngFor="let item of activityList" [nzDot]="dotTemplate">
+                        <div class="m-l-20">
+                            <div class="media align-items-center">
+                                <nz-avatar [nzSrc]="item.avatar"></nz-avatar>
+                                <div class="m-l-10">
+                                    <h6 class="m-b-0">{{item.name}}</h6>
+                                    <span class="text-muted font-size-13">
+                                        <i nz-icon nzType="clock-circle" theme="outline"></i>
+                                        <span class="m-l-5">{{item.date}}</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="m-t-20">
+                                <p class="m-l-20">
+                                    <span class="text-dark font-weight-semibold">{{item.action}} </span> 
+                                    <span class="m-l-5"> {{item.target}}</span>
+                                </p>
+                            </div>
+                        </div>
+                        <ng-template #dotTemplate>
+                            <nz-avatar *ngIf="item.actionType == 'completed'" [nzSize]="25" class="ant-avatar-cyan" nzIcon="check"></nz-avatar>
+                            <nz-avatar *ngIf="item.actionType == 'upload'" [nzSize]="25" class="ant-avatar-blue" nzIcon="link"></nz-avatar>
+                            <nz-avatar *ngIf="item.actionType == 'comment'" [nzSize]="25" class="ant-avatar-purple" nzIcon="message"></nz-avatar>
+                            <nz-avatar *ngIf="item.actionType == 'removed'" [nzSize]="25" class="ant-avatar-red" nzIcon="delete"></nz-avatar>
+                            <nz-avatar *ngIf="item.actionType == 'created'" [nzSize]="25" class="ant-avatar-gold" nzIcon="file-add"></nz-avatar>
+                        </ng-template>
+                    </nz-timeline-item>
+                </nz-timeline>
+            </nz-card>
+        </div>
+    </div>
+</div>

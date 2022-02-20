@@ -1,0 +1,489 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-drawer-demo-basic-right" nzTitle="Basic"></nz-link><nz-link nzHref="#components-drawer-demo-placement" nzTitle="Custom Placement"></nz-link><nz-link nzHref="#components-drawer-demo-from-drawer" nzTitle="Edit item in drawer"></nz-link><nz-link nzHref="#components-drawer-demo-user-profile" nzTitle="Preview drawer"></nz-link><nz-link nzHref="#components-drawer-demo-multi-level-drawer" nzTitle="Multi-level drawer"></nz-link><nz-link nzHref="#components-drawer-demo-service" nzTitle="Drawer's service"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Drawer<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A Drawer is a panel that is typically overlaid on top of a page and slides in from the side. It contains a set of information or actions. Since that user can interact with the Drawer without leaving the current page, tasks can be achieved more efficient within the same context.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>Use a Form to create or edit a set of information.</li>
+<li>Processing subtasks. When subtasks are too heavy for Popover and we still want to keep the subtasks in the context of the main task, Drawer comes very handy.</li>
+<li>When a same Form is needed in multiple places.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDrawerModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/drawer'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-drawer-demo-basic-right'"
+  nzSelector="nz-demo-drawer-basic-right"
+  [nzLink]="'components-drawer-demo-basic-right'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-basic-right <name>"
+  nzComponentName="NzDemoDrawerBasicRightComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/basic-right.md'">
+	<nz-demo-drawer-basic-right demo></nz-demo-drawer-basic-right>
+	<div intro ngNonBindable>
+		<p>Basic drawer.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Edit item in drawer"
+  [nzId]="'components-drawer-demo-from-drawer'"
+  nzSelector="nz-demo-drawer-from-drawer"
+  [nzLink]="'components-drawer-demo-from-drawer'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-from-drawer <name>"
+  nzComponentName="NzDemoDrawerFromDrawerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/from-drawer.md'">
+	<nz-demo-drawer-from-drawer demo></nz-demo-drawer-from-drawer>
+	<div intro ngNonBindable>
+		<p>A drawer containing an editable form which needs to be collapsed by clicking the close button.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Multi-level drawer"
+  [nzId]="'components-drawer-demo-multi-level-drawer'"
+  nzSelector="nz-demo-drawer-multi-level-drawer"
+  [nzLink]="'components-drawer-demo-multi-level-drawer'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-multi-level-drawer <name>"
+  nzComponentName="NzDemoDrawerMultiLevelDrawerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/multi-level-drawer.md'">
+	<nz-demo-drawer-multi-level-drawer demo></nz-demo-drawer-multi-level-drawer>
+	<div intro ngNonBindable>
+		<p>Open a new drawer on top of an existing drawer to handle multi branch tasks</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Custom Placement"
+  [nzId]="'components-drawer-demo-placement'"
+  nzSelector="nz-demo-drawer-placement"
+  [nzLink]="'components-drawer-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-placement <name>"
+  nzComponentName="NzDemoDrawerPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/placement.md'">
+	<nz-demo-drawer-placement demo></nz-demo-drawer-placement>
+	<div intro ngNonBindable>
+		<p>Basic drawer.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Preview drawer"
+  [nzId]="'components-drawer-demo-user-profile'"
+  nzSelector="nz-demo-drawer-user-profile"
+  [nzLink]="'components-drawer-demo-user-profile'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-user-profile <name>"
+  nzComponentName="NzDemoDrawerUserProfileComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/user-profile.md'">
+	<nz-demo-drawer-user-profile demo></nz-demo-drawer-user-profile>
+	<div intro ngNonBindable>
+		<p>Use when you need to quickly preview the outline of the object. Such as list item preview.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Drawer's service"
+  [nzId]="'components-drawer-demo-service'"
+  nzSelector="nz-demo-drawer-service"
+  [nzLink]="'components-drawer-demo-service'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-service <name>"
+  nzComponentName="NzDemoDrawerServiceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/service.md'">
+	<nz-demo-drawer-service demo></nz-demo-drawer-service>
+	<div intro ngNonBindable>
+		<p>Usage of Drawer&#39;s service, examples demonstrate user-defined templates, custom components.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-drawer"><span>nz-drawer</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-drawer'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Props</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzClosable]</code></td>
+<td>Whether a close (x) button is visible on top right of the Drawer dialog or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMask]</code></td>
+<td>Whether to show mask or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzMaskClosable]</code></td>
+<td>Clicking on the mask (area outside the Drawer) to close the Drawer or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzKeyboard]</code></td>
+<td>Whether support press esc to close</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaskStyle]</code></td>
+<td>Style for Drawer&#39;s mask element.</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBodyStyle]</code></td>
+<td>Body style for drawer body element. Such as height, padding etc.</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>The title for Drawer.</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>Whether the Drawer dialog is visible or not.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlacement]</code></td>
+<td>The placement of the Drawer.</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;right&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWidth]</code></td>
+<td>Width of the Drawer dialog, only when placement is <code>&#39;right&#39;</code> or <code>&#39;left&#39;</code>.</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHeight]</code></td>
+<td>Height of the Drawer dialog, only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffsetX]</code></td>
+<td>The the X coordinate offset(px), only when placement is <code>&#39;right&#39;</code> or <code>&#39;left&#39;</code>.</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffsetY]</code></td>
+<td>The the Y coordinate offset(px), only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWrapClassName]</code></td>
+<td>The class name of the container of the Drawer dialog.</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzZIndex]</code></td>
+<td>The <code>z-index</code> of the Drawer.</td>
+<td><code>number</code></td>
+<td><code>1000</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnClose)</code></td>
+<td>Specify a callback that will be called when a user clicks mask, close button or Cancel button.</td>
+<td><code>EventEmitter&lt;MouseEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nzdrawerservice"><span>NzDrawerService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzdrawerservice'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Params</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>create and open an Drawer</td>
+<td><code>NzDrawerOptions&lt;T, D, R&gt;</code></td>
+<td><code>NzDrawerRef&lt;R&gt;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzdraweroptions"><span>NzDrawerOptions</span><a onclick="window.location.hash = 'nzdraweroptions'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Params</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzContent</td>
+<td>The drawer body content.</td>
+<td><code>TemplateRef&lt;&#123; $implicit: D, drawerRef: NzDrawerRef &#125;&gt; | Type&lt;T&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzContentParams</td>
+<td>The component inputs the param / The Template context.</td>
+<td><code>D</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>Whether a close (x) button is visible on top right of the Drawer dialog or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>Execute when click on the mask or the upper cancel button, This function returns a promise, which is automatically closed when the execution is complete or the promise ends (return false to prevent closing)</td>
+<td><code>() =&gt; Promise&lt;any&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>Clicking on the mask (area outside the Drawer) to close the Drawer or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>Whether to show mask or not.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>Whether support press esc to close</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>Style for Drawer&#39;s mask element.</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Body style for modal body element. Such as height, padding etc.</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>The title for Drawer.</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>Width of the Drawer dialog.</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>nzHeight</td>
+<td>Height of the Drawer dialog, only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>The class name of the container of the Drawer dialog.</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>The <code>z-index</code> of the Drawer.</td>
+<td><code>number</code></td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td>nzPlacement</td>
+<td>The placement of the Drawer.</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;right&#39;</code></td>
+</tr>
+<tr>
+<td>nzOffsetX</td>
+<td>The the X coordinate offset(px).</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>nzOffsetY</td>
+<td>The the Y coordinate offset(px), only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzdrawerref"><span>NzDrawerRef</span><a onclick="window.location.hash = 'nzdrawerref'" class="anchor">#</a></h3><h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>close</td>
+<td>close the drawer.</td>
+<td><code>(result?: R) =&gt; void</code></td>
+</tr>
+<tr>
+<td>open</td>
+<td>open the drawer.</td>
+<td><code>() =&gt; void</code></td>
+</tr>
+</tbody></table>
+<h4 id="property"><span>Property</span><a onclick="window.location.hash = 'property'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>afterOpen</td>
+<td>Callback called after open.</td>
+<td><code>Observable&lt;void&gt;</code></td>
+</tr>
+<tr>
+<td>afterClose</td>
+<td>Callback called after close.</td>
+<td><code>Observable&lt;R&gt;</code></td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>Whether a close (x) button is visible on top right of the Drawer dialog or not.</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>Clicking on the mask (area outside the Drawer) to close the Drawer or not.</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>Whether to show mask or not.</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>Whether support press esc to close</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>Style for Drawer&#39;s mask element.</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Body style for modal body element. Such as height, padding etc.</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>The title for Drawer.</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>Width of the Drawer dialog.</td>
+<td><code>number | string</code></td>
+</tr>
+<tr>
+<td>nzHeight</td>
+<td>Height of the Drawer dialog, only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number | string</code></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>The class name of the container of the Drawer dialog.</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>The <code>z-index</code> of the Drawer.</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzPlacement</td>
+<td>The placement of the Drawer.</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+</tr>
+<tr>
+<td>nzOffsetX</td>
+<td>The the X coordinate offset(px).</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzOffsetY</td>
+<td>The the Y coordinate offset(px), only when placement is <code>&#39;top&#39;</code> or <code>&#39;bottom&#39;</code>.</td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+</section></article>

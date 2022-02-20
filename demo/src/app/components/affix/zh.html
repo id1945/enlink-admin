@@ -1,0 +1,122 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-affix-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-affix-demo-on-change" nzTitle="固定状态改变的回调"></nz-link><nz-link nzHref="#components-affix-demo-target" nzTitle="滚动容器"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Affix<span class="subtitle">固钉</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/affix/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>将页面元素钉在可视范围。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当内容区域比较长，需要滚动页面时，这部分内容对应的操作或者导航需要在滚动范围内始终展现。常用于侧边菜单和按钮组合。</p>
+<p>页面可视范围过小时，慎用此功能以免遮挡页面内容。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzAffixModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/affix'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-affix-demo-basic'"
+  nzSelector="nz-demo-affix-basic"
+  [nzLink]="'components-affix-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:affix-basic <name>"
+  nzComponentName="NzDemoAffixBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/affix/demo/basic.md'">
+	<nz-demo-affix-basic demo></nz-demo-affix-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="滚动容器"
+  [nzId]="'components-affix-demo-target'"
+  nzSelector="nz-demo-affix-target"
+  [nzLink]="'components-affix-demo-target'"
+  nzGenerateCommand="ng g ng-zorro-antd:affix-target <name>"
+  nzComponentName="NzDemoAffixTargetComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/affix/demo/target.md'">
+	<nz-demo-affix-target demo></nz-demo-affix-target>
+	<div intro ngNonBindable>
+		<p>用 <code>nzTarget</code> 设置 <code>nz-affix</code> 需要监听其滚动事件的元素，默认为 <code>window</code>。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="固定状态改变的回调"
+  [nzId]="'components-affix-demo-on-change'"
+  nzSelector="nz-demo-affix-on-change"
+  [nzLink]="'components-affix-demo-on-change'"
+  nzGenerateCommand="ng g ng-zorro-antd:affix-on-change <name>"
+  nzComponentName="NzDemoAffixOnChangeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/affix/demo/on-change.md'">
+	<nz-demo-affix-on-change demo></nz-demo-affix-on-change>
+	<div intro ngNonBindable>
+		<p>可以获得是否固定的状态。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-affix"><span>nz-affix</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-affix'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzOffsetBottom]</code></td>
+<td>距离窗口底部达到指定偏移量后触发</td>
+<td><code>number</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzOffsetTop]</code></td>
+<td>距离窗口顶部达到指定偏移量后触发</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzTarget]</code></td>
+<td>设置 <code>nz-affix</code> 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数</td>
+<td><code>string | HTMLElement</code></td>
+<td><code>window</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzChange)</code></td>
+<td>固定状态改变时触发的回调函数</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>注意：</strong><code>nz-affix</code> 内的元素不要使用绝对定位，如需要绝对定位的效果，可以直接设置 <code>nz-affix</code> 为绝对定位：</p>
+<pre class="language-jsx"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-affix</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">10</span>px, <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">10</span>px</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token operator">...</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-affix</span><span class="token punctuation">></span></span></code></pre>
+</section></article>

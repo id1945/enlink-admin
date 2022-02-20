@@ -1,0 +1,286 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-dropdown-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-dropdown-demo-placement" nzTitle="弹出位置"></nz-link><nz-link nzHref="#components-dropdown-demo-item" nzTitle="其他元素"></nz-link><nz-link nzHref="#components-dropdown-demo-trigger" nzTitle="触发方式"></nz-link><nz-link nzHref="#components-dropdown-demo-event" nzTitle="触发事件"></nz-link><nz-link nzHref="#components-dropdown-demo-dropdown-button" nzTitle="带下拉框的按钮"></nz-link><nz-link nzHref="#components-dropdown-demo-sub-menu" nzTitle="多级菜单"></nz-link><nz-link nzHref="#components-dropdown-demo-overlay-visible" nzTitle="菜单隐藏方式"></nz-link><nz-link nzHref="#components-dropdown-demo-context-menu" nzTitle="右键菜单"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Dropdown<span class="subtitle">下拉菜单</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>向下弹出的列表。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当页面上的操作命令过多时，用此组件可以收纳操作元素。点击或移入触点，会出现一个下拉菜单。可在列表中进行选择，并执行相应的命令。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDropDownModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/dropdown'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-dropdown-demo-basic'"
+  nzSelector="nz-demo-dropdown-basic"
+  [nzLink]="'components-dropdown-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-basic <name>"
+  nzComponentName="NzDemoDropdownBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/basic.md'">
+	<nz-demo-dropdown-basic demo></nz-demo-dropdown-basic>
+	<div intro ngNonBindable>
+		<p>最简单的下拉菜单。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="其他元素"
+  [nzId]="'components-dropdown-demo-item'"
+  nzSelector="nz-demo-dropdown-item"
+  [nzLink]="'components-dropdown-demo-item'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-item <name>"
+  nzComponentName="NzDemoDropdownItemComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/item.md'">
+	<nz-demo-dropdown-item demo></nz-demo-dropdown-item>
+	<div intro ngNonBindable>
+		<p>分割线和不可用菜单项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="触发事件"
+  [nzId]="'components-dropdown-demo-event'"
+  nzSelector="nz-demo-dropdown-event"
+  [nzLink]="'components-dropdown-demo-event'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-event <name>"
+  nzComponentName="NzDemoDropdownEventComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/event.md'">
+	<nz-demo-dropdown-event demo></nz-demo-dropdown-event>
+	<div intro ngNonBindable>
+		<p>点击菜单项后会触发事件，用户可以自由添加各种事件进行不同的操作。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多级菜单"
+  [nzId]="'components-dropdown-demo-sub-menu'"
+  nzSelector="nz-demo-dropdown-sub-menu"
+  [nzLink]="'components-dropdown-demo-sub-menu'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-sub-menu <name>"
+  nzComponentName="NzDemoDropdownSubMenuComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/sub-menu.md'">
+	<nz-demo-dropdown-sub-menu demo></nz-demo-dropdown-sub-menu>
+	<div intro ngNonBindable>
+		<p>传入的菜单里有多个层级。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="右键菜单"
+  [nzId]="'components-dropdown-demo-context-menu'"
+  nzSelector="nz-demo-dropdown-context-menu"
+  [nzLink]="'components-dropdown-demo-context-menu'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-context-menu <name>"
+  nzComponentName="NzDemoDropdownContextMenuComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/context-menu.md'">
+	<nz-demo-dropdown-context-menu demo></nz-demo-dropdown-context-menu>
+	<div intro ngNonBindable>
+		<p>在区域内任意右击触发。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="弹出位置"
+  [nzId]="'components-dropdown-demo-placement'"
+  nzSelector="nz-demo-dropdown-placement"
+  [nzLink]="'components-dropdown-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-placement <name>"
+  nzComponentName="NzDemoDropdownPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/placement.md'">
+	<nz-demo-dropdown-placement demo></nz-demo-dropdown-placement>
+	<div intro ngNonBindable>
+		<p>支持 6 个弹出位置。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="触发方式"
+  [nzId]="'components-dropdown-demo-trigger'"
+  nzSelector="nz-demo-dropdown-trigger"
+  [nzLink]="'components-dropdown-demo-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-trigger <name>"
+  nzComponentName="NzDemoDropdownTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/trigger.md'">
+	<nz-demo-dropdown-trigger demo></nz-demo-dropdown-trigger>
+	<div intro ngNonBindable>
+		<p>默认是移入触发菜单，可以点击触发。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带下拉框的按钮"
+  [nzId]="'components-dropdown-demo-dropdown-button'"
+  nzSelector="nz-demo-dropdown-dropdown-button"
+  [nzLink]="'components-dropdown-demo-dropdown-button'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-dropdown-button <name>"
+  nzComponentName="NzDemoDropdownDropdownButtonComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/dropdown-button.md'">
+	<nz-demo-dropdown-dropdown-button demo></nz-demo-dropdown-dropdown-button>
+	<div intro ngNonBindable>
+		<p>左边是按钮，右边是额外的相关功能菜单。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="菜单隐藏方式"
+  [nzId]="'components-dropdown-demo-overlay-visible'"
+  nzSelector="nz-demo-dropdown-overlay-visible"
+  [nzLink]="'components-dropdown-demo-overlay-visible'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-overlay-visible <name>"
+  nzComponentName="NzDemoDropdownOverlayVisibleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/overlay-visible.md'">
+	<nz-demo-dropdown-overlay-visible demo></nz-demo-dropdown-overlay-visible>
+	<div intro ngNonBindable>
+		<p>默认是点击关闭菜单，可以关闭此功能。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-dropdown]"><span>[nz-dropdown]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-dropdown]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDropdownMenu]</code></td>
+<td>Dropdown 下拉菜单组件</td>
+<td><code>NzDropdownMenuComponent</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>菜单是否禁用</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPlacement]</code></td>
+<td>菜单弹出位置</td>
+<td><code>&#39;bottomLeft&#39; | &#39;bottomCenter&#39; | &#39;bottomRight&#39; | &#39;topLeft&#39; | &#39;topCenter&#39; | &#39;topRight&#39;</code></td>
+<td><code>&#39;bottomLeft&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTrigger]</code></td>
+<td>触发下拉的行为</td>
+<td><code>&#39;click&#39; | &#39;hover&#39;</code></td>
+<td><code>&#39;hover&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzClickHide]</code></td>
+<td>点击后是否隐藏菜单</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>菜单是否显示，可双向绑定</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzBackdrop]</code></td>
+<td>是否在 <code>nzTrigger</code> 为 <code>click</code>时增加背景蒙版</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzOverlayClassName]</code></td>
+<td>下拉根元素的类名称</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOverlayStyle]</code></td>
+<td>下拉根元素的样式</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzVisibleChange)</code></td>
+<td>菜单显示状态改变时调用，参数为 nzVisible</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>菜单使用 <a href="/components/menu/zh">nz-menu</a>，还包括菜单项 <code>[nz-menu-item]</code>，分割线 <code>[nz-menu-divider]</code>。</p>
+<blockquote>
+<p>nz-dropdown 下的 nz-menu 默认不可选中。如果需要菜单可选中，可以指定 <code>&lt;ul nz-menu nzSelectable&gt;</code>.</p>
+</blockquote>
+<h3 id="nz-dropdown-menu"><span>nz-dropdown-menu</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-dropdown-menu'" class="anchor">#</a></h3><p>用于包裹菜单项，可以通过 <code>nzDropdownMenu</code> 模板变量导出后传入 <code>[nz-dropdown]</code> 和 <code>NzContextMenuService</code>。</p>
+<blockquote>
+<p>注意：每个 <code>nz-dropdown-menu</code> 只能作为一个 <code>[nz-dropdown]</code> 的输入项</p>
+</blockquote>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">nz-dropdown</span> <span class="token attr-name">[nzDropdownMenu]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hover me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-dropdown-menu</span> <span class="token attr-name">#menu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nzDropdownMenu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">nz-menu</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>1st menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>2nd menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>3rd menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-dropdown-menu</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nzcontextmenuservice"><span>NzContextMenuService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzcontextmenuservice'" class="anchor">#</a></h3><p>用于右键弹出下拉菜单，具体参见示例</p>
+<table>
+<thead>
+<tr>
+<th>方法/属性</th>
+<th>说明</th>
+<th>参数</th>
+<th>返回</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>创建右键菜单</td>
+<td>`($event:MouseEvent</td>
+<td>&#123;x:number, y:number&#125;, menu:NzDropdownMenuComponent)`</td>
+<td>-</td>
+</tr>
+<tr>
+<td>close</td>
+<td>关闭右键菜单</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

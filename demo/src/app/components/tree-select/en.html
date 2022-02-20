@@ -1,0 +1,341 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tree-select-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-tree-select-demo-multiple" nzTitle="Multiple Selection"></nz-link><nz-link nzHref="#components-tree-select-demo-async" nzTitle="Load data asynchronously"></nz-link><nz-link nzHref="#components-tree-select-demo-checkable" nzTitle="Checkable"></nz-link><nz-link nzHref="#components-tree-select-demo-customized-icon" nzTitle="Customize Icon"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>TreeSelect<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Tree selection control.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p><code>TreeSelect</code> is similar to <code>Select</code>, but the values are provided in a tree like structure.
+Any data whose entries are defined in a hierarchical manner is fit to use this control. Examples of such case may include a corporate hierarchy, a directory structure, and so on.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTreeSelectModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tree-select'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-tree-select-demo-basic'"
+  nzSelector="nz-demo-tree-select-basic"
+  [nzLink]="'components-tree-select-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-basic <name>"
+  nzComponentName="NzDemoTreeSelectBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/basic.md'">
+	<nz-demo-tree-select-basic demo></nz-demo-tree-select-basic>
+	<div intro ngNonBindable>
+		<p>The most basic usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Load data asynchronously"
+  [nzId]="'components-tree-select-demo-async'"
+  nzSelector="nz-demo-tree-select-async"
+  [nzLink]="'components-tree-select-demo-async'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-async <name>"
+  nzComponentName="NzDemoTreeSelectAsyncComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/async.md'">
+	<nz-demo-tree-select-async demo></nz-demo-tree-select-async>
+	<div intro ngNonBindable>
+		<p>To load data asynchronously when click to expand a treeNode, loading state keeps until excute addChildren().</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize Icon"
+  [nzId]="'components-tree-select-demo-customized-icon'"
+  nzSelector="nz-demo-tree-select-customized-icon"
+  [nzLink]="'components-tree-select-demo-customized-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-customized-icon <name>"
+  nzComponentName="NzDemoTreeSelectCustomizedIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/customized-icon.md'">
+	<nz-demo-tree-select-customized-icon demo></nz-demo-tree-select-customized-icon>
+	<div intro ngNonBindable>
+		<p>You can customize icons for different nodes.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Multiple Selection"
+  [nzId]="'components-tree-select-demo-multiple'"
+  nzSelector="nz-demo-tree-select-multiple"
+  [nzLink]="'components-tree-select-demo-multiple'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-multiple <name>"
+  nzComponentName="NzDemoTreeSelectMultipleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/multiple.md'">
+	<nz-demo-tree-select-multiple demo></nz-demo-tree-select-multiple>
+	<div intro ngNonBindable>
+		<p>Multiple selection usage, max 3 option will display at the same time by <code>nzMaxTagCount</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Checkable"
+  [nzId]="'components-tree-select-demo-checkable'"
+  nzSelector="nz-demo-tree-select-checkable"
+  [nzLink]="'components-tree-select-demo-checkable'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-checkable <name>"
+  nzComponentName="NzDemoTreeSelectCheckableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/checkable.md'">
+	<nz-demo-tree-select-checkable demo></nz-demo-tree-select-checkable>
+	<div intro ngNonBindable>
+		<p>Multiple and checkable.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-tree-select"><span>nz-tree-select</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tree-select'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAllowClear]</code></td>
+<td>Whether allow clear</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>Placeholder of the select input</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disabled or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowIcon]</code></td>
+<td>Shows the icon before a TreeNode&#39;s title. There is no default style</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowSearch]</code></td>
+<td>Whether to display a search input in the dropdown menu(valid only in the single mode)</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>Specify content to show when no result matches.</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDropdownMatchSelectWidth]</code></td>
+<td>Determine whether the dropdown menu and the select input are the same width</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDropdownStyle]</code></td>
+<td>To set the style of the dropdown menu</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDropdownClassName]</code></td>
+<td>classname of dropdown menu</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMultiple]</code></td>
+<td>Support multiple or not, will be <code>true</code> when enable <code>nzCheckable</code>.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHideUnMatched]</code></td>
+<td>Hide unmatched nodes while searching</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>To set the size of the select input</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCheckable]</code></td>
+<td>Whether to show checkbox on the treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCheckStrictly]</code></td>
+<td>Check treeNode precisely; parent treeNode and children treeNodes are not associated</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowExpand]</code></td>
+<td>Show a Expand Icon before the treeNodes</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowLine]</code></td>
+<td>Shows a connecting line</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAsyncData]</code></td>
+<td>Load data asynchronously (should be used with NzTreeNode.addChildren(...))</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNodes]</code></td>
+<td>Data of the treeNodes</td>
+<td><code>NzTreeNodeOptions[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDefaultExpandAll]</code></td>
+<td>Whether to expand all treeNodes by default</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandedKeys]</code></td>
+<td>Default expanded treeNodes</td>
+<td><code>string[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisplayWith]</code></td>
+<td>How to display the selected node value in the trigger</td>
+<td><code>(node: NzTreeNode) =&gt; string</code></td>
+<td><code>(node: NzTreeNode) =&gt; node.title</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaxTagCount]</code></td>
+<td>Max tag count to show</td>
+<td>number</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaxTagPlaceholder]</code></td>
+<td>Placeholder for not showing tags</td>
+<td>TemplateRef&lt;&#123; $implicit: NzTreeNode[] &#125;&gt;</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTreeTemplate]</code></td>
+<td>Custom Nodes</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzTreeNode &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>Callback function for when a treeNode is expanded or collapsed</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getTreeNodes</td>
+<td>get all nodes(NzTreeNode)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getTreeNodeByKey</td>
+<td>get NzTreeNode with key</td>
+<td><code>NzTreeNode</code></td>
+</tr>
+<tr>
+<td>getCheckedNodeList</td>
+<td>get checked nodes(merged)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getSelectedNodeList</td>
+<td>get selected nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getHalfCheckedNodeList</td>
+<td>get half checked nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getExpandedNodeList</td>
+<td>get expanded nodes</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getMatchedNodeList</td>
+<td>get matched nodes(if nzSearchValue is not null)</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,199 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-popconfirm-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-popconfirm-demo-locale" nzTitle="Locale text"></nz-link><nz-link nzHref="#components-popconfirm-demo-placement" nzTitle="Placement"></nz-link><nz-link nzHref="#components-popconfirm-demo-dynamic-trigger" nzTitle="Conditional trigger"></nz-link><nz-link nzHref="#components-popconfirm-demo-custom-icon" nzTitle="Customize icon"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Popconfirm<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A simple and compact confirmation dialog of an action.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>A simple and compact dialog used for asking for user confirmation.</p>
+<p>The difference with the <code>confirm</code> modal dialog is that it&#39;s more lightweight than the static popped full-screen confirm modal.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzPopconfirmModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/popconfirm'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-popconfirm-demo-basic'"
+  nzSelector="nz-demo-popconfirm-basic"
+  [nzLink]="'components-popconfirm-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:popconfirm-basic <name>"
+  nzComponentName="NzDemoPopconfirmBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/demo/basic.md'">
+	<nz-demo-popconfirm-basic demo></nz-demo-popconfirm-basic>
+	<div intro ngNonBindable>
+		<p>The basic example.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Placement"
+  [nzId]="'components-popconfirm-demo-placement'"
+  nzSelector="nz-demo-popconfirm-placement"
+  [nzLink]="'components-popconfirm-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:popconfirm-placement <name>"
+  nzComponentName="NzDemoPopconfirmPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/demo/placement.md'">
+	<nz-demo-popconfirm-placement demo></nz-demo-popconfirm-placement>
+	<div intro ngNonBindable>
+		<p>There are 12 placement options available.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize icon"
+  [nzId]="'components-popconfirm-demo-custom-icon'"
+  nzSelector="nz-demo-popconfirm-custom-icon"
+  [nzLink]="'components-popconfirm-demo-custom-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:popconfirm-custom-icon <name>"
+  nzComponentName="NzDemoPopconfirmCustomIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/demo/custom-icon.md'">
+	<nz-demo-popconfirm-custom-icon demo></nz-demo-popconfirm-custom-icon>
+	<div intro ngNonBindable>
+		<p>Set <code>nzIcon</code> to customize the icon.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Locale text"
+  [nzId]="'components-popconfirm-demo-locale'"
+  nzSelector="nz-demo-popconfirm-locale"
+  [nzLink]="'components-popconfirm-demo-locale'"
+  nzGenerateCommand="ng g ng-zorro-antd:popconfirm-locale <name>"
+  nzComponentName="NzDemoPopconfirmLocaleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/demo/locale.md'">
+	<nz-demo-popconfirm-locale demo></nz-demo-popconfirm-locale>
+	<div intro ngNonBindable>
+		<p>Set <code>okText</code> and <code>cancelText</code> props to customise the button&#39;s labels.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Conditional trigger"
+  [nzId]="'components-popconfirm-demo-dynamic-trigger'"
+  nzSelector="nz-demo-popconfirm-dynamic-trigger"
+  [nzLink]="'components-popconfirm-demo-dynamic-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:popconfirm-dynamic-trigger <name>"
+  nzComponentName="NzDemoPopconfirmDynamicTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popconfirm/demo/dynamic-trigger.md'">
+	<nz-demo-popconfirm-dynamic-trigger demo></nz-demo-popconfirm-dynamic-trigger>
+	<div intro ngNonBindable>
+		<p>Make it pop up under some conditions.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-popconfirm]"><span>[nz-popconfirm]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-popconfirm]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPopconfirmTitle]</code></td>
+<td>Title of the confirmation box</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPopconfirmTrigger]</code></td>
+<td>Popconfirm trigger mode. If set to <code>null</code> it would not be triggered</td>
+<td><code>&#39;click&#39; | &#39;focus&#39; | &#39;hover&#39; | null</code></td>
+<td><code>&#39;hover&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPopconfirmPlacement]</code></td>
+<td>The position of the popconfirm relative to the target</td>
+<td><code>&#39;top&#39; | &#39;left&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;topLeft&#39; | &#39;topRight&#39; | &#39;bottomLeft&#39; | &#39;bottomRight&#39; | &#39;leftTop&#39; | &#39;leftBottom&#39; | &#39;rightTop&#39; | &#39;rightBottom&#39;</code></td>
+<td><code>&#39;top&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPopconfirmOrigin]</code></td>
+<td>Origin of the popconfirm</td>
+<td><code>ElementRef</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzCancelText]</code></td>
+<td>Text of the Cancel button</td>
+<td><code>string</code></td>
+<td><code>&#39;Cancel&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzOkText]</code></td>
+<td>Text of the Confirm button</td>
+<td><code>string</code></td>
+<td><code>&#39;Confirm&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzOkType]</code></td>
+<td>Button <code>type</code> of the Confirm button</td>
+<td><code>&#39;primary&#39; | &#39;ghost&#39; | &#39;dashed&#39; | &#39;danger&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;primary&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzCondition]</code></td>
+<td>Whether to directly emit <code>onConfirm</code> without showing Popconfirm</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzIcon]</code></td>
+<td>Customize icon of confirmation</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnCancel)</code></td>
+<td>Callback of cancel</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnConfirm)</code></td>
+<td>Callback of confirmation</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>Consult <a href="/components/tooltip/en#api">Tooltip&#39;s documentation</a> to find more APIs.</p>
+<h2 id="note"><span>Note</span><a onclick="window.location.hash = 'note'" class="anchor">#</a></h2><p>Please ensure that the child node of <code>nz-popconfirm</code> accepts <code>onMouseEnter</code>, <code>onMouseLeave</code>, <code>onFocus</code>, <code>onClick</code> events.</p>
+</section></article>

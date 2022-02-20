@@ -1,0 +1,274 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-pagination-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-pagination-demo-more" nzTitle="More"></nz-link><nz-link nzHref="#components-pagination-demo-changer" nzTitle="Changer"></nz-link><nz-link nzHref="#components-pagination-demo-jump" nzTitle="Jumper"></nz-link><nz-link nzHref="#components-pagination-demo-mini" nzTitle="Mini size"></nz-link><nz-link nzHref="#components-pagination-demo-simple" nzTitle="Simple mode"></nz-link><nz-link nzHref="#components-pagination-demo-controlled" nzTitle="Page Index"></nz-link><nz-link nzHref="#components-pagination-demo-total" nzTitle="Total number"></nz-link><nz-link nzHref="#components-pagination-demo-item-render" nzTitle="Prev and next"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Pagination<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A long list can be divided into several pages by <code>Pagination</code>, and only one page will be loaded at a time.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When it will take a long time to load/render all items.</li>
+<li>If you want to browse the data by navigating through pages.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzPaginationModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/pagination'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-pagination-demo-basic'"
+  nzSelector="nz-demo-pagination-basic"
+  [nzLink]="'components-pagination-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-basic <name>"
+  nzComponentName="NzDemoPaginationBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/basic.md'">
+	<nz-demo-pagination-basic demo></nz-demo-pagination-basic>
+	<div intro ngNonBindable>
+		<p>Basic pagination.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="More"
+  [nzId]="'components-pagination-demo-more'"
+  nzSelector="nz-demo-pagination-more"
+  [nzLink]="'components-pagination-demo-more'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-more <name>"
+  nzComponentName="NzDemoPaginationMoreComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/more.md'">
+	<nz-demo-pagination-more demo></nz-demo-pagination-more>
+	<div intro ngNonBindable>
+		<p>More pages.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Changer"
+  [nzId]="'components-pagination-demo-changer'"
+  nzSelector="nz-demo-pagination-changer"
+  [nzLink]="'components-pagination-demo-changer'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-changer <name>"
+  nzComponentName="NzDemoPaginationChangerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/changer.md'">
+	<nz-demo-pagination-changer demo></nz-demo-pagination-changer>
+	<div intro ngNonBindable>
+		<p>Change <code>nzPageSize</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Jumper"
+  [nzId]="'components-pagination-demo-jump'"
+  nzSelector="nz-demo-pagination-jump"
+  [nzLink]="'components-pagination-demo-jump'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-jump <name>"
+  nzComponentName="NzDemoPaginationJumpComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/jump.md'">
+	<nz-demo-pagination-jump demo></nz-demo-pagination-jump>
+	<div intro ngNonBindable>
+		<p>Jump to a page directly.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Mini size"
+  [nzId]="'components-pagination-demo-mini'"
+  nzSelector="nz-demo-pagination-mini"
+  [nzLink]="'components-pagination-demo-mini'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-mini <name>"
+  nzComponentName="NzDemoPaginationMiniComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/mini.md'">
+	<nz-demo-pagination-mini demo></nz-demo-pagination-mini>
+	<div intro ngNonBindable>
+		<p>Mini size pagination.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Simple mode"
+  [nzId]="'components-pagination-demo-simple'"
+  nzSelector="nz-demo-pagination-simple"
+  [nzLink]="'components-pagination-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-simple <name>"
+  nzComponentName="NzDemoPaginationSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/simple.md'">
+	<nz-demo-pagination-simple demo></nz-demo-pagination-simple>
+	<div intro ngNonBindable>
+		<p>Simple mode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Page Index"
+  [nzId]="'components-pagination-demo-controlled'"
+  nzSelector="nz-demo-pagination-controlled"
+  [nzLink]="'components-pagination-demo-controlled'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-controlled <name>"
+  nzComponentName="NzDemoPaginationControlledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/controlled.md'">
+	<nz-demo-pagination-controlled demo></nz-demo-pagination-controlled>
+	<div intro ngNonBindable>
+		<p>Change page index number.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Total number"
+  [nzId]="'components-pagination-demo-total'"
+  nzSelector="nz-demo-pagination-total"
+  [nzLink]="'components-pagination-demo-total'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-total <name>"
+  nzComponentName="NzDemoPaginationTotalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/total.md'">
+	<nz-demo-pagination-total demo></nz-demo-pagination-total>
+	<div intro ngNonBindable>
+		<p>You can show the total number of data by setting <code>nzShowTotal</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Prev and next"
+  [nzId]="'components-pagination-demo-item-render'"
+  nzSelector="nz-demo-pagination-item-render"
+  [nzLink]="'components-pagination-demo-item-render'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-item-render <name>"
+  nzComponentName="NzDemoPaginationItemRenderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/item-render.md'">
+	<nz-demo-pagination-item-render demo></nz-demo-pagination-item-render>
+	<div intro ngNonBindable>
+		<p>Use text link for prev and next button.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-pagination</span> <span class="token attr-name">[nzPageIndex]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">[nzTotal]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-pagination</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-pagination"><span>nz-pagination</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-pagination'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTotal]</code></td>
+<td>total number of data items</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>[nzPageIndex]</code></td>
+<td>current page number，double binding</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzPageSize]</code></td>
+<td>number of data items per page, double binding</td>
+<td><code>number</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>disable pagination</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzShowQuickJumper]</code></td>
+<td>determine whether you can jump to pages directly</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzShowSizeChanger]</code></td>
+<td>determine whether <code>nzPageSize</code> can be changed</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSimple]</code></td>
+<td>whether to use simple mode</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>specify the size of <code>nz-pagination</code>, can be set to <code>small</code></td>
+<td><code>&#39;small&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzResponsive]</code></td>
+<td><code>Pagination</code> would resize according to the width of the window</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzPageSizeOptions]</code></td>
+<td>specify the sizeChanger options</td>
+<td><code>number[]</code></td>
+<td><code>[10, 20, 30, 40]</code></td>
+</tr>
+<tr>
+<td><code>[nzItemRender]</code></td>
+<td>to customize item</td>
+<td><code>TemplateRef&lt;&#123; $implicit: &#39;page&#39; | &#39;prev&#39; | &#39;next&#39;| &#39;prev_5&#39;| &#39;next_5&#39;, page: number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzShowTotal]</code></td>
+<td>to display the total number and range</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number, range: [ number, number ] &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzHideOnSinglePage]</code></td>
+<td>Whether to hide pager on single page</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(nzPageIndexChange)</code></td>
+<td>current page number change callback</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzPageSizeChange)</code></td>
+<td>number of data items per page change callback</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

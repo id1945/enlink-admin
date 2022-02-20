@@ -1,0 +1,416 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-transfer-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-transfer-demo-search" nzTitle="Search"></nz-link><nz-link nzHref="#components-transfer-demo-advanced" nzTitle="Advanced"></nz-link><nz-link nzHref="#components-transfer-demo-custom-item" nzTitle="Custom datasource"></nz-link><nz-link nzHref="#components-transfer-demo-can-move" nzTitle="Check Before Move"></nz-link><nz-link nzHref="#components-transfer-demo-table-transfer" nzTitle="Table Transfer"></nz-link><nz-link nzHref="#components-transfer-demo-tree-transfer" nzTitle="Tree Transfer"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Transfer<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Double column transfer choice box.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>Transfer the elements between two columns in an intuitive and efficient way.</p>
+<p>One or more elements can be selected from either column, one click on the proper &#39;direction&#39; button, and the transfer is done. The left column is considered the &#39;source&#39; and the right column is considered the &#39;target&#39;. As you can see in the API description, these names are reflected in.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTransferModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/transfer'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-transfer-demo-basic'"
+  nzSelector="nz-demo-transfer-basic"
+  [nzLink]="'components-transfer-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-basic <name>"
+  nzComponentName="NzDemoTransferBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/basic.md'">
+	<nz-demo-transfer-basic demo></nz-demo-transfer-basic>
+	<div intro ngNonBindable>
+		<p>The most basic usage of <code>nz-transfer</code> involves providing the source data and target keys arrays, plus the rendering and some callback functions.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Search"
+  [nzId]="'components-transfer-demo-search'"
+  nzSelector="nz-demo-transfer-search"
+  [nzLink]="'components-transfer-demo-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-search <name>"
+  nzComponentName="NzDemoTransferSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/search.md'">
+	<nz-demo-transfer-search demo></nz-demo-transfer-search>
+	<div intro ngNonBindable>
+		<p>Transfer with a search box.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Advanced"
+  [nzId]="'components-transfer-demo-advanced'"
+  nzSelector="nz-demo-transfer-advanced"
+  [nzLink]="'components-transfer-demo-advanced'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-advanced <name>"
+  nzComponentName="NzDemoTransferAdvancedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/advanced.md'">
+	<nz-demo-transfer-advanced demo></nz-demo-transfer-advanced>
+	<div intro ngNonBindable>
+		<p>Advanced Usage of Transfer.</p>
+<p>You can customize the labels of the transfer buttons, the width and height of the columns, and what should be displayed in the footer.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom datasource"
+  [nzId]="'components-transfer-demo-custom-item'"
+  nzSelector="nz-demo-transfer-custom-item"
+  [nzLink]="'components-transfer-demo-custom-item'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-custom-item <name>"
+  nzComponentName="NzDemoTransferCustomItemComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/custom-item.md'">
+	<nz-demo-transfer-custom-item demo></nz-demo-transfer-custom-item>
+	<div intro ngNonBindable>
+		<p>Custom each Transfer Item, and in this way you can render a complex datasource.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Check Before Move"
+  [nzId]="'components-transfer-demo-can-move'"
+  nzSelector="nz-demo-transfer-can-move"
+  [nzLink]="'components-transfer-demo-can-move'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-can-move <name>"
+  nzComponentName="NzDemoTransferCanMoveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/can-move.md'">
+	<nz-demo-transfer-can-move demo></nz-demo-transfer-can-move>
+	<div intro ngNonBindable>
+		<p>Can use <code>nzCanMove</code> to do two-verification.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Table Transfer"
+  [nzId]="'components-transfer-demo-table-transfer'"
+  nzSelector="nz-demo-transfer-table-transfer"
+  [nzLink]="'components-transfer-demo-table-transfer'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-table-transfer <name>"
+  nzComponentName="NzDemoTransferTableTransferComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/table-transfer.md'">
+	<nz-demo-transfer-table-transfer demo></nz-demo-transfer-table-transfer>
+	<div intro ngNonBindable>
+		<p>Customize render list with Table component.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Tree Transfer"
+  [nzId]="'components-transfer-demo-tree-transfer'"
+  nzSelector="nz-demo-transfer-tree-transfer"
+  [nzLink]="'components-transfer-demo-tree-transfer'"
+  nzGenerateCommand="ng g ng-zorro-antd:transfer-tree-transfer <name>"
+  nzComponentName="NzDemoTransferTreeTransferComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/transfer/demo/tree-transfer.md'">
+	<nz-demo-transfer-tree-transfer demo></nz-demo-transfer-tree-transfer>
+	<div intro ngNonBindable>
+		<p>Customize render list with Tree component.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-transfer"><span>nz-transfer</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-transfer'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDataSource]</code></td>
+<td>Used for setting the source data. Except the elements whose keys are <code>direction: &#39;right&#39;</code> prop , or using <code>nzTargetKeys</code> prop.</td>
+<td><code>TransferItem[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Whether disabled transfer</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzTitles]</code></td>
+<td>A set of titles that are sorted from left to right.</td>
+<td><code>string[]</code></td>
+<td><code>[&#39;&#39;, &#39;&#39;]</code></td>
+</tr>
+<tr>
+<td><code>[nzOperations]</code></td>
+<td>A set of operations that are sorted from bottom to top.</td>
+<td><code>string[]</code></td>
+<td><code>[&#39;&#39;, &#39;&#39;]</code></td>
+</tr>
+<tr>
+<td><code>[nzListStyle]</code></td>
+<td>A custom CSS style used for rendering the transfer columns. equal <code>ngStyle</code></td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzItemUnit]</code></td>
+<td>single unit</td>
+<td><code>string</code></td>
+<td><code>&#39;item&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzItemsUnit]</code></td>
+<td>multiple unit</td>
+<td><code>string</code></td>
+<td><code>&#39;items&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzRenderList]</code></td>
+<td>Customize render list, please refer to the case.</td>
+<td><code>Array&lt;TemplateRef&lt;void&gt; | null&gt;</code></td>
+<td><code>[null, null]</code></td>
+</tr>
+<tr>
+<td><code>[nzRender]</code></td>
+<td>The function to generate the item shown on a column. please refer to the case.</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzFooter]</code></td>
+<td>A function used for rendering the footer. please refer to the case.</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzShowSearch]</code></td>
+<td>If included, a search box is shown on each column.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzFilterOption]</code></td>
+<td>A function to determine whether an item should show in search result list</td>
+<td><code>(inputValue: string, item: TransferItem) =&gt; boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSearchPlaceholder]</code></td>
+<td>The hint text of the search box.</td>
+<td><code>string</code></td>
+<td><code>&#39;Search here&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>Text to display when a column is empty.</td>
+<td><code>string</code></td>
+<td><code>&#39;The list is empty&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzCanMove]</code></td>
+<td>Two verification when transfer choice box. please refer to the case.</td>
+<td><code>(arg: TransferCanMove) =&gt; Observable&lt;TransferItem[]&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSelectedKeys]</code></td>
+<td>A set of keys of selected items.</td>
+<td><code>string[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTargetKeys]</code></td>
+<td>A set of keys of elements that are listed on the right column.</td>
+<td><code>string[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzChange)</code></td>
+<td>A callback function that is executed when the transfer between columns is complete.</td>
+<td><code>EventEmitter&lt;TransferChange&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzSearchChange)</code></td>
+<td>A callback function which is executed when search field are changed</td>
+<td><code>EventEmitter&lt;TransferSearchChange&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzSelectChange)</code></td>
+<td>A callback function which is executed when selected items are changed.</td>
+<td><code>EventEmitter&lt;TransferSearchChange&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="transferitem"><span>TransferItem</span><a onclick="window.location.hash = 'transferitem'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td>Used to display and search keyword</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>direction</td>
+<td>Used for setting the source data. Except the elements whose keys are <code>direction: &#39;right&#39;</code> prop.</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>specifies whether the checkbox is disabled</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td>checked</td>
+<td>specifies whether the checkbox is selected</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h4 id="transfercanmove"><span>TransferCanMove</span><a onclick="window.location.hash = 'transfercanmove'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>direction</td>
+<td>data direction</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Used for setting the source data.</td>
+<td><code>TransferItem[]</code></td>
+<td><code>[]</code></td>
+</tr>
+</tbody></table>
+<h4 id="transferchange"><span>TransferChange</span><a onclick="window.location.hash = 'transferchange'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>from</td>
+<td>data direction</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>to</td>
+<td>data direction</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>list</td>
+<td>Used for setting the source data.</td>
+<td><code>TransferItem[]</code></td>
+<td><code>[]</code></td>
+</tr>
+</tbody></table>
+<h4 id="transfersearchchange"><span>TransferSearchChange</span><a onclick="window.location.hash = 'transfersearchchange'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>direction</td>
+<td>data direction</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>value</td>
+<td>Search keyword</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="nzrenderlist"><span>nzRenderList</span><a onclick="window.location.hash = 'nzrenderlist'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>direction</code></td>
+<td>List render direction</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td>Disable list or not</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>Filtered items</td>
+<td><code>TransferItem[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>onItemSelect</code></td>
+<td>Select item</td>
+<td><code>(item: TransferItem) =&gt; void</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>onItemSelectAll</code></td>
+<td>Select a group of items</td>
+<td><code>(selected: boolean) =&gt; void</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

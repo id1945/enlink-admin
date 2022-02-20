@@ -1,0 +1,209 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-carousel-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-carousel-demo-position" nzTitle="位置"></nz-link><nz-link nzHref="#components-carousel-demo-fade" nzTitle="渐显"></nz-link><nz-link nzHref="#components-carousel-demo-autoplay" nzTitle="自动切换"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Carousel<span class="subtitle">走马灯</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>旋转木马，一组轮播的区域。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当有一组平级的内容。</li>
+<li>当内容空间不足时，可以用走马灯的形式进行收纳，进行轮播展现。</li>
+<li>常用于一组图片或卡片轮播。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCarouselModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/carousel'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-carousel-demo-basic'"
+  nzSelector="nz-demo-carousel-basic"
+  [nzLink]="'components-carousel-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-basic <name>"
+  nzComponentName="NzDemoCarouselBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/basic.md'">
+	<nz-demo-carousel-basic demo></nz-demo-carousel-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="渐显"
+  [nzId]="'components-carousel-demo-fade'"
+  nzSelector="nz-demo-carousel-fade"
+  [nzLink]="'components-carousel-demo-fade'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-fade <name>"
+  nzComponentName="NzDemoCarouselFadeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/fade.md'">
+	<nz-demo-carousel-fade demo></nz-demo-carousel-fade>
+	<div intro ngNonBindable>
+		<p>切换效果为渐显。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="位置"
+  [nzId]="'components-carousel-demo-position'"
+  nzSelector="nz-demo-carousel-position"
+  [nzLink]="'components-carousel-demo-position'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-position <name>"
+  nzComponentName="NzDemoCarouselPositionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/position.md'">
+	<nz-demo-carousel-position demo></nz-demo-carousel-position>
+	<div intro ngNonBindable>
+		<p>位置有 4 个方向。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自动切换"
+  [nzId]="'components-carousel-demo-autoplay'"
+  nzSelector="nz-demo-carousel-autoplay"
+  [nzLink]="'components-carousel-demo-autoplay'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-autoplay <name>"
+  nzComponentName="NzDemoCarouselAutoplayComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/autoplay.md'">
+	<nz-demo-carousel-autoplay demo></nz-demo-carousel-autoplay>
+	<div intro ngNonBindable>
+		<p>定时切换下一张。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-carousel"><span>nz-carousel</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-carousel'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAutoPlay]</code></td>
+<td>是否自动切换</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoPlaySpeed]</code></td>
+<td>切换时间(毫秒)，当设置为0时不切换</td>
+<td><code>number</code></td>
+<td><code>3000</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDotRender]</code></td>
+<td>Dot渲染模板</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDotPosition]</code></td>
+<td>面板指示点位置，可选 <code>top</code> <code>bottom</code> <code>left</code> <code>right</code></td>
+<td><code>string</code></td>
+<td><code>bottom</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDots]</code></td>
+<td>是否显示面板指示点</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzEffect]</code></td>
+<td>动画效果函数，可取 <code>scrollx</code>, <code>fade</code></td>
+<td><code>&#39;scrollx&#39;|&#39;fade&#39;</code></td>
+<td><code>&#39;scrollx&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzEnableSwipe]</code></td>
+<td>是否支持手势划动切换</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>(nzAfterChange)</code></td>
+<td>切换面板的回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzBeforeChange)</code></td>
+<td>切换面板的回调</td>
+<td><code>EventEmitter&lt;&#123; from: number; to: number &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>goTo(slideNumber)</code></td>
+<td>切换到指定面板</td>
+</tr>
+<tr>
+<td><code>next()</code></td>
+<td>切换到下一面板</td>
+</tr>
+<tr>
+<td><code>pre()</code></td>
+<td>切换到上一面板</td>
+</tr>
+</tbody></table>
+<h3 id="injectiontoken"><span>InjectionToken</span><a onclick="window.location.hash = 'injectiontoken'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>说明</th>
+<th>参数</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>NZ_CAROUSEL_CUSTOM_STRATEGIES</code></td>
+<td>提供用户自定义的切换效果</td>
+<td><code>CarouselStrategyRegistryItem[]</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="自定义切换效果"><span>自定义切换效果</span><a onclick="window.location.hash = '自定义切换效果'" class="anchor">#</a></h3><p>你可以提供自定义的切换效果，切换效果应当继承 <code>NzCarouselBaseStrategy</code> 类（默认的两种切换效果同样基于该类）。</p>
+</section></article>

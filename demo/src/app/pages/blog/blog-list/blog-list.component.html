@@ -1,0 +1,37 @@
+<div class="container">
+    <nz-card *ngFor="let item of blogs">
+        <nz-skeleton [nzLoading]="loading" [nzActive]="loading">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" [src]="item.image" [alt]="item.title">
+                </div>
+                <div class="col-md-8">
+                    <h4 class="m-b-10">{{item.title}}</h4>
+                    <div class="m-b-15">
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center">
+                                <nz-avatar nzSize="small" [nzSrc]="item.authorImg"></nz-avatar>
+                                <div class="m-l-10">
+                                    <span class="text-gray font-weight-semibold">{{item.authorName}}</span>
+                                </div>
+                            </div>
+                            <div class="text-gray">
+                                <nz-divider nzType="vertical"></nz-divider>
+                                <span>{{item.date}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="lh-1-8 m-b-20">
+                        <span>{{item.desc}}</span>
+                    </p>
+                    <div class="text-right">
+                        <a [routerLink]="['/pages/blog/blog-post']" class="font-weight-semibold" nz-button nzType="link">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </nz-skeleton>
+    </nz-card>
+    <div class="m-t-30 text-center">
+        <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+    </div>
+</div>

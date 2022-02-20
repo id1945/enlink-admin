@@ -1,0 +1,317 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-mention-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-mention-demo-placement" nzTitle="Placement"></nz-link><nz-link nzHref="#components-mention-demo-async" nzTitle="Asynchronous loading"></nz-link><nz-link nzHref="#components-mention-demo-custom-tag" nzTitle="Customize Suggestion"></nz-link><nz-link nzHref="#components-mention-demo-avatar" nzTitle="Icon Image"></nz-link><nz-link nzHref="#components-mention-demo-controlled" nzTitle="With Form"></nz-link><nz-link nzHref="#components-mention-demo-multilines" nzTitle="Multi-lines Mode"></nz-link><nz-link nzHref="#components-mention-demo-readonly" nzTitle="disabled or readOnly"></nz-link><nz-link nzHref="#components-mention-demo-multiple-trigger" nzTitle="Customize Trigger Token"></nz-link><nz-link nzHref="#components-mention-demo-preview" nzTitle="Preview"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Mention<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Mention component.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When need to mention someone or something.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzMentionModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/mention'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-mention-demo-basic'"
+  nzSelector="nz-demo-mention-basic"
+  [nzLink]="'components-mention-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-basic <name>"
+  nzComponentName="NzDemoMentionBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/basic.md'">
+	<nz-demo-mention-basic demo></nz-demo-mention-basic>
+	<div intro ngNonBindable>
+		<p>Basic usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Asynchronous loading"
+  [nzId]="'components-mention-demo-async'"
+  nzSelector="nz-demo-mention-async"
+  [nzLink]="'components-mention-demo-async'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-async <name>"
+  nzComponentName="NzDemoMentionAsyncComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/async.md'">
+	<nz-demo-mention-async demo></nz-demo-mention-async>
+	<div intro ngNonBindable>
+		<p>async</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Icon Image"
+  [nzId]="'components-mention-demo-avatar'"
+  nzSelector="nz-demo-mention-avatar"
+  [nzLink]="'components-mention-demo-avatar'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-avatar <name>"
+  nzComponentName="NzDemoMentionAvatarComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/avatar.md'">
+	<nz-demo-mention-avatar demo></nz-demo-mention-avatar>
+	<div intro ngNonBindable>
+		<p>Customize suggestions.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Multi-lines Mode"
+  [nzId]="'components-mention-demo-multilines'"
+  nzSelector="nz-demo-mention-multilines"
+  [nzLink]="'components-mention-demo-multilines'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-multilines <name>"
+  nzComponentName="NzDemoMentionMultilinesComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/multilines.md'">
+	<nz-demo-mention-multilines demo></nz-demo-mention-multilines>
+	<div intro ngNonBindable>
+		<p>Multi lines mode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize Trigger Token"
+  [nzId]="'components-mention-demo-multiple-trigger'"
+  nzSelector="nz-demo-mention-multiple-trigger"
+  [nzLink]="'components-mention-demo-multiple-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-multiple-trigger <name>"
+  nzComponentName="NzDemoMentionMultipleTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/multiple-trigger.md'">
+	<nz-demo-mention-multiple-trigger demo></nz-demo-mention-multiple-trigger>
+	<div intro ngNonBindable>
+		<p>Customize Trigger Token by <code>nzPrefix</code> props. Default to <code>@</code>, <code>Array&lt;string&gt;</code> also supported.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Placement"
+  [nzId]="'components-mention-demo-placement'"
+  nzSelector="nz-demo-mention-placement"
+  [nzLink]="'components-mention-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-placement <name>"
+  nzComponentName="NzDemoMentionPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/placement.md'">
+	<nz-demo-mention-placement demo></nz-demo-mention-placement>
+	<div intro ngNonBindable>
+		<p>Change the suggestions placement.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize Suggestion"
+  [nzId]="'components-mention-demo-custom-tag'"
+  nzSelector="nz-demo-mention-custom-tag"
+  [nzLink]="'components-mention-demo-custom-tag'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-custom-tag <name>"
+  nzComponentName="NzDemoMentionCustomTagComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/custom-tag.md'">
+	<nz-demo-mention-custom-tag demo></nz-demo-mention-custom-tag>
+	<div intro ngNonBindable>
+		<p>Customize suggestions.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="With Form"
+  [nzId]="'components-mention-demo-controlled'"
+  nzSelector="nz-demo-mention-controlled"
+  [nzLink]="'components-mention-demo-controlled'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-controlled <name>"
+  nzComponentName="NzDemoMentionControlledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/controlled.md'">
+	<nz-demo-mention-controlled demo></nz-demo-mention-controlled>
+	<div intro ngNonBindable>
+		<p>Controlled mode, for example, to work with <code>Form</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="disabled or readOnly"
+  [nzId]="'components-mention-demo-readonly'"
+  nzSelector="nz-demo-mention-readonly"
+  [nzLink]="'components-mention-demo-readonly'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-readonly <name>"
+  nzComponentName="NzDemoMentionReadonlyComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/readonly.md'">
+	<nz-demo-mention-readonly demo></nz-demo-mention-readonly>
+	<div intro ngNonBindable>
+		<p>Configurate <code>disabled</code> and <code>readOnly</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Preview"
+  [nzId]="'components-mention-demo-preview'"
+  nzSelector="nz-demo-mention-preview"
+  [nzLink]="'components-mention-demo-preview'"
+  nzGenerateCommand="ng g ng-zorro-antd:mention-preview <name>"
+  nzComponentName="NzDemoMentionPreviewComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/mention/demo/preview.md'">
+	<nz-demo-mention-preview demo></nz-demo-mention-preview>
+	<div intro ngNonBindable>
+		<p>Rendering the mentions.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-mention</span> <span class="token attr-name">[nzSuggestions]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>suggestions<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span>
+    <span class="token attr-name">nz-input</span>
+    <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span>
+    <span class="token attr-name">nzMentionTrigger</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-mention</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-mention"><span>nz-mention</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-mention'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzMentionTrigger]</code></td>
+<td>Trigger element <strong>(required)</strong></td>
+<td><code>HTMLTextAreaElement | HTMLInputElement</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMentionSuggestion]</code></td>
+<td>Customize the suggestion template</td>
+<td><code>TemplateRef&lt;any&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>Loading mode</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>Suggestion when suggestions empty</td>
+<td><code>string</code></td>
+<td><code>&#39;无匹配结果，轻敲空格完成输入&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPlacement]</code></td>
+<td>The position of the suggestion relative to the target, which can be one of top and bottom</td>
+<td><code>&#39;button&#39; | &#39;top&#39;</code></td>
+<td><code>&#39;bottom&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPrefix]</code></td>
+<td>Character which will trigger Mention to show mention list</td>
+<td><code>string | string[]</code></td>
+<td><code>&#39;@&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSuggestions]</code></td>
+<td>Suggestion content</td>
+<td><code>any[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>[nzValueWith]</code></td>
+<td>Function that maps an suggestion&#39;s value</td>
+<td><code>(any) =&gt; string | (value: string) =&gt; string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnSelect)</code></td>
+<td>Callback function called when select from suggestions</td>
+<td><code>EventEmitter&lt;any&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnSearchChange)</code></td>
+<td>Callback function called when search content changes</td>
+<td><code>EventEmitter&lt;MentionOnSearchTypes&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getMentions</td>
+<td>Get the mentions array in the <code>input[nzMentionTrigger]</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzmentiontrigger"><span>nzMentionTrigger</span><a onclick="window.location.hash = 'nzmentiontrigger'" class="anchor">#</a></h3><p>Trigger element</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-mention</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">nzMentionTrigger</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-mention</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-mention</span><span class="token punctuation">></span></span>
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nzMentionTrigger</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-mention</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nzmentionsuggestion"><span>nzMentionSuggestion</span><a onclick="window.location.hash = 'nzmentionsuggestion'" class="anchor">#</a></h3><p>Customize the suggestion template</p>
+<pre class="language-html"><code>  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-mention</span>
+    <span class="token attr-name">[nzSuggestions]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>items<span class="token punctuation">"</span></span>
+    <span class="token attr-name">[nzValueWith]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>valueWith<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nz-input</span> <span class="token attr-name">nzMentionTrigger</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-container</span> <span class="token attr-name">*nzMentionSuggestion</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>let item<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;&#123; item.label &#125;&#125; - &#123;&#123; item.value &#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-container</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-mention</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="mentiononsearchtypes"><span>MentionOnSearchTypes</span><a onclick="window.location.hash = 'mentiononsearchtypes'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>Search keyword</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>prefix</td>
+<td>prefix</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

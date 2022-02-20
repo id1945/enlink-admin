@@ -1,0 +1,315 @@
+.ant-input {
+    padding: $input-padding-y $input-padding-x;
+    line-height: $input-line-height;
+    color: $input-color;
+    height: auto;
+    border: 1px solid $input-border-color;
+    border-radius: $input-border-radius;
+
+    &.ant-input:hover {
+        border-color: $input-theme-color;
+    }
+
+    &:focus,
+    .ant-input-focused {
+        border-color: $input-theme-color;
+        box-shadow: 0 0 0 2px rgba($input-theme-color,.2)
+    }
+
+    &.ant-input-disabled {
+        &:hover,
+        &:focus { 
+            border-color: $input-border-color;
+        }         
+    }
+
+    &~.ant-input-prefix,
+    &~.ant-input-suffix {
+
+        &:not(.anticon) {
+
+            .ant-input-search-button {
+                height: $select-height;
+            }
+        }
+    }
+
+    &:disabled {
+        background-color: $input-bg-disabled;
+        cursor: not-allowed;
+
+        &:hover {
+            border-color: $input-border-color;
+        }  
+    }
+
+    @include placeholder {
+        color: $input-color-placeholder;
+    }
+}
+.ant-input-sm {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+    height: auto;
+
+    &~.ant-input-prefix,
+    &~.ant-input-suffix {
+
+        &:not(.anticon) {
+
+            .ant-input-search-button {
+                height: $select-height-sm;
+            }
+        }
+    }
+}    
+
+.ant-input-lg {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    height: auto;
+    font-size: $input-font-size-lg;
+
+    &~.ant-input-prefix,
+    &~.ant-input-suffix {
+
+        &:not(.anticon) {
+
+            .ant-input-search-button {
+                height: $select-height-lg;
+            }
+        }
+    }
+}   
+
+.ant-input-affix-wrapper {
+    padding: $input-padding-y $input-padding-x;
+    color: $input-color;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: $input-border-radius;
+
+    &:hover {
+        border-color: $input-theme-color;
+    }
+
+    &:focus, 
+    &.ant-input-affix-wrapper-focused {
+        border-color: $input-theme-color;
+        box-shadow: 0 0 0 2px rgba($input-theme-color, 0.2);
+    }
+}
+
+.ant-input-affix-wrapper-sm {
+    padding: $input-padding-y-sm $input-padding-x-sm;
+}
+
+.ant-input-affix-wrapper-lg {
+    padding: $input-padding-y-lg $input-padding-x-lg;
+    
+    .ant-input-prefix,
+    .ant-input-suffix {
+        font-size: $input-font-size-lg;
+    }
+}
+
+.ant-input-group-addon {
+    border: 1px solid $input-border-color;
+    background-color: $gray-lightest;
+    color: $body-color;
+    font-size: $font-size-base;
+    padding: 0 0.625rem;
+    border-radius: $border-radius;
+}
+
+
+textarea {
+    &.ant-input {
+        min-height: $textarea-min-height;
+    }
+}
+
+.ant-input-affix-wrapper-textarea-with-clear-btn {
+    padding: 0;
+    border: 0;
+}
+
+.ant-input-disabled {
+    background-color: $input-bg-disabled;
+    cursor: not-allowed;
+
+    &:hover {
+        border-color: $input-border-color;
+    }
+} 
+
+.ant-input-affix-wrapper-disabled {
+    background-color: $input-bg-disabled;
+    color: rgba($input-color, 0.6);
+    &:hover {
+        border-color: $input-border-color;
+    }
+}
+
+.ant-input-number {
+    border: 1px solid $input-border-color;
+    line-height: $input-line-height;
+    height: $select-height;
+    color: $body-color;
+    font-size: $font-size-base;
+
+    &:hover,
+    &:focus {
+        border-color: $input-theme-color;
+    }
+
+    &.ant-input-number-disabled {
+        &:hover,
+        &:focus {
+            border-color: $input-border-color;
+        }
+    }
+}
+
+.ant-input-number {
+    border-radius: $input-border-radius;
+}
+
+.ant-input-number-input {
+    height: $select-height - 0.125rem;
+}
+
+.ant-input-number-lg {
+    height: $select-height-lg;
+
+    .ant-input-number-input {
+        height: $select-height-lg - 0.125rem;
+    }
+}
+
+.ant-input-number-sm {
+    height: $select-height-sm;
+
+    .ant-input-number-input {
+        height: $select-height-sm - 0.125rem;
+    }
+}
+
+.ant-input-number-handler-wrap {
+    border-left: 1px solid $input-border-color;
+}    
+
+.ant-input-number-handler {
+
+    &:hover {
+        .ant-input-number-handler-down-inner,
+        .ant-input-number-handler-up-inner {
+            color: $input-theme-color;
+        }
+    }
+
+    &:active {
+        background-color: $gray-lightest;
+    }
+} 
+
+.ant-input-number-handler-down {
+    border-top: 1px solid $input-border-color;
+}
+
+.ant-input-number-focused {
+    border-color: $input-theme-color;
+}
+
+.has-error {
+
+    .ant-input {
+        border-color: $input-error-color;
+
+        &:focus,
+        &:hover {
+            border-color: $input-error-color;
+        }
+
+        .ant-cascader-picker-arrow,
+        .ant-form-explain, 
+        .ant-form-split,
+        .ant-input-group-addon,
+        .ant-input-prefix,
+        .ant-select-arrow,
+        .has-feedback {
+            color: $input-error-color;
+        }
+
+        .ant-calendar-picker-icon,
+        .ant-picker-icon,
+        .ant-time-picker-icon {
+
+            &:after {
+                color: $input-error-color;
+            }
+        }
+    }
+
+    &.has-feedback {
+        
+        .ant-form-item-children {
+
+            &:after {
+                color: $input-error-color;
+            }
+        }
+    }
+}
+
+.has-warning {
+
+    .ant-input {
+        border-color: $input-warning-color;
+
+        &:hover {
+            border-color: $input-warning-color;
+        }
+    }
+
+    &.has-feedback {
+
+        .ant-form-item-children {
+
+            &:after {
+                color: $input-warning-color;
+            }
+        }
+    }
+} 
+
+
+.has-success {
+
+    &.has-feedback {
+        .ant-form-item-children {
+
+            &:after {
+                color: $input-success-color;
+            }
+        }
+    }
+} 
+
+.is-validating {
+
+    &.has-feedback {
+
+        .ant-form-item-children-icon {
+            color: $loading-color;
+        }
+    }
+}    
+
+
+.ant-form-item-required {
+    &:before {
+        color: $input-error-color;
+    }
+}
+

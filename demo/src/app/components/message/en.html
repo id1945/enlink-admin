@@ -1,0 +1,218 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-message-demo-info" nzTitle="Normal prompt"></nz-link><nz-link nzHref="#components-message-demo-other" nzTitle="Other types of message"></nz-link><nz-link nzHref="#components-message-demo-duration" nzTitle="Customize duration"></nz-link><nz-link nzHref="#components-message-demo-loading" nzTitle="Message of loading"></nz-link><nz-link nzHref="#components-message-demo-close" nzTitle="Customize duration"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Message<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Display global messages as feedback in response to user operations.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>To provide feedback such as success, warning, error etc.</li>
+<li>A message is displayed at top and center and will be dismissed automatically, as a non-interrupting light-weighted prompt.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzMessageModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/message'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Normal prompt"
+  [nzId]="'components-message-demo-info'"
+  nzSelector="nz-demo-message-info"
+  [nzLink]="'components-message-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-info <name>"
+  nzComponentName="NzDemoMessageInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/info.md'">
+	<nz-demo-message-info demo></nz-demo-message-info>
+	<div intro ngNonBindable>
+		<p>Normal messages as feedbacks.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize duration"
+  [nzId]="'components-message-demo-duration'"
+  nzSelector="nz-demo-message-duration"
+  [nzLink]="'components-message-demo-duration'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-duration <name>"
+  nzComponentName="NzDemoMessageDurationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/duration.md'">
+	<nz-demo-message-duration demo></nz-demo-message-duration>
+	<div intro ngNonBindable>
+		<p>Customize message display duration from default <code>3s</code> to <code>10s</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize duration"
+  [nzId]="'components-message-demo-close'"
+  nzSelector="nz-demo-message-close"
+  [nzLink]="'components-message-demo-close'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-close <name>"
+  nzComponentName="NzDemoMessageCloseComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/close.md'">
+	<nz-demo-message-close demo></nz-demo-message-close>
+	<div intro ngNonBindable>
+		<p>You can subscribe to <code>onClose</code> event to make some operations. This case would open three messages in sequence.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Other types of message"
+  [nzId]="'components-message-demo-other'"
+  nzSelector="nz-demo-message-other"
+  [nzLink]="'components-message-demo-other'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-other <name>"
+  nzComponentName="NzDemoMessageOtherComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/other.md'">
+	<nz-demo-message-other demo></nz-demo-message-other>
+	<div intro ngNonBindable>
+		<p>Messages of success, error and warning types.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Message of loading"
+  [nzId]="'components-message-demo-loading'"
+  nzSelector="nz-demo-message-loading"
+  [nzLink]="'components-message-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-loading <name>"
+  nzComponentName="NzDemoMessageLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/loading.md'">
+	<nz-demo-message-loading demo></nz-demo-message-loading>
+	<div intro ngNonBindable>
+		<p>Display a global loading indicator, which is dismissed by itself asynchronously.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nzmessageservice"><span>NzMessageService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzmessageservice'" class="anchor">#</a></h3><p>This components provides some service methods, with usage and arguments as following:</p>
+<ul>
+<li><code>NzMessageService.success(content, [options])</code></li>
+<li><code>NzMessageService.error(content, [options])</code></li>
+<li><code>NzMessageService.info(content, [options])</code></li>
+<li><code>NzMessageService.warning(content, [options])</code></li>
+<li><code>NzMessageService.loading(content, [options])</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content</td>
+<td>The content of message</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>options</td>
+<td>Support setting the parameters for the current message box, see the table below</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>The parameters that are set by the <code>options</code> support are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzDuration</td>
+<td>Duration (milliseconds), does not disappear when set to 0</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>Do not remove automatically when mouse is over while setting to <code>true</code></td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>Whether to turn on animation</td>
+<td><code>boolean</code></td>
+</tr>
+</tbody></table>
+<p>Methods for destruction are also provided:</p>
+<ul>
+<li><code>message.remove(id)</code> // Remove the message with the specified id. When the id is empty, remove all messages (the message id is returned by the above method)</li>
+</ul>
+<h3 id="global-configuration"><span>Global Configuration</span><a onclick="window.location.hash = 'global-configuration'" class="anchor">#</a></h3><p>You can use <code>NzConfigService</code> to configure this component globally. Please check the Global Configuration chapter for more information.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzDuration</td>
+<td>Duration (milliseconds), does not disappear when set to 0</td>
+<td><code>number</code></td>
+<td><code>3000</code></td>
+</tr>
+<tr>
+<td>nzMaxStack</td>
+<td>The maximum number of messages that can be displayed at the same time</td>
+<td><code>number</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>Do not remove automatically when mouse is over while setting to <code>true</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>Whether to turn on animation</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzTop</td>
+<td>Distance from top</td>
+<td><code>number | string</code></td>
+<td><code>24</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzmessageref"><span>NzMessageRef</span><a onclick="window.location.hash = 'nzmessageref'" class="anchor">#</a></h3><p>It&#39;s the object that returned when you call <code>NzMessageService.success</code> and others.</p>
+<pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">NzMessageRef</span> <span class="token punctuation">&#123;</span>
+  messageId<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  onClose<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">false</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// It would emit an event when the message is closed</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

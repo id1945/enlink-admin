@@ -1,0 +1,258 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-slider-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-slider-demo-input-number" nzTitle="带输入框的滑块"></nz-link><nz-link nzHref="#components-slider-demo-icon-slider" nzTitle="带 icon 的滑块"></nz-link><nz-link nzHref="#components-slider-demo-tip-formatter" nzTitle="自定义提示"></nz-link><nz-link nzHref="#components-slider-demo-event" nzTitle="事件"></nz-link><nz-link nzHref="#components-slider-demo-mark" nzTitle="带标签的滑块"></nz-link><nz-link nzHref="#components-slider-demo-vertical" nzTitle="垂直"></nz-link><nz-link nzHref="#components-slider-demo-tooltip" nzTitle="控制 Tooltip 的显示"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Slider<span class="subtitle">滑动输入条</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>滑动型输入器，展示当前值和可选范围。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当用户需要在数值区间/自定义区间内进行选择时，可为连续或离散值。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSliderModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/slider'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-slider-demo-basic'"
+  nzSelector="nz-demo-slider-basic"
+  [nzLink]="'components-slider-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-basic <name>"
+  nzComponentName="NzDemoSliderBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/basic.md'">
+	<nz-demo-slider-basic demo></nz-demo-slider-basic>
+	<div intro ngNonBindable>
+		<p>基本滑动条。当 <code>nzRange</code> 为 <code>true</code> 时，渲染为双滑块。当 <code>nzDisabled</code> 为 <code>true</code> 时，滑块处于不可用状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带 icon 的滑块"
+  [nzId]="'components-slider-demo-icon-slider'"
+  nzSelector="nz-demo-slider-icon-slider"
+  [nzLink]="'components-slider-demo-icon-slider'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-icon-slider <name>"
+  nzComponentName="NzDemoSliderIconSliderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/icon-slider.md'">
+	<nz-demo-slider-icon-slider demo></nz-demo-slider-icon-slider>
+	<div intro ngNonBindable>
+		<p>滑块左右可以设置图标来表达业务含义。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="事件"
+  [nzId]="'components-slider-demo-event'"
+  nzSelector="nz-demo-slider-event"
+  [nzLink]="'components-slider-demo-event'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-event <name>"
+  nzComponentName="NzDemoSliderEventComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/event.md'">
+	<nz-demo-slider-event demo></nz-demo-slider-event>
+	<div intro ngNonBindable>
+		<p>当 Slider 的值发生改变时，会触发 <code>nzOnChange</code> 事件，并把改变后的值作为参数传入。在 <code>onmouseup</code> 时，会触发 <code>nzOnAfterChange</code> 事件，并把当前值作为参数传入。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="垂直"
+  [nzId]="'components-slider-demo-vertical'"
+  nzSelector="nz-demo-slider-vertical"
+  [nzLink]="'components-slider-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-vertical <name>"
+  nzComponentName="NzDemoSliderVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/vertical.md'">
+	<nz-demo-slider-vertical demo></nz-demo-slider-vertical>
+	<div intro ngNonBindable>
+		<p>垂直方向的 Slider。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="带输入框的滑块"
+  [nzId]="'components-slider-demo-input-number'"
+  nzSelector="nz-demo-slider-input-number"
+  [nzLink]="'components-slider-demo-input-number'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-input-number <name>"
+  nzComponentName="NzDemoSliderInputNumberComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/input-number.md'">
+	<nz-demo-slider-input-number demo></nz-demo-slider-input-number>
+	<div intro ngNonBindable>
+		<p>和 <a href="/components/input-number/">数字输入框</a> 组件保持同步。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义提示"
+  [nzId]="'components-slider-demo-tip-formatter'"
+  nzSelector="nz-demo-slider-tip-formatter"
+  [nzLink]="'components-slider-demo-tip-formatter'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-tip-formatter <name>"
+  nzComponentName="NzDemoSliderTipFormatterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/tip-formatter.md'">
+	<nz-demo-slider-tip-formatter demo></nz-demo-slider-tip-formatter>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzTipFormatter</code> 可以格式化 <code>Tooltip</code> 的内容，设置 <code>nzTipFormatter = null</code>，则隐藏 <code>Tooltip</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带标签的滑块"
+  [nzId]="'components-slider-demo-mark'"
+  nzSelector="nz-demo-slider-mark"
+  [nzLink]="'components-slider-demo-mark'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-mark <name>"
+  nzComponentName="NzDemoSliderMarkComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/mark.md'">
+	<nz-demo-slider-mark demo></nz-demo-slider-mark>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzMarks</code> 属性标注分段式滑块，使用 <code>ngModel</code> 指定滑块位置。当 <code>nzIncluded = false</code> 时，表明不同标记间为并列关系。当 <code>nzStep = null</code> 时，Slider 的可选值仅有 <code>nzMarks</code> 标出来的部分。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="控制 Tooltip 的显示"
+  [nzId]="'components-slider-demo-tooltip'"
+  nzSelector="nz-demo-slider-tooltip"
+  [nzLink]="'components-slider-demo-tooltip'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-tooltip <name>"
+  nzComponentName="NzDemoSliderTooltipComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/tooltip.md'">
+	<nz-demo-slider-tooltip demo></nz-demo-slider-tooltip>
+	<div intro ngNonBindable>
+		<p>当 <code>nzTooltipVisible</code> 为 <code>always</code> 时，将始终显示 ToolTip，为 <code>never</code> 时反之则始终不显示，即使在拖动、移入时也是如此。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-slider"><span>nz-slider</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-slider'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>值为 <code>true</code> 时，滑块为禁用状态</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDots]</code></td>
+<td>是否只能拖拽到刻度上</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzIncluded]</code></td>
+<td><code>marks</code> 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzMarks]</code></td>
+<td>刻度标记，key 的类型必须为 <code>number</code> 且取值在闭区间 [min, max] 内，每个标签可以单独设置样式</td>
+<td><code>object</code></td>
+<td>&#123; number: string/HTML &#125; or &#123; number: &#123; style: object, label: string/HTML &#125; &#125;</td>
+</tr>
+<tr>
+<td><code>[nzMax]</code></td>
+<td>最大值</td>
+<td><code>number</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>[nzMin]</code></td>
+<td>最小值</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>[nzRange]</code></td>
+<td>双滑块模式</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzStep]</code></td>
+<td>步长，取值必须大于 0，并且可被 (max - min) 整除。当 <code>marks</code> 不为空对象时，可以设置 <code>step</code> 为 <code>null</code>，此时 Slider 的可选值仅有 marks 标出来的部分。</td>
+<td><code>number | null</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzTipFormatter]</code></td>
+<td>Slider 会把当前值传给 <code>nzTipFormatter</code>，并在 Tooltip 中显示 <code>nzTipFormatter</code> 的返回值，若为 null，则隐藏 Tooltip。</td>
+<td><code>(value: number) =&gt; string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[ngModel]</code></td>
+<td>设置当前取值。当 <code>range</code> 为 <code>false</code> 时，使用 <code>number</code>，否则用 <code>[number, number]</code></td>
+<td><code>number | number[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzVertical]</code></td>
+<td>值为 <code>true</code> 时，Slider 为垂直方向</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipVisible]</code></td>
+<td>值为 <code>always</code> 时总是显示，值为 <code>never</code> 时在任何情况下都不显示</td>
+<td><code>&#39;default&#39; | &#39;always&#39; | &#39;never&#39;</code></td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipPlacement]</code></td>
+<td>设置 Tooltip 的默认位置。</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnAfterChange)</code></td>
+<td>与 <code>onmouseup</code> 触发时机一致，把当前值作为参数传入。</td>
+<td><code>EventEmitter&lt;number[]  |  number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>当 Slider 的值发生改变时，会触发 ngModelChange 事件，并把改变后的值作为参数传入。</td>
+<td><code>EventEmitter&lt;number[]  |  number&gt;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

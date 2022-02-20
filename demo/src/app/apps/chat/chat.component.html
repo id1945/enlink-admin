@@ -1,0 +1,120 @@
+<div class="container-fluid p-h-0">
+    <div class="chat chat-app row">
+        <div class="chat-list">
+            <div class="chat-user-tool">
+                <i nz-icon nzType="search" theme="outline" class="search-icon p-r-10 font-size-20"></i>
+                <input placeholder="Search...">
+            </div>
+            <div class="chat-user-list">
+                <nz-list [nzDataSource]="chatList" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+                    <ng-template #item let-item let-index="index">
+                        <a (click)="selectChat(item.name)">
+                            <nz-list-item class="p-h-25" [ngClass]="{'active': index == chatId}">
+                                <div class="media align-items-center">
+                                    <div>
+                                        <nz-avatar class="shadow" nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                                    </div>
+                                    <div class="p-l-15">
+                                        <h5 class="m-b-0">{{item.name}}</h5>
+                                        <ng-container *ngFor="let item of item.msg; let last = last">
+                                            <p *ngIf="last" class="msg-overflow m-b-0 text-muted font-size-13">
+                                                {{item.text}}
+                                            </p>
+                                        </ng-container>
+                                    </div>
+                                </div>
+                            </nz-list-item>
+                        </a>
+                    </ng-template>
+                </nz-list>
+            </div>    
+        </div>
+        <div class="chat-content" [ngClass]="{'open': isContentOpen}">
+            <div class="conversation">
+                <div class="conversation-wrapper">
+                    <div class="conversation-header justify-content-between">
+                        <ng-container *ngFor="let item of chatList">
+                            <div class="media align-items-center" *ngIf="chatId == item.name">
+                                <a [routerLink]="" (click)="closeChatContent()" class="m-r-20 d-md-none d-block text-dark font-size-18 m-t-5" >
+                                    <i nz-icon nzType="left-circle" theme="outline"></i>
+                                </a>
+                                <div>
+                                    <nz-avatar class="shadow" nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                                </div>
+                                <div class="p-l-15">
+                                    <h6 class="m-b-0">{{item.name}}</h6>
+                                    <p class="m-b-0 text-muted font-size-13">
+                                        <nz-badge nzStatus="success"></nz-badge>
+                                        <span>Online</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </ng-container>
+                        <div>
+                            <a class="text-dark font-size-18" [nzDropdownMenu]="chatSetting" nz-dropdown [nzTrigger]="'click'" nzPlacement="bottomRight">
+                                <i nz-icon nzType="setting" theme="outline"></i>
+                            </a>
+                            <nz-dropdown-menu #chatSetting="nzDropdownMenu">
+                                <ul nz-menu>
+                                    <li nz-menu-item>1st menu item</li>
+                                    <li nz-menu-item>2nd menu item</li>
+                                    <li nz-menu-item>3rd menu item</li>
+                                </ul>
+                            </nz-dropdown-menu>
+                        </div>
+                    </div>
+                    <div class="conversation-body" #scrollBottom>
+                        <ng-container *ngFor="let item of chatList">
+                            <div *ngIf="chatId == item.name">
+                                <div class="msg" [ngClass]="{'msg-recipient':item.from == 'opposite', 'msg-sent': item.from == 'me', 'justify-content-center': item.msgType == 'date'}" *ngFor="let item of item.msg">                                  
+                                    <div class="m-r-10" *ngIf="item.avatar.length > 1">
+                                        <nz-avatar *ngIf="item.avatar.length > 1" [nzIcon]="'user'" [nzSrc]="item.avatar"></nz-avatar>
+                                    </div>
+                                    <div class="bubble" *ngIf="item.text.length > 1" [ngClass]="{'m-l-50': item.avatar.length == 0}">
+                                        <div class="bubble-wrapper" [ngClass]="{'p-5': item.msgType == 'image'}">
+                                            <span *ngIf="item.msgType == 'text'">{{item.text}}</span>
+                                            <img *ngIf="item.msgType == 'image'" [src]="item.text" [alt]="item.text">
+                                            <div *ngIf="item.msgType == 'file'" class="d-flex align-items-center msg-file">
+                                                <i class="font-size-25" nz-icon nzType="file" theme="outline"></i>
+                                                <span class="m-l-10 font-weight-semibold text-link pointer">
+                                                    <u>{{item.text}}</u>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="font-weight-semibold font-size-12" *ngIf="item.time.length > 1">
+                                        {{item.time}}
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>    
+                    <div class="conversation-footer">
+                        <input [(ngModel)]="msg" class="chat-input" type="text" placeholder="Type a message..." (keydown.enter)="sendMsg(msg);$event.preventDefault()">
+                        <ul class="list-inline d-flex align-items-center m-b-0">
+                            <li class="list-inline-item">
+                                <a class="text-gray font-size-20" nz-tooltip nzTooltipTitle="Emoji">
+                                    <i nz-icon nzType="smile" theme="outline"></i>
+                                </a>
+                            </li> 
+                            <li class="list-inline-item">
+                                <a class="text-gray font-size-20" nz-tooltip nzTooltipTitle="Attachment">
+                                    <i nz-icon nzType="paper-clip" theme="outline"></i>
+                                </a>
+                            </li>    
+                            <li class="list-inline-item">
+                                <button class="d-none d-md-block" nz-button nzType="primary" (click)="sendMsg(msg)">
+                                    <span class="m-r-10">Send</span>
+                                    <i class="far fa-paper-plane"></i>
+                                </button>
+                                <a class="text-gray font-size-20 d-md-none d-block" (click)="sendMsg(msg)" nz-tooltip nzTooltipTitle="Attachment">
+                                    <i nz-icon nzType="paper-clip" theme="outline"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>

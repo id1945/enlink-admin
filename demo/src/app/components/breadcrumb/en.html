@@ -1,0 +1,200 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-breadcrumb-demo-basic" nzTitle="Basic Usage"></nz-link><nz-link nzHref="#components-breadcrumb-demo-with-icon" nzTitle="With an Icon"></nz-link><nz-link nzHref="#components-breadcrumb-demo-router" nzTitle="RouterLink"></nz-link><nz-link nzHref="#components-breadcrumb-demo-auto" nzTitle="Auto generated breadcrumbs"></nz-link><nz-link nzHref="#components-breadcrumb-demo-separator" nzTitle="Configuring the Separator"></nz-link><nz-link nzHref="#components-breadcrumb-demo-dropdown" nzTitle="Bread crumbs with drop down menu"></nz-link><nz-link nzHref="#components-breadcrumb-demo-separator-independent" nzTitle="Configuring the Separator Independently"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Breadcrumb<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A breadcrumb displays the current location within a hierarchy. It allows going back to states higher up in the hierarchy.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When the system has more than two layers in a hierarchy.</li>
+<li>When you need to inform the user of where they are.</li>
+<li>When the user may need to navigate back to a higher level.</li>
+<li>When the application has multi-layer architecture.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzBreadCrumbModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/breadcrumb'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic Usage"
+  [nzId]="'components-breadcrumb-demo-basic'"
+  nzSelector="nz-demo-breadcrumb-basic"
+  [nzLink]="'components-breadcrumb-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-basic <name>"
+  nzComponentName="NzDemoBreadcrumbBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/basic.md'">
+	<nz-demo-breadcrumb-basic demo></nz-demo-breadcrumb-basic>
+	<div intro ngNonBindable>
+		<p>The simplest use</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="RouterLink"
+  [nzId]="'components-breadcrumb-demo-router'"
+  nzSelector="nz-demo-breadcrumb-router"
+  [nzLink]="'components-breadcrumb-demo-router'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-router <name>"
+  nzComponentName="NzDemoBreadcrumbRouterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/router.md'">
+	<nz-demo-breadcrumb-router demo></nz-demo-breadcrumb-router>
+	<div intro ngNonBindable>
+		<p>Used together with <a href="https://angular.io/api/router/RouterLink">RouterLink</a>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Configuring the Separator"
+  [nzId]="'components-breadcrumb-demo-separator'"
+  nzSelector="nz-demo-breadcrumb-separator"
+  [nzLink]="'components-breadcrumb-demo-separator'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-separator <name>"
+  nzComponentName="NzDemoBreadcrumbSeparatorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/separator.md'">
+	<nz-demo-breadcrumb-separator demo></nz-demo-breadcrumb-separator>
+	<div intro ngNonBindable>
+		<p>The separator can be customized by setting the separator property: <code>nzSeparator</code></p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Configuring the Separator Independently"
+  [nzId]="'components-breadcrumb-demo-separator-independent'"
+  nzSelector="nz-demo-breadcrumb-separator-independent"
+  [nzLink]="'components-breadcrumb-demo-separator-independent'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-separator-independent <name>"
+  nzComponentName="NzDemoBreadcrumbSeparatorIndependentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/separator-independent.md'">
+	<nz-demo-breadcrumb-separator-independent demo></nz-demo-breadcrumb-separator-independent>
+	<div intro ngNonBindable>
+		<p>The separator can be customized by using the component <code>nz-breadcrumb-separator</code>.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="With an Icon"
+  [nzId]="'components-breadcrumb-demo-with-icon'"
+  nzSelector="nz-demo-breadcrumb-with-icon"
+  [nzLink]="'components-breadcrumb-demo-with-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-with-icon <name>"
+  nzComponentName="NzDemoBreadcrumbWithIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/with-icon.md'">
+	<nz-demo-breadcrumb-with-icon demo></nz-demo-breadcrumb-with-icon>
+	<div intro ngNonBindable>
+		<p>The icon should be placed in front of the text.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Auto generated breadcrumbs"
+  [nzId]="'components-breadcrumb-demo-auto'"
+  nzSelector="nz-demo-breadcrumb-auto"
+  [nzLink]="'components-breadcrumb-demo-auto'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-auto <name>"
+  nzComponentName="NzDemoBreadcrumbAutoComponent"
+  nzIframeSource="https://stackblitz.com/edit/ng-zorro-breadcrumb-auto?embed=1&file=src/app/app.component.html&hideExplorer=1&hideNavigation=1&view=preview"
+  nzIframeHeight="460"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/auto.md'">
+	<nz-demo-breadcrumb-auto demo></nz-demo-breadcrumb-auto>
+	<div intro ngNonBindable>
+		<p>Auto generate breadcrumbs using <code>router.data</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Bread crumbs with drop down menu"
+  [nzId]="'components-breadcrumb-demo-dropdown'"
+  nzSelector="nz-demo-breadcrumb-dropdown"
+  [nzLink]="'components-breadcrumb-demo-dropdown'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-dropdown <name>"
+  nzComponentName="NzDemoBreadcrumbDropdownComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/dropdown.md'">
+	<nz-demo-breadcrumb-dropdown demo></nz-demo-breadcrumb-dropdown>
+	<div intro ngNonBindable>
+		<p>Breadcrumbs support drop down menu.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-breadcrumb"><span>nz-breadcrumb</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-breadcrumb'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSeparator]</code></td>
+<td>Custom separator</td>
+<td><code>string | TemplateRef&lt;void&gt; | null</code></td>
+<td><code>&#39;/&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzAutoGenerate]</code></td>
+<td>Auto generate breadcrumb</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzRouteLabel]</code></td>
+<td>Name of property that determines displayed text in routing config. It should be used when <code>nzAutoGenerate</code> is <code>true</code></td>
+<td><code>string</code></td>
+<td><code>&#39;breadcrumb&#39;</code></td>
+</tr>
+</tbody></table>
+<p>Using <code>[nzAutoGenerate]</code> by configuring <code>data</code> like this:</p>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'/path'</span><span class="token punctuation">,</span>
+  component<span class="token punctuation">:</span> SomeComponent<span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    breadcrumb<span class="token punctuation">:</span> <span class="token string">'Display Name'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>For lazy loading moduels, you should write <code>data</code> in parent module like this:</p>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'first'</span><span class="token punctuation">,</span>
+  loadChildren<span class="token punctuation">:</span> <span class="token string">'./first/first.module#FirstModule'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    breadcrumb<span class="token punctuation">:</span> <span class="token string">'First'</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>use <code>nzRouteLabel</code> to custom <code>data</code> breadcrumb label:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-breadcrumb</span> <span class="token attr-name">[nzAutoGenerate]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">[nzRouteLabel]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>customBreadcrumb<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-breadcrumb</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'path'</span><span class="token punctuation">,</span>
+  component<span class="token punctuation">:</span> SomeComponent<span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    customBreadcrumb<span class="token punctuation">:</span> <span class="token string">'Display Name'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

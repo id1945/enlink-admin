@@ -1,0 +1,116 @@
+.common-layout {
+    
+    .page-container {
+        min-height: 100vh;
+        padding-left: $side-nav-width;
+        @include transition(all 0.2s ease); 
+
+        @include screen-laptop-only {
+            padding-left: $side-nav-width-laptop;
+        }
+
+        @include screen-tablet {
+            padding-left: 0px;
+        }    
+        
+        .main-content {
+            padding: calc(#{$header-height} + #{$layout-content-gutter}) $layout-content-gutter $layout-content-gutter $layout-content-gutter;
+            min-height: calc(100vh - #{$footer-height});
+
+            @include screen-mobile {
+                padding: calc(#{$header-height} + #{$layout-content-gutter-sm}) $layout-content-gutter-sm $layout-content-gutter-sm $layout-content-gutter-sm;
+            }   
+            
+            .main-content-header {
+                @include screen-mobile-above {
+                    display: flex;
+                    align-items: center;
+                }
+                
+                padding-left: 5px; 
+                margin-bottom: $layout-content-gutter;
+
+                .page-title {
+                    margin-bottom: 0px;
+                    margin-right: 20px;
+                    color: $gray;
+                    font-size: 17px;
+                    line-height: 1;
+
+                    @include screen-mobile {
+                        margin-bottom: 20px;
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-header {
+        margin-left: -$layout-content-gutter;
+        margin-right: -$layout-content-gutter;
+        margin-top: -$layout-content-gutter;
+        margin-bottom: $layout-content-gutter; 
+        background-color: $white;
+        border-bottom: 1px solid $border-color;
+        padding: 25px 30px;
+
+        &.has-tab {
+            border-bottom: 0px;
+            margin-bottom: 0px;
+            padding-bottom: 1px;
+        }
+
+        @include screen-mobile {
+            margin-left: -$layout-content-gutter-sm;
+            margin-right: -$layout-content-gutter-sm;
+            margin-top: -$layout-content-gutter-sm;
+            margin-bottom: $layout-content-gutter-sm; 
+        }    
+    }
+
+    .page-header-tab {
+        margin-left: -$layout-content-gutter;
+        margin-right: -$layout-content-gutter;
+
+        @include screen-mobile {
+            margin-left: -$layout-content-gutter-sm;
+            margin-right: -$layout-content-gutter-sm;
+        }     
+
+        .ant-tabs-nav {
+            background-color: $white; 
+            padding-left: $layout-content-gutter;
+            padding-right: $layout-content-gutter;
+            margin-bottom: $layout-content-gutter; 
+
+            @include screen-mobile {
+                padding-left: $layout-content-gutter-sm;
+                padding-right: $layout-content-gutter-sm;
+                margin-bottom: $layout-content-gutter-sm; 
+            }
+        } 
+
+        .ant-tabs-content {
+
+            .ant-tabs-tabpane {
+                padding-left: $layout-content-gutter;
+                padding-right: $layout-content-gutter;
+
+                @include screen-mobile {
+                    padding-left: $layout-content-gutter-sm;
+                    padding-right: $layout-content-gutter-sm;
+                }    
+            }
+        }
+    }
+
+    &.is-folded {
+
+        @include screen-tablet-above {
+            .page-container {
+                padding-left: $side-nav-folded;
+            }    
+        }
+    }
+}

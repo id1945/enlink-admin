@@ -1,0 +1,219 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-typography-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-typography-demo-title" nzTitle="标题组件"></nz-link><nz-link nzHref="#components-typography-demo-interactive" nzTitle="可交互"></nz-link><nz-link nzHref="#components-typography-demo-text" nzTitle="文本组件"></nz-link><nz-link nzHref="#components-typography-demo-ellipsis" nzTitle="省略号"></nz-link><nz-link nzHref="#components-typography-demo-suffix" nzTitle="后缀"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Typography<span class="subtitle">排版</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>文本的基本格式。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当需要展示标题、段落、列表内容时使用，如文章/博客/日志的文本样式。</li>
+<li>当需要一列基于文本的基础操作时，如拷贝/省略/可编辑。</li>
+</ul>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-typography-demo-basic'"
+  nzSelector="nz-demo-typography-basic"
+  [nzLink]="'components-typography-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-basic <name>"
+  nzComponentName="NzDemoTypographyBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/basic.md'">
+	<nz-demo-typography-basic demo></nz-demo-typography-basic>
+	<div intro ngNonBindable>
+		<p>展示文档样例。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="标题组件"
+  [nzId]="'components-typography-demo-title'"
+  nzSelector="nz-demo-typography-title"
+  [nzLink]="'components-typography-demo-title'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-title <name>"
+  nzComponentName="NzDemoTypographyTitleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/title.md'">
+	<nz-demo-typography-title demo></nz-demo-typography-title>
+	<div intro ngNonBindable>
+		<p>展示不同级别的标题。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可交互"
+  [nzId]="'components-typography-demo-interactive'"
+  nzSelector="nz-demo-typography-interactive"
+  [nzLink]="'components-typography-demo-interactive'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-interactive <name>"
+  nzComponentName="NzDemoTypographyInteractiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/interactive.md'">
+	<nz-demo-typography-interactive demo></nz-demo-typography-interactive>
+	<div intro ngNonBindable>
+		<p>提供额外的交互能力。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="文本组件"
+  [nzId]="'components-typography-demo-text'"
+  nzSelector="nz-demo-typography-text"
+  [nzLink]="'components-typography-demo-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-text <name>"
+  nzComponentName="NzDemoTypographyTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/text.md'">
+	<nz-demo-typography-text demo></nz-demo-typography-text>
+	<div intro ngNonBindable>
+		<p>内置不同样式的文本。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="省略号"
+  [nzId]="'components-typography-demo-ellipsis'"
+  nzSelector="nz-demo-typography-ellipsis"
+  [nzLink]="'components-typography-demo-ellipsis'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-ellipsis <name>"
+  nzComponentName="NzDemoTypographyEllipsisComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/ellipsis.md'">
+	<nz-demo-typography-ellipsis demo></nz-demo-typography-ellipsis>
+	<div intro ngNonBindable>
+		<p>多行文本省略。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="后缀"
+  [nzId]="'components-typography-demo-suffix'"
+  nzSelector="nz-demo-typography-suffix"
+  [nzLink]="'components-typography-demo-suffix'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-suffix <name>"
+  nzComponentName="NzDemoTypographySuffixComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/suffix.md'">
+	<nz-demo-typography-suffix demo></nz-demo-typography-suffix>
+	<div intro ngNonBindable>
+		<p>添加后缀的省略。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-typography]"><span>[nz-typography]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-typography]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzContent]</code></td>
+<td>组件内容</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCopyable]</code></td>
+<td>是否可拷贝，需要配合 <code>[nzContent]</code> 使用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEditable]</code></td>
+<td>是否可编辑，需要配合 <code>[nzContent]</code> 使用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEllipsis]</code></td>
+<td>自动溢出省略，动态内容时需要配合 <code>[nzContent]</code> 使用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandable]</code></td>
+<td>自动溢出省略时是否可展开</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>自动溢出省略时的文本后缀</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCopyText]</code></td>
+<td>自定义被拷贝的文本</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用文本</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEllipsisRows]</code></td>
+<td>自动溢出省略时省略行数</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>文本类型</td>
+<td><code>&#39;secondary&#39;｜&#39;warning&#39;｜&#39;danger&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzContentChange)</code></td>
+<td>当用户提交编辑内容时触发</td>
+<td><code>EventEmitter&lt;string&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>展开省略文本时触发</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

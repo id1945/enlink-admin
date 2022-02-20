@@ -1,0 +1,298 @@
+[
+    {
+        "name": "App Flow.pdf",
+        "type": "pdf",
+        "url": "",
+        "size": "19.8MB",
+        "date": "Feb 17, 2019",
+        "modifiedDate": "Feb 17, 2019",
+        "author": "Erin Gonzales",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-1.jpg",
+                "name": "Erin Gonzales",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Guide Line.pdf",
+                    "Business Plan.doc"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-1.jpg",
+                "name": "Erin Gonzales",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Expenses.xls"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Documentation.doc",
+        "type": "doc",
+        "url": "",
+        "size": "1.2MB",
+        "date": "Feb 03, 2019",
+        "modifiedDate": "Feb 03, 2019",
+        "author": "Darryl Day",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-2.jpg",
+                "name": "Darryl Day",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Guide Line.pdf",
+                    "Business Plan.doc"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Expensess.xls",
+        "type": "xls",
+        "url": "",
+        "size": "518KB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Marshall Nichols",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-3.jpg",
+                "name": "Marshall Nichols",
+                "text": "files",
+                "action": "modified",
+                "time": "7:57PM",
+                "files": [
+                    "Expensess.xls"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-3.jpg",
+                "name": "Marshall Nichols",
+                "text": "files",
+                "action": "added",
+                "time": "9:50AM",
+                "files": [
+                    "Expensess.xls"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Presentation.ppt",
+        "type": "ppt",
+        "url": "",
+        "size": "308KB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Marshall Nichols",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-4.jpg",
+                "name": "Virgil Gonzales",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Presentation.ppt"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Guideline.doc",
+        "type": "doc",
+        "url": "",
+        "size": "1.2MB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Nicole Wyne",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-5.jpg",
+                "name": "Nicole Wyne",
+                "text": "files",
+                "action": "modified",
+                "time": "7:57PM",
+                "files": [
+                    "Guideline.doc"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-5.jpg",
+                "name": "Nicole Wyne",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Guide Line.pdf"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-5.jpg",
+                "name": "Nicole Wyne",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Guideline.doc"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Annual_Report.xls",
+        "type": "xls",
+        "url": "",
+        "size": "518KB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Riley Newman",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-6.jpg",
+                "name": "Riley Newman",
+                "text": "files",
+                "action": "modified",
+                "time": "10:25PM",
+                "files": [
+                    "Annual_Report.xls"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-6.jpg",
+                "name": "Riley Newman",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Annual_Report.xls"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Design_brief.doc",
+        "type": "doc",
+        "url": "",
+        "size": "168KB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Darryl Day",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-7.jpg",
+                "name": "Pamela Wanda",
+                "text": "files",
+                "action": "modified",
+                "time": "3:07AM",
+                "files": [
+                    "Design_brief.doc"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-7.jpg",
+                "name": "Pamela Wanda",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Design_brief.doc"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Wallpapers",
+        "type": "folder",
+        "url": "",
+        "size": "57.3MB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Darryl Day",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-7.jpg",
+                "name": "Pamela Wanda",
+                "text": "files",
+                "action": "added",
+                "time": "3:07AM",
+                "files": [
+                    "Design_brief.doc",
+                    "Annual_Report.xls"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-6.jpg",
+                "name": "Riley Newman",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Design_brief.doc"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Secret Movies",
+        "type": "folder",
+        "url": "",
+        "size": "43.9MB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Darryl Day",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-2.jpg",
+                "name": "Darryl Day",
+                "text": "files",
+                "action": "added",
+                "time": "3:07AM",
+                "files": [
+                    "Design_brief.doc",
+                    "Documentation.doc"
+                ]
+            },
+            {
+                "avatar": "assets/images/avatars/thumb-2.jpg",
+                "name": "Darryl Day",
+                "text": "files",
+                "action": "added",
+                "time": "7:57PM",
+                "files": [
+                    "Design_brief.doc"
+                ]
+            }
+        ]    
+    },
+    {
+        "name": "Holiday Plans",
+        "type": "folder",
+        "url": "",
+        "size": "19.8MB",
+        "date": "Jan 7, 2019",
+        "modifiedDate": "Jan 7, 2019",
+        "author": "Marshall Nichols",
+        "activity": [
+            {
+                "avatar": "assets/images/avatars/thumb-3.jpg",
+                "name": "Marshall Nichols",
+                "text": "files",
+                "action": "added",
+                "time": "3:07AM",
+                "files": [
+                    "Korea Tour.pdf",
+                    "Japan Tour.pdf",
+                    "Italy Tour.pdf"
+                ]
+            }
+        ]    
+    }
+]

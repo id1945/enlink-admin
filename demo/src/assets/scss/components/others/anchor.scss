@@ -1,0 +1,51 @@
+.ant-anchor {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    margin: 0;
+    padding: 0 0 0 2px;
+
+    &.fixed {
+        position: relative;
+    }
+}    
+
+.ant-anchor-link-title {
+    display: block;
+    position: relative;
+    color: $body-color;
+    margin-bottom: 10px;
+}    
+
+.ant-anchor-link {
+    padding: 8px 0 8px 15px;
+    line-height: $line-height-base;
+}
+
+.ant-anchor-link-active{
+
+    > .ant-anchor-link-title {
+        color: $brand-primary;
+    }
+}
+
+.ant-anchor-ink {
+    &:before {
+        content: ' ';
+        position: relative;
+        width: 2px;
+        height: 100%;
+        display: block;
+        background-color: $border-color;
+        margin: 0 auto;
+    }
+}
+
+.ant-anchor-ink-ball {
+    width: 10px;
+    height: 10px;
+    border-radius: $border-radius-circle;
+    border: 2px solid $brand-primary;
+    background-color: $white;
+}

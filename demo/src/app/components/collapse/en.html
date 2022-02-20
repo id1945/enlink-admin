@@ -1,0 +1,233 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-collapse-demo-basic" nzTitle="Collapse"></nz-link><nz-link nzHref="#components-collapse-demo-accordion" nzTitle="Accordion"></nz-link><nz-link nzHref="#components-collapse-demo-mix" nzTitle="Nested panel"></nz-link><nz-link nzHref="#components-collapse-demo-borderless" nzTitle="Borderless"></nz-link><nz-link nzHref="#components-collapse-demo-custom" nzTitle="Custom Panel"></nz-link><nz-link nzHref="#components-collapse-demo-noarrow" nzTitle="No arrow"></nz-link><nz-link nzHref="#components-collapse-demo-extra" nzTitle="Extra Node"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Collapse<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A content area which can be collapsed and expanded.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>Can be used to group or hide complex regions to keep the page clean.</li>
+<li><code>Accordion</code> is a special kind of <code>Collapse</code>, which allows only one panel to be expanded at a time.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCollapseModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/collapse'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Collapse"
+  [nzId]="'components-collapse-demo-basic'"
+  nzSelector="nz-demo-collapse-basic"
+  [nzLink]="'components-collapse-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-basic <name>"
+  nzComponentName="NzDemoCollapseBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/basic.md'">
+	<nz-demo-collapse-basic demo></nz-demo-collapse-basic>
+	<div intro ngNonBindable>
+		<p>More than one panel can be expanded at a time, the first panel is initialized to be active in this case.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Accordion"
+  [nzId]="'components-collapse-demo-accordion'"
+  nzSelector="nz-demo-collapse-accordion"
+  [nzLink]="'components-collapse-demo-accordion'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-accordion <name>"
+  nzComponentName="NzDemoCollapseAccordionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/accordion.md'">
+	<nz-demo-collapse-accordion demo></nz-demo-collapse-accordion>
+	<div intro ngNonBindable>
+		<p>Accordion mode, only one panel can be expanded at a time. The first panel will be expanded by default.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Nested panel"
+  [nzId]="'components-collapse-demo-mix'"
+  nzSelector="nz-demo-collapse-mix"
+  [nzLink]="'components-collapse-demo-mix'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-mix <name>"
+  nzComponentName="NzDemoCollapseMixComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/mix.md'">
+	<nz-demo-collapse-mix demo></nz-demo-collapse-mix>
+	<div intro ngNonBindable>
+		<p><code>Collapse</code> is nested inside the <code>Collapse</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Borderless"
+  [nzId]="'components-collapse-demo-borderless'"
+  nzSelector="nz-demo-collapse-borderless"
+  [nzLink]="'components-collapse-demo-borderless'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-borderless <name>"
+  nzComponentName="NzDemoCollapseBorderlessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/borderless.md'">
+	<nz-demo-collapse-borderless demo></nz-demo-collapse-borderless>
+	<div intro ngNonBindable>
+		<p>A borderless style of Collapse.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom Panel"
+  [nzId]="'components-collapse-demo-custom'"
+  nzSelector="nz-demo-collapse-custom"
+  [nzLink]="'components-collapse-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-custom <name>"
+  nzComponentName="NzDemoCollapseCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/custom.md'">
+	<nz-demo-collapse-custom demo></nz-demo-collapse-custom>
+	<div intro ngNonBindable>
+		<p>Customize the background, border, margin and icon styles for each panel.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="No arrow"
+  [nzId]="'components-collapse-demo-noarrow'"
+  nzSelector="nz-demo-collapse-noarrow"
+  [nzLink]="'components-collapse-demo-noarrow'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-noarrow <name>"
+  nzComponentName="NzDemoCollapseNoarrowComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/noarrow.md'">
+	<nz-demo-collapse-noarrow demo></nz-demo-collapse-noarrow>
+	<div intro ngNonBindable>
+		<p>You can disable showing arrow icon by passing <code>[nzShowArrow]=&quot;false&quot;</code> to <code>nz-collapse-panel</code> component.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Extra Node"
+  [nzId]="'components-collapse-demo-extra'"
+  nzSelector="nz-demo-collapse-extra"
+  [nzLink]="'components-collapse-demo-extra'"
+  nzGenerateCommand="ng g ng-zorro-antd:collapse-extra <name>"
+  nzComponentName="NzDemoCollapseExtraComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/collapse/demo/extra.md'">
+	<nz-demo-collapse-extra demo></nz-demo-collapse-extra>
+	<div intro ngNonBindable>
+		<p>You can use <code>nzExtra</code> to put extra elements in the top right corner.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-collapse"><span>nz-collapse</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-collapse'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAccordion]</code></td>
+<td>Accordion mode</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzBordered]</code></td>
+<td>Set border style</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzExpandIconPosition]</code></td>
+<td>Set expand icon position</td>
+<td><code>&#39;left&#39; | &#39;right&#39;</code></td>
+<td><code>left</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-collapse-panel"><span>nz-collapse-panel</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-collapse-panel'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>If <code>true</code>, panel cannot be opened or closed</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHeader]</code></td>
+<td>Title of the panel</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandedIcon]</code></td>
+<td>Customize an icon for toggle</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExtra]</code></td>
+<td>Extra element in the corner</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowArrow]</code></td>
+<td>Display arrow or not</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzActive]</code></td>
+<td>Active status of panel, double binding</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzActiveChange)</code></td>
+<td>Callback function of the active status</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

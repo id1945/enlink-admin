@@ -1,0 +1,69 @@
+.ant-dropdown {
+    color: $dropdown-item-text;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: $zindex-dropdown;
+}    
+
+.ant-dropdown-menu {
+    min-width: $dropdown-min-width;
+    box-shadow: $dropdown-shadow;
+
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+}
+
+.ant-dropdown-menu-item, 
+.ant-dropdown-menu-submenu-title {
+    padding: $dropdown-padding-y $dropdown-padding-x;
+    margin: 0;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    color: $dropdown-item-text;
+    line-height: $line-height-base;
+
+    > a {
+        display: block;
+        padding: 0;
+        margin: 0;
+        @include transition(all 0.3s); 
+        color: $dropdown-item-text;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $dropdown-bg-hover;
+        color: $dropdown-item-text-hover;
+
+        > a {
+            color: $dropdown-item-text-hover;
+            background-color: transparent;
+        }
+    }
+}
+
+.ant-dropdown-menu-item-disabled,
+.ant-dropdown-menu-submenu-title-disabled {
+    color: rgba($dropdown-item-text,.25);
+    cursor: not-allowed;
+
+    &:hover {
+        color: rgba($dropdown-item-text,.25);
+        background-color: $white;
+        cursor: not-allowed;
+    }
+}
+
+.ant-dropdown-menu-item-selected,
+.ant-dropdown-menu-submenu-title-selected {
+    background-color: $dropdown-bg-hover;
+    color: $dropdown-item-text-hover;
+
+    > a {
+        background-color: $dropdown-bg-hover;
+        color: $dropdown-item-text-hover;
+    }
+}

@@ -1,0 +1,299 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-icon-demo-basic" nzTitle="Basic usage"></nz-link><nz-link nzHref="#components-icon-demo-twotone" nzTitle="Two-tone icon and colorful icon"></nz-link><nz-link nzHref="#components-icon-demo-custom" nzTitle="Custom icon"></nz-link><nz-link nzHref="#components-icon-demo-iconfont" nzTitle="Use iconfont.cn"></nz-link><nz-link nzHref="#components-icon-demo-namespace" nzTitle="Namespace"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Icon<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Semantic vector graphics.</p>
+<h2 id="list-of-icons"><span>List of icons</span><a onclick="window.location.hash = 'list-of-icons'" class="anchor">#</a></h2><p>We are still adding icons right now, syncing to <a href="https://ant.design/components/icon/">antd</a>.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzIconModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/icon'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	<section class="page-demo"><nz-page-demo-icon-en></nz-page-demo-icon-en></section>
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic usage"
+  [nzId]="'components-icon-demo-basic'"
+  nzSelector="nz-demo-icon-basic"
+  [nzLink]="'components-icon-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-basic <name>"
+  nzComponentName="NzDemoIconBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/basic.md'">
+	<nz-demo-icon-basic demo></nz-demo-icon-basic>
+	<div intro ngNonBindable>
+		<p>Use <code>&lt;i nz-icon&gt;&lt;/i&gt;</code> to create an icon and set its type in the <code>nzType</code> prop. Specific the <code>nzSpin</code> prop to show spinning animation and the theme property to switch different themes. Old API <code>&lt;i class=&quot;anticon&quot;&gt;&lt;/i&gt;</code></p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom icon"
+  [nzId]="'components-icon-demo-custom'"
+  nzSelector="nz-demo-icon-custom"
+  [nzLink]="'components-icon-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-custom <name>"
+  nzComponentName="NzDemoIconCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/custom.md'">
+	<nz-demo-icon-custom demo></nz-demo-icon-custom>
+	<div intro ngNonBindable>
+		<p>You can just put a <code>svg</code> element inside of a <code>nz-icon</code> to render custom content. We would take care of size and color things for you.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Namespace"
+  [nzId]="'components-icon-demo-namespace'"
+  nzSelector="nz-demo-icon-namespace"
+  [nzLink]="'components-icon-demo-namespace'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-namespace <name>"
+  nzComponentName="NzDemoIconNamespaceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/namespace.md'">
+	<nz-demo-icon-namespace demo></nz-demo-icon-namespace>
+	<div intro ngNonBindable>
+		<p>You can use namespace to add your own icons. Static loading and dynamic loading are both supported.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Two-tone icon and colorful icon"
+  [nzId]="'components-icon-demo-twotone'"
+  nzSelector="nz-demo-icon-twotone"
+  [nzLink]="'components-icon-demo-twotone'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-twotone <name>"
+  nzComponentName="NzDemoIconTwotoneComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/twotone.md'">
+	<nz-demo-icon-twotone demo></nz-demo-icon-twotone>
+	<div intro ngNonBindable>
+		<p>Specify property <code>nzTheme</code> to <code>twotone</code> to render two-tone icons. You can also set the primary color.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Use iconfont.cn"
+  [nzId]="'components-icon-demo-iconfont'"
+  nzSelector="nz-demo-icon-iconfont"
+  [nzLink]="'components-icon-demo-iconfont'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-iconfont <name>"
+  nzComponentName="NzDemoIconIconfontComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/iconfont.md'">
+	<nz-demo-icon-iconfont demo></nz-demo-icon-iconfont>
+	<div intro ngNonBindable>
+		<p>If you are using <a href="http://iconfont.cn/">iconfont.cn</a>, you can use the icons in your project gracefully.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-icon]"><span>[nz-icon]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-icon]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzType]</code></td>
+<td>Type of the ant design icon</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTheme]</code></td>
+<td>Type of the ant design icon</td>
+<td><code>&#39;fill&#39;|&#39;outline&#39;|&#39;twotone&#39;</code></td>
+<td><code>&#39;outline&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSpin]</code></td>
+<td>Rotate icon with animation</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTwotoneColor]</code></td>
+<td>Only support the two-tone icon. Specific the primary color.</td>
+<td><code>string (hex color)</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzIconfont]</code></td>
+<td>Type of the icon from iconfont</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzRotate]</code></td>
+<td>Rotate degrees</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nziconservice"><span>NzIconService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nziconservice'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Methods/Properties</th>
+<th>Description</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>addIcon()</code></td>
+<td>To import icons statically</td>
+<td><code>IconDefinition</code></td>
+</tr>
+<tr>
+<td><code>addIconLiteral()</code></td>
+<td>To statically import custom icons</td>
+<td><code>string</code>, <code>string (SVG)</code></td>
+</tr>
+<tr>
+<td><code>fetchFromIconfont()</code></td>
+<td>To get icon assets from fonticon</td>
+<td><code>NzIconfontOption</code></td>
+</tr>
+<tr>
+<td><code>changeAssetsSource()</code></td>
+<td>To change the location of your icon assets, so that you can deploy these icons wherever you want</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+<h3 id="svg-icons"><span>SVG icons</span><a onclick="window.location.hash = 'svg-icons'" class="anchor">#</a></h3><p>We synced to Ant Design and replaced font icons with svg icons which bring benefits below:</p>
+<ul>
+<li>Complete offline usage of icon, no dependency of alipay cdn font icon file and no more empty square during downloading.</li>
+<li>Much more display accuracy in lower-level screens.</li>
+<li>Support multiple colors for icon.</li>
+<li>No need to change built-in icons with overriding styles by providing more props in component.</li>
+</ul>
+<p>You can join in <a href="https://github.com/ant-design/ant-design/issues/10353">this dicussion of Ant Design</a>.</p>
+<p>NG-ZORRO hadn&#39;t provided an icon component. Instead, icon based on font files was provided. We make this new directive compatible to old API. If you make no changes to your existing code, old icons would be dynamically loaded as <code>outline</code> icons. But the best pratice is always to use <code>nz-icon</code> directive and specify the <code>theme</code> prop.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[nzType]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>star<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">[nzTheme]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>fill<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<p>All the icons will be rendered to <code>&lt;svg&gt;</code>, and styles and classes applied to <code>&lt;i&gt;</code> would work.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[nzType]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>message<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#08c</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="static-loading-and-dynamic-loading"><span>Static loading and dynamic loading</span><a onclick="window.location.hash = 'static-loading-and-dynamic-loading'" class="anchor">#</a></h3><p>As for icons provided by Ant Design, there are two ways of importing them into your project.</p>
+<p>Static loading. By registering icons to <code>AppModule</code> you load icons statically.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> IconDefinition <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-angular'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzIconModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/icon'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Import what you need. RECOMMENDED. ✔️</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> AccountBookFill<span class="token punctuation">,</span> AlertFill<span class="token punctuation">,</span> AlertOutline <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-angular/icons'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> icons<span class="token punctuation">:</span> IconDefinition<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span> AccountBookFill<span class="token punctuation">,</span> AlertOutline<span class="token punctuation">,</span> AlertFill <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// Import all. NOT RECOMMENDED. ❌</span>
+<span class="token comment" spellcheck="true">// import * as AllIcons from '@ant-design/icons-angular/icons';</span>
+
+<span class="token comment" spellcheck="true">// const antDesignIcons = AllIcons as &#123;</span>
+<span class="token comment" spellcheck="true">//   [key: string]: IconDefinition;</span>
+<span class="token comment" spellcheck="true">// &#125;;</span>
+<span class="token comment" spellcheck="true">// const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    AppComponent
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    NzIconModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>icons<span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+  bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>Actually this calls <code>addIcon</code> of <code>NzIconService</code>. Icons imported would be bundled into your <code>.js</code> files. Static loading would increase your bundle&#39;s size so we recommend use dynamic importing as much as you can.</p>
+<blockquote>
+<p>Icons used by <code>NG-ZORRO</code> itself are imported statically to increase loading speed. However, icons demonstrated on the official website are loaded dynamically.</p>
+</blockquote>
+<p>Dynamic importing. This way would not increase your bundle&#39;s size. When NG-ZORRO detects that the icon you want to render hasn&#39;t been registered, it would fire a HTTP request to load it. All you have to do is to config your <code>angular.json</code> like this:</p>
+<pre class="language-json"><code><span class="token punctuation">&#123;</span>
+  <span class="token property">"assets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token property">"glob"</span><span class="token operator">:</span> <span class="token string">"**/*"</span><span class="token punctuation">,</span>
+      <span class="token property">"input"</span><span class="token operator">:</span> <span class="token string">"./node_modules/@ant-design/icons-angular/src/inline-svg/"</span><span class="token punctuation">,</span>
+      <span class="token property">"output"</span><span class="token operator">:</span> <span class="token string">"/assets/"</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>You can call <code>changeAssetsSource()</code> of <code>NzIconService</code> to change the location of your icon assets, so that you can deploy these icon assets to cdn. The parameter you passed would be add in front of <code>assets/</code>.</p>
+<p>Let&#39;s assume that you deploy static assets under <code>https://mycdn.somecdn.com/icons/assets</code>. You can call <code>changeAssetsSource(&#39;https://mycdn.somecdn.com/icons&#39;)</code> to tell NG-ZORRO that all your resources are located there.</p>
+<p>Please call this in component&#39;s constructor or <code>AppInitService</code>.</p>
+<h3 id="add-icons-in-lazy-loaded-modules"><span>Add Icons in Lazy-loaded Modules</span><a onclick="window.location.hash = 'add-icons-in-lazy-loaded-modules'" class="anchor">#</a></h3><p>Sometimes, you want to import icons in lazy modules to avoid increasing the size of the main.js. You can use <code>NzIconModule.forChild</code>.</p>
+<pre class="language-ts"><code>@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>CommonModule<span class="token punctuation">,</span> NzIconModule<span class="token punctuation">.</span><span class="token function">forChild</span><span class="token punctuation">(</span><span class="token punctuation">[</span>QuestionOutline<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">ChildModule</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></code></pre>
+<p>When <code>ChildModule</code> get loaded, the icon QuestionOutline would be usable across the application.</p>
+<h3 id="set-default-twotone-color"><span>Set Default TwoTone Color</span><a onclick="window.location.hash = 'set-default-twotone-color'" class="anchor">#</a></h3><p>When using the two-tone icons, you provide a global configuration like <code>&#123; nzIcon: &#123; nzTwotoneColor: &#39;xxx&#39; &#125; &#125;</code> via <code>NzConfigService</code> or call corresponding <code>set</code> method to change two default twotone color.</p>
+<h3 id="custom-font-icon"><span>Custom Font Icon</span><a onclick="window.location.hash = 'custom-font-icon'" class="anchor">#</a></h3><p>We added a <code>fetchFromIconfont</code> method function to help developer using their own icons deployed at <a href="http://iconfont.cn/">iconfont.cn</a> in a convenient way.</p>
+<blockquote>
+<p>This method is specified for iconfont.cn.</p>
+</blockquote>
+<pre class="language-ts"><code><span class="token keyword">this</span><span class="token punctuation">.</span>_iconService<span class="token punctuation">.</span><span class="token function">fetchFromIconfont</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  scriptUrl<span class="token punctuation">:</span> <span class="token string">'https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[iconfont]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>icon-tuichu<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<p>It create a component that uses SVG sprites in essence.</p>
+<p>The following option are available:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>scriptUrl</code></td>
+<td>The URL generated by iconfont.cn project.</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>The property scriptUrl should be set to import the svg sprite symbols.</p>
+<p>See <a href="http://iconfont.cn/help/detail?spm=a313x.7781069.1998910419.15&amp;helptype=code">iconfont.cn</a> documents to learn about how to generate scriptUrl.</p>
+<h3 id="namespace"><span>Namespace</span><a onclick="window.location.hash = 'namespace'" class="anchor">#</a></h3><p>We introduced namespace so you could add your own icons in a convenient way. When you wan to render an icon, you could assign <code>type</code> <code>namespace:name</code>. Dynamic importing and static importing are both supported.</p>
+<p>Static importing. Invoke <code>addIconLiteral</code> of <code>NzIconService</code>.</p>
+<p>Dynamic importing. Make sure that you have put your SVG resources in dir like <code>assets/$&#123;namespace&#125;</code>. For example, if you have a <code>panda</code> icon and in <code>zoo</code> namespace, you should put <code>panda.svg</code> in <code>assets/zoo</code>.</p>
+<h2 id="faq"><span>FAQ</span><a onclick="window.location.hash = 'faq'" class="anchor">#</a></h2><h3 id="all-my-icons-are-gone!"><span>All my icons are gone!</span><a onclick="window.location.hash = 'all-my-icons-are-gone!'" class="anchor">#</a></h3><p>Have you read the docs above?</p>
+<h3 id="there-are-two-similar-icons-in-a-<code>&lt;i&gt;&lt;/i&gt;</code>-tag--what-happened"><span>There are two similar icons in a <code>&lt;i&gt;&lt;/i&gt;</code> tag. What happened?</span><a onclick="window.location.hash = 'there-are-two-similar-icons-in-a-<code>&lt;i&gt;&lt;/i&gt;</code>-tag--what-happened'" class="anchor">#</a></h3><p>In older versions of NG-ZORRO, there was a font file which would use <code>:before</code> to insert a icon according to a <code>i</code> tag&#39;s <code>className</code>. So if you have two icons, try to remove <code>node_modules</code> and reinstall. If the problem is still there, search <code>@icon-url</code> and remove that line.</p>
+<h3 id="i-want-to-import-all-icons-statically--what-should-i-do"><span>I want to import all icons statically. What should I do?</span><a onclick="window.location.hash = 'i-want-to-import-all-icons-statically--what-should-i-do'" class="anchor">#</a></h3><p>Actually we demonstrate it here <a href="/components/icon/en#static-loading-and-dynamic-loading">Static loading and dynamic loading</a>:</p>
+<pre class="language-ts"><code><span class="token comment" spellcheck="true">// import * as AllIcons from '@ant-design/icons-angular/icons';</span>
+
+<span class="token comment" spellcheck="true">// const antDesignIcons = AllIcons as &#123;</span>
+<span class="token comment" spellcheck="true">//   [key: string]: IconDefinition;</span>
+<span class="token comment" spellcheck="true">// &#125;;</span>
+<span class="token comment" spellcheck="true">// const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])</span></code></pre>
+<h3 id="does-dynamic-loading-affect-web-pages&#39;-performance"><span>Does dynamic loading affect web pages&#39; performance?</span><a onclick="window.location.hash = 'does-dynamic-loading-affect-web-pages&#39;-performance'" class="anchor">#</a></h3><p>We used several methods to reduce requests, like static cache, dynamic cache and reusable request. It&#39;s basically not noticeable for visitors that icons are loaded asynchronously assuming web connections are fairly good.</p>
+<h3 id="how-do-i-know-a-icon&#39;s-corresponding-module-to-import"><span>How do I know a icon&#39;s corresponding module to import?</span><a onclick="window.location.hash = 'how-do-i-know-a-icon&#39;s-corresponding-module-to-import'" class="anchor">#</a></h3><p>Capital camel-case <code>type &amp; theme</code>, i.e. <code>alibaba</code> =&gt; <code>AlibabaOutline</code>.</p>
+</section></article>

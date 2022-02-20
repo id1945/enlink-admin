@@ -1,0 +1,164 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-calendar-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-calendar-demo-notice-calendar" nzTitle="Notice Calendar"></nz-link><nz-link nzHref="#components-calendar-demo-card" nzTitle="Card"></nz-link><nz-link nzHref="#components-calendar-demo-select" nzTitle="Selectable Calendar"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Calendar<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Container for displaying data in calendar form.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When data is in the form of dates, such as schedules, timetables, prices calendar, lunar calendar. This component also supports Year/Month switch.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCalendarModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/calendar'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-calendar-demo-basic'"
+  nzSelector="nz-demo-calendar-basic"
+  [nzLink]="'components-calendar-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-basic <name>"
+  nzComponentName="NzDemoCalendarBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/basic.md'">
+	<nz-demo-calendar-basic demo></nz-demo-calendar-basic>
+	<div intro ngNonBindable>
+		<p>A basic calendar component with Year/Month switch.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Notice Calendar"
+  [nzId]="'components-calendar-demo-notice-calendar'"
+  nzSelector="nz-demo-calendar-notice-calendar"
+  [nzLink]="'components-calendar-demo-notice-calendar'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-notice-calendar <name>"
+  nzComponentName="NzDemoCalendarNoticeCalendarComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/notice-calendar.md'">
+	<nz-demo-calendar-notice-calendar demo></nz-demo-calendar-notice-calendar>
+	<div intro ngNonBindable>
+		<p>This component can be rendered by using <code>nzDateCell</code> and <code>nzMonthCell</code> with the data you need.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Card"
+  [nzId]="'components-calendar-demo-card'"
+  nzSelector="nz-demo-calendar-card"
+  [nzLink]="'components-calendar-demo-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-card <name>"
+  nzComponentName="NzDemoCalendarCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/card.md'">
+	<nz-demo-calendar-card demo></nz-demo-calendar-card>
+	<div intro ngNonBindable>
+		<p>Nested inside a container element for rendering in limited space.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Selectable Calendar"
+  [nzId]="'components-calendar-demo-select'"
+  nzSelector="nz-demo-calendar-select"
+  [nzLink]="'components-calendar-demo-select'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-select <name>"
+  nzComponentName="NzDemoCalendarSelectComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/select.md'">
+	<nz-demo-calendar-select demo></nz-demo-calendar-select>
+	<div intro ngNonBindable>
+		<p>A basic calendar component with Year/Month switch.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><p><strong>Note:</strong> Some of Calendar&#39;s locale are coming from <a href="https://angular.io/guide/i18n">Angular i18n</a>, that should be provided in the file of <code>app.module.ts</code>.</p>
+<p>For example:</p>
+<pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> registerLocaleData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@angular/common'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> en <span class="token keyword">from</span> <span class="token string">'@angular/common/locales/en'</span><span class="token punctuation">;</span>
+<span class="token function">registerLocaleData</span><span class="token punctuation">(</span>en<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-calendar</span>
+  <span class="token attr-name">[nzDateCell]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dateCellTpl<span class="token punctuation">"</span></span>
+  <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectedDate<span class="token punctuation">"</span></span>
+  <span class="token attr-name">[(nzMode)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mode<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(nzPanelChange)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>panelChange($event)<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(nzSelectChange)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectChange($event)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment" spellcheck="true">&lt;!-- Another method for cell definition --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">*nzDateCell</span><span class="token punctuation">></span></span>Foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-calendar</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!-- Passing TemplateRef --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#dateCellTpl</span> <span class="token attr-name">let-date</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;&#123; date | date:'d'&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-calendar"><span>nz-calendar</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-calendar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[(ngModel)]</code></td>
+<td>(Two-way bindable) The current selected date</td>
+<td><code>Date</code></td>
+<td>current date</td>
+</tr>
+<tr>
+<td><code>[(nzMode)]</code></td>
+<td>The display mode of the calendar (two-way bindable)</td>
+<td><code>&#39;month&#39; | &#39;year&#39;</code></td>
+<td><code>&#39;month&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzFullscreen]</code></td>
+<td>Whether to display in full-screen</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzDateCell]</code></td>
+<td>(Contentable) Customize the display of the date cell, the template content will be appended to the cell</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDateFullCell]</code></td>
+<td>(Contentable) Customize the display of the date cell, the template content will override the cell</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMonthCell]</code></td>
+<td>(Contentable) Customize the display of the month cell, the template content will be appended to the cell</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMonthFullCell]</code></td>
+<td>(Contentable) Customize the display of the month cell, the template content will override the cell</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzPanelChange)</code></td>
+<td>Callback for when panel changes</td>
+<td><code>EventEmitter&lt;&#123; date: Date, mode: &#39;month&#39; | &#39;year&#39; &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

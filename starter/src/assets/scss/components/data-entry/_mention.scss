@@ -1,0 +1,33 @@
+
+.ant-mention-dropdown {
+    line-height: $line-height-base;
+    color: $dropdown-item-text;
+    margin: $dropdown-margin 0 0;
+    padding: 0;
+    list-style: none;
+    max-height: $dropdown-max-height;
+    min-width: $dropdown-min-width;
+    background-color: $dropdown-bg;
+    border-radius: $border-radius;
+    z-index: $zindex-dropdown;
+}
+
+.ant-mention-dropdown-item {
+    position: relative;
+    display: block;
+    padding: $dropdown-padding-y $dropdown-padding-x;
+    line-height: $line-height-base;
+    font-weight: $font-weight-normal;
+    color: $dropdown-item-text;
+}
+
+.ant-mention-dropdown-item-active,
+.ant-mention-dropdown-item.focus,
+.ant-mention-dropdown-item:hover {
+    background-color: $dropdown-bg-hover;
+}
+
+.ant-mention-dropdown,
+.ant-menu {
+    font-family: $font-family-sans-serif;
+}

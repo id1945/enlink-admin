@@ -1,0 +1,241 @@
+<div class="page-header">
+    <div class="row align-items-md-center">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-5">
+                    <nz-input-group [nzPrefix]="searchPrefix">
+                        <input type="text" nz-input placeholder="Search Project" [(ngModel)]="searchInput" (ngModelChange)="search()">
+                    </nz-input-group>
+                    <ng-template #searchPrefix>
+                        <i class="opacity-04" nz-icon nzType="search"></i>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-md-right m-v-10">
+                <nz-radio-group class="m-r-10" [(ngModel)]="view">
+                    <label nz-radio-button nzValue="cardView" nzTooltipTitle="Card View" nzTooltipPlacement="bottom" nz-tooltip>
+                        <i class="font-size-16" nz-icon nzType="appstore" theme="outline"></i>
+                    </label>
+                    <label nz-radio-button nzValue="listView" nzTooltipTitle="List View" nzTooltipPlacement="bottom" nz-tooltip>
+                        <i class="font-size-16" nz-icon nzType="ordered-list" theme="outline"></i>
+                    </label>
+                </nz-radio-group> 
+                <button nz-button nzType="primary" (click)="showNewProject(newProjectContent)">
+                    <i nz-icon nzType="plus"></i>
+                    <span>New Project</span>
+                </button>  
+                <ng-template #newProjectContent>
+                    <form nz-form nzLayout="vertical">
+                        <nz-form-item>
+                            <nz-form-label>Project</nz-form-label>
+                            <nz-form-control >
+                                <input type="text" nz-input placeholder="Please input project name">
+                            </nz-form-control>
+                        </nz-form-item>
+                        <nz-form-item>
+                            <nz-form-label>Description</nz-form-label>
+                            <nz-form-control >
+                                <textarea nz-input></textarea>
+                            </nz-form-control>
+                        </nz-form-item>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <nz-form-item>
+                                    <nz-form-label>Label</nz-form-label>
+                                    <nz-form-control >
+                                        <nz-form-control >
+                                            <nz-select class="w-100" nzMode="multiple" nzPlaceHolder="Select Label" >
+                                                <nz-option nzLabel="Web" nzValue="web"></nz-option>
+                                                <nz-option nzLabel="Mobile App" nzValue="mobile app"></nz-option>
+                                                <nz-option nzLabel="Design" nzValue="design"></nz-option>
+                                                <nz-option nzLabel="Web App" nzValue="web app"></nz-option>
+                                            </nz-select>
+                                        </nz-form-control>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                            <div class="col-md-6">
+                                <nz-form-item>
+                                    <nz-form-label>Member</nz-form-label>
+                                    <nz-form-control >
+                                        <nz-select class="w-100" nzMode="multiple" nzShowSearch nzAllowClear nzPlaceHolder="Select Member">
+                                            <nz-option class="d-flex align-items-center" nzCustomContent nzLabel="Erin Gonzales" nzValue="erin gonzales">
+                                                <nz-avatar nzIcon="user" [nzSize]="25" nzSrc="assets/images/avatars/thumb-1.jpg"></nz-avatar>
+                                                <span class="m-l-10">Erin Gonzales</span>
+                                            </nz-option>
+                                            <nz-option class="d-flex align-items-center" nzCustomContent nzLabel="Darryl Day" nzValue="darryl day">
+                                                <nz-avatar nzIcon="user" [nzSize]="25" nzSrc="assets/images/avatars/thumb-2.jpg"></nz-avatar>
+                                                <span class="m-l-10">Darryl Day</span>
+                                            </nz-option>
+                                            <nz-option class="d-flex align-items-center" nzCustomContent nzLabel="Marshall Nichols" nzValue="marshall nichols">
+                                                <nz-avatar nzIcon="user" [nzSize]="25" nzSrc="assets/images/avatars/thumb-3.jpg"></nz-avatar>
+                                                <span class="m-l-10">Marshall Nichols</span>
+                                            </nz-option>
+                                            <nz-option class="d-flex align-items-center" nzCustomContent nzLabel="Virgil Gonzales" nzValue="virgil gonzales">
+                                                <nz-avatar nzIcon="user" [nzSize]="25" nzSrc="assets/images/avatars/thumb-4.jpg"></nz-avatar>
+                                                <span class="m-l-10">Virgil Gonzales</span>
+                                            </nz-option>
+                                        </nz-select>
+                                    </nz-form-control>
+                                </nz-form-item>
+                            </div>
+                        </div>
+                        <nz-form-item>
+                            <nz-form-label>Due Date</nz-form-label>
+                            <nz-form-control >
+                                <nz-date-picker class="w-100" nzShowTime></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </form>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row" *ngIf="view == 'cardView'">
+        <div class="col-md-3" *ngFor="let item of projectList">
+            <nz-card>
+                <div class="d-flex justify-content-between">
+                    <div class="media">
+                        <nz-avatar [nzSize]="40" nzShape="square" [nzSrc]="item.avatar"></nz-avatar>
+                        <div class="m-l-10">
+                            <h5 class="m-b-0">{{item.project}}</h5>
+                            <span class="text-muted font-size-13">{{item.tasks}} Tasks</span>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="text-gray font-size-18" nz-dropdown nzTooltipPlacement="bottomRight" nzTrigger="click" [nzDropdownMenu]="projectListSetting">
+                            <i nz-icon nzType="ellipsis" theme="outline"></i>
+                        </a>
+                        <nz-dropdown-menu #projectListSetting="nzDropdownMenu">
+                            <ul nz-menu nzSelectable>
+                                <li nz-menu-item>
+                                    <a [routerLink]="['/apps/projects/project-details']">
+                                        <i nz-icon nzType="eye" theme="outline"></i>
+                                        <span class="m-l-10">View</span>
+                                    </a>
+                                </li>
+                                <li nz-menu-item>
+                                    <a>
+                                        <i nz-icon nzType="edit" theme="outline"></i>
+                                        <span class="m-l-10">Edit</span>
+                                    </a>
+                                </li>
+                                <li nz-menu-divider></li>
+                                <li nz-menu-item>
+                                    <a>
+                                        <i nz-icon nzType="delete" theme="outline"></i>
+                                        <span class="m-l-10">Delete</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nz-dropdown-menu>
+                    </div>
+                </div>
+                <p class="m-t-25">{{item.desc}}</p>
+                <div class="m-t-30">
+                    <div class="d-flex justify-content-between">
+                        <span class="font-weight-semibold">Progress</span>
+                        <span class="font-weight-semibold">{{item.progress}}%</span>
+                    </div>
+                    <nz-progress *ngIf="item.status !== 'Behind'" [nzPercent]="item.progress" [nzShowInfo]="false" nzSize="small"></nz-progress>
+                    <nz-progress *ngIf="item.status == 'Behind'" [nzPercent]="item.progress" [nzShowInfo]="false" nzSize="small" nzStatus="exception"></nz-progress>
+                </div>
+                <div class="m-t-20">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <nz-tag class="m-b-0" *ngIf="item.status == 'In Progress'" [nzColor]="'blue'">{{item.status}}</nz-tag>
+                            <nz-tag class="m-b-0" *ngIf="item.status == 'Ready'" [nzColor]="'cyan'">{{item.status}}</nz-tag>
+                            <nz-tag class="m-b-0" *ngIf="item.status == 'Behind'" [nzColor]="'red'">{{item.status}}</nz-tag>
+                        </div>
+                        <div>
+                            <a routerLinkActive="router-link-active"  class="m-r-5" *ngFor="let item of (item.member ? item.member.slice(0,2): [])">
+                                <nz-avatar  nzSize="small" [nzSrc]="item.avatar" nz-tooltip [nzTooltipTitle]="item.name"></nz-avatar>
+                            </a>
+                            <a *ngIf="item.member.length > 2">
+                                <nz-avatar class="font-size-11 text-dark" nzSize="small" [nzText]="'+' + [item.member.length - 2].toString()" nz-tooltip [nzTooltipTitle]="[item.member.length - 2].toString() + ' More'"></nz-avatar>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nz-card>
+        </div>
+    </div>    
+    <nz-card *ngIf="view == 'listView'">
+        <nz-table #listViewTable [nzData]="projectList">
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Tasks</th>
+                    <th>Members</th>
+                    <th>Progress</th>
+                    <th class="text-center">Status</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listViewTable.data">
+                    <td>
+                        <div class="media align-items-center">
+                            <nz-avatar nzShape="square" [nzSrc]="item.avatar"></nz-avatar>
+                            <div class="m-l-10">
+                                <h5 class="m-b-0">{{item.project}}</h5>
+                            </div>
+                        </div>
+                    </td>
+                    <td>{{item.tasks}} Tasks</td>
+                    <td>
+                        <a routerLinkActive="router-link-active"  class="m-r-5" *ngFor="let item of (item.member ? item.member.slice(0,2): [])">
+                            <nz-avatar  nzSize="small" [nzSrc]="item.avatar" nz-tooltip [nzTooltipTitle]="item.name"></nz-avatar>
+                        </a>
+                        <a *ngIf="item.member.length > 2">
+                            <nz-avatar class="font-size-11 text-dark" nzSize="small" [nzText]="'+' + [item.member.length - 2].toString()" nz-tooltip [nzTooltipTitle]="[item.member.length - 2].toString() + ' More'"></nz-avatar>
+                        </a>
+                    </td>
+                    <td>
+                        <nz-progress *ngIf="item.status !== 'Behind'" [nzPercent]="item.progress" nzSize="small"></nz-progress>
+                        <nz-progress *ngIf="item.status == 'Behind'" [nzPercent]="item.progress" nzSize="small" nzStatus="exception"></nz-progress>
+                    </td>
+                    <td class="text-center">
+                        <nz-tag class="m-b-0" *ngIf="item.status == 'In Progress'" [nzColor]="'blue'">{{item.status}}</nz-tag>
+                        <nz-tag class="m-b-0" *ngIf="item.status == 'Ready'" [nzColor]="'cyan'">{{item.status}}</nz-tag>
+                        <nz-tag class="m-b-0" *ngIf="item.status == 'Behind'" [nzColor]="'red'">{{item.status}}</nz-tag>
+                    </td>
+                    <td class="text-right">
+                        <div>
+                            <a class="text-gray font-size-18" nz-dropdown nzPlacement="bottomRight" nzTrigger="click" [nzDropdownMenu]="projectListSetting2">
+                                    <i nz-icon nzType="ellipsis" theme="outline"></i>
+                                </a>
+                                <nz-dropdown-menu #projectListSetting2="nzDropdownMenu">
+                                    <ul nz-menu nzSelectable>
+                                        <li nz-menu-item>
+                                            <a [routerLink]="['/apps/projects/project-details']">
+                                                <i nz-icon nzType="eye" theme="outline"></i>
+                                                <span class="m-l-10">View</span>
+                                            </a>
+                                        </li>
+                                        <li nz-menu-item>
+                                            <a>
+                                                <i nz-icon nzType="edit" theme="outline"></i>
+                                                <span class="m-l-10">Edit</span>
+                                            </a>
+                                        </li>
+                                        <li nz-menu-divider></li>
+                                        <li nz-menu-item>
+                                            <a>
+                                                <i nz-icon nzType="delete" theme="outline"></i>
+                                                <span class="m-l-10">Delete</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nz-dropdown-menu>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </nz-table>
+    </nz-card>
+</div>

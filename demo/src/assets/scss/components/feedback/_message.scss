@@ -1,0 +1,37 @@
+.ant-message {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    position: fixed;
+    z-index: $zindex-sticky;
+    width: 100%;
+    top: 1rem;
+}
+
+.ant-message-notice-content {
+    padding: 0.625rem 1rem;
+    border-radius: $border-radius;
+    background: $white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15)
+}
+
+.ant-message-success .anticon {
+    color: $state-success-text;
+}
+
+.ant-message-info .anticon {
+    color: $state-info-text;
+}
+
+.ant-message-error .anticon {
+    color: $state-warning-text;
+}
+
+.ant-message-error .anticon {
+    color: $state-danger-text;
+}
+
+.ant-message-loading .anticon {
+    color: $brand-primary;
+}

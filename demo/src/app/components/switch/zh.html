@@ -1,0 +1,212 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-switch-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-switch-demo-disabled" nzTitle="不可用"></nz-link><nz-link nzHref="#components-switch-demo-text" nzTitle="文字和图标"></nz-link><nz-link nzHref="#components-switch-demo-size" nzTitle="两种大小"></nz-link><nz-link nzHref="#components-switch-demo-loading" nzTitle="加载中"></nz-link><nz-link nzHref="#components-switch-demo-control" nzTitle="完整控制"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Switch<span class="subtitle">开关</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>开关选择器。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>需要表示开关状态/两种状态之间的切换时；</li>
+<li>和 <code>checkbox</code>的区别是，切换 <code>switch</code> 会直接触发状态改变，而 <code>checkbox</code> 一般用于状态标记，需要和提交操作配合。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSwitchModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/switch'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-switch-demo-basic'"
+  nzSelector="nz-demo-switch-basic"
+  [nzLink]="'components-switch-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-basic <name>"
+  nzComponentName="NzDemoSwitchBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/basic.md'">
+	<nz-demo-switch-basic demo></nz-demo-switch-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="文字和图标"
+  [nzId]="'components-switch-demo-text'"
+  nzSelector="nz-demo-switch-text"
+  [nzLink]="'components-switch-demo-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-text <name>"
+  nzComponentName="NzDemoSwitchTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/text.md'">
+	<nz-demo-switch-text demo></nz-demo-switch-text>
+	<div intro ngNonBindable>
+		<p>带有文字和图标。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="加载中"
+  [nzId]="'components-switch-demo-loading'"
+  nzSelector="nz-demo-switch-loading"
+  [nzLink]="'components-switch-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-loading <name>"
+  nzComponentName="NzDemoSwitchLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/loading.md'">
+	<nz-demo-switch-loading demo></nz-demo-switch-loading>
+	<div intro ngNonBindable>
+		<p>标识开关操作仍在执行中。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="不可用"
+  [nzId]="'components-switch-demo-disabled'"
+  nzSelector="nz-demo-switch-disabled"
+  [nzLink]="'components-switch-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-disabled <name>"
+  nzComponentName="NzDemoSwitchDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/disabled.md'">
+	<nz-demo-switch-disabled demo></nz-demo-switch-disabled>
+	<div intro ngNonBindable>
+		<p>Switch 失效状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="两种大小"
+  [nzId]="'components-switch-demo-size'"
+  nzSelector="nz-demo-switch-size"
+  [nzLink]="'components-switch-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-size <name>"
+  nzComponentName="NzDemoSwitchSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/size.md'">
+	<nz-demo-switch-size demo></nz-demo-switch-size>
+	<div intro ngNonBindable>
+		<p><code>nzSize=&quot;small&quot;</code> 表示小号开关。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="完整控制"
+  [nzId]="'components-switch-demo-control'"
+  nzSelector="nz-demo-switch-control"
+  [nzLink]="'components-switch-demo-control'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-control <name>"
+  nzComponentName="NzDemoSwitchControlComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/control.md'">
+	<nz-demo-switch-control demo></nz-demo-switch-control>
+	<div intro ngNonBindable>
+		<p><code>Switch</code> 的状态完全由用户接管，不再自动根据点击事件改变数据。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-switch"><span>nz-switch</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-switch'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>指定当前是否选中，可双向绑定</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCheckedChildren]</code></td>
+<td>选中时的内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzUnCheckedChildren]</code></td>
+<td>非选中时的内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>disable 状态</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>开关大小，可选值：<code>default</code> <code>small</code></td>
+<td><code>&#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>加载中的开关</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzControl]</code></td>
+<td>是否完全由用户控制状态</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>当前是否选中的回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>focus()</td>
+<td>获取焦点</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>移除焦点</td>
+</tr>
+</tbody></table>
+</section></article>

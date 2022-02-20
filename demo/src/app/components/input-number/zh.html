@@ -1,0 +1,249 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-input-number-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-input-number-demo-size" nzTitle="三种大小"></nz-link><nz-link nzHref="#components-input-number-demo-disabled" nzTitle="不可用"></nz-link><nz-link nzHref="#components-input-number-demo-digit" nzTitle="小数"></nz-link><nz-link nzHref="#components-input-number-demo-formatter" nzTitle="格式化展示"></nz-link><nz-link nzHref="#components-input-number-demo-precision" nzTitle="精度"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>InputNumber<span class="subtitle">数字输入框</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>通过鼠标或键盘，输入范围内的数值。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当需要获取标准数值时。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzInputNumberModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/input-number'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-input-number-demo-basic'"
+  nzSelector="nz-demo-input-number-basic"
+  [nzLink]="'components-input-number-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-basic <name>"
+  nzComponentName="NzDemoInputNumberBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/basic.md'">
+	<nz-demo-input-number-basic demo></nz-demo-input-number-basic>
+	<div intro ngNonBindable>
+		<p>数字输入框。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="不可用"
+  [nzId]="'components-input-number-demo-disabled'"
+  nzSelector="nz-demo-input-number-disabled"
+  [nzLink]="'components-input-number-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-disabled <name>"
+  nzComponentName="NzDemoInputNumberDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/disabled.md'">
+	<nz-demo-input-number-disabled demo></nz-demo-input-number-disabled>
+	<div intro ngNonBindable>
+		<p>点击按钮切换可用状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="格式化展示"
+  [nzId]="'components-input-number-demo-formatter'"
+  nzSelector="nz-demo-input-number-formatter"
+  [nzLink]="'components-input-number-demo-formatter'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-formatter <name>"
+  nzComponentName="NzDemoInputNumberFormatterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/formatter.md'">
+	<nz-demo-input-number-formatter demo></nz-demo-input-number-formatter>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzFormatter</code> 格式化数字，以展示具有具体含义的数据，往往需要配合 <code>nzParser</code> 一起使用。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="三种大小"
+  [nzId]="'components-input-number-demo-size'"
+  nzSelector="nz-demo-input-number-size"
+  [nzLink]="'components-input-number-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-size <name>"
+  nzComponentName="NzDemoInputNumberSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/size.md'">
+	<nz-demo-input-number-size demo></nz-demo-input-number-size>
+	<div intro ngNonBindable>
+		<p>三种大小的数字输入框，当 <code>nzSize</code> 分别为 <code>large</code> 和 <code>small</code> 时，输入框高度为 <code>40px</code> 和 <code>24px</code> ，默认高度为 <code>32px</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="小数"
+  [nzId]="'components-input-number-demo-digit'"
+  nzSelector="nz-demo-input-number-digit"
+  [nzLink]="'components-input-number-demo-digit'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-digit <name>"
+  nzComponentName="NzDemoInputNumberDigitComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/digit.md'">
+	<nz-demo-input-number-digit demo></nz-demo-input-number-digit>
+	<div intro ngNonBindable>
+		<p>和原生的数字输入框一样，value 的精度由 <code>nzStep</code> 的小数位数决定。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="精度"
+  [nzId]="'components-input-number-demo-precision'"
+  nzSelector="nz-demo-input-number-precision"
+  [nzLink]="'components-input-number-demo-precision'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-number-precision <name>"
+  nzComponentName="NzDemoInputNumberPrecisionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input-number/demo/precision.md'">
+	<nz-demo-input-number-precision demo></nz-demo-input-number-precision>
+	<div intro ngNonBindable>
+		<p>指定 value 的精度</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-input-number"><span>nz-input-number</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-input-number'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>当前值，可双向绑定</td>
+<td><code>number | string</code>  |  <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>自动获取焦点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMax]</code></td>
+<td>最大值</td>
+<td><code>number</code></td>
+<td><code>Infinity</code></td>
+</tr>
+<tr>
+<td><code>[nzMin]</code></td>
+<td>最小值</td>
+<td><code>number</code></td>
+<td><code>-Infinity</code></td>
+</tr>
+<tr>
+<td><code>[nzFormatter]</code></td>
+<td>指定输入框展示值的格式</td>
+<td><code>(value: number | string) =&gt; string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzParser]</code></td>
+<td>指定从 nzFormatter 里转换回数字的方式，和 nzFormatter 搭配使用</td>
+<td><code>(value: string) =&gt; string | number</code></td>
+<td><code>(value: string) =&gt; value.trim().replace(/。/g, &#39;.&#39;).replace(/[^\w\.-]+/g, &#39;&#39;)</code></td>
+</tr>
+<tr>
+<td><code>[nzPrecision]</code></td>
+<td>数值精度</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPrecisionMode]</code></td>
+<td>数值精度的取值方式</td>
+<td><code>&#39;cut&#39; | &#39;toFixed&#39; | ((value: number | string, precision?: number) =&gt; number)</code></td>
+<td><code>&#39;toFixed&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>输入框大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStep]</code></td>
+<td>每次改变步数，可以为小数</td>
+<td><code>number | string</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>选择框默认文字</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzId]</code></td>
+<td>组件内部 input 的 id 值</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>数值改变时回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzFocus)</code></td>
+<td>focus时回调</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzBlur)</code></td>
+<td>blur时回调</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><p>通过 <code>ViewChild</code> 等方法获得实例后调用</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>focus()</td>
+<td>获取焦点</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>移除焦点</td>
+</tr>
+</tbody></table>
+</section></article>

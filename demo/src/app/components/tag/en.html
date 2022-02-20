@@ -1,0 +1,172 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tag-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-tag-demo-colorful" nzTitle="Colorful Tag"></nz-link><nz-link nzHref="#components-tag-demo-control" nzTitle="Add & Remove Dynamically"></nz-link><nz-link nzHref="#components-tag-demo-checkable" nzTitle="Checkable"></nz-link><nz-link nzHref="#components-tag-demo-hot-tags" nzTitle="Hot Tags"></nz-link><nz-link nzHref="#components-tag-demo-status" nzTitle="Status Tag"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Tag<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Tag for categorizing or markup.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li><p>It can be used to tag by dimension or property.</p>
+</li>
+<li><p>When categorizing.</p>
+</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTagModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tag'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-tag-demo-basic'"
+  nzSelector="nz-demo-tag-basic"
+  [nzLink]="'components-tag-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-basic <name>"
+  nzComponentName="NzDemoTagBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/basic.md'">
+	<nz-demo-tag-basic demo></nz-demo-tag-basic>
+	<div intro ngNonBindable>
+		<p>Usage of basic Tag, and it could be closeable by set <code>nzMode=&quot;closeable&quot;</code> property. Closeable Tag supports <code>nzOnClose</code> events.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Add & Remove Dynamically"
+  [nzId]="'components-tag-demo-control'"
+  nzSelector="nz-demo-tag-control"
+  [nzLink]="'components-tag-demo-control'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-control <name>"
+  nzComponentName="NzDemoTagControlComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/control.md'">
+	<nz-demo-tag-control demo></nz-demo-tag-control>
+	<div intro ngNonBindable>
+		<p>Generating a set of Tags by array, you can add and remove dynamically.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Hot Tags"
+  [nzId]="'components-tag-demo-hot-tags'"
+  nzSelector="nz-demo-tag-hot-tags"
+  [nzLink]="'components-tag-demo-hot-tags'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-hot-tags <name>"
+  nzComponentName="NzDemoTagHotTagsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/hot-tags.md'">
+	<nz-demo-tag-hot-tags demo></nz-demo-tag-hot-tags>
+	<div intro ngNonBindable>
+		<p>Select your favourite topics.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Colorful Tag"
+  [nzId]="'components-tag-demo-colorful'"
+  nzSelector="nz-demo-tag-colorful"
+  [nzLink]="'components-tag-demo-colorful'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-colorful <name>"
+  nzComponentName="NzDemoTagColorfulComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/colorful.md'">
+	<nz-demo-tag-colorful demo></nz-demo-tag-colorful>
+	<div intro ngNonBindable>
+		<p>We preset a series of colorful tag style for different situation usage.
+And you can always set it to a hex color string for custom color.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Checkable"
+  [nzId]="'components-tag-demo-checkable'"
+  nzSelector="nz-demo-tag-checkable"
+  [nzLink]="'components-tag-demo-checkable'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-checkable <name>"
+  nzComponentName="NzDemoTagCheckableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/checkable.md'">
+	<nz-demo-tag-checkable demo></nz-demo-tag-checkable>
+	<div intro ngNonBindable>
+		<p><code>nzMode=&quot;checkable&quot;</code> works like Checkbox, click it to toggle checked state.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Status Tag"
+  [nzId]="'components-tag-demo-status'"
+  nzSelector="nz-demo-tag-status"
+  [nzLink]="'components-tag-demo-status'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-status <name>"
+  nzComponentName="NzDemoTagStatusComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/status.md'">
+	<nz-demo-tag-status demo></nz-demo-tag-status>
+	<div intro ngNonBindable>
+		<p>We preset five different colors, you can set <code>nzColor</code> property such as <code>success</code>,<code>processing</code>,<code>error</code>,<code>default</code> and <code>warning</code> to indicate specific status.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="tag"><span>Tag</span><a onclick="window.location.hash = 'tag'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzMode]</code></td>
+<td>Mode of tag</td>
+<td><code>&#39;closeable&#39; | &#39;default&#39; | &#39;checkable&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzChecked]</code></td>
+<td>Checked status of Tag, double binding, only works when <code>nzMode=&quot;checkable&quot;</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzColor]</code></td>
+<td>Color of the Tag</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnClose)</code></td>
+<td>Callback executed when tag is closed, only works when <code>nzMode=&quot;closable&quot;</code></td>
+<td><code>EventEmitter&lt;MouseEvent&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCheckedChange)</code></td>
+<td>Checked status change call back, only works when <code>nzMode=&quot;checkable&quot;</code></td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

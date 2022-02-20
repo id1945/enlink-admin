@@ -1,0 +1,643 @@
+@use 'sass:math';
+
+// align
+.align-baseline    { vertical-align: baseline !important; } // Browser default
+.align-top         { vertical-align: top !important; }
+.align-middle      { vertical-align: middle !important; }
+.align-bottom      { vertical-align: bottom !important; }
+.align-text-bottom { vertical-align: text-bottom !important; }
+.align-text-top    { vertical-align: text-top !important; }
+
+//background
+@mixin bg-variant($parent, $color) {
+    #{$parent} {
+        background-color: $color !important;
+    }
+    a#{$parent} {
+        
+        &:hover,
+        &:focus {
+            background-color: darken($color, 10%) !important;
+        }
+    }
+}
+
+.bg-white {
+    background-color: $white !important;
+  }
+  
+.bg-transparent {
+    background-color: transparent !important;
+}
+  
+@include bg-variant('.bg-primary', $brand-primary);
+
+@include bg-variant('.bg-secondary', $brand-secondary);
+
+@include bg-variant('.bg-success', $brand-success);
+
+@include bg-variant('.bg-info', $brand-info);
+
+@include bg-variant('.bg-warning', $brand-warning);
+
+@include bg-variant('.bg-danger', $brand-danger);
+
+@include bg-variant('.bg-dark', $gray-dark);
+
+@include bg-variant('.bg-gray', $gray);
+
+@include bg-variant('.bg-gray-light', $gray-light);
+
+@include bg-variant('.bg-gray-lighter', $gray-lighter);
+
+@include bg-variant('.bg-gray-lightest', $gray-lightest);
+  
+
+//border
+.border         { border: $border-width solid $border-color !important; }
+.border-top     { border-top: $border-width solid $border-color !important; }
+.border-right   { border-right: $border-width solid $border-color !important; }
+.border-bottom  { border-bottom: $border-width solid $border-color !important; }
+.border-left    { border-left: $border-width solid $border-color !important; }
+
+.border-0        { border: 0 !important; }
+.border-top-0    { border-top: 0 !important; }
+.border-right-0  { border-right: 0 !important; }
+.border-bottom-0 { border-bottom: 0 !important; }
+.border-left-0   { border-left: 0 !important; }
+
+.rounded {
+  border-radius: $border-radius !important;
+}
+.rounded-top {
+  border-top-left-radius: $border-radius !important;
+  border-top-right-radius: $border-radius !important;
+}
+.rounded-right {
+  border-top-right-radius: $border-radius !important;
+  border-bottom-right-radius: $border-radius !important;
+}
+.rounded-bottom {
+  border-bottom-right-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+.rounded-left {
+  border-top-left-radius: $border-radius !important;
+  border-bottom-left-radius: $border-radius !important;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.rounded-0 {
+  border-radius: 0 !important;
+}
+
+//clearfix
+.clearfix {
+    @include clearfix();
+}
+
+//display
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+      .d#{$infix}-none         { display: none !important; }
+      .d#{$infix}-inline       { display: inline !important; }
+      .d#{$infix}-inline-block { display: inline-block !important; }
+      .d#{$infix}-block        { display: block !important; }
+      .d#{$infix}-table        { display: table !important; }
+      .d#{$infix}-table-row    { display: table-row !important; }
+      .d#{$infix}-table-cell   { display: table-cell !important; }
+      .d#{$infix}-flex         { display: flex !important; }
+      .d#{$infix}-inline-flex  { display: inline-flex !important; }
+    }
+}
+  
+@media print {
+    .d-print-none         { display: none !important; }
+    .d-print-inline       { display: inline !important; }
+    .d-print-inline-block { display: inline-block !important; }
+    .d-print-block        { display: block !important; }
+    .d-print-table        { display: table !important; }
+    .d-print-table-row    { display: table-row !important; }
+    .d-print-table-cell   { display: table-cell !important; }
+    .d-print-flex         { display: flex !important; }
+    .d-print-inline-flex  { display: inline-flex !important; }
+}
+
+.media {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-thumbnail {
+    padding: .25rem;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+}
+
+// embed
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  
+    &::before {
+        display: block;
+        content: "";
+    }
+  
+    .embed-responsive-item,
+    iframe,
+    embed,
+    object,
+    video {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+}
+
+.embed-responsive-21by9 {
+    &::before {
+        padding-top: percentage(math.div(9, 21));
+    }
+}
+
+.embed-responsive-16by9 {
+    &::before {
+        padding-top: percentage(math.div(9, 16));
+    }
+}
+
+.embed-responsive-4by3 {
+    &::before {
+        padding-top: percentage(math.div(3, 4));
+    }
+}
+
+.embed-responsive-1by1 {
+    &::before {
+        padding-top: percentage(math.div(1, 1));
+    }
+}
+
+// flex
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    
+        .flex#{$infix}-first     { order: -1; }
+        .flex#{$infix}-last      { order: 1; }
+        .flex#{$infix}-unordered { order: 0; }
+    
+        .flex#{$infix}-row            { flex-direction: row !important; }
+        .flex#{$infix}-column         { flex-direction: column !important; }
+        .flex#{$infix}-row-reverse    { flex-direction: row-reverse !important; }
+        .flex#{$infix}-column-reverse { flex-direction: column-reverse !important; }
+    
+        .flex#{$infix}-wrap         { flex-wrap: wrap !important; }
+        .flex#{$infix}-nowrap       { flex-wrap: nowrap !important; }
+        .flex#{$infix}-wrap-reverse { flex-wrap: wrap-reverse !important; }
+
+        .flex#{$infix}-grow-0         { flex-grow: 0 !important; }
+        .flex#{$infix}-grow-1         { flex-grow: 1 !important; }
+
+        .flex#{$infix}-shrink-0         { flex-shrink: 0 !important; }
+        .flex#{$infix}-shrink-1         { flex-shrink: 1 !important; }
+
+        .flex#{$infix}-fill         { flex: 1 1 auto!important; }
+    
+        .justify-content#{$infix}-start   { justify-content: flex-start !important; }
+        .justify-content#{$infix}-end     { justify-content: flex-end !important; }
+        .justify-content#{$infix}-center  { justify-content: center !important; }
+        .justify-content#{$infix}-between { justify-content: space-between !important; }
+        .justify-content#{$infix}-around  { justify-content: space-around !important; }
+    
+        .align-items#{$infix}-start    { align-items: flex-start !important; }
+        .align-items#{$infix}-end      { align-items: flex-end !important; }
+        .align-items#{$infix}-center   { align-items: center !important; }
+        .align-items#{$infix}-baseline { align-items: baseline !important; }
+        .align-items#{$infix}-stretch  { align-items: stretch !important; }
+    
+        .align-content#{$infix}-start   { align-content: flex-start !important; }
+        .align-content#{$infix}-end     { align-content: flex-end !important; }
+        .align-content#{$infix}-center  { align-content: center !important; }
+        .align-content#{$infix}-between { align-content: space-between !important; }
+        .align-content#{$infix}-around  { align-content: space-around !important; }
+        .align-content#{$infix}-stretch { align-content: stretch !important; }
+    
+        .align-self#{$infix}-auto     { align-self: auto !important; }
+        .align-self#{$infix}-start    { align-self: flex-start !important; }
+        .align-self#{$infix}-end      { align-self: flex-end !important; }
+        .align-self#{$infix}-center   { align-self: center !important; }
+        .align-self#{$infix}-baseline { align-self: baseline !important; }
+        .align-self#{$infix}-stretch  { align-self: stretch !important; }
+    }
+}
+
+//float 
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    
+        .float#{$infix}-left  { float: left !important; }
+        .float#{$infix}-right { float: right !important; }
+        .float#{$infix}-none  { float: none !important; }
+    }
+}
+
+//position
+$positions: static, relative, absolute, fixed, sticky;
+
+@each $position in $positions {
+    .position-#{$position} { position: $position !important; }
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-fixed;
+}
+
+.sticky-top {
+    @supports (position: sticky) {
+        position: sticky;
+        top: 0;
+        z-index: $zindex-sticky;
+    }
+}
+
+.shadow-none {
+    box-shadow: none!important;
+}
+
+.shadow-sm {
+    box-shadow: 0 .125rem .25rem rgba(77, 84, 124, 0.09)!important;
+}
+
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(77, 84, 124, 0.09)!important;
+}
+
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(77, 84, 124, 0.09)!important;
+}
+
+//sizing
+.w-10 {
+    width: 10%!important;
+}
+
+.w-15 {
+    width: 15%!important;
+}
+
+.w-20 {
+    width: 10%!important;
+}
+
+.w-25 {
+    width: 25%!important;
+}
+
+.w-30 {
+    width: 30%!important;
+}
+
+.w-35 {
+    width: 35%!important;
+}
+
+.w-40 {
+    width: 40%!important;
+}
+
+.w-45 {
+    width: 45%!important;
+}
+
+.w-50 {
+    width: 50%!important;
+}
+
+.w-55 {
+    width: 55%!important;
+}
+
+.w-60 {
+    width: 60%!important;
+}
+
+.w-65 {
+    width: 65%!important;
+}
+
+.w-70 {
+    width: 70%!important;
+}
+
+.w-75 {
+    width: 75%!important;
+}
+
+.w-80 {
+    width: 80%!important;
+}
+
+.w-85 {
+    width: 85%!important;
+}
+
+.w-90 {
+    width: 80%!important;
+}
+
+.w-95 {
+    width: 95%!important;
+}
+
+.w-100 {
+    width: 100%!important;
+}
+
+.mw-100 { 
+    max-width: 100% !important; 
+}
+
+.mh-100 { 
+    max-height: 100% !important; 
+}
+
+.h-10 {
+    height: 10%!important;
+}
+
+.h-15 {
+    height: 15%!important;
+}
+
+.h-20 {
+    height: 10%!important;
+}
+
+.h-25 {
+    height: 25%!important;
+}
+
+.h-30 {
+    height: 30%!important;
+}
+
+.h-35 {
+    height: 35%!important;
+}
+
+.h-40 {
+    height: 40%!important;
+}
+
+.h-45 {
+    height: 45%!important;
+}
+
+.h-50 {
+    height: 50%!important;
+}
+
+.h-55 {
+    height: 55%!important;
+}
+
+.h-60 {
+    height: 60%!important;
+}
+
+.h-65 {
+    height: 65%!important;
+}
+
+.h-70 {
+    height: 70%!important;
+}
+
+.h-75 {
+    height: 75%!important;
+}
+
+.h-80 {
+    height: 80%!important;
+}
+
+.h-85 {
+    height: 85%!important;
+}
+
+.h-90 {
+    height: 80%!important;
+}
+
+.h-95 {
+    height: 95%!important;
+}
+
+.h-100 {
+    height: 100%!important;
+}
+
+// Margin and Padding
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+        @each $prop, $abbrev in (margin: m, padding: p) {
+            @each $size, $length in $spacers {
+    
+            .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+            .#{$abbrev}t#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-top: $length !important;
+            }
+            .#{$abbrev}r#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-right: $length !important;
+            }
+            .#{$abbrev}b#{$infix}-#{$size},
+            .#{$abbrev}y#{$infix}-#{$size} {
+                #{$prop}-bottom: $length !important;
+            }
+            .#{$abbrev}l#{$infix}-#{$size},
+            .#{$abbrev}x#{$infix}-#{$size} {
+                #{$prop}-left: $length !important;
+            }
+            }
+        }
+    
+        // Some special margin utils
+        .m#{$infix}-auto { margin: auto !important; }
+        .mt#{$infix}-auto,
+        .my#{$infix}-auto {
+            margin-top: auto !important;
+        }
+        .mr#{$infix}-auto,
+        .mx#{$infix}-auto {
+            margin-right: auto !important;
+        }
+        .mb#{$infix}-auto,
+        .my#{$infix}-auto {
+            margin-bottom: auto !important;
+        }
+        .ml#{$infix}-auto,
+        .mx#{$infix}-auto {
+            margin-left: auto !important;
+        }
+    }
+}
+
+//text
+@mixin text-truncate() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+  
+.text-justify  { text-align: justify !important; }
+.text-nowrap   { white-space: nowrap !important; }
+.text-truncate { @include text-truncate; }
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .text#{$infix}-left   { text-align: left !important; }
+        .text#{$infix}-right  { text-align: right !important; }
+        .text#{$infix}-center { text-align: center !important; }
+    }
+}
+
+.text-lowercase  { text-transform: lowercase !important; }
+.text-uppercase  { text-transform: uppercase !important; }
+.text-capitalize { text-transform: capitalize !important; }
+.text-italics    { text-transform: italic !important; }
+
+.font-weight-light    { font-weight: $font-weight-light !important; }
+.font-weight-normal   { font-weight: $font-weight-normal !important; }
+.font-weight-semibold { font-weight: $font-weight-semibold !important; }
+.font-weight-bold     { font-weight: $font-weight-bold !important; }
+.font-italic          { font-style: italic !important; }
+
+.text-white { color: $white !important; }
+
+.text-dark {
+    color: $gray-dark !important;
+}
+
+.text-gray {
+    color: $gray-light !important;
+}
+
+.text-body-color {
+    color: $body-color !important;
+}
+
+.text-primary {
+    color: $brand-primary !important;
+}
+
+.text-secondary {
+    color: $brand-secondary !important;
+}
+
+.text-info {
+    color: $brand-info !important;
+}
+
+.text-success {
+    color: $brand-success !important;
+}
+
+.text-warning {
+    color: $brand-warning !important;
+}
+
+.text-danger {
+    color: $brand-danger !important;
+}
+
+.text-body {
+     color: $body-color !important;
+}
+
+.text-muted { 
+    color: $text-muted !important; 
+}
+
+.text-link {
+
+    &:hover {
+        text-decoration: underline !important;
+    }
+}
+
+.blockquote {
+    font-family: serif;;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.58;
+    border-left: 3px solid $gray-dark;
+    padding-left: 20px;
+    padding-bottom: 2px;
+}
+
+
+//visibility
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+    content: "";
+    background-color: rgba(0,0,0,0);
+}

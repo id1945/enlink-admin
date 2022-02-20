@@ -1,0 +1,343 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-menu-demo-horizontal" nzTitle="顶部导航"></nz-link><nz-link nzHref="#components-menu-demo-inline" nzTitle="内嵌菜单"></nz-link><nz-link nzHref="#components-menu-demo-inline-collapsed" nzTitle="缩起内嵌菜单"></nz-link><nz-link nzHref="#components-menu-demo-sider-current" nzTitle="只展开当前父级菜单"></nz-link><nz-link nzHref="#components-menu-demo-vertical" nzTitle="垂直菜单"></nz-link><nz-link nzHref="#components-menu-demo-theme" nzTitle="主题"></nz-link><nz-link nzHref="#components-menu-demo-switch-mode" nzTitle="切换菜单类型"></nz-link><nz-link nzHref="#components-menu-demo-router" nzTitle="配合路由使用"></nz-link><nz-link nzHref="#components-menu-demo-recursive" nzTitle="递归生成菜单"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Menu<span class="subtitle">导航菜单</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>为页面和功能提供导航的菜单列表。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>导航菜单是一个网站的灵魂，用户依赖导航在各个页面中进行跳转。一般分为顶部导航和侧边导航，顶部导航提供全局性的类目和功能，侧边导航提供多级结构来收纳和排列网站架构。</p>
+<p>更多布局和导航的使用可以参考：<a href="/components/layout/zh">通用布局</a>。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzMenuModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/menu'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="顶部导航"
+  [nzId]="'components-menu-demo-horizontal'"
+  nzSelector="nz-demo-menu-horizontal"
+  [nzLink]="'components-menu-demo-horizontal'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-horizontal <name>"
+  nzComponentName="NzDemoMenuHorizontalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/horizontal.md'">
+	<nz-demo-menu-horizontal demo></nz-demo-menu-horizontal>
+	<div intro ngNonBindable>
+		<p>水平的顶部导航菜单。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="内嵌菜单"
+  [nzId]="'components-menu-demo-inline'"
+  nzSelector="nz-demo-menu-inline"
+  [nzLink]="'components-menu-demo-inline'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-inline <name>"
+  nzComponentName="NzDemoMenuInlineComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/inline.md'">
+	<nz-demo-menu-inline demo></nz-demo-menu-inline>
+	<div intro ngNonBindable>
+		<p>垂直菜单，子菜单内嵌在菜单区域。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="缩起内嵌菜单"
+  [nzId]="'components-menu-demo-inline-collapsed'"
+  nzSelector="nz-demo-menu-inline-collapsed"
+  [nzLink]="'components-menu-demo-inline-collapsed'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-inline-collapsed <name>"
+  nzComponentName="NzDemoMenuInlineCollapsedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/inline-collapsed.md'">
+	<nz-demo-menu-inline-collapsed demo></nz-demo-menu-inline-collapsed>
+	<div intro ngNonBindable>
+		<p>内嵌菜单可以被缩起/展开。</p>
+<p>你可以在 <a href="/components/layout/#components-layout-demo-side">Layout</a> 里查看侧边布局结合的完整示例。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="只展开当前父级菜单"
+  [nzId]="'components-menu-demo-sider-current'"
+  nzSelector="nz-demo-menu-sider-current"
+  [nzLink]="'components-menu-demo-sider-current'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-sider-current <name>"
+  nzComponentName="NzDemoMenuSiderCurrentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/sider-current.md'">
+	<nz-demo-menu-sider-current demo></nz-demo-menu-sider-current>
+	<div intro ngNonBindable>
+		<p>点击菜单，收起其他展开的所有菜单，保持菜单聚焦简洁。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="垂直菜单"
+  [nzId]="'components-menu-demo-vertical'"
+  nzSelector="nz-demo-menu-vertical"
+  [nzLink]="'components-menu-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-vertical <name>"
+  nzComponentName="NzDemoMenuVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/vertical.md'">
+	<nz-demo-menu-vertical demo></nz-demo-menu-vertical>
+	<div intro ngNonBindable>
+		<p>子菜单是弹出的形式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="主题"
+  [nzId]="'components-menu-demo-theme'"
+  nzSelector="nz-demo-menu-theme"
+  [nzLink]="'components-menu-demo-theme'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-theme <name>"
+  nzComponentName="NzDemoMenuThemeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/theme.md'">
+	<nz-demo-menu-theme demo></nz-demo-menu-theme>
+	<div intro ngNonBindable>
+		<p>内建了两套主题 <code>light|dark</code>，默认 <code>light</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="切换菜单类型"
+  [nzId]="'components-menu-demo-switch-mode'"
+  nzSelector="nz-demo-menu-switch-mode"
+  [nzLink]="'components-menu-demo-switch-mode'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-switch-mode <name>"
+  nzComponentName="NzDemoMenuSwitchModeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/switch-mode.md'">
+	<nz-demo-menu-switch-mode demo></nz-demo-menu-switch-mode>
+	<div intro ngNonBindable>
+		<p>展示动态切换模式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="配合路由使用"
+  [nzId]="'components-menu-demo-router'"
+  nzSelector="nz-demo-menu-router"
+  [nzLink]="'components-menu-demo-router'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-router <name>"
+  nzComponentName="NzDemoMenuRouterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/router.md'">
+	<nz-demo-menu-router demo></nz-demo-menu-router>
+	<div intro ngNonBindable>
+		<p>自动根据路由激活菜单项，需要结合 <a href="https://www.angular.cn/api/router/RouterLink">routerLink</a> 一起使用。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="递归生成菜单"
+  [nzId]="'components-menu-demo-recursive'"
+  nzSelector="nz-demo-menu-recursive"
+  [nzLink]="'components-menu-demo-recursive'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-recursive <name>"
+  nzComponentName="NzDemoMenuRecursiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/recursive.md'">
+	<nz-demo-menu-recursive demo></nz-demo-menu-recursive>
+	<div intro ngNonBindable>
+		<p>递归生成菜单，需要手动指定 <code>nzPaddingLeft</code>，仅在 <code>nzMode</code> 为 <code>inline</code> 的模式，且 <code>nzInlineCollapsed</code> 为 <code>false</code> 的情况下有效。</p>
+<blockquote>
+<p>追踪 Issue：<a href="https://github.com/angular/angular/issues/14842">https://github.com/angular/angular/issues/14842</a></p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">nz-menu</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>Menu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>Menu 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubMenu Title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="[nz-menu]"><span>[nz-menu]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzInlineCollapsed]</code></td>
+<td>inline 时菜单是否收起状态</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzInlineIndent]</code></td>
+<td>inline 模式的菜单缩进宽度</td>
+<td><code>number</code></td>
+<td><code>24</code></td>
+</tr>
+<tr>
+<td><code>[nzMode]</code></td>
+<td>菜单类型，现在支持垂直、水平、和内嵌模式三种</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39; | &#39;inline&#39;</code></td>
+<td><code>&#39;vertical&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSelectable]</code></td>
+<td>是否允许选中</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzTheme]</code></td>
+<td>主题颜色</td>
+<td><code>&#39;light&#39; | &#39;dark&#39;</code></td>
+<td><code>&#39;light&#39;</code></td>
+</tr>
+<tr>
+<td><code>(nzClick)</code></td>
+<td>点击 nz-menu-item 输出属性</td>
+<td><code>EventEmitter&lt;NzMenuItemDirective&gt;</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-item]"><span>[nz-menu-item]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-item]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>是否禁用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSelected]</code></td>
+<td>是否被选中</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMatchRouter]</code></td>
+<td>是否根据 <a href="https://www.angular.cn/api/router/RouterLink">routerLink</a> 自动设定 <code>nzSelected</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMatchRouterExact]</code></td>
+<td>是否路由完整精确匹配, 详见 <a href="https://angular.io/api/router/RouterLinkActive#routerLinkActiveOptions">routerLinkActiveOptions</a></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id="[nz-submenu]"><span>[nz-submenu]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-submenu]'" class="anchor">#</a></h3><p>你可以使用以下三种方式来定义 <code>nz-submenu</code> 的标题</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubTitle<span class="token punctuation">"</span></span> <span class="token attr-name">nzIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">[nzTitle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>titleTpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#titleTpl</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzOpen]</code></td>
+<td>是否展开，可双向绑定</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>是否禁用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>标题内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIcon]</code></td>
+<td>标题中 icon 类型</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMenuClassName]</code></td>
+<td>自定义子菜单容器类名</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOpenChange)</code></td>
+<td>展开回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-group]"><span>[nz-menu-group]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-group]'" class="anchor">#</a></h3><p>你可以使用以下三种方式来定义 <code>nz-menu-group</code> 的标题</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubTitle<span class="token punctuation">"</span></span> <span class="token attr-name">nzIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span> <span class="token attr-name">[nzTitle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>titleTpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#titleTpl</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTitle]</code></td>
+<td>标题内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-divider]"><span>[nz-menu-divider]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-divider]'" class="anchor">#</a></h3><p>菜单项分割线，只用在弹出菜单内。</p>
+</section></article>

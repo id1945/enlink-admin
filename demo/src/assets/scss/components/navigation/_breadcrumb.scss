@@ -1,0 +1,15 @@
+.ant-breadcrumb {
+    font-family: $font-family-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    font-size: 13px;
+    font-weight: $font-weight-semibold;
+
+    a {
+        color: $gray-light;
+
+        &:hover {
+            color: $brand-primary;
+        }
+    }
+}    

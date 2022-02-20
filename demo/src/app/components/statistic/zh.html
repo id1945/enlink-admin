@@ -1,0 +1,231 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-statistic-demo-basic" nzTitle="基本用法"></nz-link><nz-link nzHref="#components-statistic-demo-unit" nzTitle="单位"></nz-link><nz-link nzHref="#components-statistic-demo-card" nzTitle="在卡片中使用"></nz-link><nz-link nzHref="#components-statistic-demo-countdown" nzTitle="倒计时"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Statistic<span class="subtitle">统计</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>展示统计数字。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当需要突出某个或某组数字时。</li>
+<li>当需要展示带描述的统计类数据时使用。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzStatisticModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/statistic'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本用法"
+  [nzId]="'components-statistic-demo-basic'"
+  nzSelector="nz-demo-statistic-basic"
+  [nzLink]="'components-statistic-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-basic <name>"
+  nzComponentName="NzDemoStatisticBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/basic.md'">
+	<nz-demo-statistic-basic demo></nz-demo-statistic-basic>
+	<div intro ngNonBindable>
+		<p>简单的展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="在卡片中使用"
+  [nzId]="'components-statistic-demo-card'"
+  nzSelector="nz-demo-statistic-card"
+  [nzLink]="'components-statistic-demo-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-card <name>"
+  nzComponentName="NzDemoStatisticCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/card.md'">
+	<nz-demo-statistic-card demo></nz-demo-statistic-card>
+	<div intro ngNonBindable>
+		<p>在卡片中展示统计数值。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="单位"
+  [nzId]="'components-statistic-demo-unit'"
+  nzSelector="nz-demo-statistic-unit"
+  [nzLink]="'components-statistic-demo-unit'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-unit <name>"
+  nzComponentName="NzDemoStatisticUnitComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/unit.md'">
+	<nz-demo-statistic-unit demo></nz-demo-statistic-unit>
+	<div intro ngNonBindable>
+		<p>通过前缀和后缀添加单位。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="倒计时"
+  [nzId]="'components-statistic-demo-countdown'"
+  nzSelector="nz-demo-statistic-countdown"
+  [nzLink]="'components-statistic-demo-countdown'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-countdown <name>"
+  nzComponentName="NzDemoStatisticCountdownComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/countdown.md'">
+	<nz-demo-statistic-countdown demo></nz-demo-statistic-countdown>
+	<div intro ngNonBindable>
+		<p>倒计时组件。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-statistic"><span>nz-statistic</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-statistic'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPrefix]</code></td>
+<td>设置数值的前缀</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>设置数值的后缀</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>数值的标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>数值内容</td>
+<td><code>string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueStyle]</code></td>
+<td>设置数值的样式</td>
+<td><code>Object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueTemplate]</code></td>
+<td>自定义数值展示</td>
+<td><code>TemplateRef&lt;&#123; $implicit: string | number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-countdown"><span>nz-countdown</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-countdown'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzFormat]</code></td>
+<td>格式化倒计时展示</td>
+<td><code>string</code></td>
+<td><code>&quot;HH:mm:ss&quot;</code></td>
+</tr>
+<tr>
+<td><code>[nzPrefix]</code></td>
+<td>设置数值的前缀</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>设置数值的后缀</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>数值的标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>时间戳格式的目标时间</td>
+<td><code>string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueTemplate]</code></td>
+<td>自定义时间展示</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCountdownFinish)</code></td>
+<td>当倒计时完成时发出事件</td>
+<td><code>void</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nzformat"><span>nzFormat</span><a onclick="window.location.hash = 'nzformat'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>占位符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Y</code></td>
+<td>年</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>月</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>日</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>时</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>分</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>秒</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>毫秒</td>
+</tr>
+</tbody></table>
+</section></article>

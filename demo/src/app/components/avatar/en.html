@@ -1,0 +1,160 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-avatar-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-avatar-demo-type" nzTitle="Type"></nz-link><nz-link nzHref="#components-avatar-demo-dynamic" nzTitle="Autoset Font Size"></nz-link><nz-link nzHref="#components-avatar-demo-badge" nzTitle="With Badge"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Avatar<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Avatars can be used to represent people or objects. It supports images, <code>Icon</code>s, or letters.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzAvatarModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/avatar'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-avatar-demo-basic'"
+  nzSelector="nz-demo-avatar-basic"
+  [nzLink]="'components-avatar-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-basic <name>"
+  nzComponentName="NzDemoAvatarBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/basic.md'">
+	<nz-demo-avatar-basic demo></nz-demo-avatar-basic>
+	<div intro ngNonBindable>
+		<p>Three sizes and two shapes are available.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Autoset Font Size"
+  [nzId]="'components-avatar-demo-dynamic'"
+  nzSelector="nz-demo-avatar-dynamic"
+  [nzLink]="'components-avatar-demo-dynamic'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-dynamic <name>"
+  nzComponentName="NzDemoAvatarDynamicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/dynamic.md'">
+	<nz-demo-avatar-dynamic demo></nz-demo-avatar-dynamic>
+	<div intro ngNonBindable>
+		<p>For letter type Avatar, when the letters are too long to display, the font size can be automatically adjusted according to the width of the Avatar.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Type"
+  [nzId]="'components-avatar-demo-type'"
+  nzSelector="nz-demo-avatar-type"
+  [nzLink]="'components-avatar-demo-type'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-type <name>"
+  nzComponentName="NzDemoAvatarTypeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/type.md'">
+	<nz-demo-avatar-type demo></nz-demo-avatar-type>
+	<div intro ngNonBindable>
+		<p>Image, Icon and letter are supported, and the latter two kinds avatar can have custom colors and background colors.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="With Badge"
+  [nzId]="'components-avatar-demo-badge'"
+  nzSelector="nz-demo-avatar-badge"
+  [nzLink]="'components-avatar-demo-badge'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-badge <name>"
+  nzComponentName="NzDemoAvatarBadgeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/badge.md'">
+	<nz-demo-avatar-badge demo></nz-demo-avatar-badge>
+	<div intro ngNonBindable>
+		<p>Usually used for messages remind.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-avatar"><span>nz-avatar</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-avatar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzIcon]</code></td>
+<td>the <code>Icon</code> type for an icon avatar, see <code>Icon</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>the shape of avatar</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td><code>&#39;circle&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>the size of the avatar</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39; | number</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSrc]</code></td>
+<td>the address of the image for an image avatar</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSrcSet]</code></td>
+<td>a list of sources to use for different screen resolutions</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAlt]</code></td>
+<td>This attribute defines the alternative text describing the image</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzText]</code></td>
+<td>letter type avatar</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzError)</code></td>
+<td>handler when img load error, call the <code>preventDefault</code> method to prevent default fallback behavior</td>
+<td><code>EventEmitter&lt;Event&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

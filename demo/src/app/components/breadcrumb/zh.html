@@ -1,0 +1,199 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-breadcrumb-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-breadcrumb-demo-with-icon" nzTitle="带有图标的"></nz-link><nz-link nzHref="#components-breadcrumb-demo-router" nzTitle="路由"></nz-link><nz-link nzHref="#components-breadcrumb-demo-auto" nzTitle="自动生成"></nz-link><nz-link nzHref="#components-breadcrumb-demo-separator" nzTitle="分隔符"></nz-link><nz-link nzHref="#components-breadcrumb-demo-dropdown" nzTitle="带下拉菜单的面包屑"></nz-link><nz-link nzHref="#components-breadcrumb-demo-separator-independent" nzTitle="独立的分隔符"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Breadcrumb<span class="subtitle">面包屑</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>显示当前页面在系统层级结构中的位置，并能向上返回。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当系统拥有超过两级以上的层级结构时；</li>
+<li>当需要告知用户『你在哪里』时；</li>
+<li>当需要向上导航的功能时。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzBreadCrumbModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/breadcrumb'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-breadcrumb-demo-basic'"
+  nzSelector="nz-demo-breadcrumb-basic"
+  [nzLink]="'components-breadcrumb-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-basic <name>"
+  nzComponentName="NzDemoBreadcrumbBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/basic.md'">
+	<nz-demo-breadcrumb-basic demo></nz-demo-breadcrumb-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="路由"
+  [nzId]="'components-breadcrumb-demo-router'"
+  nzSelector="nz-demo-breadcrumb-router"
+  [nzLink]="'components-breadcrumb-demo-router'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-router <name>"
+  nzComponentName="NzDemoBreadcrumbRouterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/router.md'">
+	<nz-demo-breadcrumb-router demo></nz-demo-breadcrumb-router>
+	<div intro ngNonBindable>
+		<p>和 <a href="https://angular.io/api/router/RouterLink">RouterLink</a> 进行结合使用。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="分隔符"
+  [nzId]="'components-breadcrumb-demo-separator'"
+  nzSelector="nz-demo-breadcrumb-separator"
+  [nzLink]="'components-breadcrumb-demo-separator'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-separator <name>"
+  nzComponentName="NzDemoBreadcrumbSeparatorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/separator.md'">
+	<nz-demo-breadcrumb-separator demo></nz-demo-breadcrumb-separator>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzSeparator</code> 可以自定义分隔符。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="独立的分隔符"
+  [nzId]="'components-breadcrumb-demo-separator-independent'"
+  nzSelector="nz-demo-breadcrumb-separator-independent"
+  [nzLink]="'components-breadcrumb-demo-separator-independent'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-separator-independent <name>"
+  nzComponentName="NzDemoBreadcrumbSeparatorIndependentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/separator-independent.md'">
+	<nz-demo-breadcrumb-separator-independent demo></nz-demo-breadcrumb-separator-independent>
+	<div intro ngNonBindable>
+		<p>使用 <code>nz-breadcrumb-separator</code> 可以自定义分隔符。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="带有图标的"
+  [nzId]="'components-breadcrumb-demo-with-icon'"
+  nzSelector="nz-demo-breadcrumb-with-icon"
+  [nzLink]="'components-breadcrumb-demo-with-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-with-icon <name>"
+  nzComponentName="NzDemoBreadcrumbWithIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/with-icon.md'">
+	<nz-demo-breadcrumb-with-icon demo></nz-demo-breadcrumb-with-icon>
+	<div intro ngNonBindable>
+		<p>图标放在文字前面。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自动生成"
+  [nzId]="'components-breadcrumb-demo-auto'"
+  nzSelector="nz-demo-breadcrumb-auto"
+  [nzLink]="'components-breadcrumb-demo-auto'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-auto <name>"
+  nzComponentName="NzDemoBreadcrumbAutoComponent"
+  nzIframeSource="https://stackblitz.com/edit/ng-zorro-breadcrumb-auto?embed=1&file=src/app/app.component.html&hideExplorer=1&hideNavigation=1&view=preview"
+  nzIframeHeight="460"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/auto.md'">
+	<nz-demo-breadcrumb-auto demo></nz-demo-breadcrumb-auto>
+	<div intro ngNonBindable>
+		<p>通过配置 <code>router.data</code> 自动生成面包屑。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带下拉菜单的面包屑"
+  [nzId]="'components-breadcrumb-demo-dropdown'"
+  nzSelector="nz-demo-breadcrumb-dropdown"
+  [nzLink]="'components-breadcrumb-demo-dropdown'"
+  nzGenerateCommand="ng g ng-zorro-antd:breadcrumb-dropdown <name>"
+  nzComponentName="NzDemoBreadcrumbDropdownComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/breadcrumb/demo/dropdown.md'">
+	<nz-demo-breadcrumb-dropdown demo></nz-demo-breadcrumb-dropdown>
+	<div intro ngNonBindable>
+		<p>面包屑支持下拉菜单。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-breadcrumb"><span>nz-breadcrumb</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-breadcrumb'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSeparator]</code></td>
+<td>分隔符自定义</td>
+<td><code>string | TemplateRef&lt;void&gt; | null</code></td>
+<td><code>&#39;/&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzAutoGenerate]</code></td>
+<td>自动生成 Breadcrumb</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzRouteLabel]</code></td>
+<td>自定义 route data 属性名称, <code>nzAutoGenerate</code> 为 <code>true</code> 时才生效</td>
+<td><code>string</code></td>
+<td><code>&#39;breadcrumb&#39;</code></td>
+</tr>
+</tbody></table>
+<p>使用 <code>[nzAutoGenerate]</code> 时，需要在路由类中定义 <code>data</code>:</p>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'path'</span><span class="token punctuation">,</span>
+  component<span class="token punctuation">:</span> SomeComponent<span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    breadcrumb<span class="token punctuation">:</span> <span class="token string">'Display Name'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>对于懒加载路由，应该在父层路由写 <code>data</code>：</p>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'first'</span><span class="token punctuation">,</span>
+  loadChildren<span class="token punctuation">:</span> <span class="token string">'./first/first.module#FirstModule'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    breadcrumb<span class="token punctuation">:</span> <span class="token string">'First'</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>使用 <code>nzRouteLabel</code> 自定义路由属性名称:</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-breadcrumb</span> <span class="token attr-name">[nzAutoGenerate]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">[nzRouteLabel]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>customBreadcrumb<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-breadcrumb</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  path<span class="token punctuation">:</span> <span class="token string">'path'</span><span class="token punctuation">,</span>
+  component<span class="token punctuation">:</span> SomeComponent<span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    customBreadcrumb<span class="token punctuation">:</span> <span class="token string">'Display Name'</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

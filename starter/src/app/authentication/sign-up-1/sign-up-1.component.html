@@ -1,0 +1,78 @@
+<div class="container-fluid p-0 h-100">
+        <div class="row no-gutters h-100">
+            <div class="col-lg-4 d-none d-lg-flex" style="background-image:url('assets/images/others/sign-up-1.jpg')">
+                <div class="d-flex h-100 p-h-40 p-v-15 flex-column justify-content-between">
+                    <div>
+                        <img src="assets/images/logo/logo-white.png" alt="">
+                    </div>
+                    <div>
+                        <h1 class="text-white m-b-20 font-weight-normal">Exploring Enlink</h1>
+                        <p class="text-white font-size-16 lh-2 w-80 opacity-08">Climb leg rub face on everything give attitude nap all day for under the bed. Chase mice attack feet but rub face on everything hopped up.</p>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-white">© 2019 ThemeNate</span>
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a class="text-white text-link" href="">Legal</a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="text-white text-link" href="">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8 bg-white">
+                <div class="container h-100">
+                    <div class="row no-gutters h-100 align-items-center">
+                        <div class="col-md-8 col-lg-7 col-xl-6 mx-auto">
+                            <h2>Sign Up</h2>
+                            <p class="m-b-30">Create your account to get access</p>
+                            <form nz-form [formGroup]="signUpForm" class="login-form" nzLayout="vertical" (ngSubmit)="submitForm()">
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="userName">Username</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please input your username!">
+                                        <input type="text" nz-input formControlName="userName" placeholder="Username" id="userName">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="email">Email</nz-form-label>
+                                    <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                                        <input type="text" nz-input formControlName="email" placeholder="Username" id="email">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please input your Password!">
+                                        <input type="password" nz-input formControlName="password" placeholder="Password" id="password">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzFor="checkPassword" nzRequired>Confirm Password</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please confirm your password!">
+                                        <input nz-input type="password" formControlName="checkPassword"  placeholder="Confirm Password" id="checkPassword">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <nz-form-item>
+                                        <nz-form-control>
+                                            <label nz-checkbox formControlName="agree">
+                                                <span>I have read the <a>agreement</a></span>
+                                            </label>
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                    <nz-form-item>
+                                        <nz-form-control>
+                                            <div >
+                                                <button nz-button class="login-form-button" [nzType]="'primary'">Sign Up</button>
+                                            </div>
+                                        </nz-form-control>
+                                    </nz-form-item>   
+                                </div>
+                            </form>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>

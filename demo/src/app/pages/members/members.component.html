@@ -1,0 +1,91 @@
+<div class="page-header">
+    <div class="row align-items-md-center">
+        <div class="col-md-6">
+            <div class="media m-v-10">
+                <nz-avatar nzIcon="star" [nzSize]="40" [nzShape]="'square'" class="ant-avatar-cyan"></nz-avatar>
+                <div class="media-body m-l-15">
+                    <h6 class="mb-0">All Members (9)</h6>
+                    <span class="text-gray font-size-13">Dev Team</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="text-md-right m-v-10">
+                <nz-radio-group [(ngModel)]="view">
+                    <label nz-radio-button nzValue="listView" nzTooltipTitle="List View" nz-tooltip>
+                        <i class="font-size-16" nz-icon nzType="ordered-list" theme="outline"></i>
+                    </label>
+                    <label nz-radio-button nzValue="cardView" nzTooltipTitle="Card View" nz-tooltip>
+                        <i class="font-size-16" nz-icon nzType="appstore" theme="outline"></i>
+                    </label>
+                </nz-radio-group>    
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-11 mx-auto">
+        <!-- Card View -->
+        <div class="row" *ngIf="view == 'cardView'">
+            <div class="col-md-3" *ngFor="let item of memberList">
+                <nz-card> 
+                    <div class="m-t-20 text-center">
+                        <nz-avatar class="shadow" [nzSize]="100" nzIcon="user" [nzSrc]="item.img"></nz-avatar>
+                        <h4 class="m-t-30">{{item.name}}</h4>
+                        <p>{{item.mail}}</p>
+                    </div>
+                    <div class="text-center m-t-15">
+                        <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="facebook"></i></button>
+                        <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="twitter"></i></button>
+                        <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="instagram"></i></button>
+                    </div>
+                    <div class="text-center m-t-30">
+                        <a [routerLink]="['/pages/profile']" nz-button nzType="primary" nzGhost>
+                            <i nz-icon nzType="mail" theme="outline"></i>
+                            <span class="m-l-5">Contact</span>
+                        </a>
+                    </div>
+                </nz-card>
+            </div>
+        </div>
+        <!-- List View -->
+        <nz-card *ngIf="view == 'listView'">
+            <nz-table #listViewTable [nzData]="memberList">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Social</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of listViewTable.data">
+                        <td>
+                            <div class="media align-items-center">
+                                <nz-avatar nzIcon="star" [nzSrc]="item.img"></nz-avatar>
+                                <div class="media-body m-l-15">
+                                    <h6 class="mb-0">{{item.name}}</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="text-gray">{{item.mail}}</span>
+                        </td>
+                        <td>
+                            <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="facebook"></i></button>
+                            <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="twitter"></i></button>
+                            <button class="m-r-10" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="instagram"></i></button>
+                        </td>
+                        <td class="text-right">
+                            <a [routerLink]="['/pages/profile']" nz-button nzType="primary" nzGhost>
+                                <i nz-icon nzType="mail" theme="outline"></i>
+                                <span class="m-l-5">Contact</span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </nz-table>
+        </nz-card>
+    </div>
+</div>

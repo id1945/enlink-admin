@@ -1,0 +1,555 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-cascader-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-cascader-demo-default-value" nzTitle="默认值"></nz-link><nz-link nzHref="#components-cascader-demo-trigger" nzTitle="可以自定义显示"></nz-link><nz-link nzHref="#components-cascader-demo-hover" nzTitle="移入展开"></nz-link><nz-link nzHref="#components-cascader-demo-disabled" nzTitle="禁用选项"></nz-link><nz-link nzHref="#components-cascader-demo-change-on-select" nzTitle="选择即改变"></nz-link><nz-link nzHref="#components-cascader-demo-size" nzTitle="大小"></nz-link><nz-link nzHref="#components-cascader-demo-custom-render" nzTitle="自定义已选项"></nz-link><nz-link nzHref="#components-cascader-demo-reactive-form" nzTitle="响应表单"></nz-link><nz-link nzHref="#components-cascader-demo-lazy" nzTitle="动态加载选项"></nz-link><nz-link nzHref="#components-cascader-demo-change-on-function" nzTitle="指定选择"></nz-link><nz-link nzHref="#components-cascader-demo-modal" nzTitle="模态窗口"></nz-link><nz-link nzHref="#components-cascader-demo-search" nzTitle="搜索"></nz-link><nz-link nzHref="#components-cascader-demo-trigger-action" nzTitle="鼠标移入触发"></nz-link><nz-link nzHref="#components-cascader-demo-default-value-and-lazyload" nzTitle="默认值与延迟加载"></nz-link><nz-link nzHref="#components-cascader-demo-default-value-and-asyn-options" nzTitle="默认值与异步列表"></nz-link><nz-link nzHref="#components-cascader-demo-custom-field-names" nzTitle="自定义字段名"></nz-link><nz-link nzHref="#components-cascader-demo-custom-template" nzTitle="自定义选择项"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Cascader<span class="subtitle">级联选择</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>级联选择框。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>需要从一组相关联的数据集合进行选择，例如省市区，公司层级，事物分类等。</li>
+<li>从一个较大的数据集合中进行选择时，用多级分类进行分隔，方便选择。</li>
+<li>比起 Select 组件，可以在同一个浮层中完成选择，有较好的体验。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCascaderModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/cascader'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-cascader-demo-basic'"
+  nzSelector="nz-demo-cascader-basic"
+  [nzLink]="'components-cascader-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-basic <name>"
+  nzComponentName="NzDemoCascaderBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/basic.md'">
+	<nz-demo-cascader-basic demo></nz-demo-cascader-basic>
+	<div intro ngNonBindable>
+		<p>省市区级联。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可以自定义显示"
+  [nzId]="'components-cascader-demo-trigger'"
+  nzSelector="nz-demo-cascader-trigger"
+  [nzLink]="'components-cascader-demo-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-trigger <name>"
+  nzComponentName="NzDemoCascaderTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/trigger.md'">
+	<nz-demo-cascader-trigger demo></nz-demo-cascader-trigger>
+	<div intro ngNonBindable>
+		<p>切换按钮和结果分开。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="禁用选项"
+  [nzId]="'components-cascader-demo-disabled'"
+  nzSelector="nz-demo-cascader-disabled"
+  [nzLink]="'components-cascader-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-disabled <name>"
+  nzComponentName="NzDemoCascaderDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/disabled.md'">
+	<nz-demo-cascader-disabled demo></nz-demo-cascader-disabled>
+	<div intro ngNonBindable>
+		<p>通过指定 options 里的 <code>disabled</code> 字段。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="大小"
+  [nzId]="'components-cascader-demo-size'"
+  nzSelector="nz-demo-cascader-size"
+  [nzLink]="'components-cascader-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-size <name>"
+  nzComponentName="NzDemoCascaderSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/size.md'">
+	<nz-demo-cascader-size demo></nz-demo-cascader-size>
+	<div intro ngNonBindable>
+		<p>不同大小的级联选择器。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应表单"
+  [nzId]="'components-cascader-demo-reactive-form'"
+  nzSelector="nz-demo-cascader-reactive-form"
+  [nzLink]="'components-cascader-demo-reactive-form'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-reactive-form <name>"
+  nzComponentName="NzDemoCascaderReactiveFormComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/reactive-form.md'">
+	<nz-demo-cascader-reactive-form demo></nz-demo-cascader-reactive-form>
+	<div intro ngNonBindable>
+		<p>通过表单的<code>重置</code>功能清空已选择的值。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="指定选择"
+  [nzId]="'components-cascader-demo-change-on-function'"
+  nzSelector="nz-demo-cascader-change-on-function"
+  [nzLink]="'components-cascader-demo-change-on-function'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-change-on-function <name>"
+  nzComponentName="NzDemoCascaderChangeOnFunctionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/change-on-function.md'">
+	<nz-demo-cascader-change-on-function demo></nz-demo-cascader-change-on-function>
+	<div intro ngNonBindable>
+		<p>通过函数来判断选项是否可以选择。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="搜索"
+  [nzId]="'components-cascader-demo-search'"
+  nzSelector="nz-demo-cascader-search"
+  [nzLink]="'components-cascader-demo-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-search <name>"
+  nzComponentName="NzDemoCascaderSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/search.md'">
+	<nz-demo-cascader-search demo></nz-demo-cascader-search>
+	<div intro ngNonBindable>
+		<p>可以直接搜索选项并选择。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="默认值与延迟加载"
+  [nzId]="'components-cascader-demo-default-value-and-lazyload'"
+  nzSelector="nz-demo-cascader-default-value-and-lazyload"
+  [nzLink]="'components-cascader-demo-default-value-and-lazyload'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-default-value-and-lazyload <name>"
+  nzComponentName="NzDemoCascaderDefaultValueAndLazyloadComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/default-value-and-lazyload.md'">
+	<nz-demo-cascader-default-value-and-lazyload demo></nz-demo-cascader-default-value-and-lazyload>
+	<div intro ngNonBindable>
+		<p>默认值通过数组的方式指定，但<code>nzOptions</code>没有赋值，通过<code>nzLoadData</code>函数延迟加载。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义字段名"
+  [nzId]="'components-cascader-demo-custom-field-names'"
+  nzSelector="nz-demo-cascader-custom-field-names"
+  [nzLink]="'components-cascader-demo-custom-field-names'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-custom-field-names <name>"
+  nzComponentName="NzDemoCascaderCustomFieldNamesComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/custom-field-names.md'">
+	<nz-demo-cascader-custom-field-names demo></nz-demo-cascader-custom-field-names>
+	<div intro ngNonBindable>
+		<p>自定义字段名。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="默认值"
+  [nzId]="'components-cascader-demo-default-value'"
+  nzSelector="nz-demo-cascader-default-value"
+  [nzLink]="'components-cascader-demo-default-value'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-default-value <name>"
+  nzComponentName="NzDemoCascaderDefaultValueComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/default-value.md'">
+	<nz-demo-cascader-default-value demo></nz-demo-cascader-default-value>
+	<div intro ngNonBindable>
+		<p>默认值通过数组的方式指定。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="移入展开"
+  [nzId]="'components-cascader-demo-hover'"
+  nzSelector="nz-demo-cascader-hover"
+  [nzLink]="'components-cascader-demo-hover'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-hover <name>"
+  nzComponentName="NzDemoCascaderHoverComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/hover.md'">
+	<nz-demo-cascader-hover demo></nz-demo-cascader-hover>
+	<div intro ngNonBindable>
+		<p>通过移入展开下级菜单，点击完成选择。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="选择即改变"
+  [nzId]="'components-cascader-demo-change-on-select'"
+  nzSelector="nz-demo-cascader-change-on-select"
+  [nzLink]="'components-cascader-demo-change-on-select'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-change-on-select <name>"
+  nzComponentName="NzDemoCascaderChangeOnSelectComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/change-on-select.md'">
+	<nz-demo-cascader-change-on-select demo></nz-demo-cascader-change-on-select>
+	<div intro ngNonBindable>
+		<p>这种交互允许只选中父级选项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义已选项"
+  [nzId]="'components-cascader-demo-custom-render'"
+  nzSelector="nz-demo-cascader-custom-render"
+  [nzLink]="'components-cascader-demo-custom-render'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-custom-render <name>"
+  nzComponentName="NzDemoCascaderCustomRenderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/custom-render.md'">
+	<nz-demo-cascader-custom-render demo></nz-demo-cascader-custom-render>
+	<div intro ngNonBindable>
+		<p>例如给最后一项加上邮编链接。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态加载选项"
+  [nzId]="'components-cascader-demo-lazy'"
+  nzSelector="nz-demo-cascader-lazy"
+  [nzLink]="'components-cascader-demo-lazy'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-lazy <name>"
+  nzComponentName="NzDemoCascaderLazyComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/lazy.md'">
+	<nz-demo-cascader-lazy demo></nz-demo-cascader-lazy>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzLoadData</code> 实现动态加载选项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="模态窗口"
+  [nzId]="'components-cascader-demo-modal'"
+  nzSelector="nz-demo-cascader-modal"
+  [nzLink]="'components-cascader-demo-modal'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-modal <name>"
+  nzComponentName="NzDemoCascaderModalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/modal.md'">
+	<nz-demo-cascader-modal demo></nz-demo-cascader-modal>
+	<div intro ngNonBindable>
+		<p>在模态窗口中使用级联控件。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="鼠标移入触发"
+  [nzId]="'components-cascader-demo-trigger-action'"
+  nzSelector="nz-demo-cascader-trigger-action"
+  [nzLink]="'components-cascader-demo-trigger-action'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-trigger-action <name>"
+  nzComponentName="NzDemoCascaderTriggerActionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/trigger-action.md'">
+	<nz-demo-cascader-trigger-action demo></nz-demo-cascader-trigger-action>
+	<div intro ngNonBindable>
+		<p>鼠标移入触发显示菜单，移出隐藏菜单。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="默认值与异步列表"
+  [nzId]="'components-cascader-demo-default-value-and-asyn-options'"
+  nzSelector="nz-demo-cascader-default-value-and-asyn-options"
+  [nzLink]="'components-cascader-demo-default-value-and-asyn-options'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-default-value-and-asyn-options <name>"
+  nzComponentName="NzDemoCascaderDefaultValueAndAsynOptionsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/default-value-and-asyn-options.md'">
+	<nz-demo-cascader-default-value-and-asyn-options demo></nz-demo-cascader-default-value-and-asyn-options>
+	<div intro ngNonBindable>
+		<p>默认值通过数组的方式指定，但<code>nzOptions</code>通过异步加载。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义选择项"
+  [nzId]="'components-cascader-demo-custom-template'"
+  nzSelector="nz-demo-cascader-custom-template"
+  [nzLink]="'components-cascader-demo-custom-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:cascader-custom-template <name>"
+  nzComponentName="NzDemoCascaderCustomTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/cascader/demo/custom-template.md'">
+	<nz-demo-cascader-custom-template demo></nz-demo-cascader-custom-template>
+	<div intro ngNonBindable>
+		<p>自定义选项的模板。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-cascader</span> <span class="token attr-name">[nzOptions]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>options<span class="token punctuation">"</span></span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>values<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-cascader</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-cascader"><span>nz-cascader</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-cascader'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>指定选中项</td>
+<td><code>any[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAllowClear]</code></td>
+<td>是否支持清除</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>是否自动聚焦，当存在输入框时</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzChangeOn]</code></td>
+<td>点击父级菜单选项时，可通过该函数判断是否允许值的变化</td>
+<td><code>(option: any, index: number) =&gt; boolean</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzChangeOnSelect]</code></td>
+<td>当此项为 true 时，点选每级菜单选项值都会发生变化，具体见上面的演示</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzColumnClassName]</code></td>
+<td>自定义浮层列类名</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandTrigger]</code></td>
+<td>次级菜单的展开方式，可选 &#39;click&#39; 和 &#39;hover&#39;</td>
+<td><code>&#39;click&#39;|&#39;hover&#39;</code></td>
+<td><code>&#39;click&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMenuClassName]</code></td>
+<td>自定义浮层类名</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMenuStyle]</code></td>
+<td>自定义浮层样式</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>当下拉列表为空时显示的内容</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLabelProperty]</code></td>
+<td>选项的显示值的属性名</td>
+<td><code>string</code></td>
+<td><code>&#39;label&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLabelRender]</code></td>
+<td>选择后展示的渲染模板</td>
+<td><code>TemplateRef&lt;any&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOptionRender]</code></td>
+<td>选项的渲染模板</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzCascaderOption, index: number &#125;&gt;</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLoadData]</code></td>
+<td>用于动态加载选项。如果提供了<code>ngModel</code>初始值，且未提供<code>nzOptions</code>值，则会立即触发动态加载。</td>
+<td><code>(option: any, index?: index) =&gt; PromiseLike&lt;any&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOptions]</code></td>
+<td>可选项数据源</td>
+<td><code>object[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>输入框占位文本</td>
+<td><code>string</code></td>
+<td><code>&#39;请选择&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowArrow]</code></td>
+<td>是否显示箭头</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowInput]</code></td>
+<td>显示输入框</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowSearch]</code></td>
+<td>是否支持搜索，默认情况下对 <code>label</code> 进行全匹配搜索，不能和 <code>[nzLoadData]</code> 同时使用</td>
+<td><code>boolean|NzShowSearchOptions</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>输入框大小，可选 <code>large</code> <code>default</code> <code>small</code></td>
+<td><code>&#39;large&#39;|&#39;small&#39;|&#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzValueProperty]</code></td>
+<td>选项的实际值的属性名</td>
+<td><code>string</code></td>
+<td><code>&#39;value&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>值发生变化时触发</td>
+<td><code>EventEmitter&lt;any[]&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzVisibleChange)</code></td>
+<td>菜单浮层的显示/隐藏</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzSelectionChange)</code></td>
+<td>值发生变化时触发</td>
+<td><code>EventEmitter&lt;NzCascaderOption[]&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<p><code>nzShowSearch</code> 为对象时需遵守 <code>NzShowSearchOptions</code> 接口：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>filter</code></td>
+<td>可选，选择是否保留选项的过滤函数，每级菜单的选项都会被匹配</td>
+<td><code>(inputValue: string, path: NzCascaderOption[]): boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>sorter</code></td>
+<td>可选，按照到每个最终选项的路径进行排序，默认按照原始数据的顺序</td>
+<td><code>(a: NzCascaderOption[], b: NzCascaderOption[], inputValue: string): number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur()</td>
+<td>移除焦点</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>获取焦点</td>
+</tr>
+<tr>
+<td>closeMenu()</td>
+<td>隐藏菜单</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>注意，如果需要获得中国省市区数据，可以参考 <a href="https://gist.github.com/afc163/7582f35654fd03d5be7009444345ea17">china-division</a>。</p>
+</blockquote>
+</section></article>

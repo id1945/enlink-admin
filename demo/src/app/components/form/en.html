@@ -1,0 +1,440 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-form-demo-horizontal-login" nzTitle="Inline Login Form"></nz-link><nz-link nzHref="#components-form-demo-normal-login" nzTitle="Login Form"></nz-link><nz-link nzHref="#components-form-demo-register" nzTitle="Registration"></nz-link><nz-link nzHref="#components-form-demo-advanced-search" nzTitle="Advanced search"></nz-link><nz-link nzHref="#components-form-demo-dynamic-form-item" nzTitle="Dynamic Form Item"></nz-link><nz-link nzHref="#components-form-demo-time-related-controls" nzTitle="Time-related Controls"></nz-link><nz-link nzHref="#components-form-demo-validate-reactive" nzTitle="Reactive Forms Validation"></nz-link><nz-link nzHref="#components-form-demo-validate-template" nzTitle="Template-driven Forms Validation"></nz-link><nz-link nzHref="#components-form-demo-auto-tips" nzTitle="Auto tips"></nz-link><nz-link nzHref="#components-form-demo-validate-static" nzTitle="Manual Set Validation Status"></nz-link><nz-link nzHref="#components-form-demo-coordinated" nzTitle="Coordinated Controls"></nz-link><nz-link nzHref="#components-form-demo-layout" nzTitle="Form Layout"></nz-link><nz-link nzHref="#components-form-demo-dynamic-rule" nzTitle="Dynamic Rules"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Form<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Form is used to collect, validate, and submit the user input, usually contains various form items including checkbox, radio, input, select, and etc.</p>
+<p>Form is totally based on <a href="https://angular.io/guide/forms#forms">Angular Forms</a>, you can use <a href="https://angular.io/guide/reactive-forms#reactive-forms">reactive forms</a> or <a href="https://angular.io/guide/forms#template-driven-forms">template-driven-forms</a>.</p>
+<blockquote>
+<p>Please make sure you have read the official form document before using the component.</p>
+</blockquote>
+<h2 id="form"><span>Form</span><a onclick="window.location.hash = 'form'" class="anchor">#</a></h2><p>You can align the controls of a <code>form</code> using the <code>layout</code> prop：</p>
+<ul>
+<li><code>horizontal</code>：to horizontally align the <code>label</code>s and controls of the fields. (Default)</li>
+<li><code>vertical</code>：to vertically align the <code>label</code>s and controls of the fields.</li>
+<li><code>inline</code>：to render form fields in one line.</li>
+</ul>
+<h3 id="nz-form-item"><span>nz-form-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-item'" class="anchor">#</a></h3><p>Used to separate the item in forms, contains label(optional) and control field.</p>
+<h3 id="nz-form-label"><span>nz-form-label</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-label'" class="anchor">#</a></h3><p>The label of the form item, optional.</p>
+<h3 id="nz-form-control"><span>nz-form-control</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-control'" class="anchor">#</a></h3><p>A form consists of one or more form fields whose type includes input, textarea, checkbox, radio, select, tag, and more.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">nz-form</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-label</span> <span class="token attr-name">[nzSpan]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>6<span class="token punctuation">"</span></span> <span class="token attr-name">nzFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>E-mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-control</span> <span class="token attr-name">[nzSpan]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>14<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nz-input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-control</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-item</span> <span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzFormModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/form'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Inline Login Form"
+  [nzId]="'components-form-demo-horizontal-login'"
+  nzSelector="nz-demo-form-horizontal-login"
+  [nzLink]="'components-form-demo-horizontal-login'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-horizontal-login <name>"
+  nzComponentName="NzDemoFormHorizontalLoginComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/horizontal-login.md'">
+	<nz-demo-form-horizontal-login demo></nz-demo-form-horizontal-login>
+	<div intro ngNonBindable>
+		<p>Inline login form is often used in navigation bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Login Form"
+  [nzId]="'components-form-demo-normal-login'"
+  nzSelector="nz-demo-form-normal-login"
+  [nzLink]="'components-form-demo-normal-login'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-normal-login <name>"
+  nzComponentName="NzDemoFormNormalLoginComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/normal-login.md'">
+	<nz-demo-form-normal-login demo></nz-demo-form-normal-login>
+	<div intro ngNonBindable>
+		<p>Normal login form which can contain more elements.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Registration"
+  [nzId]="'components-form-demo-register'"
+  nzSelector="nz-demo-form-register"
+  [nzLink]="'components-form-demo-register'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-register <name>"
+  nzComponentName="NzDemoFormRegisterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/register.md'">
+	<nz-demo-form-register demo></nz-demo-form-register>
+	<div intro ngNonBindable>
+		<p>Fill in this form to create a new account for you.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Advanced search"
+  [nzId]="'components-form-demo-advanced-search'"
+  nzSelector="nz-demo-form-advanced-search"
+  [nzLink]="'components-form-demo-advanced-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-advanced-search <name>"
+  nzComponentName="NzDemoFormAdvancedSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/advanced-search.md'">
+	<nz-demo-form-advanced-search demo></nz-demo-form-advanced-search>
+	<div intro ngNonBindable>
+		<p>Three columns layout is often used for advanced searching of data table.</p>
+<p>Because the width of label is not fixed, you may need to adjust it by customizing its style.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dynamic Form Item"
+  [nzId]="'components-form-demo-dynamic-form-item'"
+  nzSelector="nz-demo-form-dynamic-form-item"
+  [nzLink]="'components-form-demo-dynamic-form-item'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-dynamic-form-item <name>"
+  nzComponentName="NzDemoFormDynamicFormItemComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/dynamic-form-item.md'">
+	<nz-demo-form-dynamic-form-item demo></nz-demo-form-dynamic-form-item>
+	<div intro ngNonBindable>
+		<p>Add or remove form items dynamically.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Time-related Controls"
+  [nzId]="'components-form-demo-time-related-controls'"
+  nzSelector="nz-demo-form-time-related-controls"
+  [nzLink]="'components-form-demo-time-related-controls'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-time-related-controls <name>"
+  nzComponentName="NzDemoFormTimeRelatedControlsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/time-related-controls.md'">
+	<nz-demo-form-time-related-controls demo></nz-demo-form-time-related-controls>
+	<div intro ngNonBindable>
+		<p>All the types of input and output in time-related components are <code>Date</code>. You can use <a href="https://date-fns.org/">date-fns</a> to handle it.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Reactive Forms Validation"
+  [nzId]="'components-form-demo-validate-reactive'"
+  nzSelector="nz-demo-form-validate-reactive"
+  [nzLink]="'components-form-demo-validate-reactive'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-reactive <name>"
+  nzComponentName="NzDemoFormValidateReactiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-reactive.md'">
+	<nz-demo-form-validate-reactive demo></nz-demo-form-validate-reactive>
+	<div intro ngNonBindable>
+		<p>We provide properties like <code>nzValidateStatus</code> <code>nzHasFeedback</code> in <code>nz-form-control</code> to customize your own validate status and message, when using <a href="https://angular.io/guide/reactive-forms#reactive-forms">reactive forms</a>.</p>
+<ol>
+<li><code>nzValidateStatus</code>: validate status of form components, the default status comes from the <code>NgControl</code> in <code>nz-form-control</code>, you can set other <code>NgControl</code> to it.</li>
+<li><code>nzHasFeedback</code>: display feed icon of input control</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：display validate message。<blockquote>
+<p>When there are multiple tips in the same state, <code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code> supports the passing <code>TemplateRef&lt;&#123; $implicit: FormControl &#125;</code> type, which can be used to switch tips after exporting <code>FormControl</code> via the <a href="https://angular.io/guide/template-syntax">template syntax</a>.  
+When the FormControl.status is <code>INVALID</code>, and the errors contains <code>&#123;warning:true&#125;</code> , the <code>nz-form-control</code> display with warning status.</p>
+</blockquote>
+</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Template-driven Forms Validation"
+  [nzId]="'components-form-demo-validate-template'"
+  nzSelector="nz-demo-form-validate-template"
+  [nzLink]="'components-form-demo-validate-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-template <name>"
+  nzComponentName="NzDemoFormValidateTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-template.md'">
+	<nz-demo-form-validate-template demo></nz-demo-form-validate-template>
+	<div intro ngNonBindable>
+		<p>When using <a href="https://angular.io/guide/forms#template-driven-forms">template-driven forms</a>, the form could change its status via the template setting.</p>
+<ol>
+<li><code>nzHasFeedback</code>: display feed icon of input control</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：display validate message。<blockquote>
+<p>When there are multiple tips in the same state, <code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code> supports the passing <code>TemplateRef&lt;&#123; $implicit: NgModel &#125;</code> type, which can be used to switch tips after exporting <code>NgModel</code> via the <a href="https://angular.io/guide/template-syntax">template syntax</a>.</p>
+</blockquote>
+</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Auto tips"
+  [nzId]="'components-form-demo-auto-tips'"
+  nzSelector="nz-demo-form-auto-tips"
+  [nzLink]="'components-form-demo-auto-tips'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-auto-tips <name>"
+  nzComponentName="NzDemoFormAutoTipsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/auto-tips.md'">
+	<nz-demo-form-auto-tips demo></nz-demo-form-auto-tips>
+	<div intro ngNonBindable>
+		<p>Make tips to be easy.<br>Need to customize <code>Validators</code> and provide <code>nzAutoTips</code> in advance, the priority is as follows:</p>
+<ul>
+<li><code>Validators</code> &gt; <code>nzAutoTips</code></li>
+<li>Via <code>@Input</code> set <code>nzAutoTips</code></li>
+<li>Via global config set <code>nzAutoTips</code></li>
+</ul>
+<p>In addition, you can use <code>nzDisableAutoTips</code> to disable it.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Manual Set Validation Status"
+  [nzId]="'components-form-demo-validate-static'"
+  nzSelector="nz-demo-form-validate-static"
+  [nzLink]="'components-form-demo-validate-static'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-static <name>"
+  nzComponentName="NzDemoFormValidateStaticComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-static.md'">
+	<nz-demo-form-validate-static demo></nz-demo-form-validate-static>
+	<div intro ngNonBindable>
+		<p>You can set the form status directly via the <code>nzValidateStatus</code> on <code>nz-form-control</code>.</p>
+<ol>
+<li><code>nzValidateStatus</code>: validate status of form components which could be &#39;success&#39;, &#39;warning&#39;, &#39;error&#39;, &#39;validating&#39;.</li>
+<li><code>nzHasFeedback</code>: display feed icon of input control</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：display validate message。</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Coordinated Controls"
+  [nzId]="'components-form-demo-coordinated'"
+  nzSelector="nz-demo-form-coordinated"
+  [nzLink]="'components-form-demo-coordinated'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-coordinated <name>"
+  nzComponentName="NzDemoFormCoordinatedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/coordinated.md'">
+	<nz-demo-form-coordinated demo></nz-demo-form-coordinated>
+	<div intro ngNonBindable>
+		<p>Use <code>setValue</code> to set other control&#39;s value programmaticly.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Form Layout"
+  [nzId]="'components-form-demo-layout'"
+  nzSelector="nz-demo-form-layout"
+  [nzLink]="'components-form-demo-layout'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-layout <name>"
+  nzComponentName="NzDemoFormLayoutComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/layout.md'">
+	<nz-demo-form-layout demo></nz-demo-form-layout>
+	<div intro ngNonBindable>
+		<p>There are three layout for form: <code>horizontal</code>, <code>vertical</code>, <code>inline</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dynamic Rules"
+  [nzId]="'components-form-demo-dynamic-rule'"
+  nzSelector="nz-demo-form-dynamic-rule"
+  [nzLink]="'components-form-demo-dynamic-rule'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-dynamic-rule <name>"
+  nzComponentName="NzDemoFormDynamicRuleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/dynamic-rule.md'">
+	<nz-demo-form-dynamic-rule demo></nz-demo-form-dynamic-rule>
+	<div intro ngNonBindable>
+		<p>Perform different check rules according to different situations.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-form]"><span>[nz-form]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-form]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzLayout]</code></td>
+<td>Form layout</td>
+<td><code>&#39;horizontal&#39; | &#39;vertical&#39; | &#39;inline&#39;</code></td>
+<td><code>&#39;horizontal&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNoColon]</code></td>
+<td>change default props <code>[nzNoColon]</code> value of <code>nz-form-label</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoTips]</code></td>
+<td>Set default props <code>[nzAutoTips]</code> value of <code>nz-form-control</code>, please refer to the example: <strong>Auto tips</strong></td>
+<td><code>Record&lt;string, Record&lt;string, string&gt;&gt;</code></td>
+<td><code>&#123;&#125;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDisableAutoTips]</code></td>
+<td>Set default props <code>[nzDisableAutoTip]</code> value of <code>nz-form-control</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-item"><span>nz-form-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-item'" class="anchor">#</a></h3><p>Used to separate the item in forms, contains label(optional) and control field.</p>
+<blockquote>
+<p>All api in <a href="/components/grid/zh">nz-row</a> can be used in <code>nz-form-item</code>.</p>
+</blockquote>
+<h3 id="nz-form-label"><span>nz-form-label</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-label'" class="anchor">#</a></h3><p>The label of the form item, optional.</p>
+<blockquote>
+<p>All api in <a href="/components/grid/zh">nz-col</a> can be used in <code>nz-form-label</code>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzRequired]</code></td>
+<td>add required style to current item</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzNoColon]</code></td>
+<td>whether to not display <code>:</code> after label text.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzFor]</code></td>
+<td>The <code>for</code> property of <code>label</code></td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-control"><span>nz-form-control</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-control'" class="anchor">#</a></h3><blockquote>
+<p>Note：Due to the lack of partial Observable in <a href="https://github.com/angular/angular/issues/10887">Angular Form</a>, you have to notify <code>nz-form-control</code> to update its status with <code>updateValueAndValidity</code> when you update form status using methods like <code>markAsDirty</code>.</p>
+</blockquote>
+<p>A form consists of one or more form fields whose type includes input, textarea, checkbox, radio, select, tag, and more.</p>
+<blockquote>
+<p>All api in <a href="/components/grid/zh">nz-col</a> can be used in <code>nz-form-control</code>.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzValidateStatus]</code></td>
+<td>Will generate status based on the input <code>FormControl</code>, <code>NgModel</code> or string, the default value is the first <code>FormControl</code> or <code>NgModel</code> in <code>nz-form-control</code></td>
+<td><code>&#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;validating&#39;  |  FormControl  |  NgModel</code></td>
+<td>first <code>FormControl</code> or <code>NgModel</code> in <code>nz-form-control</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHasFeedback]</code></td>
+<td>Used with <code>nzValidateStatus</code>, this option specifies the validation status icon. Recommended to be used only with <code>Input</code>.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExtra]</code></td>
+<td>The extra prompt message</td>
+<td><code>string  |  TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSuccessTip]</code></td>
+<td>Tip display when validate success</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWarningTip]</code></td>
+<td>Tip display when validate warning</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzErrorTip]</code></td>
+<td>Tip display when validate error</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzValidatingTip]</code></td>
+<td>Tip display when validating</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAutoTips]</code></td>
+<td>The object of the tips, please refer to the example: <strong>Auto tips</strong></td>
+<td><code>Record&lt;string, string | Record&lt;string, string&gt;&gt;</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisableAutoTips]</code></td>
+<td>Disable Auto Tips</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-split"><span>nz-form-split</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-split'" class="anchor">#</a></h3><p>The split icon of <code>-</code></p>
+<h3 id="nz-form-text"><span>nz-form-text</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-text'" class="anchor">#</a></h3><p>Text in <code>nz-form-control</code></p>
+</section></article>

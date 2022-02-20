@@ -1,0 +1,164 @@
+<div class="row">
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="m-b-0">Net Revenue</p>
+                    <h2 class="m-b-0">
+                        <span>$14,966</span>
+                    </h2>
+                </div>
+                <nz-avatar [nzSize]="50" nzIcon="dollar" class="ant-avatar-blue"></nz-avatar>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="m-b-0">Bounce Rate</p>
+                    <h2 class="m-b-0">
+                        <span>26.80%</span>
+                    </h2>
+                </div>
+                <nz-avatar [nzSize]="50" nzIcon="bar-chart" class="ant-avatar-cyan"></nz-avatar>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="m-b-0">Orders</p>
+                    <h2 class="m-b-0">
+                        <span>3057</span>
+                    </h2>
+                </div>
+                <nz-avatar [nzSize]="50" nzIcon="profile" class="ant-avatar-red"></nz-avatar>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <p class="m-b-0">Total Expense</p>
+                    <h2 class="m-b-0">
+                        <span>$6,138</span>
+                    </h2>
+                </div>
+                <nz-avatar [nzSize]="50" nzIcon="bar-chart" class="ant-avatar-gold"></nz-avatar>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Overall Rating</h5>
+            </div>
+            <div class="d-flex align-items-center m-t-20">
+                <h1 class="m-b-0 m-r-10 font-weight-normal">4.5</h1>
+                <nz-rate [(ngModel)]="starRating" nzDisabled></nz-rate>
+            </div>
+            <p><span class="text-success font-weight-bold">+1.5</span> point from last month</p>
+            <div class="m-t-30" style="height: 150px">
+                <canvas ngChartjs 
+                    [datasets]="ratingChartData" 
+                    [labels]="ratingChartLabels"
+                    [options]="ratingChartOptions" 
+                    [colors]="ratingChartColors" 
+                    [legend]="false"
+                    [chartType]="ratingChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-6">
+        <nz-card>
+            <div class="d-md-flex justify-content-between align-items-center">
+                <h5>Total Sales</h5>
+                <div class="d-flex">
+                    <div class="m-r-10">
+                        <nz-badge nzStatus="default" [nzColor]="purple"></nz-badge>
+                        <span class="text-gray font-weight-semibold font-size-13">Revenue</span>
+                    </div>
+                    <div class="m-r-10">
+                        <nz-badge nzStatus="default" [nzColor]="purpleLight"></nz-badge>
+                        <span class="text-gray font-weight-semibold font-size-13">Margin</span>
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-50">
+                <canvas ngChartjs 
+                    style="height: 220px"
+                    [datasets]="salesChartData" 
+                    [labels]="salesChartLabels"
+                    [options]="salesChartOptions" 
+                    [colors]="salesChartColors"
+                    [legend]="false" 
+                    [chartType]="salesChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-3">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Monthly Target</h5>
+            </div>  
+            <div class="text-center m-v-45">
+                <nz-progress [nzPercent]="70" nzType="circle" [nzWidth]="160" [nzStrokeWidth]="3" [nzFormat]="summaryFormat" nzStatus="success"></nz-progress>
+            </div>
+            <div class="d-flex justify-content-center">
+                <nz-badge nzStatus="default" [nzColor]="cyan" ></nz-badge>
+                <span><span class="font-weight-semibold">70%</span> of Your Goal</span>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Latest Transactions</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-table #ordersListTable [nzData]="ordersList"  [nzShowPagination]="false" class="no-border-last">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of ordersListTable.data">
+                            <td>#{{item.id}}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <nz-avatar [nzSize]="30" nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                                    <h6 class="m-l-10 m-b-0">{{item.name}}</h6>
+                                </div>
+                            </td>
+                            <td>{{item.date}}</td>
+                            <td>${{item.amount | number:'3.2-5'}}</td>
+                            <td>
+                                <nz-badge *ngIf="item.status == 'approved'" nzStatus="success"></nz-badge>
+                                <nz-badge *ngIf="item.status == 'rejected'" nzStatus="error"></nz-badge>
+                                <nz-badge *ngIf="item.status == 'pending'"  nzStatus="processing"></nz-badge> 
+                                <span class="text-capitalize">{{item.status}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+    </div>
+</div>

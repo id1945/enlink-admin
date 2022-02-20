@@ -1,0 +1,115 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-comment-demo-basic" nzTitle="基本评论"></nz-link><nz-link nzHref="#components-comment-demo-list" nzTitle="配合列表组件"></nz-link><nz-link nzHref="#components-comment-demo-nested" nzTitle="嵌套评论"></nz-link><nz-link nzHref="#components-comment-demo-editor" nzTitle="回复框"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Comment<span class="subtitle">评论</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/comment/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>对网站内容的反馈、评价和讨论。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>评论组件可用于对事物的讨论，例如页面、博客文章、问题等等。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCommentModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/comment'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本评论"
+  [nzId]="'components-comment-demo-basic'"
+  nzSelector="nz-demo-comment-basic"
+  [nzLink]="'components-comment-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:comment-basic <name>"
+  nzComponentName="NzDemoCommentBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/comment/demo/basic.md'">
+	<nz-demo-comment-basic demo></nz-demo-comment-basic>
+	<div intro ngNonBindable>
+		<p>一个基本的评论组件，带有作者、头像、时间和操作。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="配合列表组件"
+  [nzId]="'components-comment-demo-list'"
+  nzSelector="nz-demo-comment-list"
+  [nzLink]="'components-comment-demo-list'"
+  nzGenerateCommand="ng g ng-zorro-antd:comment-list <name>"
+  nzComponentName="NzDemoCommentListComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/comment/demo/list.md'">
+	<nz-demo-comment-list demo></nz-demo-comment-list>
+	<div intro ngNonBindable>
+		<p>配合 <code>nz-list</code> 组件展现评论列表。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="嵌套评论"
+  [nzId]="'components-comment-demo-nested'"
+  nzSelector="nz-demo-comment-nested"
+  [nzLink]="'components-comment-demo-nested'"
+  nzGenerateCommand="ng g ng-zorro-antd:comment-nested <name>"
+  nzComponentName="NzDemoCommentNestedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/comment/demo/nested.md'">
+	<nz-demo-comment-nested demo></nz-demo-comment-nested>
+	<div intro ngNonBindable>
+		<p>评论可以嵌套。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="回复框"
+  [nzId]="'components-comment-demo-editor'"
+  nzSelector="nz-demo-comment-editor"
+  [nzLink]="'components-comment-demo-editor'"
+  nzGenerateCommand="ng g ng-zorro-antd:comment-editor <name>"
+  nzComponentName="NzDemoCommentEditorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/comment/demo/editor.md'">
+	<nz-demo-comment-editor demo></nz-demo-comment-editor>
+	<div intro ngNonBindable>
+		<p>评论编辑器组件提供了相同样式的封装以支持自定义评论编辑器。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-comment"><span>nz-comment</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-comment'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[nzAuthor]</td>
+<td>显示评论的作者</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>[nzDatetime]</td>
+<td>展示时间描述</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-comment-avatar]"><span>[nz-comment-avatar]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-comment-avatar]'" class="anchor">#</a></h3><p>要显示为评论头像的元素。</p>
+<h3 id="nz-comment-content"><span>nz-comment-content</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-comment-content'" class="anchor">#</a></h3><p>评论的主要内容。</p>
+<h3 id="nz-comment-action"><span>nz-comment-action</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-comment-action'" class="anchor">#</a></h3><p>在评论内容下面呈现的操作项。</p>
+</section></article>

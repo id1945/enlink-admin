@@ -1,0 +1,188 @@
+.side-nav {
+    position: fixed;
+    top: $header-height;
+    width: $side-nav-width;
+    background-color: $white;
+    border-right: 1px solid $border-color;
+    height: 100%;
+    z-index: $zindex-navbar;
+    overflow-y: auto;
+    @include transition(all 0.2s ease); 
+
+    @include screen-tablet {
+        left: -$side-nav-width;
+    } 
+
+    @include screen-laptop-only {
+        width: $side-nav-width-laptop;
+    }
+
+    .side-nav-menu {
+        margin-bottom: $header-height;
+        
+        &:not(.ant-menu-inline-collapsed) {
+            .dropdown-menu {
+                display: none;
+            }
+
+            .ant-menu-submenu-open {
+
+                > .dropdown-menu {
+                    display: block !important;
+                }    
+            }
+        }
+
+        &.ant-menu-inline-collapsed {
+           
+            .ant-menu-submenu {
+                position: relative;
+
+                .ant-menu {
+                    visibility: hidden;
+                    opacity: 0;
+                    position: absolute;
+                    top: 0px;
+                    left: 100%;
+                    min-width: 200px;
+                    margin-left: 4px;
+                    border-radius: $border-radius;
+                    transition: all 0.2s ease-in-out;
+                }
+
+                &:hover {
+                    >.ant-menu {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+
+                &.ant-menu-submenu-inline {
+
+                    > .ant-menu-submenu-title {
+
+                        .ant-menu-submenu-arrow {
+        
+                            &:after {
+                                @include transform(rotate(-45deg) translateX(-2px));
+                            }
+        
+                            &:before {
+                                @include transform(rotate(-130deg) translateX(2px));
+                            }
+                        }
+                    }
+                }
+            }
+
+            .ant-menu-sub {
+                box-shadow: 0 2px 8px rgba(0,0,0,.15);
+            }
+
+            .p-l-50 {
+                padding-left: 20px !important;
+            }
+
+            .p-l-30 {
+                padding-left: 0px !important;
+            }
+        }
+    }
+}
+
+.is-folded {
+    .side-nav {
+        width: $side-nav-folded;
+
+        .ant-menu-inline-collapsed {
+            width: $side-nav-folded - 1px;
+        }
+    }   
+
+    perfect-scrollbar {
+        overflow: visible;
+
+        .ps {
+            overflow: visible !important;
+        }
+
+        .ps__rail-y,
+        .ps__rail-x {
+            display: none;
+        }
+    }    
+}
+
+.is-expand {
+    @include screen-tablet {
+        .side-nav {
+            left: 0px;
+        }   
+    }
+}
+
+.is-side-nav-dark {
+    .side-nav {
+        background-color: $menu-dark-bg;
+    }
+}
+
+@each $theme in $theme-color-loop {
+    .#{nth($theme, 1)} {
+
+        &:not(.is-side-nav-dark) {
+
+            .side-nav-menu {
+                .ant-menu:not(.ant-menu-horizontal)  {
+
+                    .ant-menu-item-selected { 
+                        background: rgba(nth($theme, 2), 0.1);
+                        
+                        a {
+                            color: #{nth($theme, 2)};
+                        }
+                    }
+                }
+    
+                .ant-menu-inline,
+                .ant-menu-vertical,
+                .ant-menu-vertical-left,
+                .ant-menu-vertical-right {
+                    .ant-menu-item {
+                        &:after {
+                            border-right: 3px solid #{nth($theme, 2)};
+                        }
+                    }
+                }
+
+                .ant-menu-item, 
+                .ant-menu-submenu-title {
+
+                    &:active {
+                        background: rgba(nth($theme, 2), 0.1);
+                    }
+
+                    > a {
+
+                        &:hover {
+                            color: #{nth($theme, 2)};
+                        }
+                    }
+                }
+
+                .ant-menu-submenu-title {
+                    &:hover {
+                        color: #{nth($theme, 2)};
+
+                        .ant-menu-submenu-arrow{
+                            &:after,
+                            &:before {
+                                background: linear-gradient(to right, nth($theme, 2), nth($theme, 2))
+                            }
+                        }
+                    }
+                }
+            }
+        }    
+    }
+}

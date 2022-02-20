@@ -1,0 +1,169 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tag-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-tag-demo-colorful" nzTitle="多彩标签"></nz-link><nz-link nzHref="#components-tag-demo-control" nzTitle="动态添加和删除"></nz-link><nz-link nzHref="#components-tag-demo-checkable" nzTitle="可选择"></nz-link><nz-link nzHref="#components-tag-demo-hot-tags" nzTitle="热门标签"></nz-link><nz-link nzHref="#components-tag-demo-status" nzTitle="预设状态的标签"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Tag<span class="subtitle">标签</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>进行标记和分类的小标签。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>用于标记事物的属性和维度。</li>
+<li>进行分类。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTagModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tag'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-tag-demo-basic'"
+  nzSelector="nz-demo-tag-basic"
+  [nzLink]="'components-tag-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-basic <name>"
+  nzComponentName="NzDemoTagBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/basic.md'">
+	<nz-demo-tag-basic demo></nz-demo-tag-basic>
+	<div intro ngNonBindable>
+		<p>基本标签的用法，可以通过添加 <code>nzMode=&quot;closeable&quot;</code> 变为可关闭标签。可关闭标签具有 <code>nzOnClose</code> 事件。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态添加和删除"
+  [nzId]="'components-tag-demo-control'"
+  nzSelector="nz-demo-tag-control"
+  [nzLink]="'components-tag-demo-control'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-control <name>"
+  nzComponentName="NzDemoTagControlComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/control.md'">
+	<nz-demo-tag-control demo></nz-demo-tag-control>
+	<div intro ngNonBindable>
+		<p>用数组生成一组标签，可以动态添加和删除。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="热门标签"
+  [nzId]="'components-tag-demo-hot-tags'"
+  nzSelector="nz-demo-tag-hot-tags"
+  [nzLink]="'components-tag-demo-hot-tags'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-hot-tags <name>"
+  nzComponentName="NzDemoTagHotTagsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/hot-tags.md'">
+	<nz-demo-tag-hot-tags demo></nz-demo-tag-hot-tags>
+	<div intro ngNonBindable>
+		<p>选择你感兴趣的话题。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="多彩标签"
+  [nzId]="'components-tag-demo-colorful'"
+  nzSelector="nz-demo-tag-colorful"
+  [nzLink]="'components-tag-demo-colorful'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-colorful <name>"
+  nzComponentName="NzDemoTagColorfulComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/colorful.md'">
+	<nz-demo-tag-colorful demo></nz-demo-tag-colorful>
+	<div intro ngNonBindable>
+		<p>我们添加了多种预设色彩的标签样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可选择"
+  [nzId]="'components-tag-demo-checkable'"
+  nzSelector="nz-demo-tag-checkable"
+  [nzLink]="'components-tag-demo-checkable'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-checkable <name>"
+  nzComponentName="NzDemoTagCheckableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/checkable.md'">
+	<nz-demo-tag-checkable demo></nz-demo-tag-checkable>
+	<div intro ngNonBindable>
+		<p>可通过 <code>nzMode=&quot;checkable&quot;</code> 实现类似 Checkbox 的效果，点击切换选中效果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="预设状态的标签"
+  [nzId]="'components-tag-demo-status'"
+  nzSelector="nz-demo-tag-status"
+  [nzLink]="'components-tag-demo-status'"
+  nzGenerateCommand="ng g ng-zorro-antd:tag-status <name>"
+  nzComponentName="NzDemoTagStatusComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tag/demo/status.md'">
+	<nz-demo-tag-status demo></nz-demo-tag-status>
+	<div intro ngNonBindable>
+		<p>预设五种状态颜色，可以通过设置 <code>nzColor</code> 为 <code>success</code>、 <code>processing</code>、<code>error</code>、<code>default</code>、<code>warning</code> 来代表不同的状态。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-tag"><span>nz-tag</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tag'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzMode]</code></td>
+<td>设定标签工作的模式</td>
+<td><code>&#39;closeable&#39; | &#39;default&#39; | &#39;checkable&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzChecked]</code></td>
+<td>设置标签的选中状态，可双向绑定，在 <code>nzMode=&quot;checkable&quot;</code> 时可用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzColor]</code></td>
+<td>标签色</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnClose)</code></td>
+<td>关闭时的回调，在 <code>nzMode=&quot;closable&quot;</code> 时可用</td>
+<td><code>EventEmitter&lt;MouseEvent&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCheckedChange)</code></td>
+<td>设置标签的选中状态的回调，在 <code>nzMode=&quot;checkable&quot;</code> 时可用</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

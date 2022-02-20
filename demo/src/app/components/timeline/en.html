@@ -1,0 +1,193 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-timeline-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-timeline-demo-color" nzTitle="Color"></nz-link><nz-link nzHref="#components-timeline-demo-pending" nzTitle="Last node"></nz-link><nz-link nzHref="#components-timeline-demo-alternate" nzTitle="Alternate"></nz-link><nz-link nzHref="#components-timeline-demo-custom" nzTitle="Custom"></nz-link><nz-link nzHref="#components-timeline-demo-right" nzTitle="Right alternate"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Timeline<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Vertical display timeline.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When a series of information needs to be ordered by time (ascend or descend).</li>
+<li>When you need a timeline to make a visual connection.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTimelineModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/timeline'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-timeline-demo-basic'"
+  nzSelector="nz-demo-timeline-basic"
+  [nzLink]="'components-timeline-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-basic <name>"
+  nzComponentName="NzDemoTimelineBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/basic.md'">
+	<nz-demo-timeline-basic demo></nz-demo-timeline-basic>
+	<div intro ngNonBindable>
+		<p>Basic timeline.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Last node"
+  [nzId]="'components-timeline-demo-pending'"
+  nzSelector="nz-demo-timeline-pending"
+  [nzLink]="'components-timeline-demo-pending'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-pending <name>"
+  nzComponentName="NzDemoTimelinePendingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/pending.md'">
+	<nz-demo-timeline-pending demo></nz-demo-timeline-pending>
+	<div intro ngNonBindable>
+		<p>When the timeline is incomplete and ongoing, put a ghost node at last. set <code>[nzPending]=&quot;true&quot;</code> or <code>[nzPending]=&quot;a TemplateRef&quot;</code>. Used in ascend chronological order.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom"
+  [nzId]="'components-timeline-demo-custom'"
+  nzSelector="nz-demo-timeline-custom"
+  [nzLink]="'components-timeline-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-custom <name>"
+  nzComponentName="NzDemoTimelineCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/custom.md'">
+	<nz-demo-timeline-custom demo></nz-demo-timeline-custom>
+	<div intro ngNonBindable>
+		<p>Set a node as an icon or other custom element.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Color"
+  [nzId]="'components-timeline-demo-color'"
+  nzSelector="nz-demo-timeline-color"
+  [nzLink]="'components-timeline-demo-color'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-color <name>"
+  nzComponentName="NzDemoTimelineColorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/color.md'">
+	<nz-demo-timeline-color demo></nz-demo-timeline-color>
+	<div intro ngNonBindable>
+		<p>Set the color of circles. <code>green</code> means completed or success status, <code>red</code> means warning or error, and <code>blue</code> means ongoing or other default status, <code>gray</code> for unfinished or disabled status.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Alternate"
+  [nzId]="'components-timeline-demo-alternate'"
+  nzSelector="nz-demo-timeline-alternate"
+  [nzLink]="'components-timeline-demo-alternate'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-alternate <name>"
+  nzComponentName="NzDemoTimelineAlternateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/alternate.md'">
+	<nz-demo-timeline-alternate demo></nz-demo-timeline-alternate>
+	<div intro ngNonBindable>
+		<p>Alternate timeline.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Right alternate"
+  [nzId]="'components-timeline-demo-right'"
+  nzSelector="nz-demo-timeline-right"
+  [nzLink]="'components-timeline-demo-right'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-right <name>"
+  nzComponentName="NzDemoTimelineRightComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/right.md'">
+	<nz-demo-timeline-right demo></nz-demo-timeline-right>
+	<div intro ngNonBindable>
+		<p>Right alternate timeline.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>step1 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>step2 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>step3 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>step4 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-timeline"><span>nz-timeline</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-timeline'" class="anchor">#</a></h3><p>Timeline</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPending]</code></td>
+<td>Set the last ghost node&#39;s existence or its content</td>
+<td><code>string|boolean|TemplateRef&lt;void&gt;</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzPendingDot]</code></td>
+<td>Set the dot of the last ghost node when pending is true</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td><code>&lt;i nz-icon nzType=&quot;loading&quot;&gt;&lt;/i&gt;</code></td>
+</tr>
+<tr>
+<td><code>[nzReverse]</code></td>
+<td>Reverse nodes or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMode]</code></td>
+<td>By sending <code>alternate</code> the timeline will distribute the nodes to the left and right</td>
+<td><code>&#39;left&#39; | &#39;alternate&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-timeline-item"><span>nz-timeline-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-timeline-item'" class="anchor">#</a></h3><p>Node of timeline</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzColor]</code></td>
+<td>Set the circle&#39;s color to <code>&#39;blue&#39; | &#39;red&#39; | &#39;green&#39; | &#39;gray&#39;</code> or other custom colors (css color)</td>
+<td><code>string</code></td>
+<td><code>blue</code></td>
+</tr>
+<tr>
+<td><code>[nzDot]</code></td>
+<td>Customize timeline dot</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

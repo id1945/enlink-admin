@@ -1,0 +1,10 @@
+.ant-rate {
+    font-family: $font-family-sans-serif;
+    font-size: $rate-font-size;
+    color: $rate-color;
+}
+
+.ant-rate-star-first,
+.ant-rate-star-second {
+    color: $gray-lighter;
+}

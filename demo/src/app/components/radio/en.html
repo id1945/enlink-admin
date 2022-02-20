@@ -1,0 +1,281 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-radio-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-radio-demo-disable" nzTitle="Disabled"></nz-link><nz-link nzHref="#components-radio-demo-radiogroup" nzTitle="Radio Group"></nz-link><nz-link nzHref="#components-radio-demo-radiogroup-more" nzTitle="Vertical RadioGroup"></nz-link><nz-link nzHref="#components-radio-demo-radiogroup-options" nzTitle="RadioGroup group - optional"></nz-link><nz-link nzHref="#components-radio-demo-radiobutton" nzTitle="Radio Style"></nz-link><nz-link nzHref="#components-radio-demo-radiogroup-with-name" nzTitle="RadioGroup with name"></nz-link><nz-link nzHref="#components-radio-demo-size" nzTitle="Size"></nz-link><nz-link nzHref="#components-radio-demo-solid" nzTitle="Solid radio button"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Radio<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Radio.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>Used to select a single state in multiple options.</li>
+<li>The difference between Select is that Radio is visible to user and can facilitate the comparison of choice. So, when you want to use Radio, option should not be too much.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzRadioModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/radio'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-radio-demo-basic'"
+  nzSelector="nz-demo-radio-basic"
+  [nzLink]="'components-radio-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-basic <name>"
+  nzComponentName="NzDemoRadioBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/basic.md'">
+	<nz-demo-radio-basic demo></nz-demo-radio-basic>
+	<div intro ngNonBindable>
+		<p>The simplest use.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Radio Group"
+  [nzId]="'components-radio-demo-radiogroup'"
+  nzSelector="nz-demo-radio-radiogroup"
+  [nzLink]="'components-radio-demo-radiogroup'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-radiogroup <name>"
+  nzComponentName="NzDemoRadioRadiogroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/radiogroup.md'">
+	<nz-demo-radio-radiogroup demo></nz-demo-radio-radiogroup>
+	<div intro ngNonBindable>
+		<p>A group of <code>nz-radio</code> components.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="RadioGroup group - optional"
+  [nzId]="'components-radio-demo-radiogroup-options'"
+  nzSelector="nz-demo-radio-radiogroup-options"
+  [nzLink]="'components-radio-demo-radiogroup-options'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-radiogroup-options <name>"
+  nzComponentName="NzDemoRadioRadiogroupOptionsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/radiogroup-options.md'">
+	<nz-demo-radio-radiogroup-options demo></nz-demo-radio-radiogroup-options>
+	<div intro ngNonBindable>
+		<p>Render radios by configuring <code>options</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="RadioGroup with name"
+  [nzId]="'components-radio-demo-radiogroup-with-name'"
+  nzSelector="nz-demo-radio-radiogroup-with-name"
+  [nzLink]="'components-radio-demo-radiogroup-with-name'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-radiogroup-with-name <name>"
+  nzComponentName="NzDemoRadioRadiogroupWithNameComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/radiogroup-with-name.md'">
+	<nz-demo-radio-radiogroup-with-name demo></nz-demo-radio-radiogroup-with-name>
+	<div intro ngNonBindable>
+		<p>Passing the <code>nzName</code> property to all <code>input[type=&quot;radio&quot;]</code> that are in the same RadioGroup. It is usually used to let the browser see your <code>nz-radio-group</code> as a real &quot;group&quot; and keep the default behavior. For example, using left/right keyboard arrow to change your selection that in the same <code>nz-radio-group</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Solid radio button"
+  [nzId]="'components-radio-demo-solid'"
+  nzSelector="nz-demo-radio-solid"
+  [nzLink]="'components-radio-demo-solid'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-solid <name>"
+  nzComponentName="NzDemoRadioSolidComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/solid.md'">
+	<nz-demo-radio-solid demo></nz-demo-radio-solid>
+	<div intro ngNonBindable>
+		<p>Solid radio button style.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Disabled"
+  [nzId]="'components-radio-demo-disable'"
+  nzSelector="nz-demo-radio-disable"
+  [nzLink]="'components-radio-demo-disable'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-disable <name>"
+  nzComponentName="NzDemoRadioDisableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/disable.md'">
+	<nz-demo-radio-disable demo></nz-demo-radio-disable>
+	<div intro ngNonBindable>
+		<p><code>nz-radio</code> unavailable.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical RadioGroup"
+  [nzId]="'components-radio-demo-radiogroup-more'"
+  nzSelector="nz-demo-radio-radiogroup-more"
+  [nzLink]="'components-radio-demo-radiogroup-more'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-radiogroup-more <name>"
+  nzComponentName="NzDemoRadioRadiogroupMoreComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/radiogroup-more.md'">
+	<nz-demo-radio-radiogroup-more demo></nz-demo-radio-radiogroup-more>
+	<div intro ngNonBindable>
+		<p>Vertical <code>nz-radio-group</code>, with more radios.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Radio Style"
+  [nzId]="'components-radio-demo-radiobutton'"
+  nzSelector="nz-demo-radio-radiobutton"
+  [nzLink]="'components-radio-demo-radiobutton'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-radiobutton <name>"
+  nzComponentName="NzDemoRadioRadiobuttonComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/radiobutton.md'">
+	<nz-demo-radio-radiobutton demo></nz-demo-radio-radiobutton>
+	<div intro ngNonBindable>
+		<p>The combination of radio button style.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Size"
+  [nzId]="'components-radio-demo-size'"
+  nzSelector="nz-demo-radio-size"
+  [nzLink]="'components-radio-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:radio-size <name>"
+  nzComponentName="NzDemoRadioSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/radio/demo/size.md'">
+	<nz-demo-radio-size demo></nz-demo-radio-size>
+	<div intro ngNonBindable>
+		<p>There are three sizes available: large, medium, and small. It can coordinate with input box.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-radio]-|-[nz-radio-button]"><span>[nz-radio] | [nz-radio-button]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-radio]-|-[nz-radio-button]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>get focus when component mounted</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable radio</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[ngModel]</code></td>
+<td>Specifies whether the radio is selected, double binding</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>use with <code>nz-radio-group</code></td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>The callback function that is triggered when the state changes.</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-radio-group"><span>nz-radio-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-radio-group'" class="anchor">#</a></h3><p>radio group，wrap a group of <code>nz-radio</code>。</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>current selected <code>nz-radio</code> value, double binding</td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzName]</code></td>
+<td>The <code>name</code> property of all <code>input[type=&quot;radio&quot;]</code> children</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable all radio buttons</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Size, only on radio style</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>the callback function when current selected <code>nz-radio</code> value change</td>
+<td><code>EventEmitter&lt;string&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzButtonStyle]</code></td>
+<td>style type of radio button</td>
+<td><code>&#39;outline&#39; | &#39;solid&#39;</code></td>
+<td><code>&#39;outline&#39;</code></td>
+</tr>
+</tbody></table>
+<h2 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h2><h3 id="[nz-radio]"><span>[nz-radio]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-radio]'" class="anchor">#</a></h3><p>you can get <code>NzRadioComponent</code> via <code>ViewChild</code></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur()</td>
+<td>remove focus</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>get focus</td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,335 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-steps-demo-simple" nzTitle="基本用法"></nz-link><nz-link nzHref="#components-steps-demo-small-size" nzTitle="迷你版"></nz-link><nz-link nzHref="#components-steps-demo-start-index" nzTitle="起始序号"></nz-link><nz-link nzHref="#components-steps-demo-icon" nzTitle="带图标的步骤条"></nz-link><nz-link nzHref="#components-steps-demo-step-next" nzTitle="步骤切换"></nz-link><nz-link nzHref="#components-steps-demo-vertical" nzTitle="竖直方向的步骤条"></nz-link><nz-link nzHref="#components-steps-demo-vertical-small" nzTitle="竖直方向的小型步骤条"></nz-link><nz-link nzHref="#components-steps-demo-error" nzTitle="步骤运行错误"></nz-link><nz-link nzHref="#components-steps-demo-progress-dot" nzTitle="点状步骤条"></nz-link><nz-link nzHref="#components-steps-demo-customized-progress-dot" nzTitle="自定义点状步骤条"></nz-link><nz-link nzHref="#components-steps-demo-clickable" nzTitle="可点击"></nz-link><nz-link nzHref="#components-steps-demo-nav" nzTitle="导航步骤"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Steps<span class="subtitle">步骤条</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>引导用户按照流程完成任务的导航条。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当任务复杂或者存在先后关系时，将其分解成一系列步骤，从而简化任务。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzStepsModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/steps'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本用法"
+  [nzId]="'components-steps-demo-simple'"
+  nzSelector="nz-demo-steps-simple"
+  [nzLink]="'components-steps-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-simple <name>"
+  nzComponentName="NzDemoStepsSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/simple.md'">
+	<nz-demo-steps-simple demo></nz-demo-steps-simple>
+	<div intro ngNonBindable>
+		<p>简单的步骤条。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="迷你版"
+  [nzId]="'components-steps-demo-small-size'"
+  nzSelector="nz-demo-steps-small-size"
+  [nzLink]="'components-steps-demo-small-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-small-size <name>"
+  nzComponentName="NzDemoStepsSmallSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/small-size.md'">
+	<nz-demo-steps-small-size demo></nz-demo-steps-small-size>
+	<div intro ngNonBindable>
+		<p>迷你版的步骤条，通过设置 <code>&lt;nz-steps nzSize=&quot;small&quot;&gt;</code> 启用.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="起始序号"
+  [nzId]="'components-steps-demo-start-index'"
+  nzSelector="nz-demo-steps-start-index"
+  [nzLink]="'components-steps-demo-start-index'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-start-index <name>"
+  nzComponentName="NzDemoStepsStartIndexComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/start-index.md'">
+	<nz-demo-steps-start-index demo></nz-demo-steps-start-index>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzStartIndex</code> 来设置步骤条的起始序号. 请注意 <code>nzCurrent</code> 也应该有对应的偏移.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带图标的步骤条"
+  [nzId]="'components-steps-demo-icon'"
+  nzSelector="nz-demo-steps-icon"
+  [nzLink]="'components-steps-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-icon <name>"
+  nzComponentName="NzDemoStepsIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/icon.md'">
+	<nz-demo-steps-icon demo></nz-demo-steps-icon>
+	<div intro ngNonBindable>
+		<p>通过设置 <code>nz-step</code> 的 <code>nzIcon</code> 属性，可以启用自定义图标。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="步骤切换"
+  [nzId]="'components-steps-demo-step-next'"
+  nzSelector="nz-demo-steps-step-next"
+  [nzLink]="'components-steps-demo-step-next'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-step-next <name>"
+  nzComponentName="NzDemoStepsStepNextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/step-next.md'">
+	<nz-demo-steps-step-next demo></nz-demo-steps-step-next>
+	<div intro ngNonBindable>
+		<p>通常配合内容及按钮使用，表示一个流程的处理进度。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="竖直方向的步骤条"
+  [nzId]="'components-steps-demo-vertical'"
+  nzSelector="nz-demo-steps-vertical"
+  [nzLink]="'components-steps-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-vertical <name>"
+  nzComponentName="NzDemoStepsVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/vertical.md'">
+	<nz-demo-steps-vertical demo></nz-demo-steps-vertical>
+	<div intro ngNonBindable>
+		<p>简单的竖直方向的步骤条。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="竖直方向的小型步骤条"
+  [nzId]="'components-steps-demo-vertical-small'"
+  nzSelector="nz-demo-steps-vertical-small"
+  [nzLink]="'components-steps-demo-vertical-small'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-vertical-small <name>"
+  nzComponentName="NzDemoStepsVerticalSmallComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/vertical-small.md'">
+	<nz-demo-steps-vertical-small demo></nz-demo-steps-vertical-small>
+	<div intro ngNonBindable>
+		<p>简单的竖直方向的小型步骤条。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="步骤运行错误"
+  [nzId]="'components-steps-demo-error'"
+  nzSelector="nz-demo-steps-error"
+  [nzLink]="'components-steps-demo-error'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-error <name>"
+  nzComponentName="NzDemoStepsErrorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/error.md'">
+	<nz-demo-steps-error demo></nz-demo-steps-error>
+	<div intro ngNonBindable>
+		<p>使用 <code>nz-steps</code> 的 <code>nzStatus</code> 属性来指定当前步骤的状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="点状步骤条"
+  [nzId]="'components-steps-demo-progress-dot'"
+  nzSelector="nz-demo-steps-progress-dot"
+  [nzLink]="'components-steps-demo-progress-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-progress-dot <name>"
+  nzComponentName="NzDemoStepsProgressDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/progress-dot.md'">
+	<nz-demo-steps-progress-dot demo></nz-demo-steps-progress-dot>
+	<div intro ngNonBindable>
+		<p>包含步骤点的进度条。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义点状步骤条"
+  [nzId]="'components-steps-demo-customized-progress-dot'"
+  nzSelector="nz-demo-steps-customized-progress-dot"
+  [nzLink]="'components-steps-demo-customized-progress-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-customized-progress-dot <name>"
+  nzComponentName="NzDemoStepsCustomizedProgressDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/customized-progress-dot.md'">
+	<nz-demo-steps-customized-progress-dot demo></nz-demo-steps-customized-progress-dot>
+	<div intro ngNonBindable>
+		<p>为点状步骤条增加自定义展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可点击"
+  [nzId]="'components-steps-demo-clickable'"
+  nzSelector="nz-demo-steps-clickable"
+  [nzLink]="'components-steps-demo-clickable'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-clickable <name>"
+  nzComponentName="NzDemoStepsClickableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/clickable.md'">
+	<nz-demo-steps-clickable demo></nz-demo-steps-clickable>
+	<div intro ngNonBindable>
+		<p>订阅 <code>(nzIndexChange)</code> 后，Steps 变为可点击状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="导航步骤"
+  [nzId]="'components-steps-demo-nav'"
+  nzSelector="nz-demo-steps-nav"
+  [nzLink]="'components-steps-demo-nav'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-nav <name>"
+  nzComponentName="NzDemoStepsNavComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/nav.md'">
+	<nz-demo-steps-nav demo></nz-demo-steps-nav>
+	<div intro ngNonBindable>
+		<p>导航类型的步骤条。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-steps</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第一步<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第二步<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>第三步<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-steps</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-steps"><span>nz-steps</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-steps'" class="anchor">#</a></h3><p>整体步骤条。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzType]</code></td>
+<td>步骤条类型，有 <code>default</code> 和 <code>navigation</code> 两种</td>
+<td><code>&#39;default&#39; | &#39;navigation&#39;</code></td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td><code>[nzCurrent]</code></td>
+<td>指定当前步骤，从 0 开始记数。在子 <code>nz-step</code> 元素中，可以通过 <code>nzStatus</code> 属性覆盖状态</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>[nzDirection]</code></td>
+<td>指定步骤条方向。目前支持水平（<code>horizontal</code>）和竖直（<code>vertical</code>）两种方向</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39;</code></td>
+<td><code>horizontal</code></td>
+</tr>
+<tr>
+<td><code>[nzLabelPlacement]</code></td>
+<td>指定标签放置位置，默认水平放图标右侧，可选 <code>vertical</code> 放图标下方</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39;</code></td>
+<td><code>horizontal</code></td>
+</tr>
+<tr>
+<td><code>[nzProgressDot]</code></td>
+<td>点状步骤条，可以设置为一个 TemplateRef</td>
+<td><code>boolean | TemplateRef&lt;&#123; $implicit: TemplateRef&lt;void&gt;, status: string, index: number &#125;&gt;</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>指定大小，目前支持普通（<code>default</code>）和迷你（<code>small</code>）</td>
+<td><code>&#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>指定当前步骤的状态，可选 <code>wait</code> <code>process</code> <code>finish</code> <code>error</code></td>
+<td><code>&#39;wait&#39; | &#39;process&#39; | &#39;finish&#39; | &#39;error&#39;</code></td>
+<td><code>&#39;process&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStartIndex]</code></td>
+<td>指定起始位置的序号</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>(nzIndexChange)</code></td>
+<td>点击单个步骤时触发的事件</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-step"><span>nz-step</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-step'" class="anchor">#</a></h3><p>步骤条内的每一个步骤。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDescription]</code></td>
+<td>步骤的详情描述，可选</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIcon]</code></td>
+<td>步骤图标的类型，可选</td>
+<td><code>string | string[] | Set&lt;string&gt; | &#123; [klass: string]: any; &#125;</code>  |  <code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>指定状态。当不配置该属性时，会使用 <code>nz-steps</code> 的 <code>nzCurrent</code> 来自动指定状态。可选：<code>wait</code> <code>process</code> <code>finish</code> <code>error</code></td>
+<td><code>&#39;wait&#39; | &#39;process&#39; | &#39;finish&#39; | &#39;error&#39;</code></td>
+<td><code>&#39;wait&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSubtitle]</code></td>
+<td>子标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用点击</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,59 @@
+.ant-collapse {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    background-color: $collapse-bg;
+    border-radius: $border-radius;
+    border: 1px solid $collapse-border;
+    border-bottom: 0;
+
+    > .ant-collapse-item {
+        border-bottom: 1px solid $border-color;
+        
+        > .ant-collapse-header {
+            line-height: $line-height-base;
+            padding: $collapse-header-spacing;
+            color: $collapse-header-color;
+            position: relative;
+        }
+    }
+
+    .ant-collapse-item-disabled {
+
+        > .ant-collapse-header {
+            cursor: not-allowed;
+            color: rgba($collapse-header-color, 0.25);
+
+            >.arrow {
+                cursor: not-allowed;
+                color: rgba($collapse-header-color, 0.25);
+            }
+        }
+    }
+}    
+
+.ant-collapse-content {
+    color: $body-color;
+    background-color: $white;
+    border-top: 1px solid $border-color;
+
+    > .ant-collapse-content-box {
+        padding: $collapse-content-spacing;
+    }
+}
+
+.ant-collapse-borderless {
+    background-color: transparent;
+    border: 0;
+
+    > .ant-collapse-item {
+
+        > .ant-collapse-content {
+
+            > .ant-collapse-content-box {
+                padding-top: 0.25rem;
+            }
+        }
+    } 
+}

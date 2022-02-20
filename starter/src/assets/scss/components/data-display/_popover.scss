@@ -1,0 +1,51 @@
+.ant-popover {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    z-index: $zindex-popover;
+}
+
+.ant-popover-placement-top,
+.ant-popover-placement-topLeft,
+.ant-popover-placement-topRight {
+    padding-bottom: $popover-placement-gutter;
+}
+
+.ant-popover-placement-left,
+.ant-popover-placement-leftBottom,
+.ant-popover-placement-leftTop {
+    padding-right: $popover-placement-gutter;
+}
+
+.ant-popover-placement-bottom,
+.ant-popover-placement-bottomLeft, 
+.ant-popover-placement-bottomRight {
+    padding-top: $popover-placement-gutter;
+}
+
+.ant-popover-placement-right, 
+.ant-popover-placement-rightBottom, 
+.ant-popover-placement-rightTop {
+    padding-left: $popover-placement-gutter;
+}
+
+.ant-popover-inner {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 8px rgba($gray-dark, 0.15);
+}
+
+.ant-popover-title {
+    min-width: 180px;
+    padding: 0.3125rem 0.9375rem;
+    min-height: auto;
+    border-bottom: 1px solid $border-color;
+    color: $gray-dark;
+    font-weight: 500;
+}
+
+.ant-popover-inner-content {
+    padding: 0.75rem 1rem;
+    color: $gray-light;
+}

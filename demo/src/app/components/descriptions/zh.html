@@ -1,0 +1,190 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-descriptions-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-descriptions-demo-border" nzTitle="带边框的"></nz-link><nz-link nzHref="#components-descriptions-demo-custom-size" nzTitle="自定义尺寸"></nz-link><nz-link nzHref="#components-descriptions-demo-responsive" nzTitle="响应式"></nz-link><nz-link nzHref="#components-descriptions-demo-vertical" nzTitle="垂直"></nz-link><nz-link nzHref="#components-descriptions-demo-vertical-border" nzTitle="垂直边框"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Descriptions<span class="subtitle">描述列表</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>成组显示多个只读字段。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>常见于详情页的信息展示。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDescriptionsModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/descriptions'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-descriptions-demo-basic'"
+  nzSelector="nz-demo-descriptions-basic"
+  [nzLink]="'components-descriptions-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-basic <name>"
+  nzComponentName="NzDemoDescriptionsBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/basic.md'">
+	<nz-demo-descriptions-basic demo></nz-demo-descriptions-basic>
+	<div intro ngNonBindable>
+		<p>简单的展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带边框的"
+  [nzId]="'components-descriptions-demo-border'"
+  nzSelector="nz-demo-descriptions-border"
+  [nzLink]="'components-descriptions-demo-border'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-border <name>"
+  nzComponentName="NzDemoDescriptionsBorderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/border.md'">
+	<nz-demo-descriptions-border demo></nz-demo-descriptions-border>
+	<div intro ngNonBindable>
+		<p>带边框和背景颜色列表。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义尺寸"
+  [nzId]="'components-descriptions-demo-custom-size'"
+  nzSelector="nz-demo-descriptions-custom-size"
+  [nzLink]="'components-descriptions-demo-custom-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-custom-size <name>"
+  nzComponentName="NzDemoDescriptionsCustomSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/custom-size.md'">
+	<nz-demo-descriptions-custom-size demo></nz-demo-descriptions-custom-size>
+	<div intro ngNonBindable>
+		<p>自定义尺寸，适应在各种容器中展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应式"
+  [nzId]="'components-descriptions-demo-responsive'"
+  nzSelector="nz-demo-descriptions-responsive"
+  [nzLink]="'components-descriptions-demo-responsive'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-responsive <name>"
+  nzComponentName="NzDemoDescriptionsResponsiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/responsive.md'">
+	<nz-demo-descriptions-responsive demo></nz-demo-descriptions-responsive>
+	<div intro ngNonBindable>
+		<p>通过响应式的配置可以实现在小屏幕设备上的完美呈现。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="垂直"
+  [nzId]="'components-descriptions-demo-vertical'"
+  nzSelector="nz-demo-descriptions-vertical"
+  [nzLink]="'components-descriptions-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-vertical <name>"
+  nzComponentName="NzDemoDescriptionsVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/vertical.md'">
+	<nz-demo-descriptions-vertical demo></nz-demo-descriptions-vertical>
+	<div intro ngNonBindable>
+		<p>Vertical usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="垂直边框"
+  [nzId]="'components-descriptions-demo-vertical-border'"
+  nzSelector="nz-demo-descriptions-vertical-border"
+  [nzLink]="'components-descriptions-demo-vertical-border'"
+  nzGenerateCommand="ng g ng-zorro-antd:descriptions-vertical-border <name>"
+  nzComponentName="NzDemoDescriptionsVerticalBorderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/descriptions/demo/vertical-border.md'">
+	<nz-demo-descriptions-vertical-border demo></nz-demo-descriptions-vertical-border>
+	<div intro ngNonBindable>
+		<p>垂直且带边框。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-descriptions"><span>nz-descriptions</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-descriptions'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTitle]</code></td>
+<td>描述列表的标题，显示在最顶部</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBordered]</code></td>
+<td>是否展示边框</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzColumn]</code></td>
+<td>一行的 <code>nz-descriptions-item</code> 的数量，可以写成像素值或支持响应式的对象写法 <code>&#123; xs: 8, sm: 16, md: 24&#125;</code></td>
+<td><code>number|object</code></td>
+<td><code>&#123; xxl: 3, xl: 3, lg: 3, md: 3, sm: 2, xs: 1 &#125;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>设置列表的大小（只有设置 <code>nzBordered</code> 时生效）</td>
+<td><code>&#39;default&#39; | &#39;middle&#39; | &#39;small&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzColon]</code></td>
+<td>在标题后显示冒号</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="nz-descriptions-item"><span>nz-descriptions-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-descriptions-item'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTitle]</code></td>
+<td>内容的描述</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSpan]</code></td>
+<td>包含列的数量</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+</tr>
+</tbody></table>
+</section></article>

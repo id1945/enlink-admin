@@ -1,0 +1,40 @@
+.ant-picker-dropdown {
+    color: $body-color;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    position: absolute;
+    z-index: $zindex-dropdown;
+}
+
+.ant-picker-time-panel-column {
+
+    > li {
+        &.ant-picker-time-panel-cell {
+
+            .ant-picker-time-panel-cell-inner {
+                color: $body-color;
+
+                &:hover {
+                    background: $gray-lightest;
+                }
+            }
+        }
+
+        &.ant-picker-time-panel-cell-selected {
+
+            .ant-picker-time-panel-cell-inner {
+                color: $picker-calendar-theme-color;
+                background: rgba($picker-calendar-theme-color, 0.1);
+                font-weight: $font-weight-semibold;
+
+                &:hover {
+                    background: rgba($picker-calendar-theme-color, 0.1);
+                }
+            }
+        }
+    }
+
+    &:not(:first-child) {
+        border-left: 1px solid $border-color;
+    }
+}

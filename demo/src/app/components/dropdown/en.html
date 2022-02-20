@@ -1,0 +1,286 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-dropdown-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-dropdown-demo-placement" nzTitle="Placement"></nz-link><nz-link nzHref="#components-dropdown-demo-item" nzTitle="Other elements"></nz-link><nz-link nzHref="#components-dropdown-demo-trigger" nzTitle="Trigger mode"></nz-link><nz-link nzHref="#components-dropdown-demo-event" nzTitle="Click event"></nz-link><nz-link nzHref="#components-dropdown-demo-dropdown-button" nzTitle="Button with dropdown menu"></nz-link><nz-link nzHref="#components-dropdown-demo-sub-menu" nzTitle="Cascading menu"></nz-link><nz-link nzHref="#components-dropdown-demo-overlay-visible" nzTitle="The way of hiding menu."></nz-link><nz-link nzHref="#components-dropdown-demo-context-menu" nzTitle="Context Menu"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Dropdown<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A dropdown list.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>If there are too many operations to display, you can wrap them in a <code>Dropdown</code>. By clicking/hovering on the trigger, a dropdown menu should appear, which allows you to choose one option and execute relevant actions.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDropDownModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/dropdown'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-dropdown-demo-basic'"
+  nzSelector="nz-demo-dropdown-basic"
+  [nzLink]="'components-dropdown-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-basic <name>"
+  nzComponentName="NzDemoDropdownBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/basic.md'">
+	<nz-demo-dropdown-basic demo></nz-demo-dropdown-basic>
+	<div intro ngNonBindable>
+		<p>The most basic dropdown menu.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Other elements"
+  [nzId]="'components-dropdown-demo-item'"
+  nzSelector="nz-demo-dropdown-item"
+  [nzLink]="'components-dropdown-demo-item'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-item <name>"
+  nzComponentName="NzDemoDropdownItemComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/item.md'">
+	<nz-demo-dropdown-item demo></nz-demo-dropdown-item>
+	<div intro ngNonBindable>
+		<p>Divider and disabled menu item.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Click event"
+  [nzId]="'components-dropdown-demo-event'"
+  nzSelector="nz-demo-dropdown-event"
+  [nzLink]="'components-dropdown-demo-event'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-event <name>"
+  nzComponentName="NzDemoDropdownEventComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/event.md'">
+	<nz-demo-dropdown-event demo></nz-demo-dropdown-event>
+	<div intro ngNonBindable>
+		<p>An event will be triggered when you click menu items, in which you can make different operations by adding events to item.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Cascading menu"
+  [nzId]="'components-dropdown-demo-sub-menu'"
+  nzSelector="nz-demo-dropdown-sub-menu"
+  [nzLink]="'components-dropdown-demo-sub-menu'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-sub-menu <name>"
+  nzComponentName="NzDemoDropdownSubMenuComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/sub-menu.md'">
+	<nz-demo-dropdown-sub-menu demo></nz-demo-dropdown-sub-menu>
+	<div intro ngNonBindable>
+		<p>The menu has multiple levels.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Context Menu"
+  [nzId]="'components-dropdown-demo-context-menu'"
+  nzSelector="nz-demo-dropdown-context-menu"
+  [nzLink]="'components-dropdown-demo-context-menu'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-context-menu <name>"
+  nzComponentName="NzDemoDropdownContextMenuComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/context-menu.md'">
+	<nz-demo-dropdown-context-menu demo></nz-demo-dropdown-context-menu>
+	<div intro ngNonBindable>
+		<p>Trigger <code>dropdown</code> with contextmenu.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Placement"
+  [nzId]="'components-dropdown-demo-placement'"
+  nzSelector="nz-demo-dropdown-placement"
+  [nzLink]="'components-dropdown-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-placement <name>"
+  nzComponentName="NzDemoDropdownPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/placement.md'">
+	<nz-demo-dropdown-placement demo></nz-demo-dropdown-placement>
+	<div intro ngNonBindable>
+		<p>Support 6 placements.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Trigger mode"
+  [nzId]="'components-dropdown-demo-trigger'"
+  nzSelector="nz-demo-dropdown-trigger"
+  [nzLink]="'components-dropdown-demo-trigger'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-trigger <name>"
+  nzComponentName="NzDemoDropdownTriggerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/trigger.md'">
+	<nz-demo-dropdown-trigger demo></nz-demo-dropdown-trigger>
+	<div intro ngNonBindable>
+		<p>The default trigger mode is <code>hover</code>, you can change it to <code>click</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Button with dropdown menu"
+  [nzId]="'components-dropdown-demo-dropdown-button'"
+  nzSelector="nz-demo-dropdown-dropdown-button"
+  [nzLink]="'components-dropdown-demo-dropdown-button'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-dropdown-button <name>"
+  nzComponentName="NzDemoDropdownDropdownButtonComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/dropdown-button.md'">
+	<nz-demo-dropdown-dropdown-button demo></nz-demo-dropdown-dropdown-button>
+	<div intro ngNonBindable>
+		<p>A button is on the left, and a related functional menu is on the right.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="The way of hiding menu."
+  [nzId]="'components-dropdown-demo-overlay-visible'"
+  nzSelector="nz-demo-dropdown-overlay-visible"
+  [nzLink]="'components-dropdown-demo-overlay-visible'"
+  nzGenerateCommand="ng g ng-zorro-antd:dropdown-overlay-visible <name>"
+  nzComponentName="NzDemoDropdownOverlayVisibleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/dropdown/demo/overlay-visible.md'">
+	<nz-demo-dropdown-overlay-visible demo></nz-demo-dropdown-overlay-visible>
+	<div intro ngNonBindable>
+		<p>The default is to close the menu when you click on menu items, this feature can be turned off.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-dropdown]"><span>[nz-dropdown]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-dropdown]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDropdownMenu]</code></td>
+<td>Dropdown menu</td>
+<td><code>NzDropdownMenuComponent</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>whether the dropdown menu is disabled</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPlacement]</code></td>
+<td>placement of pop menu</td>
+<td><code>&#39;bottomLeft&#39; | &#39;bottomCenter&#39; | &#39;bottomRight&#39; | &#39;topLeft&#39; | &#39;topCenter&#39; | &#39;topRight&#39;</code></td>
+<td><code>&#39;bottomLeft&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTrigger]</code></td>
+<td>the trigger mode which executes the drop-down action</td>
+<td><code>&#39;click&#39; | &#39;hover&#39;</code></td>
+<td><code>&#39;hover&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzClickHide]</code></td>
+<td>whether hide menu when click</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>whether the dropdown menu is visible, double binding</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzBackdrop]</code></td>
+<td>whether the dropdown has a backdrop when <code>nzTrigger</code> is <code>click</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzOverlayClassName]</code></td>
+<td>Class name of the dropdown root element</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOverlayStyle]</code></td>
+<td>Style of the dropdown root element</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzVisibleChange)</code></td>
+<td>a callback function takes an argument: <code>nzVisible</code>, is executed when the visible state is changed</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>You should use <a href="/components/menu/en">nz-menu</a> in <code>nz-dropdown</code>. The menu items and dividers are also available by using <code>nz-menu-item</code> and <code>nz-menu-divider</code>.</p>
+<blockquote>
+<p>nz-menu of nz-dropdown is unselectable by default, you can make it selectable via <code>&lt;ul nz-menu nzSelectable&gt;</code>.</p>
+</blockquote>
+<h3 id="nz-dropdown-menu"><span>nz-dropdown-menu</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-dropdown-menu'" class="anchor">#</a></h3><p>Wrap Dropdown Menu and pass to <code>[nz-dropdown]</code> 和 <code>NzContextMenuService</code>, you can export it via Template Syntax <code>nzDropdownMenu</code></p>
+<blockquote>
+<p>Note：Every <code>[nz-dropdown]</code> should pass independent <code>nz-dropdown-menu</code>.</p>
+</blockquote>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">nz-dropdown</span> <span class="token attr-name">[nzDropdownMenu]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>menu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Hover me<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-dropdown-menu</span> <span class="token attr-name">#menu</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>nzDropdownMenu<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">nz-menu</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>1st menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>2nd menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>3rd menu item<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-dropdown-menu</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nzcontextmenuservice"><span>NzContextMenuService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzcontextmenuservice'" class="anchor">#</a></h3><p>Create dropdown with contextmenu, the detail can be found in the example above</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Arguments</th>
+<th>Return Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>create dropdown</td>
+<td>`($event:MouseEvent</td>
+<td>&#123;x:number, y:number&#125;, menu:NzDropdownMenuComponent)`</td>
+<td>-</td>
+</tr>
+<tr>
+<td>close</td>
+<td>close dropdown</td>
+<td>-</td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

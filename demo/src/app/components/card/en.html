@@ -1,0 +1,316 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-card-demo-basic" nzTitle="Basic card"></nz-link><nz-link nzHref="#components-card-demo-border-less" nzTitle="No border"></nz-link><nz-link nzHref="#components-card-demo-simple" nzTitle="Simple card"></nz-link><nz-link nzHref="#components-card-demo-flexible-content" nzTitle="Customized content"></nz-link><nz-link nzHref="#components-card-demo-in-column" nzTitle="Card in column"></nz-link><nz-link nzHref="#components-card-demo-loading" nzTitle="Loading card"></nz-link><nz-link nzHref="#components-card-demo-grid-card" nzTitle="Grid card"></nz-link><nz-link nzHref="#components-card-demo-inner" nzTitle="Inner card"></nz-link><nz-link nzHref="#components-card-demo-tabs" nzTitle="With tabs"></nz-link><nz-link nzHref="#components-card-demo-meta" nzTitle="Support more content configuration"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Card<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Simple rectangular container.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>A card can be used to display content related to a single subject. The content can consist of multiple elements of varying types and sizes.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCardModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/card'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic card"
+  [nzId]="'components-card-demo-basic'"
+  nzSelector="nz-demo-card-basic"
+  [nzLink]="'components-card-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-basic <name>"
+  nzComponentName="NzDemoCardBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/basic.md'">
+	<nz-demo-card-basic demo></nz-demo-card-basic>
+	<div intro ngNonBindable>
+		<p>A basic card containing a title, content and an extra corner content.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="No border"
+  [nzId]="'components-card-demo-border-less'"
+  nzSelector="nz-demo-card-border-less"
+  [nzLink]="'components-card-demo-border-less'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-border-less <name>"
+  nzComponentName="NzDemoCardBorderLessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/border-less.md'">
+	<nz-demo-card-border-less demo></nz-demo-card-border-less>
+	<div intro ngNonBindable>
+		<p>A borderless card on a gray background.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Simple card"
+  [nzId]="'components-card-demo-simple'"
+  nzSelector="nz-demo-card-simple"
+  [nzLink]="'components-card-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-simple <name>"
+  nzComponentName="NzDemoCardSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/simple.md'">
+	<nz-demo-card-simple demo></nz-demo-card-simple>
+	<div intro ngNonBindable>
+		<p>A simple card only containing a content area.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized content"
+  [nzId]="'components-card-demo-flexible-content'"
+  nzSelector="nz-demo-card-flexible-content"
+  [nzLink]="'components-card-demo-flexible-content'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-flexible-content <name>"
+  nzComponentName="NzDemoCardFlexibleContentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/flexible-content.md'">
+	<nz-demo-card-flexible-content demo></nz-demo-card-flexible-content>
+	<div intro ngNonBindable>
+		<p>You can use <code>nz-card-meta</code> to support more flexible content.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Card in column"
+  [nzId]="'components-card-demo-in-column'"
+  nzSelector="nz-demo-card-in-column"
+  [nzLink]="'components-card-demo-in-column'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-in-column <name>"
+  nzComponentName="NzDemoCardInColumnComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/in-column.md'">
+	<nz-demo-card-in-column demo></nz-demo-card-in-column>
+	<div intro ngNonBindable>
+		<p>Cards usually cooperate with grid column layout in overview page.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Loading card"
+  [nzId]="'components-card-demo-loading'"
+  nzSelector="nz-demo-card-loading"
+  [nzLink]="'components-card-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-loading <name>"
+  nzComponentName="NzDemoCardLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/loading.md'">
+	<nz-demo-card-loading demo></nz-demo-card-loading>
+	<div intro ngNonBindable>
+		<p>Shows a loading indicator while the contents of the card is being fetched.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Grid card"
+  [nzId]="'components-card-demo-grid-card'"
+  nzSelector="nz-demo-card-grid-card"
+  [nzLink]="'components-card-demo-grid-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-grid-card <name>"
+  nzComponentName="NzDemoCardGridCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/grid-card.md'">
+	<nz-demo-card-grid-card demo></nz-demo-card-grid-card>
+	<div intro ngNonBindable>
+		<p>Grid style card content.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Inner card"
+  [nzId]="'components-card-demo-inner'"
+  nzSelector="nz-demo-card-inner"
+  [nzLink]="'components-card-demo-inner'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-inner <name>"
+  nzComponentName="NzDemoCardInnerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/inner.md'">
+	<nz-demo-card-inner demo></nz-demo-card-inner>
+	<div intro ngNonBindable>
+		<p>It can be placed inside the ordinary card to display the information of the multilevel structure.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="With tabs"
+  [nzId]="'components-card-demo-tabs'"
+  nzSelector="nz-demo-card-tabs"
+  [nzLink]="'components-card-demo-tabs'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-tabs <name>"
+  nzComponentName="NzDemoCardTabsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/tabs.md'">
+	<nz-demo-card-tabs demo></nz-demo-card-tabs>
+	<div intro ngNonBindable>
+		<p>More content can be hosted.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Support more content configuration"
+  [nzId]="'components-card-demo-meta'"
+  nzSelector="nz-demo-card-meta"
+  [nzLink]="'components-card-demo-meta'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-meta <name>"
+  nzComponentName="NzDemoCardMetaComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/meta.md'">
+	<nz-demo-card-meta demo></nz-demo-card-meta>
+	<div intro ngNonBindable>
+		<p>A Card that supports <code>cover</code>, <code>avatar</code>, <code>title</code> and <code>description</code>.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-card</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>卡片标题<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>卡片内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-card</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-card"><span>nz-card</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActions]</code></td>
+<td>The action list, shows at the bottom of the Card.</td>
+<td><code>Array&lt;TemplateRef&lt;void&gt;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBodyStyle]</code></td>
+<td>Inline style to apply to the card content</td>
+<td><code>&#123; [key: string]: string &#125;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBordered]</code></td>
+<td>Toggles rendering of the border around the card</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCover]</code></td>
+<td>Card cover</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExtra]</code></td>
+<td>Content to render in the top-right corner of the card</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHoverable]</code></td>
+<td>Lift up when hovering card</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>Shows a loading indicator while the contents of the card are being fetched</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>Card title</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>Card style type, can be set to <code>inner</code> or not set</td>
+<td><code>&#39;inner&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Size of card</td>
+<td><code>&#39;default&#39;|&#39;small&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="nz-card-meta"><span>nz-card-meta</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card-meta'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAvatar]</code></td>
+<td>avatar or icon</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDescription]</code></td>
+<td>description content</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>title content</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-card-grid]"><span>[nz-card-grid]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-card-grid]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzHoverable]</code></td>
+<td>Lift up when hovering card</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>Area for grid style card</p>
+<h3 id="nz-card-tab"><span>nz-card-tab</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card-tab'" class="anchor">#</a></h3><p>Area for tab card</p>
+</section></article>

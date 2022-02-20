@@ -1,0 +1,244 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-badge-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-badge-demo-no-wrapper" nzTitle="Standalone"></nz-link><nz-link nzHref="#components-badge-demo-overflow" nzTitle="Overflow Count"></nz-link><nz-link nzHref="#components-badge-demo-dot" nzTitle="Red badge"></nz-link><nz-link nzHref="#components-badge-demo-link" nzTitle="Clickable"></nz-link><nz-link nzHref="#components-badge-demo-change" nzTitle="Dynamic"></nz-link><nz-link nzHref="#components-badge-demo-status" nzTitle="Status"></nz-link><nz-link nzHref="#components-badge-demo-colorful" nzTitle="Colorful Badge"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Badge<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Small numerical value or status descriptor for UI elements.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>Badge normally appears in proximity to notifications or user avatars with eye-catching appeal, typically displaying unread messages count.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzBadgeModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/badge'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-badge-demo-basic'"
+  nzSelector="nz-demo-badge-basic"
+  [nzLink]="'components-badge-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-basic <name>"
+  nzComponentName="NzDemoBadgeBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/basic.md'">
+	<nz-demo-badge-basic demo></nz-demo-badge-basic>
+	<div intro ngNonBindable>
+		<p>Simplest Usage. Badge will be hidden when <code>nzCount</code> is <code>0</code>, but we can use <code>nzShowZero</code> to show it.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Overflow Count"
+  [nzId]="'components-badge-demo-overflow'"
+  nzSelector="nz-demo-badge-overflow"
+  [nzLink]="'components-badge-demo-overflow'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-overflow <name>"
+  nzComponentName="NzDemoBadgeOverflowComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/overflow.md'">
+	<nz-demo-badge-overflow demo></nz-demo-badge-overflow>
+	<div intro ngNonBindable>
+		<p><code>nzOverflowCount+</code> is displayed when count is larger than <code>nzOverflowCount</code>. The default value of <code>nzOverflowCount</code> is <code>99</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Clickable"
+  [nzId]="'components-badge-demo-link'"
+  nzSelector="nz-demo-badge-link"
+  [nzLink]="'components-badge-demo-link'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-link <name>"
+  nzComponentName="NzDemoBadgeLinkComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/link.md'">
+	<nz-demo-badge-link demo></nz-demo-badge-link>
+	<div intro ngNonBindable>
+		<p>The badge can be wrapped with <code>a</code> tag to make it linkable.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Status"
+  [nzId]="'components-badge-demo-status'"
+  nzSelector="nz-demo-badge-status"
+  [nzLink]="'components-badge-demo-status'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-status <name>"
+  nzComponentName="NzDemoBadgeStatusComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/status.md'">
+	<nz-demo-badge-status demo></nz-demo-badge-status>
+	<div intro ngNonBindable>
+		<p>Standalone badge with status.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Standalone"
+  [nzId]="'components-badge-demo-no-wrapper'"
+  nzSelector="nz-demo-badge-no-wrapper"
+  [nzLink]="'components-badge-demo-no-wrapper'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-no-wrapper <name>"
+  nzComponentName="NzDemoBadgeNoWrapperComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/no-wrapper.md'">
+	<nz-demo-badge-no-wrapper demo></nz-demo-badge-no-wrapper>
+	<div intro ngNonBindable>
+		<p>Used in standalone when children is empty.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Red badge"
+  [nzId]="'components-badge-demo-dot'"
+  nzSelector="nz-demo-badge-dot"
+  [nzLink]="'components-badge-demo-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-dot <name>"
+  nzComponentName="NzDemoBadgeDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/dot.md'">
+	<nz-demo-badge-dot demo></nz-demo-badge-dot>
+	<div intro ngNonBindable>
+		<p>This will simply display a red badge, without a specific count.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dynamic"
+  [nzId]="'components-badge-demo-change'"
+  nzSelector="nz-demo-badge-change"
+  [nzLink]="'components-badge-demo-change'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-change <name>"
+  nzComponentName="NzDemoBadgeChangeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/change.md'">
+	<nz-demo-badge-change demo></nz-demo-badge-change>
+	<div intro ngNonBindable>
+		<p>The count will be animated as it changes.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Colorful Badge"
+  [nzId]="'components-badge-demo-colorful'"
+  nzSelector="nz-demo-badge-colorful"
+  [nzLink]="'components-badge-demo-colorful'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-colorful <name>"
+  nzComponentName="NzDemoBadgeColorfulComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/colorful.md'">
+	<nz-demo-badge-colorful demo></nz-demo-badge-colorful>
+	<div intro ngNonBindable>
+		<p>We preset a series of colorful Badge style for different situation usage.
+And you can always set it to a hex color string for custom color.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-badge</span> <span class="token attr-name">[nzCount]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>head-example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-badge</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-badge</span> <span class="token attr-name">[nzCount]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-badge</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-badge"><span>nz-badge</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-badge'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzColor]</code></td>
+<td>Customize Badge dot color</td>
+<td>string</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCount]</code></td>
+<td>Number to show in badge</td>
+<td><code>number | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDot]</code></td>
+<td>Whether to display a red dot instead of <code>count</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowDot]</code></td>
+<td>Whether to display the red dot</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOverflowCount]</code></td>
+<td>Max count to show</td>
+<td><code>number</code></td>
+<td><code>99</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzShowZero]</code></td>
+<td>Whether to show badge when <code>count</code> is zero</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>Set <code>nz-badge</code> as a status dot</td>
+<td><code>&#39;success&#39; | &#39;processing&#39; | &#39;default&#39; | &#39;error&#39; | &#39;warning&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzText]</code></td>
+<td>If <code>nzStatus</code> is set, <code>text</code> sets the display text of the status <code>dot</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>Text to show when hovering over the badge（Only Non-standalone), hide when value is <code>null</code></td>
+<td><code>string | null</code></td>
+<td><code>nzCount</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffset]</code></td>
+<td>set offset of the badge dot, like[x, y] (Only Non-standalone)</td>
+<td><code>[number, number]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

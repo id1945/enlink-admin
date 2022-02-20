@@ -1,0 +1,247 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-rate-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-rate-demo-half" nzTitle="半星"></nz-link><nz-link nzHref="#components-rate-demo-text" nzTitle="文案展现"></nz-link><nz-link nzHref="#components-rate-demo-disabled" nzTitle="只读"></nz-link><nz-link nzHref="#components-rate-demo-clear" nzTitle="清除"></nz-link><nz-link nzHref="#components-rate-demo-character" nzTitle="其他字符"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Rate<span class="subtitle">评分</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>评分组件。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>对评价进行展示。</li>
+<li>对事物进行快速的评级操作。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzRateModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/rate'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-rate-demo-basic'"
+  nzSelector="nz-demo-rate-basic"
+  [nzLink]="'components-rate-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-basic <name>"
+  nzComponentName="NzDemoRateBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/basic.md'">
+	<nz-demo-rate-basic demo></nz-demo-rate-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="文案展现"
+  [nzId]="'components-rate-demo-text'"
+  nzSelector="nz-demo-rate-text"
+  [nzLink]="'components-rate-demo-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-text <name>"
+  nzComponentName="NzDemoRateTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/text.md'">
+	<nz-demo-rate-text demo></nz-demo-rate-text>
+	<div intro ngNonBindable>
+		<p>给评分组件加上文案展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="清除"
+  [nzId]="'components-rate-demo-clear'"
+  nzSelector="nz-demo-rate-clear"
+  [nzLink]="'components-rate-demo-clear'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-clear <name>"
+  nzComponentName="NzDemoRateClearComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/clear.md'">
+	<nz-demo-rate-clear demo></nz-demo-rate-clear>
+	<div intro ngNonBindable>
+		<p>支持允许或者禁用清除。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="半星"
+  [nzId]="'components-rate-demo-half'"
+  nzSelector="nz-demo-rate-half"
+  [nzLink]="'components-rate-demo-half'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-half <name>"
+  nzComponentName="NzDemoRateHalfComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/half.md'">
+	<nz-demo-rate-half demo></nz-demo-rate-half>
+	<div intro ngNonBindable>
+		<p>支持选中半星。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="只读"
+  [nzId]="'components-rate-demo-disabled'"
+  nzSelector="nz-demo-rate-disabled"
+  [nzLink]="'components-rate-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-disabled <name>"
+  nzComponentName="NzDemoRateDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/disabled.md'">
+	<nz-demo-rate-disabled demo></nz-demo-rate-disabled>
+	<div intro ngNonBindable>
+		<p>只读，无法进行鼠标交互。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="其他字符"
+  [nzId]="'components-rate-demo-character'"
+  nzSelector="nz-demo-rate-character"
+  [nzLink]="'components-rate-demo-character'"
+  nzGenerateCommand="ng g ng-zorro-antd:rate-character <name>"
+  nzComponentName="NzDemoRateCharacterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/rate/demo/character.md'">
+	<nz-demo-rate-character demo></nz-demo-rate-character>
+	<div intro ngNonBindable>
+		<p>可以将星星替换为其他字符，比如字母，数字，字体图标甚至中文。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-rate"><span>nz-rate</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-rate'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAllowClear]</code></td>
+<td>是否允许再次点击后清除</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAllowHalf]</code></td>
+<td>是否允许半选</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>自动获取焦点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCharacter]</code></td>
+<td>自定义字符</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td><code>&lt;i nz-icon nzType=&quot;star&quot;&gt;&lt;/i&gt;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCount]</code></td>
+<td>star 总数</td>
+<td><code>number</code></td>
+<td><code>5</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>只读，无法进行交互</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTooltips]</code></td>
+<td>自定义每项的提示信息</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[ngModel]</code></td>
+<td>当前数，可以双向绑定</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>当前数改变时的回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnBlur)</code></td>
+<td>失去焦点时的回调</td>
+<td><code>EventEmitter&lt;FocusEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnFocus)</code></td>
+<td>获取焦点时的回调</td>
+<td><code>EventEmitter&lt;FocusEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnHoverChange)</code></td>
+<td>鼠标经过时数值变化的回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnKeyDown)</code></td>
+<td>按键回调</td>
+<td><code>EventEmitter&lt;KeyboardEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur()</td>
+<td>移除焦点</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>获取焦点</td>
+</tr>
+</tbody></table>
+</section></article>

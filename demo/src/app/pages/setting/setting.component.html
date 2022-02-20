@@ -1,0 +1,215 @@
+<div class="page-header has-tab">
+    <h2 class="font-weight-normal">Setting</h2>
+</div>
+<nz-tabset class="page-header-tab">
+    <nz-tab nzTitle="Account">
+        <div class="container">
+            <nz-card nzTitle="Basic Infomation">
+                <div class="media align-items-center">
+                    <nz-avatar  [nzSize]="80" nzIcon="user" [nzSrc]="avatarUrl"></nz-avatar>
+                    <div class="m-l-20 m-r-20">
+                        <h5 class="m-b-5 font-size-18">Change Avatar</h5>
+                        <p class="opacity-07 font-size-13 m-b-0">
+                            Recommended Dimensions: <br>
+                            120x120 Max fil size: 5MB
+                        </p>
+                    </div>
+                    <nz-upload 
+                        nzName="avatar"
+                        [nzShowUploadList]="false"
+                        (nzChange)="handleChange($event)">
+                        <button nz-button nzType="primary">
+                            <span>Upload</span>
+                        </button>
+                    </nz-upload>
+                </div>
+                <hr class="m-v-25">
+                <div class="row">
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>User Name</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="Username" value="Marshall Nichols">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>Email</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="Username" type="email" value="@marshallnich">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-label>Phone Number</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="Phone Number" >
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-label>Date of Birth</nz-form-label>
+                            <nz-form-control>
+                                <nz-date-picker class="w-100" nzFormat="yyyy/MM/dd" nzPlaceHolder="Date of Birth"></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-4">
+                        <nz-form-item>
+                            <nz-form-label>Language</nz-form-label>
+                            <nz-form-control>
+                                <nz-select class="w-100" [(ngModel)]="selectedLanguage" nzPlaceHolder="Language">
+                                    <nz-option nzValue="US" nzLabel="United Stata"></nz-option>
+                                    <nz-option nzValue="UK" nzLabel="United Kingdom"></nz-option>
+                                    <nz-option nzValue="FR" nzLabel="France"></nz-option>
+                                    <nz-option nzValue="DE" nzLabel="German"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-card>
+            <nz-card nzTitle="Change Password">
+                <form nz-form [formGroup]="changePWForm" (ngSubmit)="submitForm()">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-label nzFor="oldPassword">Old Password</nz-form-label>
+                                <nz-form-control nzErrorTip="Please input your old password!">
+                                    <input formControlName="oldPassword" nz-input type="password" placeholder="Old Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>    
+                        <div class="col-md-3">
+                             <nz-form-item>
+                                <nz-form-label nzFor="newPassword">New Password</nz-form-label>
+                                <nz-form-control nzErrorTip="Please input your New Password!">
+                                    <input formControlName="newPassword" nz-input type="password" placeholder="New Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div> 
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-label nzFor="confirmPassword">Confirm</nz-form-label>
+                                <nz-form-control nzErrorTip="Please confirm your New Password!">
+                                    <input formControlName="confirmPassword" nz-input type="password" placeholder="Confirm Password">
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>
+                        <div class="col-md-3">
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <button  nz-button nzType="primary" [disabled]="!changePWForm.valid">Change</button>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </div>    
+                    </div>
+                </form>
+            </nz-card>  
+            <nz-card nzTitle="Address Details">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nz-form-item>
+                            <nz-form-label>Full Address</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="Address">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>State & City</nz-form-label>
+                            <nz-form-control>
+                                <input nz-input placeholder="State & City">
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                    <div class="col-md-6">
+                        <nz-form-item>
+                            <nz-form-label>Country</nz-form-label>
+                            <nz-form-control>
+                                <nz-select class="w-100" [(ngModel)]="selectedCountry" nzPlaceHolder="Country">
+                                    <nz-option nzValue="US" nzLabel="United Stata"></nz-option>
+                                    <nz-option nzValue="UK" nzLabel="United Kingdom"></nz-option>
+                                    <nz-option nzValue="FR" nzLabel="France"></nz-option>
+                                    <nz-option nzValue="DE" nzLabel="German"></nz-option>
+                                </nz-select>
+                            </nz-form-control>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-card>      
+        </div>
+    </nz-tab>
+    <nz-tab nzTitle="Network">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <nz-card nzTitle="Network Integration">
+                        <nz-list [nzDataSource]="networkList" [nzRenderItem]="network" [nzItemLayout]="'horizontal'">
+                            <ng-template #network let-item>
+                                <nz-list-item [nzActions]="[moreAction]">
+                                    <ng-template #moreAction>
+                                        <span class="m-r-10 text-gray" *ngIf="item.status">{{item.link}}</span>
+                                        <nz-switch [ngModel]="item.status" [nzCheckedChildren]="checkedTemplate" [nzUnCheckedChildren]="unCheckedTemplate"></nz-switch>
+                                        <ng-template #checkedTemplate><i class="font-size-12" nz-icon nzType="check"></i></ng-template>
+                                        <ng-template #unCheckedTemplate><i class="font-size-12" nz-icon nzType="close"></i></ng-template>
+                                    </ng-template>
+                                    <nz-list-item-meta
+                                        [nzTitle]="networkName"
+                                        [nzAvatar]="networkIcon">
+                                        <ng-template #networkIcon>
+                                            <nz-avatar [nzIcon]="item.icon" [ngStyle]="{'color': item.avatarColor, 'background': item.avatarBg}"></nz-avatar>
+                                        </ng-template>
+                                        <ng-template #networkName>
+                                            <div class="font-size-15 font-weight-semibold m-t-10">{{item.name}}</div>
+                                        </ng-template>
+                                    </nz-list-item-meta>
+                                </nz-list-item>
+                            </ng-template>
+                        </nz-list>
+                    </nz-card>
+                </div>
+            </div>
+        </div>
+    </nz-tab>
+    <nz-tab nzTitle="Notification">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <nz-card nzTitle="Notification Config">
+                        <nz-list [nzDataSource]="notificationConfigList" [nzRenderItem]="notification" [nzItemLayout]="'horizontal'">
+                            <ng-template #notification let-item>
+                                <nz-list-item [nzActions]="[configStatus]">
+                                    <ng-template #configStatus>
+                                        <nz-switch [ngModel]="item.status" [nzCheckedChildren]="checkedTemplate2nd" [nzUnCheckedChildren]="unCheckedTemplate2nd"></nz-switch>
+                                        <ng-template #checkedTemplate2nd><i class="font-size-12" nz-icon nzType="check"></i></ng-template>
+                                        <ng-template #unCheckedTemplate2nd><i class="font-size-12" nz-icon nzType="close"></i></ng-template>
+                                    </ng-template>
+                                    <nz-list-item-meta
+                                        [nzTitle]="notificationTitle"
+                                        [nzAvatar]="notificationIcon">
+                                        <ng-template #notificationIcon>
+                                            <nz-avatar [nzIcon]="item.icon" [ngClass]="item.color" class="m-t-5"></nz-avatar>
+                                        </ng-template>
+                                        <ng-template #notificationTitle>
+                                            <h5 class="font-weight-semibold m-b-0">{{item.title}}</h5>
+                                            <p class="m-b-0 font-weight-normal">{{item.desc}}</p>
+                                        </ng-template>
+                                    </nz-list-item-meta>
+                                </nz-list-item>
+                            </ng-template>
+                        </nz-list>
+                    </nz-card>
+                </div>
+            </div>
+        </div>
+    </nz-tab>
+</nz-tabset>

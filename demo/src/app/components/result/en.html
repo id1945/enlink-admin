@@ -1,0 +1,223 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-result-demo-success" nzTitle="Success"></nz-link><nz-link nzHref="#components-result-demo-info" nzTitle="Info"></nz-link><nz-link nzHref="#components-result-demo-warning" nzTitle="Warning"></nz-link><nz-link nzHref="#components-result-demo-fot" nzTitle="403"></nz-link><nz-link nzHref="#components-result-demo-fof" nzTitle="404"></nz-link><nz-link nzHref="#components-result-demo-foo" nzTitle="500"></nz-link><nz-link nzHref="#components-result-demo-error" nzTitle="Error"></nz-link><nz-link nzHref="#components-result-demo-custom" nzTitle="Custom Icon"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Result<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Used to feed back the results of a series of operational tasks.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>Use when important operations need to inform the user to process the results and the feedback is more complicated.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzResultModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/result'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Success"
+  [nzId]="'components-result-demo-success'"
+  nzSelector="nz-demo-result-success"
+  [nzLink]="'components-result-demo-success'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-success <name>"
+  nzComponentName="NzDemoResultSuccessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/success.md'">
+	<nz-demo-result-success demo></nz-demo-result-success>
+	<div intro ngNonBindable>
+		<p>Show successful results.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Info"
+  [nzId]="'components-result-demo-info'"
+  nzSelector="nz-demo-result-info"
+  [nzLink]="'components-result-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-info <name>"
+  nzComponentName="NzDemoResultInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/info.md'">
+	<nz-demo-result-info demo></nz-demo-result-info>
+	<div intro ngNonBindable>
+		<p>Show processing results.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Warning"
+  [nzId]="'components-result-demo-warning'"
+  nzSelector="nz-demo-result-warning"
+  [nzLink]="'components-result-demo-warning'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-warning <name>"
+  nzComponentName="NzDemoResultWarningComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/warning.md'">
+	<nz-demo-result-warning demo></nz-demo-result-warning>
+	<div intro ngNonBindable>
+		<p>Show warning.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="403"
+  [nzId]="'components-result-demo-fot'"
+  nzSelector="nz-demo-result-fot"
+  [nzLink]="'components-result-demo-fot'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-fot <name>"
+  nzComponentName="NzDemoResultFotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/fot.md'">
+	<nz-demo-result-fot demo></nz-demo-result-fot>
+	<div intro ngNonBindable>
+		<p>You are not authorized to access this page.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="404"
+  [nzId]="'components-result-demo-fof'"
+  nzSelector="nz-demo-result-fof"
+  [nzLink]="'components-result-demo-fof'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-fof <name>"
+  nzComponentName="NzDemoResultFofComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/fof.md'">
+	<nz-demo-result-fof demo></nz-demo-result-fof>
+	<div intro ngNonBindable>
+		<p>The page you visited does not exist.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="500"
+  [nzId]="'components-result-demo-foo'"
+  nzSelector="nz-demo-result-foo"
+  [nzLink]="'components-result-demo-foo'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-foo <name>"
+  nzComponentName="NzDemoResultFooComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/foo.md'">
+	<nz-demo-result-foo demo></nz-demo-result-foo>
+	<div intro ngNonBindable>
+		<p>There is an error on server.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Error"
+  [nzId]="'components-result-demo-error'"
+  nzSelector="nz-demo-result-error"
+  [nzLink]="'components-result-demo-error'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-error <name>"
+  nzComponentName="NzDemoResultErrorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/error.md'">
+	<nz-demo-result-error demo></nz-demo-result-error>
+	<div intro ngNonBindable>
+		<p>Complex error feedback.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom Icon"
+  [nzId]="'components-result-demo-custom'"
+  nzSelector="nz-demo-result-custom"
+  [nzLink]="'components-result-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-custom <name>"
+  nzComponentName="NzDemoResultCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/custom.md'">
+	<nz-demo-result-custom demo></nz-demo-result-custom>
+	<div intro ngNonBindable>
+		<p>Custom icon.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-result"><span>nz-result</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-result'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nzTitle</code></td>
+<td>title</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzSubTitle</code></td>
+<td>subTitle</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzStatus</code></td>
+<td>result status, decides icons and colors</td>
+<td><code>&#39;success&#39; | &#39;error&#39; | &#39;info&#39; | &#39;warning&#39;| &#39;404&#39; | &#39;403&#39; | &#39;500&#39;</code> | &#39;info&#39;</td>
+<td><code>&#39;info&#39;</code></td>
+</tr>
+<tr>
+<td><code>nzIcon</code></td>
+<td>custom icon</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzExtra</code></td>
+<td>operating area</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="counter-parts"><span>Counter Parts</span><a onclick="window.location.hash = 'counter-parts'" class="anchor">#</a></h3><p>You can use these directives as children of nz-result.</p>
+<table>
+<thead>
+<tr>
+<th>Directive</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>i[nz-result-icon], div[nz-result-icon]</code></td>
+<td>custom icon</td>
+</tr>
+<tr>
+<td><code>div[nz-result-title]</code></td>
+<td>title</td>
+</tr>
+<tr>
+<td><code>div[nz-result-subtitle]</code></td>
+<td>subtitle</td>
+</tr>
+<tr>
+<td><code>div[nz-result-content]</code></td>
+<td>contents, for detailed explanations</td>
+</tr>
+<tr>
+<td><code>div[nz-result-extra]</code></td>
+<td>extra content, usually an operating area</td>
+</tr>
+</tbody></table>
+</section></article>

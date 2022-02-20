@@ -1,0 +1,97 @@
+.ant-picker-calendar {
+    color: $body-color;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    background: $white;
+
+    .ant-picker-panel {
+
+        .ant-picker-body {
+            padding: 0.625rem 0;
+        }
+
+        .ant-picker-content {
+
+            tbody {
+                border-left: 1px solid $picker-calendar-border-color;
+                border-bottom: 1px solid $picker-calendar-border-color;
+            }
+        }
+    }
+
+    &.ant-picker-calendar-mini {
+        .ant-picker-panel {
+            border-top: 1px solid $picker-calendar-border-color;
+
+            .ant-picker-content {
+                tbody {
+                    border-left: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.ant-picker-calendar-full {
+
+    .ant-picker-panel {
+
+        .ant-picker-calendar-date { 
+            margin: 0px;
+            padding: 4px 8px 0;
+            border-top: 1px solid $picker-calendar-border-color;
+            border-right: 1px solid $picker-calendar-border-color;
+        }
+
+        .ant-picker-calendar-date-content {
+            height: 86px;
+            color: $body-color;
+            line-height: $line-height-base;
+        }
+
+        .ant-picker-cell {
+            &:hover {
+                .ant-picker-calendar-date {
+                    background: $picker-calendar-hover-bg;
+                }
+            }
+        }
+
+        .ant-picker-cell-selected {
+
+            .ant-picker-calendar-date,
+            .ant-picker-calendar-date-today {
+                background: $picker-calendar-selected-bg;
+
+                .ant-picker-calendar-date-value {
+                    color: $picker-calendar-theme-color;
+                    font-weight: $font-weight-semibold;
+                }
+            }
+
+            &:hover {
+                .ant-picker-calendar-date,
+                .ant-picker-calendar-date-today {
+                    background: $picker-calendar-selected-bg;
+
+                    .ant-picker-calendar-date-value {
+                        color: $picker-calendar-theme-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ant-picker-calendar-header {
+    padding: 0.9375rem 0;
+}
+
+.calendar-card {
+    @include screen-mobile-above {
+        width: 320px;
+    }
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+}

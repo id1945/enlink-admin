@@ -1,0 +1,193 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-timeline-demo-basic" nzTitle="基本用法"></nz-link><nz-link nzHref="#components-timeline-demo-color" nzTitle="圆圈颜色"></nz-link><nz-link nzHref="#components-timeline-demo-pending" nzTitle="最后一个及排序"></nz-link><nz-link nzHref="#components-timeline-demo-alternate" nzTitle="交替展现"></nz-link><nz-link nzHref="#components-timeline-demo-custom" nzTitle="自定义时间轴点"></nz-link><nz-link nzHref="#components-timeline-demo-right" nzTitle="右侧时间轴点"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Timeline<span class="subtitle">时间轴</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>垂直展示的时间流信息。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当有一系列信息需按时间排列时，可正序和倒序。</li>
+<li>需要有一条时间轴进行视觉上的串联时。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTimelineModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/timeline'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本用法"
+  [nzId]="'components-timeline-demo-basic'"
+  nzSelector="nz-demo-timeline-basic"
+  [nzLink]="'components-timeline-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-basic <name>"
+  nzComponentName="NzDemoTimelineBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/basic.md'">
+	<nz-demo-timeline-basic demo></nz-demo-timeline-basic>
+	<div intro ngNonBindable>
+		<p>基本的时间轴。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="最后一个及排序"
+  [nzId]="'components-timeline-demo-pending'"
+  nzSelector="nz-demo-timeline-pending"
+  [nzLink]="'components-timeline-demo-pending'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-pending <name>"
+  nzComponentName="NzDemoTimelinePendingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/pending.md'">
+	<nz-demo-timeline-pending demo></nz-demo-timeline-pending>
+	<div intro ngNonBindable>
+		<p>当任务状态正在发生，还在记录过程中，可用幽灵节点来表示当前的时间节点，当 <code>nzPending</code> 为真值时展示幽灵节点，如果 <code>nzPending</code> 是 Template 可用于定制该节点内容，同时 <code>nzPendingDot</code> 将可以用于定制其轴点。<code>nzReverse</code> 属性用于控制节点排序，为 <code>false</code> 时按正序排列，为 <code>true</code> 时按倒序排列。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义时间轴点"
+  [nzId]="'components-timeline-demo-custom'"
+  nzSelector="nz-demo-timeline-custom"
+  [nzLink]="'components-timeline-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-custom <name>"
+  nzComponentName="NzDemoTimelineCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/custom.md'">
+	<nz-demo-timeline-custom demo></nz-demo-timeline-custom>
+	<div intro ngNonBindable>
+		<p>可以设置为图标或其他自定义元素。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="圆圈颜色"
+  [nzId]="'components-timeline-demo-color'"
+  nzSelector="nz-demo-timeline-color"
+  [nzLink]="'components-timeline-demo-color'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-color <name>"
+  nzComponentName="NzDemoTimelineColorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/color.md'">
+	<nz-demo-timeline-color demo></nz-demo-timeline-color>
+	<div intro ngNonBindable>
+		<p>圆圈颜色，绿色用于已完成、成功状态，红色表示告警或错误状态，蓝色可表示正在进行或其他默认状态，灰色表示未完成或失效状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="交替展现"
+  [nzId]="'components-timeline-demo-alternate'"
+  nzSelector="nz-demo-timeline-alternate"
+  [nzLink]="'components-timeline-demo-alternate'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-alternate <name>"
+  nzComponentName="NzDemoTimelineAlternateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/alternate.md'">
+	<nz-demo-timeline-alternate demo></nz-demo-timeline-alternate>
+	<div intro ngNonBindable>
+		<p>内容在时间轴两侧交替出现。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="右侧时间轴点"
+  [nzId]="'components-timeline-demo-right'"
+  nzSelector="nz-demo-timeline-right"
+  [nzLink]="'components-timeline-demo-right'"
+  nzGenerateCommand="ng g ng-zorro-antd:timeline-right <name>"
+  nzComponentName="NzDemoTimelineRightComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/timeline/demo/right.md'">
+	<nz-demo-timeline-right demo></nz-demo-timeline-right>
+	<div intro ngNonBindable>
+		<p>时间轴可以在内容的右边。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>创建服务现场 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>初步排除网络异常 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>技术测试异常 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-timeline-item</span><span class="token punctuation">></span></span>网络异常正在修复 2015-09-01<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline-item</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-timeline</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-timeline"><span>nz-timeline</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-timeline'" class="anchor">#</a></h3><p>时间轴。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPending]</code></td>
+<td>指定最后一个幽灵节点是否存在或内容</td>
+<td><code>string | boolean | TemplateRef&lt;void&gt;</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzPendingDot]</code></td>
+<td>当最后一个幽灵节点存在時，指定其时间图点</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td><code>&lt;i nz-icon nzType=&quot;loading&quot;&gt;&lt;/i&gt;</code></td>
+</tr>
+<tr>
+<td><code>[nzReverse]</code></td>
+<td>节点排序</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMode]</code></td>
+<td>可以改变时间轴和内容的相对位置</td>
+<td><code>&#39;left&#39; | &#39;alternate&#39; | &#39;right&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-timeline-item"><span>nz-timeline-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-timeline-item'" class="anchor">#</a></h3><p>时间轴的每一个节点。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzColor]</code></td>
+<td>指定圆圈颜色 <code>&#39;blue&#39; | &#39;red&#39; | &#39;green&#39; | &#39;gray&#39;</code>，或自定义的色值 (CSS 颜色)</td>
+<td><code>string</code></td>
+<td>blue</td>
+</tr>
+<tr>
+<td><code>[nzDot]</code></td>
+<td>自定义时间轴点</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

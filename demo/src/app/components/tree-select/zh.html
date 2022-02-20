@@ -1,0 +1,340 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tree-select-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-tree-select-demo-multiple" nzTitle="多选"></nz-link><nz-link nzHref="#components-tree-select-demo-async" nzTitle="异步数据加载"></nz-link><nz-link nzHref="#components-tree-select-demo-checkable" nzTitle="可勾选"></nz-link><nz-link nzHref="#components-tree-select-demo-customized-icon" nzTitle="自定义图标"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>TreeSelect<span class="subtitle">树选择</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>树型选择控件。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>类似 Select 的选择控件，可选择的数据结构是一个树形结构时，可以使用 TreeSelect，例如公司层级、学科系统、分类目录等等。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTreeSelectModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tree-select'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-tree-select-demo-basic'"
+  nzSelector="nz-demo-tree-select-basic"
+  [nzLink]="'components-tree-select-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-basic <name>"
+  nzComponentName="NzDemoTreeSelectBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/basic.md'">
+	<nz-demo-tree-select-basic demo></nz-demo-tree-select-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="异步数据加载"
+  [nzId]="'components-tree-select-demo-async'"
+  nzSelector="nz-demo-tree-select-async"
+  [nzLink]="'components-tree-select-demo-async'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-async <name>"
+  nzComponentName="NzDemoTreeSelectAsyncComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/async.md'">
+	<nz-demo-tree-select-async demo></nz-demo-tree-select-async>
+	<div intro ngNonBindable>
+		<p>点击展开节点，动态加载数据，直到执行 addChildren() 方法取消加载状态。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义图标"
+  [nzId]="'components-tree-select-demo-customized-icon'"
+  nzSelector="nz-demo-tree-select-customized-icon"
+  [nzLink]="'components-tree-select-demo-customized-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-customized-icon <name>"
+  nzComponentName="NzDemoTreeSelectCustomizedIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/customized-icon.md'">
+	<nz-demo-tree-select-customized-icon demo></nz-demo-tree-select-customized-icon>
+	<div intro ngNonBindable>
+		<p>可以针对不同节点采用样式覆盖的方式定制图标。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="多选"
+  [nzId]="'components-tree-select-demo-multiple'"
+  nzSelector="nz-demo-tree-select-multiple"
+  [nzLink]="'components-tree-select-demo-multiple'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-multiple <name>"
+  nzComponentName="NzDemoTreeSelectMultipleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/multiple.md'">
+	<nz-demo-tree-select-multiple demo></nz-demo-tree-select-multiple>
+	<div intro ngNonBindable>
+		<p>多选的树选择，例子中通过 <code>nzMaxTagCount</code> 限制最多显示3个选项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可勾选"
+  [nzId]="'components-tree-select-demo-checkable'"
+  nzSelector="nz-demo-tree-select-checkable"
+  [nzLink]="'components-tree-select-demo-checkable'"
+  nzGenerateCommand="ng g ng-zorro-antd:tree-select-checkable <name>"
+  nzComponentName="NzDemoTreeSelectCheckableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tree-select/demo/checkable.md'">
+	<nz-demo-tree-select-checkable demo></nz-demo-tree-select-checkable>
+	<div intro ngNonBindable>
+		<p>使用勾选框实现多选功能。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-tree-select"><span>nz-tree-select</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-tree-select'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAllowClear]</code></td>
+<td>显示清除按钮</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>选择框默认文字</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用选择器</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowIcon]</code></td>
+<td>是否展示 TreeNode title 前的图标，没有默认样式</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzShowSearch]</code></td>
+<td>显示搜索框</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>当下拉列表为空时显示的内容</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDropdownMatchSelectWidth]</code></td>
+<td>下拉菜单和选择器同宽</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDropdownStyle]</code></td>
+<td>下拉菜单的样式</td>
+<td><code>&#123; [key: string]: string; &#125;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDropdownClassName]</code></td>
+<td>下拉菜单的 className 属性</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMultiple]</code></td>
+<td>支持多选（当设置 nzCheckable 时自动变为true）</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHideUnMatched]</code></td>
+<td>搜索隐藏未匹配的节点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>选择框大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCheckable]</code></td>
+<td>节点前添加 Checkbox 复选框</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCheckStrictly]</code></td>
+<td>checkable 状态下节点选择完全受控（父子节点选中状态不再关联）</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowExpand]</code></td>
+<td>节点前添加展开图标</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowLine]</code></td>
+<td>是否展示连接线</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAsyncData]</code></td>
+<td>是否异步加载(显示加载状态)</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNodes]</code></td>
+<td>treeNodes 数据</td>
+<td><code>NzTreeNodeOptions[]</code></td>
+<td><code>[]</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDefaultExpandAll]</code></td>
+<td>默认展开所有树节点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandedKeys]</code></td>
+<td>默认展开指定的树节点</td>
+<td><code>string[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisplayWith]</code></td>
+<td>如何在输入框显示所选的节点值的方法</td>
+<td><code>(node: NzTreeNode) =&gt; string</code></td>
+<td><code>(node: NzTreeNode) =&gt; node.title</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaxTagCount]</code></td>
+<td>最多显示多少个 tag</td>
+<td>number</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaxTagPlaceholder]</code></td>
+<td>隐藏 tag 时显示的内容</td>
+<td>TemplateRef&lt;&#123; $implicit: NzTreeNode[] &#125;&gt;</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTreeTemplate]</code></td>
+<td>自定义节点</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzTreeNode &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>点击展开树节点图标调用</td>
+<td><code>EventEmitter&lt;NzFormatEmitEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>getTreeNodes</td>
+<td>获取组件 NzTreeNode 节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getTreeNodeByKey</td>
+<td>按 key 获取 NzTreeNode 节点</td>
+<td><code>NzTreeNode</code></td>
+</tr>
+<tr>
+<td>getCheckedNodeList</td>
+<td>获取组件 checkBox 被点击选中的节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getSelectedNodeList</td>
+<td>获取组件被选中的节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getHalfCheckedNodeList</td>
+<td>获取组件半选状态节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getExpandedNodeList</td>
+<td>获取组件展开状态节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+<tr>
+<td>getMatchedNodeList</td>
+<td>获取组搜索匹配到的节点</td>
+<td><code>NzTreeNode[]</code></td>
+</tr>
+</tbody></table>
+</section></article>

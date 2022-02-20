@@ -1,0 +1,274 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-pagination-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-pagination-demo-more" nzTitle="更多"></nz-link><nz-link nzHref="#components-pagination-demo-changer" nzTitle="改变"></nz-link><nz-link nzHref="#components-pagination-demo-jump" nzTitle="跳转"></nz-link><nz-link nzHref="#components-pagination-demo-mini" nzTitle="迷你"></nz-link><nz-link nzHref="#components-pagination-demo-simple" nzTitle="简洁"></nz-link><nz-link nzHref="#components-pagination-demo-controlled" nzTitle="页码"></nz-link><nz-link nzHref="#components-pagination-demo-total" nzTitle="总数"></nz-link><nz-link nzHref="#components-pagination-demo-item-render" nzTitle="上一步和下一步"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Pagination<span class="subtitle">分页</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>采用分页的形式分隔长列表，每次只加载一个页面。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当加载/渲染所有数据将花费很多时间时；</li>
+<li>可切换页码浏览数据。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzPaginationModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/pagination'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-pagination-demo-basic'"
+  nzSelector="nz-demo-pagination-basic"
+  [nzLink]="'components-pagination-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-basic <name>"
+  nzComponentName="NzDemoPaginationBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/basic.md'">
+	<nz-demo-pagination-basic demo></nz-demo-pagination-basic>
+	<div intro ngNonBindable>
+		<p>基础分页。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="更多"
+  [nzId]="'components-pagination-demo-more'"
+  nzSelector="nz-demo-pagination-more"
+  [nzLink]="'components-pagination-demo-more'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-more <name>"
+  nzComponentName="NzDemoPaginationMoreComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/more.md'">
+	<nz-demo-pagination-more demo></nz-demo-pagination-more>
+	<div intro ngNonBindable>
+		<p>更多分页。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="改变"
+  [nzId]="'components-pagination-demo-changer'"
+  nzSelector="nz-demo-pagination-changer"
+  [nzLink]="'components-pagination-demo-changer'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-changer <name>"
+  nzComponentName="NzDemoPaginationChangerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/changer.md'">
+	<nz-demo-pagination-changer demo></nz-demo-pagination-changer>
+	<div intro ngNonBindable>
+		<p>改变每页显示条目数。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="跳转"
+  [nzId]="'components-pagination-demo-jump'"
+  nzSelector="nz-demo-pagination-jump"
+  [nzLink]="'components-pagination-demo-jump'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-jump <name>"
+  nzComponentName="NzDemoPaginationJumpComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/jump.md'">
+	<nz-demo-pagination-jump demo></nz-demo-pagination-jump>
+	<div intro ngNonBindable>
+		<p>快速跳转到某一页。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="迷你"
+  [nzId]="'components-pagination-demo-mini'"
+  nzSelector="nz-demo-pagination-mini"
+  [nzLink]="'components-pagination-demo-mini'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-mini <name>"
+  nzComponentName="NzDemoPaginationMiniComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/mini.md'">
+	<nz-demo-pagination-mini demo></nz-demo-pagination-mini>
+	<div intro ngNonBindable>
+		<p>迷你版本。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="简洁"
+  [nzId]="'components-pagination-demo-simple'"
+  nzSelector="nz-demo-pagination-simple"
+  [nzLink]="'components-pagination-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-simple <name>"
+  nzComponentName="NzDemoPaginationSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/simple.md'">
+	<nz-demo-pagination-simple demo></nz-demo-pagination-simple>
+	<div intro ngNonBindable>
+		<p>简单的翻页。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="页码"
+  [nzId]="'components-pagination-demo-controlled'"
+  nzSelector="nz-demo-pagination-controlled"
+  [nzLink]="'components-pagination-demo-controlled'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-controlled <name>"
+  nzComponentName="NzDemoPaginationControlledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/controlled.md'">
+	<nz-demo-pagination-controlled demo></nz-demo-pagination-controlled>
+	<div intro ngNonBindable>
+		<p>改变页码。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="总数"
+  [nzId]="'components-pagination-demo-total'"
+  nzSelector="nz-demo-pagination-total"
+  [nzLink]="'components-pagination-demo-total'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-total <name>"
+  nzComponentName="NzDemoPaginationTotalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/total.md'">
+	<nz-demo-pagination-total demo></nz-demo-pagination-total>
+	<div intro ngNonBindable>
+		<p>通过设置 <code>nzShowTotal</code> 展示总共有多少数据。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="上一步和下一步"
+  [nzId]="'components-pagination-demo-item-render'"
+  nzSelector="nz-demo-pagination-item-render"
+  [nzLink]="'components-pagination-demo-item-render'"
+  nzGenerateCommand="ng g ng-zorro-antd:pagination-item-render <name>"
+  nzComponentName="NzDemoPaginationItemRenderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/pagination/demo/item-render.md'">
+	<nz-demo-pagination-item-render demo></nz-demo-pagination-item-render>
+	<div intro ngNonBindable>
+		<p>修改上一步和下一步为文字链接。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-pagination</span> <span class="token attr-name">[nzPageIndex]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">[nzTotal]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-pagination</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-pagination"><span>nz-pagination</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-pagination'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTotal]</code></td>
+<td>数据总数</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPageIndex]</code></td>
+<td>当前页数，可双向绑定</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzPageSize]</code></td>
+<td>每页条数 ，可双向绑定</td>
+<td><code>number</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>是否禁用</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzShowQuickJumper]</code></td>
+<td>是否可以快速跳转至某页</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzShowSizeChanger]</code></td>
+<td>是否可以改变 <code>nzPageSize</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSimple]</code></td>
+<td>当添加该属性时，显示为简单分页</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>当为「small」时，是小尺寸分页</td>
+<td><code>&#39;small&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzResponsive]</code></td>
+<td>当 <code>nzSize</code> 未指定时，根据屏幕宽度自动调整尺寸</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzPageSizeOptions]</code></td>
+<td>指定每页可以显示多少条</td>
+<td><code>number[]</code></td>
+<td><code>[10, 20, 30, 40]</code></td>
+</tr>
+<tr>
+<td><code>[nzItemRender]</code></td>
+<td>用于自定义页码的结构</td>
+<td><code>TemplateRef&lt;&#123; $implicit: &#39;page&#39; | &#39;prev&#39; | &#39;next&#39;| &#39;prev_5&#39;| &#39;next_5&#39;, page: number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzShowTotal]</code></td>
+<td>用于显示数据总量和当前数据范围，具体使用方式见代码演示部分</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number, range: [ number, number ] &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzHideOnSinglePage]</code></td>
+<td>只有一页时是否隐藏分页器</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(nzPageIndexChange)</code></td>
+<td>页码改变的回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzPageSizeChange)</code></td>
+<td>每页条数改变的回调</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

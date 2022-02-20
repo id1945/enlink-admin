@@ -1,0 +1,172 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-empty-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-empty-demo-simple" nzTitle="Chose image"></nz-link><nz-link nzHref="#components-empty-demo-customize" nzTitle="Customize"></nz-link><nz-link nzHref="#components-empty-demo-config" nzTitle="Default Config"></nz-link><nz-link nzHref="#components-empty-demo-description" nzTitle="No description"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Empty<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Empty state placeholder.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When there is no data provided, display for friendly tips.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzEmptyModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/empty'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-empty-demo-basic'"
+  nzSelector="nz-demo-empty-basic"
+  [nzLink]="'components-empty-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-basic <name>"
+  nzComponentName="NzDemoEmptyBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/basic.md'">
+	<nz-demo-empty-basic demo></nz-demo-empty-basic>
+	<div intro ngNonBindable>
+		<p>Simplest usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Chose image"
+  [nzId]="'components-empty-demo-simple'"
+  nzSelector="nz-demo-empty-simple"
+  [nzLink]="'components-empty-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-simple <name>"
+  nzComponentName="NzDemoEmptySimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/simple.md'">
+	<nz-demo-empty-simple demo></nz-demo-empty-simple>
+	<div intro ngNonBindable>
+		<p>You can choose another style of <code>image</code> by setting <code>simple</code> to <code>nzNotFoundImage</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customize"
+  [nzId]="'components-empty-demo-customize'"
+  nzSelector="nz-demo-empty-customize"
+  [nzLink]="'components-empty-demo-customize'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-customize <name>"
+  nzComponentName="NzDemoEmptyCustomizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/customize.md'">
+	<nz-demo-empty-customize demo></nz-demo-empty-customize>
+	<div intro ngNonBindable>
+		<p>Customize image, description and extra content.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Default Config"
+  [nzId]="'components-empty-demo-config'"
+  nzSelector="nz-demo-empty-config"
+  [nzLink]="'components-empty-demo-config'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-config <name>"
+  nzComponentName="NzDemoEmptyConfigComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/config.md'">
+	<nz-demo-empty-config demo></nz-demo-empty-config>
+	<div intro ngNonBindable>
+		<p>Use <code>NzEmptyService</code> set global Empty style.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="No description"
+  [nzId]="'components-empty-demo-description'"
+  nzSelector="nz-demo-empty-description"
+  [nzLink]="'components-empty-demo-description'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-description <name>"
+  nzComponentName="NzDemoEmptyDescriptionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/description.md'">
+	<nz-demo-empty-description demo></nz-demo-empty-description>
+	<div intro ngNonBindable>
+		<p>Simplest Usage with no description.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-empty"><span>nz-empty</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-empty'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzNotFoundImage]</code></td>
+<td>Customize image. Will tread as image url when string provided</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>Custom description</td>
+<td><code>string | TemplateRef&lt;void&gt; | null</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzNotFoundFooter]</code></td>
+<td>Custom Footer</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="<code>nz_config</code>"><span><code>NZ_CONFIG</code></span><a onclick="window.location.hash = '<code>nz_config</code>'" class="anchor">#</a></h3><p>The <code>nzEmpty</code> interface has properties as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Properties</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nzDefaultEmptyContent</code></td>
+<td>User default empty component. You can restore the system default empty content by providing <code>undefined</code></td>
+<td><code>Type&lt;any&gt;|TemplateRef&lt;string&gt;|string|undefined</code></td>
+</tr>
+</tbody></table>
+<h3 id="injectiontoken"><span>InjectionToken</span><a onclick="window.location.hash = 'injectiontoken'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>NZ_EMPTY_COMPONENT_NAME</code></td>
+<td>Would be injected to <code>NZ_DEFAULT_EMPTY_CONTENT</code>, telling that component its parent component&#39;s name</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+<h3 id="global-customizable-empty-content"><span>Global Customizable Empty Content</span><a onclick="window.location.hash = 'global-customizable-empty-content'" class="anchor">#</a></h3><p>You may notice or used some inputs like <code>nzNotFoundContent</code> in some components. Now they would use <code>Empty</code> component. So you can provide <code>nzDefaultEmptyContent</code> to customize them.</p>
+<pre class="language-ts"><code><span class="token punctuation">&#123;</span>
+  provide<span class="token punctuation">:</span> NZ_CONFIG<span class="token punctuation">,</span>
+  useValue<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+    empty<span class="token punctuation">:</span> <span class="token punctuation">&#123;</span>
+      nzDefaultEmptyContent
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

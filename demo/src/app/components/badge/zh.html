@@ -1,0 +1,246 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-badge-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-badge-demo-no-wrapper" nzTitle="独立使用"></nz-link><nz-link nzHref="#components-badge-demo-overflow" nzTitle="封顶数字"></nz-link><nz-link nzHref="#components-badge-demo-dot" nzTitle="讨嫌的小红点"></nz-link><nz-link nzHref="#components-badge-demo-link" nzTitle="可点击"></nz-link><nz-link nzHref="#components-badge-demo-change" nzTitle="动态"></nz-link><nz-link nzHref="#components-badge-demo-status" nzTitle="状态点"></nz-link><nz-link nzHref="#components-badge-demo-colorful" nzTitle="多彩徽标"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Badge<span class="subtitle">徽标数</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>图标右上角的圆形徽标数字。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>一般出现在通知图标或头像的右上角，用于显示需要处理的消息条数，通过醒目视觉形式吸引用户处理。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzBadgeModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/badge'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-badge-demo-basic'"
+  nzSelector="nz-demo-badge-basic"
+  [nzLink]="'components-badge-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-basic <name>"
+  nzComponentName="NzDemoBadgeBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/basic.md'">
+	<nz-demo-badge-basic demo></nz-demo-badge-basic>
+	<div intro ngNonBindable>
+		<p>简单的徽章展示，当 <code>nzCount</code> 为 <code>0</code> 时，默认不显示，但是可以使用 <code>nzShowZero</code> 修改为显示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="封顶数字"
+  [nzId]="'components-badge-demo-overflow'"
+  nzSelector="nz-demo-badge-overflow"
+  [nzLink]="'components-badge-demo-overflow'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-overflow <name>"
+  nzComponentName="NzDemoBadgeOverflowComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/overflow.md'">
+	<nz-demo-badge-overflow demo></nz-demo-badge-overflow>
+	<div intro ngNonBindable>
+		<p>超过 <code>nzOverflowCount</code> 的会显示为 <code>nzOverflowCount+</code>，默认的 <code>nzOverflowCount</code> 为 <code>99</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="可点击"
+  [nzId]="'components-badge-demo-link'"
+  nzSelector="nz-demo-badge-link"
+  [nzLink]="'components-badge-demo-link'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-link <name>"
+  nzComponentName="NzDemoBadgeLinkComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/link.md'">
+	<nz-demo-badge-link demo></nz-demo-badge-link>
+	<div intro ngNonBindable>
+		<p>用 a 标签进行包裹即可。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="状态点"
+  [nzId]="'components-badge-demo-status'"
+  nzSelector="nz-demo-badge-status"
+  [nzLink]="'components-badge-demo-status'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-status <name>"
+  nzComponentName="NzDemoBadgeStatusComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/status.md'">
+	<nz-demo-badge-status demo></nz-demo-badge-status>
+	<div intro ngNonBindable>
+		<p>用于表示状态的小圆点。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="独立使用"
+  [nzId]="'components-badge-demo-no-wrapper'"
+  nzSelector="nz-demo-badge-no-wrapper"
+  [nzLink]="'components-badge-demo-no-wrapper'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-no-wrapper <name>"
+  nzComponentName="NzDemoBadgeNoWrapperComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/no-wrapper.md'">
+	<nz-demo-badge-no-wrapper demo></nz-demo-badge-no-wrapper>
+	<div intro ngNonBindable>
+		<p>不包裹任何元素即是独立使用，可自定样式展现。</p>
+<blockquote>
+<p>在右上角的 badge 则限定为红色。</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="讨嫌的小红点"
+  [nzId]="'components-badge-demo-dot'"
+  nzSelector="nz-demo-badge-dot"
+  [nzLink]="'components-badge-demo-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-dot <name>"
+  nzComponentName="NzDemoBadgeDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/dot.md'">
+	<nz-demo-badge-dot demo></nz-demo-badge-dot>
+	<div intro ngNonBindable>
+		<p>没有具体的数字。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态"
+  [nzId]="'components-badge-demo-change'"
+  nzSelector="nz-demo-badge-change"
+  [nzLink]="'components-badge-demo-change'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-change <name>"
+  nzComponentName="NzDemoBadgeChangeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/change.md'">
+	<nz-demo-badge-change demo></nz-demo-badge-change>
+	<div intro ngNonBindable>
+		<p>展示动态变化的效果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多彩徽标"
+  [nzId]="'components-badge-demo-colorful'"
+  nzSelector="nz-demo-badge-colorful"
+  [nzLink]="'components-badge-demo-colorful'"
+  nzGenerateCommand="ng g ng-zorro-antd:badge-colorful <name>"
+  nzComponentName="NzDemoBadgeColorfulComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/badge/demo/colorful.md'">
+	<nz-demo-badge-colorful demo></nz-demo-badge-colorful>
+	<div intro ngNonBindable>
+		<p>我们添加了多种预设色彩的徽标样式，用作不同场景使用。如果预设值不能满足你的需求，可以设置为具体的色值。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-badge</span> <span class="token attr-name">[nzCount]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>head-example<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-badge</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-badge</span> <span class="token attr-name">[nzCount]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>5<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-badge</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-badge"><span>nz-badge</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-badge'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzColor]</code></td>
+<td>自定义小圆点的颜色</td>
+<td>string</td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCount]</code></td>
+<td>展示的数字，大于 nzOverflowCount 时显示为 <code>$&#123;nzOverflowCount&#125;+</code>，为 0 时隐藏</td>
+<td><code>number | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDot]</code></td>
+<td>不展示数字，只有一个小红点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowDot]</code></td>
+<td>是否展示小红点</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOverflowCount]</code></td>
+<td>展示封顶的数字值</td>
+<td><code>number</code></td>
+<td><code>99</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzShowZero]</code></td>
+<td>当数值为 0 时，是否展示 Badge</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>设置 <code>nz-badge</code> 为状态点</td>
+<td><code>&#39;success&#39; | &#39;processing&#39; | &#39;default&#39; | &#39;error&#39; | &#39;warning&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzText]</code></td>
+<td>在设置了 <code>nzStatus</code> 的前提下有效，设置状态点的文本</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>设置鼠标放在状态点上时显示的文字（非独立使用时), 为 <code>null</code> 时隐藏</td>
+<td><code>string | null</code></td>
+<td><code>nzCount</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffset]</code></td>
+<td>设置状态点的位置偏移，格式为 <a href="%E9%9D%9E%E7%8B%AC%E7%AB%8B%E4%BD%BF%E7%94%A8%E6%97%B6">x, y</a></td>
+<td><code>[number, number]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,343 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-menu-demo-horizontal" nzTitle="Top Navigation"></nz-link><nz-link nzHref="#components-menu-demo-inline" nzTitle="Inline menu"></nz-link><nz-link nzHref="#components-menu-demo-inline-collapsed" nzTitle="Collapsed inline menu"></nz-link><nz-link nzHref="#components-menu-demo-sider-current" nzTitle="Open current submenu only"></nz-link><nz-link nzHref="#components-menu-demo-vertical" nzTitle="Vertical menu"></nz-link><nz-link nzHref="#components-menu-demo-theme" nzTitle="Menu Themes"></nz-link><nz-link nzHref="#components-menu-demo-switch-mode" nzTitle="Switch the menu type"></nz-link><nz-link nzHref="#components-menu-demo-router" nzTitle="Router"></nz-link><nz-link nzHref="#components-menu-demo-recursive" nzTitle="Recursive"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Menu<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Menu list of Navigation.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>Navigation menu is important for a website, it helps users jump from one site section to another quickly. Mostly, it includes top navigation and side navigation. Top navigation provides all the category and functions of the website. Side navigation provides the Multi-level structure of the website.</p>
+<p>More layouts with navigation: <a href="/components/layout/en">layout</a>.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzMenuModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/menu'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Top Navigation"
+  [nzId]="'components-menu-demo-horizontal'"
+  nzSelector="nz-demo-menu-horizontal"
+  [nzLink]="'components-menu-demo-horizontal'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-horizontal <name>"
+  nzComponentName="NzDemoMenuHorizontalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/horizontal.md'">
+	<nz-demo-menu-horizontal demo></nz-demo-menu-horizontal>
+	<div intro ngNonBindable>
+		<p>Horizontal top navigation menu.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Inline menu"
+  [nzId]="'components-menu-demo-inline'"
+  nzSelector="nz-demo-menu-inline"
+  [nzLink]="'components-menu-demo-inline'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-inline <name>"
+  nzComponentName="NzDemoMenuInlineComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/inline.md'">
+	<nz-demo-menu-inline demo></nz-demo-menu-inline>
+	<div intro ngNonBindable>
+		<p>Vertical menu with inline submenus.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Collapsed inline menu"
+  [nzId]="'components-menu-demo-inline-collapsed'"
+  nzSelector="nz-demo-menu-inline-collapsed"
+  [nzLink]="'components-menu-demo-inline-collapsed'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-inline-collapsed <name>"
+  nzComponentName="NzDemoMenuInlineCollapsedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/inline-collapsed.md'">
+	<nz-demo-menu-inline-collapsed demo></nz-demo-menu-inline-collapsed>
+	<div intro ngNonBindable>
+		<p>Inline menu could be collapsed.</p>
+<p>Here is <a href="/components/layout/#components-layout-demo-side">a complete demo</a> with sider layout.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Open current submenu only"
+  [nzId]="'components-menu-demo-sider-current'"
+  nzSelector="nz-demo-menu-sider-current"
+  [nzLink]="'components-menu-demo-sider-current'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-sider-current <name>"
+  nzComponentName="NzDemoMenuSiderCurrentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/sider-current.md'">
+	<nz-demo-menu-sider-current demo></nz-demo-menu-sider-current>
+	<div intro ngNonBindable>
+		<p>Click the menu and you will see that all the other menus gets collapsed to keep the entire menu compact.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical menu"
+  [nzId]="'components-menu-demo-vertical'"
+  nzSelector="nz-demo-menu-vertical"
+  [nzLink]="'components-menu-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-vertical <name>"
+  nzComponentName="NzDemoMenuVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/vertical.md'">
+	<nz-demo-menu-vertical demo></nz-demo-menu-vertical>
+	<div intro ngNonBindable>
+		<p>Submenus open as pop-ups.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Menu Themes"
+  [nzId]="'components-menu-demo-theme'"
+  nzSelector="nz-demo-menu-theme"
+  [nzLink]="'components-menu-demo-theme'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-theme <name>"
+  nzComponentName="NzDemoMenuThemeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/theme.md'">
+	<nz-demo-menu-theme demo></nz-demo-menu-theme>
+	<div intro ngNonBindable>
+		<p>There are two built-in themes: &#39;light&#39; and &#39;dark&#39;. The default value is &#39;light&#39;.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Switch the menu type"
+  [nzId]="'components-menu-demo-switch-mode'"
+  nzSelector="nz-demo-menu-switch-mode"
+  [nzLink]="'components-menu-demo-switch-mode'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-switch-mode <name>"
+  nzComponentName="NzDemoMenuSwitchModeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/switch-mode.md'">
+	<nz-demo-menu-switch-mode demo></nz-demo-menu-switch-mode>
+	<div intro ngNonBindable>
+		<p>Show the dynamic switching mode (between &#39;inline&#39; and &#39;vertical&#39;).</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Router"
+  [nzId]="'components-menu-demo-router'"
+  nzSelector="nz-demo-menu-router"
+  [nzLink]="'components-menu-demo-router'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-router <name>"
+  nzComponentName="NzDemoMenuRouterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/router.md'">
+	<nz-demo-menu-router demo></nz-demo-menu-router>
+	<div intro ngNonBindable>
+		<p>Automatically activate menu items based on routing, should work with <a href="https://angular.io/api/router/RouterLink">routerLink</a>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Recursive"
+  [nzId]="'components-menu-demo-recursive'"
+  nzSelector="nz-demo-menu-recursive"
+  [nzLink]="'components-menu-demo-recursive'"
+  nzGenerateCommand="ng g ng-zorro-antd:menu-recursive <name>"
+  nzComponentName="NzDemoMenuRecursiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/menu/demo/recursive.md'">
+	<nz-demo-menu-recursive demo></nz-demo-menu-recursive>
+	<div intro ngNonBindable>
+		<p>Recursive generation menu, you need to set <code>nzPaddingLeft</code> <a href="https://github.com/angular/angular/issues/14842">manually</a>, only works when <code>nzMode</code> is <code>inline</code> mode and <code>nzInlineCollapsed</code> is <code>false</code>;</p>
+<blockquote>
+<p>Track Issue：<a href="https://github.com/angular/angular/issues/14842">https://github.com/angular/angular/issues/14842</a></p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span> <span class="token attr-name">nz-menu</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>Menu 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>Menu 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubMenu Title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-item</span><span class="token punctuation">></span></span>SubMenu Item 3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="[nz-menu]"><span>[nz-menu]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzInlineCollapsed]</code></td>
+<td>specifies the collapsed status when menu is inline mode</td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzInlineIndent]</code></td>
+<td>indent px of inline menu item on each level</td>
+<td><code>number</code></td>
+<td><code>24</code></td>
+</tr>
+<tr>
+<td><code>[nzMode]</code></td>
+<td>type of the menu; <code>vertical</code>, <code>horizontal</code>, and <code>inline</code> modes are supported</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39; | &#39;inline&#39;</code></td>
+<td><code>&#39;vertical&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSelectable]</code></td>
+<td>allow selecting menu items</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzTheme]</code></td>
+<td>color theme of the menu</td>
+<td><code>&#39;light&#39; | &#39;dark&#39;</code></td>
+<td><code>&#39;light&#39;</code></td>
+</tr>
+<tr>
+<td><code>(nzClick)</code></td>
+<td>the Output when click nz-menu-item inside nz-menu</td>
+<td><code>EventEmitter&lt;NzMenuItemDirective&gt;</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-item]"><span>[nz-menu-item]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-item]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>whether menu item is disabled or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSelected]</code></td>
+<td>whether menu item is selected or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMatchRouter]</code></td>
+<td>whether auto set <code>nzSelected</code> according to <a href="https://www.angular.cn/api/router/RouterLink">routerLink</a></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzMatchRouterExact]</code></td>
+<td>only match when the url matches the link exactly, same as <a href="https://angular.io/api/router/RouterLinkActive#routerLinkActiveOptions">routerLinkActiveOptions</a></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id="[nz-submenu]"><span>[nz-submenu]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-submenu]'" class="anchor">#</a></h3><p>You can set the title of <code>[nz-submenu]</code> in the following ways.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubTitle<span class="token punctuation">"</span></span> <span class="token attr-name">nzIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-submenu</span> <span class="token attr-name">[nzTitle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>titleTpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#titleTpl</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzOpen]</code></td>
+<td>whether sub menu is open or not, double binding</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>whether sub menu is disabled or not</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>set submenu title</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIcon]</code></td>
+<td>icon type in title</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMenuClassName]</code></td>
+<td>Custom the submenu container&#39;s class name</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOpenChange)</code></td>
+<td>nzOpen callback</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-group]"><span>[nz-menu-group]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-group]'" class="anchor">#</a></h3><p>You can set the title of <code>[nz-menu-group]</code> in the following ways.</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>SubTitle<span class="token punctuation">"</span></span> <span class="token attr-name">nzIcon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">title</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">nz-menu-group</span> <span class="token attr-name">[nzTitle]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>titleTpl<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#titleTpl</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>appstore<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>SubTitle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTitle]</code></td>
+<td>set menu group title</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-menu-divider]"><span>[nz-menu-divider]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-menu-divider]'" class="anchor">#</a></h3><p>Divider line in between menu items, only used in vertical popup Menu or Dropdown Menu.</p>
+</section></article>

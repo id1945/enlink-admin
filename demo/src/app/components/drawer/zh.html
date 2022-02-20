@@ -1,0 +1,488 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-drawer-demo-basic-right" nzTitle="基础抽屉"></nz-link><nz-link nzHref="#components-drawer-demo-placement" nzTitle="自定义位置"></nz-link><nz-link nzHref="#components-drawer-demo-from-drawer" nzTitle="对象编辑"></nz-link><nz-link nzHref="#components-drawer-demo-user-profile" nzTitle="信息预览抽屉"></nz-link><nz-link nzHref="#components-drawer-demo-multi-level-drawer" nzTitle="多层抽屉"></nz-link><nz-link nzHref="#components-drawer-demo-service" nzTitle="服务方式创建"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Drawer<span class="subtitle">抽屉</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>抽屉从父窗体边缘滑入，覆盖住部分父窗体内容。用户在抽屉内操作时不必离开当前任务，操作完成后，可以平滑地回到到原任务。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当需要一个附加的面板来控制父窗体内容，这个面板在需要时呼出。比如，控制界面展示样式，往界面中添加内容。</li>
+<li>当需要在当前任务流中插入临时任务，创建或预览附加内容。比如展示协议条款，创建子对象。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDrawerModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/drawer'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基础抽屉"
+  [nzId]="'components-drawer-demo-basic-right'"
+  nzSelector="nz-demo-drawer-basic-right"
+  [nzLink]="'components-drawer-demo-basic-right'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-basic-right <name>"
+  nzComponentName="NzDemoDrawerBasicRightComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/basic-right.md'">
+	<nz-demo-drawer-basic-right demo></nz-demo-drawer-basic-right>
+	<div intro ngNonBindable>
+		<p>基础抽屉，点击触发按钮抽屉从右滑出，点击遮罩区关闭</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="对象编辑"
+  [nzId]="'components-drawer-demo-from-drawer'"
+  nzSelector="nz-demo-drawer-from-drawer"
+  [nzLink]="'components-drawer-demo-from-drawer'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-from-drawer <name>"
+  nzComponentName="NzDemoDrawerFromDrawerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/from-drawer.md'">
+	<nz-demo-drawer-from-drawer demo></nz-demo-drawer-from-drawer>
+	<div intro ngNonBindable>
+		<p>用于承载编辑相关操作，需要点击关闭按钮关闭。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多层抽屉"
+  [nzId]="'components-drawer-demo-multi-level-drawer'"
+  nzSelector="nz-demo-drawer-multi-level-drawer"
+  [nzLink]="'components-drawer-demo-multi-level-drawer'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-multi-level-drawer <name>"
+  nzComponentName="NzDemoDrawerMultiLevelDrawerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/multi-level-drawer.md'">
+	<nz-demo-drawer-multi-level-drawer demo></nz-demo-drawer-multi-level-drawer>
+	<div intro ngNonBindable>
+		<p>在抽屉内打开新的抽屉，用以解决多分支任务的复杂状况。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="自定义位置"
+  [nzId]="'components-drawer-demo-placement'"
+  nzSelector="nz-demo-drawer-placement"
+  [nzLink]="'components-drawer-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-placement <name>"
+  nzComponentName="NzDemoDrawerPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/placement.md'">
+	<nz-demo-drawer-placement demo></nz-demo-drawer-placement>
+	<div intro ngNonBindable>
+		<p>自定义位置，点击触发按钮抽屉从相应的位置滑出，点击遮罩区关闭</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="信息预览抽屉"
+  [nzId]="'components-drawer-demo-user-profile'"
+  nzSelector="nz-demo-drawer-user-profile"
+  [nzLink]="'components-drawer-demo-user-profile'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-user-profile <name>"
+  nzComponentName="NzDemoDrawerUserProfileComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/user-profile.md'">
+	<nz-demo-drawer-user-profile demo></nz-demo-drawer-user-profile>
+	<div intro ngNonBindable>
+		<p>需要快速预览对象概要时使用，点击遮罩区关闭。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="服务方式创建"
+  [nzId]="'components-drawer-demo-service'"
+  nzSelector="nz-demo-drawer-service"
+  [nzLink]="'components-drawer-demo-service'"
+  nzGenerateCommand="ng g ng-zorro-antd:drawer-service <name>"
+  nzComponentName="NzDemoDrawerServiceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/drawer/demo/service.md'">
+	<nz-demo-drawer-service demo></nz-demo-drawer-service>
+	<div intro ngNonBindable>
+		<p>Drawer 的 service 用法，示例中演示了用户自定义模板、自定义component。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-drawer"><span>nz-drawer</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-drawer'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzClosable]</code></td>
+<td>是否显示右上角的关闭按钮</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMaskClosable]</code></td>
+<td>点击蒙层是否允许关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzMask]</code></td>
+<td>是否展示遮罩</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzMaskStyle]</code></td>
+<td>遮罩样式</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzKeyboard]</code></td>
+<td>是否支持键盘 esc 关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBodyStyle]</code></td>
+<td>Drawer body 样式</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>Drawer 是否可见</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlacement]</code></td>
+<td>抽屉的方向</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;right&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWidth]</code></td>
+<td>宽度, 只在方向为 <code>&#39;right&#39;</code>或<code>&#39;left&#39;</code> 时生效</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHeight]</code></td>
+<td>高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffsetX]</code></td>
+<td>x 坐标移量(px), 只在方向为 <code>&#39;right&#39;</code>或<code>&#39;left&#39;</code> 时生效</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzOffsetY]</code></td>
+<td>y 坐标移量(px), 高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWrapClassName]</code></td>
+<td>对话框外层容器的类名</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzZIndex]</code></td>
+<td>设置 Drawer 的 <code>z-index</code></td>
+<td><code>number</code></td>
+<td><code>1000</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnClose)</code></td>
+<td>点击遮罩层或右上角叉的回调</td>
+<td><code>EventEmitter&lt;MouseEvent&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nzdrawerservice"><span>NzDrawerService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzdrawerservice'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>说明</th>
+<th>参数</th>
+<th>返回</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>create</td>
+<td>创建并打开一个 Drawer</td>
+<td><code>NzDrawerOptions&lt;T, D, R&gt;</code></td>
+<td><code>NzDrawerRef&lt;R&gt;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzdraweroptions"><span>NzDrawerOptions</span><a onclick="window.location.hash = 'nzdraweroptions'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzContent</td>
+<td>Drawer body 的内容</td>
+<td><code>TemplateRef&lt;&#123; $implicit: D, drawerRef: NzDrawerRef &#125;&gt; |  Type&lt;T&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzContentParams</td>
+<td>内容组件的输入参数 / Template的 context</td>
+<td><code>D</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>点击遮罩层或右上角叉时执行,该函数可返回 promise 待执行完毕或 promise 结束时，将自动关闭对话框（返回false可阻止关闭）</td>
+<td><code>() =&gt; Promise&lt;any&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>是否显示右上角的关闭按钮</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>点击蒙层是否允许关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>是否展示遮罩</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>是否支持键盘esc关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>遮罩样式</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Modal body 样式</td>
+<td><code>object</code></td>
+<td><code>&#123;&#125;</code></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>宽度</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>nzHeight</td>
+<td>高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number | string</code></td>
+<td><code>256</code></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>对话框外层容器的类名</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>设置 Drawer 的 <code>z-index</code></td>
+<td><code>number</code></td>
+<td><code>1000</code></td>
+</tr>
+<tr>
+<td>nzPlacement</td>
+<td>抽屉的方向</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+<td><code>&#39;right&#39;</code></td>
+</tr>
+<tr>
+<td>nzOffsetX</td>
+<td>x 坐标移量(px)</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td>nzOffsetY</td>
+<td>y 坐标移量(px), 高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzdrawerref"><span>NzDrawerRef</span><a onclick="window.location.hash = 'nzdrawerref'" class="anchor">#</a></h3><h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>close</td>
+<td>关闭 Drawer</td>
+<td><code>(result?: R) =&gt; void</code></td>
+</tr>
+<tr>
+<td>open</td>
+<td>打开 Drawer</td>
+<td><code>() =&gt; void</code></td>
+</tr>
+</tbody></table>
+<h4 id="属性"><span>属性</span><a onclick="window.location.hash = '属性'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>afterOpen</td>
+<td>打开之后的回调</td>
+<td><code>Observable&lt;void&gt;</code></td>
+</tr>
+<tr>
+<td>afterClose</td>
+<td>关闭之后的回调</td>
+<td><code>Observable&lt;R&gt;</code></td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>是否显示右上角的关闭按钮</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>点击蒙层是否允许关闭</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>是否展示遮罩</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>遮罩样式</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>是否支持键盘esc关闭</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Modal body 样式</td>
+<td><code>object</code></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>标题</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>宽度</td>
+<td><code>number | string</code></td>
+</tr>
+<tr>
+<td>nzHeight</td>
+<td>高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number | string</code></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>对话框外层容器的类名</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>设置 Drawer 的 <code>z-index</code></td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzPlacement</td>
+<td>抽屉的方向</td>
+<td><code>&#39;top&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;left&#39;</code></td>
+</tr>
+<tr>
+<td>nzOffsetX</td>
+<td>x 坐标移量(px)</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzOffsetY</td>
+<td>y 坐标移量(px), 高度, 只在方向为 <code>&#39;top&#39;</code>或<code>&#39;bottom&#39;</code> 时生效</td>
+<td><code>number</code></td>
+</tr>
+</tbody></table>
+</section></article>

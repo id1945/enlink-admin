@@ -1,0 +1,209 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-carousel-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-carousel-demo-position" nzTitle="Position"></nz-link><nz-link nzHref="#components-carousel-demo-fade" nzTitle="Fade in"></nz-link><nz-link nzHref="#components-carousel-demo-autoplay" nzTitle="Scroll automatically"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Carousel<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A carousel component. Scales with its container.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When there is a group of content on the same level.</li>
+<li>When there is insufficient content space, it can be used to save space in the form of a revolving door.</li>
+<li>Commonly used for a group of pictures/cards.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCarouselModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/carousel'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-carousel-demo-basic'"
+  nzSelector="nz-demo-carousel-basic"
+  [nzLink]="'components-carousel-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-basic <name>"
+  nzComponentName="NzDemoCarouselBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/basic.md'">
+	<nz-demo-carousel-basic demo></nz-demo-carousel-basic>
+	<div intro ngNonBindable>
+		<p>Basic usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Fade in"
+  [nzId]="'components-carousel-demo-fade'"
+  nzSelector="nz-demo-carousel-fade"
+  [nzLink]="'components-carousel-demo-fade'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-fade <name>"
+  nzComponentName="NzDemoCarouselFadeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/fade.md'">
+	<nz-demo-carousel-fade demo></nz-demo-carousel-fade>
+	<div intro ngNonBindable>
+		<p>Slides use fade for transition.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Position"
+  [nzId]="'components-carousel-demo-position'"
+  nzSelector="nz-demo-carousel-position"
+  [nzLink]="'components-carousel-demo-position'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-position <name>"
+  nzComponentName="NzDemoCarouselPositionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/position.md'">
+	<nz-demo-carousel-position demo></nz-demo-carousel-position>
+	<div intro ngNonBindable>
+		<p>There are four positions available.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Scroll automatically"
+  [nzId]="'components-carousel-demo-autoplay'"
+  nzSelector="nz-demo-carousel-autoplay"
+  [nzLink]="'components-carousel-demo-autoplay'"
+  nzGenerateCommand="ng g ng-zorro-antd:carousel-autoplay <name>"
+  nzComponentName="NzDemoCarouselAutoplayComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/carousel/demo/autoplay.md'">
+	<nz-demo-carousel-autoplay demo></nz-demo-carousel-autoplay>
+	<div intro ngNonBindable>
+		<p>Timing of scrolling to the next card/picture.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-carousel"><span>nz-carousel</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-carousel'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAutoPlay]</code></td>
+<td>Whether to scroll automatically</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoPlaySpeed]</code></td>
+<td>Duration (milliseconds), does not scroll when set to 0</td>
+<td><code>number</code></td>
+<td><code>3000</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDotRender]</code></td>
+<td>Dot render template</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDotPosition]</code></td>
+<td>The position of the dots, which can be one of <code>top</code> <code>bottom</code> <code>left</code> <code>right</code></td>
+<td><code>string</code></td>
+<td><code>bottom</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDots]</code></td>
+<td>Whether to show the dots at the bottom of the gallery</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzEffect]</code></td>
+<td>Transition effect</td>
+<td><code>&#39;scrollx&#39;|&#39;fade&#39;</code></td>
+<td><code>&#39;scrollx&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzEnableSwipe]</code></td>
+<td>Whether to support swipe gesture</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>(nzAfterChange)</code></td>
+<td>Callback function called after the current index changes</td>
+<td><code>EventEmitter&lt;number&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzBeforeChange)</code></td>
+<td>Callback function called before the current index changes</td>
+<td><code>EventEmitter&#123; from: number; to: number &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>goTo(slideNumber)</code></td>
+<td>Change current slide to given slide number</td>
+</tr>
+<tr>
+<td><code>next()</code></td>
+<td>Change current slide to next slide</td>
+</tr>
+<tr>
+<td><code>pre()</code></td>
+<td>Change current slide to previous slide</td>
+</tr>
+</tbody></table>
+<h3 id="injectiontoken"><span>InjectionToken</span><a onclick="window.location.hash = 'injectiontoken'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+<th>Parameters</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>NZ_CAROUSEL_CUSTOM_STRATEGIES</code></td>
+<td>Provide custom transitioning strategies</td>
+<td><code>CarouselStrategyRegistryItem[]</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="customizing-transition-effects"><span>Customizing transition effects</span><a onclick="window.location.hash = 'customizing-transition-effects'" class="anchor">#</a></h3><p>You can provide strategies that extends <code>NzCarouselBaseStrategy</code> to implement custom transition effects.</p>
+</section></article>

@@ -1,0 +1,219 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-alert-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-alert-demo-style" nzTitle="More types"></nz-link><nz-link nzHref="#components-alert-demo-closable" nzTitle="Closable"></nz-link><nz-link nzHref="#components-alert-demo-description" nzTitle="Description"></nz-link><nz-link nzHref="#components-alert-demo-icon" nzTitle="Icon"></nz-link><nz-link nzHref="#components-alert-demo-close-text" nzTitle="Customized Close Text"></nz-link><nz-link nzHref="#components-alert-demo-banner" nzTitle="Banner"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Alert<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Alert component for feedback.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When you need to show alert messages to users.</li>
+<li>When you need a persistent static container which is closable by user actions.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzAlertModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/alert'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-alert-demo-basic'"
+  nzSelector="nz-demo-alert-basic"
+  [nzLink]="'components-alert-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-basic <name>"
+  nzComponentName="NzDemoAlertBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/basic.md'">
+	<nz-demo-alert-basic demo></nz-demo-alert-basic>
+	<div intro ngNonBindable>
+		<p>The simplest usage for short messages.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Closable"
+  [nzId]="'components-alert-demo-closable'"
+  nzSelector="nz-demo-alert-closable"
+  [nzLink]="'components-alert-demo-closable'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-closable <name>"
+  nzComponentName="NzDemoAlertClosableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/closable.md'">
+	<nz-demo-alert-closable demo></nz-demo-alert-closable>
+	<div intro ngNonBindable>
+		<p>To show close button.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Icon"
+  [nzId]="'components-alert-demo-icon'"
+  nzSelector="nz-demo-alert-icon"
+  [nzLink]="'components-alert-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-icon <name>"
+  nzComponentName="NzDemoAlertIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/icon.md'">
+	<nz-demo-alert-icon demo></nz-demo-alert-icon>
+	<div intro ngNonBindable>
+		<p>Decent icon make information more clear and more friendly.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Banner"
+  [nzId]="'components-alert-demo-banner'"
+  nzSelector="nz-demo-alert-banner"
+  [nzLink]="'components-alert-demo-banner'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-banner <name>"
+  nzComponentName="NzDemoAlertBannerComponent"
+  nzIframeSource="/iframe/#/alert-banner"
+  nzIframeHeight="220"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/banner.md'">
+	<nz-demo-alert-banner demo></nz-demo-alert-banner>
+	<div intro ngNonBindable>
+		<p>Display Alert as a banner at top of page.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="More types"
+  [nzId]="'components-alert-demo-style'"
+  nzSelector="nz-demo-alert-style"
+  [nzLink]="'components-alert-demo-style'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-style <name>"
+  nzComponentName="NzDemoAlertStyleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/style.md'">
+	<nz-demo-alert-style demo></nz-demo-alert-style>
+	<div intro ngNonBindable>
+		<p>There are 4 types of Alert: <code>success</code>, <code>info</code>, <code>warning</code>, <code>error</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Description"
+  [nzId]="'components-alert-demo-description'"
+  nzSelector="nz-demo-alert-description"
+  [nzLink]="'components-alert-demo-description'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-description <name>"
+  nzComponentName="NzDemoAlertDescriptionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/description.md'">
+	<nz-demo-alert-description demo></nz-demo-alert-description>
+	<div intro ngNonBindable>
+		<p>Additional description for alert message.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized Close Text"
+  [nzId]="'components-alert-demo-close-text'"
+  nzSelector="nz-demo-alert-close-text"
+  [nzLink]="'components-alert-demo-close-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:alert-close-text <name>"
+  nzComponentName="NzDemoAlertCloseTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/alert/demo/close-text.md'">
+	<nz-demo-alert-close-text demo></nz-demo-alert-close-text>
+	<div intro ngNonBindable>
+		<p>Replace the default icon with customized content.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-alert"><span>nz-alert</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-alert'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzBanner]</code></td>
+<td>Whether to show as banner</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCloseable]</code></td>
+<td>Whether Alert can be closed</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCloseText]</code></td>
+<td>Close text to show</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDescription]</code></td>
+<td>Additional content of Alert</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzMessage]</code></td>
+<td>Content of Alert</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShowIcon]</code></td>
+<td>Whether to show icon, in <code>nzBanner</code> mode default is <code>true</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzIconType]</code></td>
+<td>Icon type, effective when <code>nzShowIcon</code> is <code>true</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>Type of Alert styles, in <code>nzBanner</code> mode default is <code>&#39;warning&#39;</code></td>
+<td><code>&#39;success&#39; | &#39;info&#39; | &#39;warning&#39; | &#39;error&#39;</code></td>
+<td><code>&#39;info&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnClose)</code></td>
+<td>Callback when Alert is closed</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

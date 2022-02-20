@@ -1,0 +1,169 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-popover-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-popover-demo-placement" nzTitle="Placement"></nz-link><nz-link nzHref="#components-popover-demo-control" nzTitle="Controlling the close of the dialog"></nz-link><nz-link nzHref="#components-popover-demo-arrow-point-at-center" nzTitle="Arrow pointing at the center"></nz-link><nz-link nzHref="#components-popover-demo-template" nzTitle="Template"></nz-link><nz-link nzHref="#components-popover-demo-trigger-type" nzTitle="Three ways to trigger"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Popover<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>The floating card popped by clicking or hovering.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>A simple popup menu to provide extra information or operations.</p>
+<p>Comparing with <code>Tooltip</code>, besides information <code>Popover</code> card can also provide action elements like links and buttons.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzPopoverModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/popover'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-popover-demo-basic'"
+  nzSelector="nz-demo-popover-basic"
+  [nzLink]="'components-popover-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-basic <name>"
+  nzComponentName="NzDemoPopoverBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/basic.md'">
+	<nz-demo-popover-basic demo></nz-demo-popover-basic>
+	<div intro ngNonBindable>
+		<p>The most basic example. The size of the floating layer depends on the contents region.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Controlling the close of the dialog"
+  [nzId]="'components-popover-demo-control'"
+  nzSelector="nz-demo-popover-control"
+  [nzLink]="'components-popover-demo-control'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-control <name>"
+  nzComponentName="NzDemoPopoverControlComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/control.md'">
+	<nz-demo-popover-control demo></nz-demo-popover-control>
+	<div intro ngNonBindable>
+		<p>Use <code>nzVisible</code> prop to control the display of the card.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Template"
+  [nzId]="'components-popover-demo-template'"
+  nzSelector="nz-demo-popover-template"
+  [nzLink]="'components-popover-demo-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-template <name>"
+  nzComponentName="NzDemoPopoverTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/template.md'">
+	<nz-demo-popover-template demo></nz-demo-popover-template>
+	<div intro ngNonBindable>
+		<p><code>nzPopoverContent</code> and <code>nzPopoverTitle</code> accept the type of <code>TemplateRef&lt;void&gt;</code></p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Placement"
+  [nzId]="'components-popover-demo-placement'"
+  nzSelector="nz-demo-popover-placement"
+  [nzLink]="'components-popover-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-placement <name>"
+  nzComponentName="NzDemoPopoverPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/placement.md'">
+	<nz-demo-popover-placement demo></nz-demo-popover-placement>
+	<div intro ngNonBindable>
+		<p>There are 12 <code>placement</code> options available.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Arrow pointing at the center"
+  [nzId]="'components-popover-demo-arrow-point-at-center'"
+  nzSelector="nz-demo-popover-arrow-point-at-center"
+  [nzLink]="'components-popover-demo-arrow-point-at-center'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-arrow-point-at-center <name>"
+  nzComponentName="NzDemoPopoverArrowPointAtCenterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/arrow-point-at-center.md'">
+	<nz-demo-popover-arrow-point-at-center demo></nz-demo-popover-arrow-point-at-center>
+	<div intro ngNonBindable>
+		<p>By specifying <code>nzPopoverPlacement</code> prop, the arrow can be point to the center of the target element.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Three ways to trigger"
+  [nzId]="'components-popover-demo-trigger-type'"
+  nzSelector="nz-demo-popover-trigger-type"
+  [nzLink]="'components-popover-demo-trigger-type'"
+  nzGenerateCommand="ng g ng-zorro-antd:popover-trigger-type <name>"
+  nzComponentName="NzDemoPopoverTriggerTypeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/popover/demo/trigger-type.md'">
+	<nz-demo-popover-trigger-type demo></nz-demo-popover-trigger-type>
+	<div intro ngNonBindable>
+		<p>Mouse to click, focus and move in.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-popover]"><span>[nz-popover]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-popover]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPopoverTitle]</code></td>
+<td>Title of the popover</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPopoverContent]</code></td>
+<td>Content of the popover</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPopoverTrigger]</code></td>
+<td>Popover trigger mode. If set to <code>null</code> it would not be triggered</td>
+<td><code>&#39;click&#39; | &#39;focus&#39; | &#39;hover&#39; | null</code></td>
+<td><code>&#39;hover&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPopoverPlacement]</code></td>
+<td>The position of the popover relative to the target</td>
+<td><code>&#39;top&#39; | &#39;left&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;topLeft&#39; | &#39;topRight&#39; | &#39;bottomLeft&#39; | &#39;bottomRight&#39; | &#39;leftTop&#39; | &#39;leftBottom&#39; | &#39;rightTop&#39; | &#39;rightBottom&#39;</code></td>
+<td><code>&#39;top&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPopoverOrigin]</code></td>
+<td>Origin of the tooltip</td>
+<td><code>ElementRef</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>Consult <a href="/components/tooltip/en#api">Tooltip&#39;s documentation</a> to find more APIs.</p>
+<h2 id="note"><span>Note</span><a onclick="window.location.hash = 'note'" class="anchor">#</a></h2><p>Please ensure that the child node of <code>nz-popover</code> accepts <code>onMouseEnter</code>, <code>onMouseLeave</code>, <code>onFocus</code>, <code>onClick</code> events.</p>
+</section></article>

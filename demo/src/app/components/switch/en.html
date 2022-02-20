@@ -1,0 +1,212 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-switch-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-switch-demo-disabled" nzTitle="Disabled"></nz-link><nz-link nzHref="#components-switch-demo-text" nzTitle="Text & icon"></nz-link><nz-link nzHref="#components-switch-demo-size" nzTitle="Two sizes"></nz-link><nz-link nzHref="#components-switch-demo-loading" nzTitle="Loading"></nz-link><nz-link nzHref="#components-switch-demo-control" nzTitle="Control"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Switch<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Switching Selector.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>If you need to represent the switching between two states or on-off state.</li>
+<li>The difference between <code>Switch</code> and <code>Checkbox</code> is that <code>Switch</code> will trigger a state change directly when you toggle it, while <code>Checkbox</code> is generally used for state marking, which should work in conjunction with submit operation.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSwitchModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/switch'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-switch-demo-basic'"
+  nzSelector="nz-demo-switch-basic"
+  [nzLink]="'components-switch-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-basic <name>"
+  nzComponentName="NzDemoSwitchBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/basic.md'">
+	<nz-demo-switch-basic demo></nz-demo-switch-basic>
+	<div intro ngNonBindable>
+		<p>The most basic usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Text & icon"
+  [nzId]="'components-switch-demo-text'"
+  nzSelector="nz-demo-switch-text"
+  [nzLink]="'components-switch-demo-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-text <name>"
+  nzComponentName="NzDemoSwitchTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/text.md'">
+	<nz-demo-switch-text demo></nz-demo-switch-text>
+	<div intro ngNonBindable>
+		<p>With text and icon.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Loading"
+  [nzId]="'components-switch-demo-loading'"
+  nzSelector="nz-demo-switch-loading"
+  [nzLink]="'components-switch-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-loading <name>"
+  nzComponentName="NzDemoSwitchLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/loading.md'">
+	<nz-demo-switch-loading demo></nz-demo-switch-loading>
+	<div intro ngNonBindable>
+		<p>Mark a pending state of switch.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Disabled"
+  [nzId]="'components-switch-demo-disabled'"
+  nzSelector="nz-demo-switch-disabled"
+  [nzLink]="'components-switch-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-disabled <name>"
+  nzComponentName="NzDemoSwitchDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/disabled.md'">
+	<nz-demo-switch-disabled demo></nz-demo-switch-disabled>
+	<div intro ngNonBindable>
+		<p>Disabled state of <code>Switch</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Two sizes"
+  [nzId]="'components-switch-demo-size'"
+  nzSelector="nz-demo-switch-size"
+  [nzLink]="'components-switch-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-size <name>"
+  nzComponentName="NzDemoSwitchSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/size.md'">
+	<nz-demo-switch-size demo></nz-demo-switch-size>
+	<div intro ngNonBindable>
+		<p><code>nzSize=&quot;small&quot;</code> represents a small sized switch.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Control"
+  [nzId]="'components-switch-demo-control'"
+  nzSelector="nz-demo-switch-control"
+  [nzLink]="'components-switch-demo-control'"
+  nzGenerateCommand="ng g ng-zorro-antd:switch-control <name>"
+  nzComponentName="NzDemoSwitchControlComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/switch/demo/control.md'">
+	<nz-demo-switch-control demo></nz-demo-switch-control>
+	<div intro ngNonBindable>
+		<p>The status of <code>Switch</code> is completely up to the user and no longer automatically changes the data based on the click event.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-switch"><span>nz-switch</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-switch'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>determine whether the <code>nz-switch</code> is checked, double binding</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCheckedChildren]</code></td>
+<td>content to be shown when the state is checked</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzUnCheckedChildren]</code></td>
+<td>content to be shown when the state is unchecked</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable switch</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>the size of the <code>nz-switch</code>, options: <code>default</code> <code>small</code></td>
+<td><code>&#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>loading state of switch</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzControl]</code></td>
+<td>determine whether fully control state by user</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>a callback function, can be executed when the checked state is changing</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>focus()</td>
+<td>get focus</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>remove focus</td>
+</tr>
+</tbody></table>
+</section></article>

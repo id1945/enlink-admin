@@ -1,0 +1,235 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-checkbox-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-checkbox-demo-disabled" nzTitle="Disabled"></nz-link><nz-link nzHref="#components-checkbox-demo-controller" nzTitle="Controlled Checkbox"></nz-link><nz-link nzHref="#components-checkbox-demo-group" nzTitle="Checkbox Group"></nz-link><nz-link nzHref="#components-checkbox-demo-check-all" nzTitle="Check all"></nz-link><nz-link nzHref="#components-checkbox-demo-layout" nzTitle="Use with Grid"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Checkbox<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Checkbox.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>Used for selecting multiple values from several options.</li>
+<li>If you use only one checkbox, it is the same as using Switch to toggle between two states. The difference is that Switch will trigger the state change directly, but Checkbox just marks the state as changed and this needs to be submitted.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCheckboxModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/checkbox'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-checkbox-demo-basic'"
+  nzSelector="nz-demo-checkbox-basic"
+  [nzLink]="'components-checkbox-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-basic <name>"
+  nzComponentName="NzDemoCheckboxBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/basic.md'">
+	<nz-demo-checkbox-basic demo></nz-demo-checkbox-basic>
+	<div intro ngNonBindable>
+		<p>Basic usage of checkbox.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Controlled Checkbox"
+  [nzId]="'components-checkbox-demo-controller'"
+  nzSelector="nz-demo-checkbox-controller"
+  [nzLink]="'components-checkbox-demo-controller'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-controller <name>"
+  nzComponentName="NzDemoCheckboxControllerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/controller.md'">
+	<nz-demo-checkbox-controller demo></nz-demo-checkbox-controller>
+	<div intro ngNonBindable>
+		<p>Communicated with other components.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Check all"
+  [nzId]="'components-checkbox-demo-check-all'"
+  nzSelector="nz-demo-checkbox-check-all"
+  [nzLink]="'components-checkbox-demo-check-all'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-check-all <name>"
+  nzComponentName="NzDemoCheckboxCheckAllComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/check-all.md'">
+	<nz-demo-checkbox-check-all demo></nz-demo-checkbox-check-all>
+	<div intro ngNonBindable>
+		<p>The <code>nzIndeterminate</code> property can help you to achieve a &#39;check all&#39; effect.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Disabled"
+  [nzId]="'components-checkbox-demo-disabled'"
+  nzSelector="nz-demo-checkbox-disabled"
+  [nzLink]="'components-checkbox-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-disabled <name>"
+  nzComponentName="NzDemoCheckboxDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/disabled.md'">
+	<nz-demo-checkbox-disabled demo></nz-demo-checkbox-disabled>
+	<div intro ngNonBindable>
+		<p>Disabled checkbox.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Checkbox Group"
+  [nzId]="'components-checkbox-demo-group'"
+  nzSelector="nz-demo-checkbox-group"
+  [nzLink]="'components-checkbox-demo-group'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-group <name>"
+  nzComponentName="NzDemoCheckboxGroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/group.md'">
+	<nz-demo-checkbox-group demo></nz-demo-checkbox-group>
+	<div intro ngNonBindable>
+		<p>Generate a group of checkboxes from an array.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Use with Grid"
+  [nzId]="'components-checkbox-demo-layout'"
+  nzSelector="nz-demo-checkbox-layout"
+  [nzLink]="'components-checkbox-demo-layout'"
+  nzGenerateCommand="ng g ng-zorro-antd:checkbox-layout <name>"
+  nzComponentName="NzDemoCheckboxLayoutComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/checkbox/demo/layout.md'">
+	<nz-demo-checkbox-layout demo></nz-demo-checkbox-layout>
+	<div intro ngNonBindable>
+		<p>We can use <code>nz-checkbox</code> and Grid in <code>nz-checkbox-wrapper</code>, to implement complex layout.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-checkbox]"><span>[nz-checkbox]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-checkbox]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>get focus when component mounted</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable checkbox</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[ngModel]</code></td>
+<td>Specifies whether the checkbox is selected, double binding</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzIndeterminate]</code></td>
+<td>set the status of indeterminate，only affect the style</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>use for the callback of <code>nz-checkbox-wrapper</code></td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>The callback function that is triggered when the state changes.</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-checkbox-group"><span>nz-checkbox-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-checkbox-group'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>Specifies options, double binding</td>
+<td><code>Array&lt;&#123; label: string; value: string; checked?: boolean; &#125;&gt;</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable all checkboxes</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>The callback function that is triggered when the state changes.</td>
+<td><code>EventEmitter&lt;Array&lt;&#123; label: string; value: string; checked?: boolean; &#125;&gt;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-checkbox-wrapper"><span>nz-checkbox-wrapper</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-checkbox-wrapper'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>(nzOnChange)</code></td>
+<td>The callback function that is triggered when the state changes.</td>
+<td><code>EventEmitter&lt;any[]&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h2><h3 id="[nz-checkbox]"><span>[nz-checkbox]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-checkbox]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>focus()</td>
+<td>get focus</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>remove focus</td>
+</tr>
+</tbody></table>
+</section></article>

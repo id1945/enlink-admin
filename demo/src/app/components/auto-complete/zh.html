@@ -1,0 +1,224 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-auto-complete-demo-basic" nzTitle="基本使用"></nz-link><nz-link nzHref="#components-auto-complete-demo-options" nzTitle="自定义选项"></nz-link><nz-link nzHref="#components-auto-complete-demo-custom" nzTitle="自定义输入组件"></nz-link><nz-link nzHref="#components-auto-complete-demo-non-case-sensitive" nzTitle="不区分大小写"></nz-link><nz-link nzHref="#components-auto-complete-demo-certain-category" nzTitle="查询模式 - 确定类目"></nz-link><nz-link nzHref="#components-auto-complete-demo-uncertain-category" nzTitle="查询模式 - 不确定类目"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Autocomplete<span class="subtitle">自动完成</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>输入框自动完成功能。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>需要自动完成时。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzAutocompleteModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/auto-complete'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本使用"
+  [nzId]="'components-auto-complete-demo-basic'"
+  nzSelector="nz-demo-auto-complete-basic"
+  [nzLink]="'components-auto-complete-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-basic <name>"
+  nzComponentName="NzDemoAutoCompleteBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/basic.md'">
+	<nz-demo-auto-complete-basic demo></nz-demo-auto-complete-basic>
+	<div intro ngNonBindable>
+		<p>基本使用。通过 <code>nzDataSource</code> 设置自动完成的数据源</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义输入组件"
+  [nzId]="'components-auto-complete-demo-custom'"
+  nzSelector="nz-demo-auto-complete-custom"
+  [nzLink]="'components-auto-complete-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-custom <name>"
+  nzComponentName="NzDemoAutoCompleteCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/custom.md'">
+	<nz-demo-auto-complete-custom demo></nz-demo-auto-complete-custom>
+	<div intro ngNonBindable>
+		<p>自定义输入组件。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="查询模式 - 确定类目"
+  [nzId]="'components-auto-complete-demo-certain-category'"
+  nzSelector="nz-demo-auto-complete-certain-category"
+  [nzLink]="'components-auto-complete-demo-certain-category'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-certain-category <name>"
+  nzComponentName="NzDemoAutoCompleteCertainCategoryComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/certain-category.md'">
+	<nz-demo-auto-complete-certain-category demo></nz-demo-auto-complete-certain-category>
+	<div intro ngNonBindable>
+		<p><a href="https://ant.design/docs/spec/reaction#Lookup-Patterns">查询模式: 确定类目</a> 示例。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="自定义选项"
+  [nzId]="'components-auto-complete-demo-options'"
+  nzSelector="nz-demo-auto-complete-options"
+  [nzLink]="'components-auto-complete-demo-options'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-options <name>"
+  nzComponentName="NzDemoAutoCompleteOptionsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/options.md'">
+	<nz-demo-auto-complete-options demo></nz-demo-auto-complete-options>
+	<div intro ngNonBindable>
+		<p>也可以直接传 <code>nz-auto-option</code> 作为 <code>nz-autocomplete</code> 的 Content，而非使用 <code>nzDataSource</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="不区分大小写"
+  [nzId]="'components-auto-complete-demo-non-case-sensitive'"
+  nzSelector="nz-demo-auto-complete-non-case-sensitive"
+  [nzLink]="'components-auto-complete-demo-non-case-sensitive'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-non-case-sensitive <name>"
+  nzComponentName="NzDemoAutoCompleteNonCaseSensitiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/non-case-sensitive.md'">
+	<nz-demo-auto-complete-non-case-sensitive demo></nz-demo-auto-complete-non-case-sensitive>
+	<div intro ngNonBindable>
+		<p>不区分大小写的 AutoComplete</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="查询模式 - 不确定类目"
+  [nzId]="'components-auto-complete-demo-uncertain-category'"
+  nzSelector="nz-demo-auto-complete-uncertain-category"
+  [nzLink]="'components-auto-complete-demo-uncertain-category'"
+  nzGenerateCommand="ng g ng-zorro-antd:auto-complete-uncertain-category <name>"
+  nzComponentName="NzDemoAutoCompleteUncertainCategoryComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/auto-complete/demo/uncertain-category.md'">
+	<nz-demo-auto-complete-uncertain-category demo></nz-demo-auto-complete-uncertain-category>
+	<div intro ngNonBindable>
+		<p><a href="https://ant.design/docs/spec/reaction#Lookup-Patterns">查询模式: 不确定类目</a> 示例。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nz-input</span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span> <span class="token attr-name">[nzAutocomplete]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>auto<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-autocomplete</span> <span class="token attr-name">[nzDataSource]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>[<span class="token punctuation">'</span>12345<span class="token punctuation">'</span>, <span class="token punctuation">'</span>23456<span class="token punctuation">'</span>, <span class="token punctuation">'</span>34567<span class="token punctuation">'</span>]<span class="token punctuation">"</span></span> <span class="token attr-name">#auto</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-autocomplete</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nz-input</span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>value<span class="token punctuation">"</span></span> <span class="token attr-name">[nzAutocomplete]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>auto<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-autocomplete</span> <span class="token attr-name">#auto</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-auto-option</span> <span class="token attr-name">[nzValue]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>12345<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>12345<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-auto-option</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-auto-option</span> <span class="token attr-name">[nzValue]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>23456<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>23456<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-auto-option</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-auto-option</span> <span class="token attr-name">[nzValue]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>34567<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>34567<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-auto-option</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-autocomplete</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="[nzautocomplete]"><span>[nzAutocomplete]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nzautocomplete]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAutocomplete]</code></td>
+<td>用于绑定 nzAutocomplete 组件</td>
+<td><code>NzAutocompleteComponent</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-autocomplete"><span>nz-autocomplete</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-autocomplete'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzBackfill]</code></td>
+<td>使用键盘选择选项的时候把选中项回填到输入框中</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDataSource]</code></td>
+<td>自动完成的数据源</td>
+<td><code>AutocompleteDataSource</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDefaultActiveFirstOption]</code></td>
+<td>是否默认高亮第一个选项。</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzWidth]</code></td>
+<td>自定义宽度单位 px</td>
+<td><code>number</code></td>
+<td>触发元素宽度</td>
+</tr>
+<tr>
+<td><code>[nzOverlayClassName]</code></td>
+<td>下拉根元素的类名称</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOverlayStyle]</code></td>
+<td>下拉根元素的样式</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-auto-option"><span>nz-auto-option</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-auto-option'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzValue]</code></td>
+<td>绑定到触发元素 ngModel 的值</td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzLabel]</code></td>
+<td>填入触发元素显示的值</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用选项</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+</section></article>

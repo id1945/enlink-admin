@@ -1,0 +1,60 @@
+<div class="container-fluid h-100">
+    <div class="d-flex h-100 p-v-15 flex-column justify-content-between">
+        <div class="d-none d-md-flex p-h-40">
+            <img src="assets/images/logo/logo.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-5">
+                    <nz-card>
+                        <h2 class="m-t-20">Sign In</h2>
+                        <p class="m-b-30">Enter your credential to get access</p>
+                        <form nz-form [formGroup]="loginForm" nzLayout="vertical" class="login-form" (ngSubmit)="submitForm()">
+                            <nz-form-item>
+                                <nz-form-label nzRequired nzFor="userName">Username</nz-form-label>
+                                <nz-form-control nzErrorTip="Please input your username!">
+                                    <nz-input-group [nzPrefix]="prefixUser">
+                                        <input type="text" nz-input formControlName="userName" placeholder="Username">
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item class="relative">
+                                <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+                                <a class="float-right font-size-13 text-muted" style="position:absolute; right: 0" [routerLink]="['/authentication/reset-password-1']">Forget Password?</a>
+                                <nz-form-control nzErrorTip="Please input your Password!">
+                                    <nz-input-group [nzPrefix]="prefixLock">
+                                        <input type="password" nz-input formControlName="password" placeholder="Password">
+                                    </nz-input-group>
+                                </nz-form-control>
+                            </nz-form-item>
+                            <nz-form-item>
+                                <nz-form-control>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <span class="font-size-13 text-muted">Don't have an account? <a class="small" [routerLink]="['/authentication/sign-up-1']"> Signup</a></span>
+                                        <button nz-button class="login-form-button" [nzType]="'primary'">Sign In</button>
+                                    </div>
+                                </nz-form-control>
+                            </nz-form-item>
+                        </form>
+                        <ng-template #prefixUser><i nz-icon nzType="user"></i></ng-template>
+                        <ng-template #prefixLock><i nz-icon nzType="lock"></i></ng-template>
+                    </nz-card>
+                </div>
+                <div class="offset-md-1 col-md-6 d-none d-md-block">
+                    <img class="img-fluid" src="assets/images/others/login-2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-flex  p-h-40 justify-content-between">
+            <span class="">© 2019 ThemeNate</span>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class="text-dark text-link" href="">Legal</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class="text-dark text-link" href="">Privacy</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

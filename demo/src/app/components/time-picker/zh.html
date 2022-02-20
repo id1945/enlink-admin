@@ -1,0 +1,349 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-time-picker-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-time-picker-demo-value" nzTitle="数据绑定"></nz-link><nz-link nzHref="#components-time-picker-demo-size" nzTitle="三种大小"></nz-link><nz-link nzHref="#components-time-picker-demo-disabled" nzTitle="禁用"></nz-link><nz-link nzHref="#components-time-picker-demo-hide-column" nzTitle="选择时分"></nz-link><nz-link nzHref="#components-time-picker-demo-interval-options" nzTitle="步长选项"></nz-link><nz-link nzHref="#components-time-picker-demo-addon" nzTitle="附加内容"></nz-link><nz-link nzHref="#components-time-picker-demo-disabled-part" nzTitle="禁用部分"></nz-link><nz-link nzHref="#components-time-picker-demo-use12-hours" nzTitle="12小时制"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>TimePicker<span class="subtitle">时间选择框</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>输入或选择时间的控件。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当用户需要输入一个时间，可以点击标准输入框，弹出时间面板进行选择。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzTimePickerModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/time-picker'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-time-picker-demo-basic'"
+  nzSelector="nz-demo-time-picker-basic"
+  [nzLink]="'components-time-picker-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-basic <name>"
+  nzComponentName="NzDemoTimePickerBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/basic.md'">
+	<nz-demo-time-picker-basic demo></nz-demo-time-picker-basic>
+	<div intro ngNonBindable>
+		<p>点击 <code>nz-time-picker</code>，然后可以在浮层中选择或者输入某一时间。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="三种大小"
+  [nzId]="'components-time-picker-demo-size'"
+  nzSelector="nz-demo-time-picker-size"
+  [nzLink]="'components-time-picker-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-size <name>"
+  nzComponentName="NzDemoTimePickerSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/size.md'">
+	<nz-demo-time-picker-size demo></nz-demo-time-picker-size>
+	<div intro ngNonBindable>
+		<p>三种大小的输入框，大的用在表单中，中的为默认。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="选择时分"
+  [nzId]="'components-time-picker-demo-hide-column'"
+  nzSelector="nz-demo-time-picker-hide-column"
+  [nzLink]="'components-time-picker-demo-hide-column'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-hide-column <name>"
+  nzComponentName="NzDemoTimePickerHideColumnComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/hide-column.md'">
+	<nz-demo-time-picker-hide-column demo></nz-demo-time-picker-hide-column>
+	<div intro ngNonBindable>
+		<p><code>nz-time-picker</code> 浮层中的列会随着 <code>nzFormat</code> 变化，当略去 <code>nzFormat</code> 中的某部分时，浮层中对应的列也会消失。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="附加内容"
+  [nzId]="'components-time-picker-demo-addon'"
+  nzSelector="nz-demo-time-picker-addon"
+  [nzLink]="'components-time-picker-demo-addon'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-addon <name>"
+  nzComponentName="NzDemoTimePickerAddonComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/addon.md'">
+	<nz-demo-time-picker-addon demo></nz-demo-time-picker-addon>
+	<div intro ngNonBindable>
+		<p>在 <code>nz-time-picker</code> 选择框底部显示自定义的内容。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="12小时制"
+  [nzId]="'components-time-picker-demo-use12-hours'"
+  nzSelector="nz-demo-time-picker-use12-hours"
+  [nzLink]="'components-time-picker-demo-use12-hours'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-use12-hours <name>"
+  nzComponentName="NzDemoTimePickerUse12HoursComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/use12-hours.md'">
+	<nz-demo-time-picker-use12-hours demo></nz-demo-time-picker-use12-hours>
+	<div intro ngNonBindable>
+		<p>12小时制的时间选择器，默认format为 <code>h:mm:ss a</code></p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="数据绑定"
+  [nzId]="'components-time-picker-demo-value'"
+  nzSelector="nz-demo-time-picker-value"
+  [nzLink]="'components-time-picker-demo-value'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-value <name>"
+  nzComponentName="NzDemoTimePickerValueComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/value.md'">
+	<nz-demo-time-picker-value demo></nz-demo-time-picker-value>
+	<div intro ngNonBindable>
+		<p>可以进行双向绑定。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="禁用"
+  [nzId]="'components-time-picker-demo-disabled'"
+  nzSelector="nz-demo-time-picker-disabled"
+  [nzLink]="'components-time-picker-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-disabled <name>"
+  nzComponentName="NzDemoTimePickerDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/disabled.md'">
+	<nz-demo-time-picker-disabled demo></nz-demo-time-picker-disabled>
+	<div intro ngNonBindable>
+		<p>禁用时间选择。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="步长选项"
+  [nzId]="'components-time-picker-demo-interval-options'"
+  nzSelector="nz-demo-time-picker-interval-options"
+  [nzLink]="'components-time-picker-demo-interval-options'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-interval-options <name>"
+  nzComponentName="NzDemoTimePickerIntervalOptionsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/interval-options.md'">
+	<nz-demo-time-picker-interval-options demo></nz-demo-time-picker-interval-options>
+	<div intro ngNonBindable>
+		<p>可以使用 <code>nzHourStep</code> <code>nzMinuteStep</code> <code>nzSecondStep</code> 按步长展示可选的时分秒。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="禁用部分"
+  [nzId]="'components-time-picker-demo-disabled-part'"
+  nzSelector="nz-demo-time-picker-disabled-part"
+  [nzLink]="'components-time-picker-demo-disabled-part'"
+  nzGenerateCommand="ng g ng-zorro-antd:time-picker-disabled-part <name>"
+  nzComponentName="NzDemoTimePickerDisabledPartComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/time-picker/demo/disabled-part.md'">
+	<nz-demo-time-picker-disabled-part demo></nz-demo-time-picker-disabled-part>
+	<div intro ngNonBindable>
+		<p>禁用部分时间选择。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-time-picker</span> <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>someTime<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-time-picker</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-time-picker"><span>nz-time-picker</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-time-picker'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>当前时间</td>
+<td><code>Date</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAddon]</code></td>
+<td>选择框底部显示自定义的内容</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAllowEmpty]</code></td>
+<td>是否展示清除按钮</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>自动获取焦点</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzClearText]</code></td>
+<td>清除按钮的提示文案</td>
+<td><code>string</code></td>
+<td><code>&#39;clear&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDefaultOpenValue]</code></td>
+<td>当 <code>[ngModel]</code> 不存在时，可以设置面板打开时默认选中的值</td>
+<td><code>Date</code></td>
+<td><code>new Date()</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>禁用全部操作</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabledHours]</code></td>
+<td>禁止选择部分小时选项</td>
+<td><code>() =&gt; number[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabledMinutes]</code></td>
+<td>禁止选择部分分钟选项</td>
+<td><code>(hour: number) =&gt; number[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabledSeconds]</code></td>
+<td>禁止选择部分秒选项</td>
+<td><code>(hour: number, minute: number) =&gt; number[]</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzFormat]</code></td>
+<td>展示的时间格式</td>
+<td><a href="https://angular.io/api/common/DatePipe">DatePipe</a></td>
+<td><code>&quot;HH:mm:ss&quot;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzHideDisabledOptions]</code></td>
+<td>隐藏禁止选择的选项</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHourStep]</code></td>
+<td>小时选项间隔</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzMinuteStep]</code></td>
+<td>分钟选项间隔</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSecondStep]</code></td>
+<td>秒选项间隔</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzOpen]</code></td>
+<td>面板是否打开，可双向绑定</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>没有值的时候显示的内容</td>
+<td><code>string</code></td>
+<td><code>&quot;请选择时间&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzPopupClassName]</code></td>
+<td>弹出层类名</td>
+<td><code>string</code></td>
+<td><code>&#39;&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzUse12Hours]</code></td>
+<td>使用12小时制，为true时format默认为<code>h:mm:ss a</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>时间发生变化的回调</td>
+<td><code>EventEmitter&lt;Date&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOpenChange)</code></td>
+<td>面板打开/关闭时的回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="方法"><span>方法</span><a onclick="window.location.hash = '方法'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur()</td>
+<td>移除焦点</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>获取焦点</td>
+</tr>
+</tbody></table>
+</section></article>

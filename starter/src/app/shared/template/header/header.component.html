@@ -1,0 +1,40 @@
+<div class="header">
+    <div class="logo logo-dark">
+        <a href="">
+            <img src="assets/images/logo/logo.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold.png" alt="Logo">
+        </a>
+    </div>
+    <div class="logo logo-white">
+        <a href="">
+            <img src="assets/images/logo/logo-white.png" alt="Logo">
+            <img class="logo-fold" src="assets/images/logo/logo-fold-white.png" alt="Logo">
+        </a>
+    </div>
+    <div class="nav-wrap">
+        <ul class="nav-left">
+            <li class="desktop-toggle">
+                <a (click)="toggleFold()">
+                    <i nz-icon [nzType]="isFolded? 'menu-unfold':'menu-fold'" theme="outline"></i>
+                </a>
+            </li>
+            <li class="mobile-toggle">
+                <a (click)="toggleExpand()">
+                    <i nz-icon [nzType]="isExpand? 'menu-fold': 'menu-unfold'" theme="outline"></i>
+                </a>
+            </li>
+        </ul>
+        <ul class="nav-right">
+            <li>
+                <a (click)="quickViewToggle()">
+                    <i nz-icon nzType="appstore" theme="outline"></i>
+                </a>
+                <nz-drawer [nzWidth]="280" nzTitle="Quick View" [nzClosable]="false" [nzVisible]="quickViewVisible" nzPlacement="right" (nzOnClose)="quickViewToggle()">
+                    <ng-container *nzDrawerContent>
+                        <app-quick-view></app-quick-view>
+                    </ng-container>
+                </nz-drawer>
+            </li>
+        </ul>
+    </div>
+</div>    

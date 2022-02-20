@@ -1,0 +1,326 @@
+<div class="row">
+    <div class="col-lg-5">
+        <div class="row">
+            <div class="col-md-6">
+                <nz-card>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="m-b-0 text-muted">Sales</p>
+                            <h2 class="m-b-0">$23,523</h2>
+                        </div>
+                        <nz-tag class="m-r-0 m-b-0" [nzColor]="'cyan'">
+                            <i nz-icon nzType="arrow-up" theme="outline"></i>
+                            <span class="font-weight-semibold m-l-5">6.71%</span>
+                        </nz-tag>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <nz-badge nzStatus="default" [nzColor]="blue"></nz-badge>
+                                <span class="text-gray font-weight-semibold font-size-13">Monthly Goal</span>
+                            </div>
+                            <span class="text-dark font-weight-semibold font-size-13">70% </span>
+                        </div>
+                        <nz-progress [nzStrokeColor]="blue" nzPercent="70" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                    </div>
+                </nz-card>
+            </div>
+            <div class="col-md-6">
+                <nz-card>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="m-b-0 text-muted">Margin</p>
+                            <h2 class="m-b-0">$8,753</h2>
+                        </div>
+                        <nz-tag class="m-r-0 m-b-0" [nzColor]="'red'">
+                            <i nz-icon nzType="arrow-down" theme="outline"></i>
+                            <span class="font-weight-semibold m-l-5">3.26%</span>
+                        </nz-tag>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <nz-badge nzStatus="default" [nzColor]="cyan"></nz-badge>
+                                <span class="text-gray font-weight-semibold font-size-13">Monthly Goal</span>
+                            </div>
+                            <span class="text-dark font-weight-semibold font-size-13">60%</span>
+                        </div>
+                        <nz-progress [nzStrokeColor]="cyan" nzPercent="60" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                    </div>
+                </nz-card>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <nz-card>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="m-b-0 text-muted">Orders</p>
+                            <h2 class="m-b-0">1,753</h2>
+                        </div>
+                        <nz-tag class="m-r-0 m-b-0" [nzColor]="'red'">
+                            <i nz-icon nzType="arrow-down" theme="outline"></i>
+                            <span class="font-weight-semibold m-l-5">2.71%</span>
+                        </nz-tag>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <nz-badge nzStatus="default" [nzColor]="gold"></nz-badge>
+                                <span class="text-gray font-weight-semibold font-size-13">Monthly Goal</span>
+                            </div>
+                            <span class="text-dark font-weight-semibold font-size-13">45% </span>
+                        </div>
+                        <nz-progress [nzStrokeColor]="gold" nzPercent="45" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                    </div>
+                </nz-card>
+            </div>
+            <div class="col-md-6">
+                <nz-card>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <p class="m-b-0 text-muted">Affiliate</p>
+                            <h2 class="m-b-0">236</h2>
+                        </div>
+                        <nz-tag class="m-r-0 m-b-0" [nzColor]="'gold'">
+                            <span class="font-weight-semibold m-l-5">N/A</span>
+                        </nz-tag>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <nz-badge nzStatus="default" [nzColor]="purple"></nz-badge>
+                                <span class="text-gray font-weight-semibold font-size-13">Monthly Goal</span>
+                            </div>
+                            <span class="text-dark font-weight-semibold font-size-13">50%</span>
+                        </div>
+                        <nz-progress [nzStrokeColor]="purple" nzPercent="80" nzSize="small" [nzShowInfo]="false"></nz-progress>
+                    </div>
+                </nz-card>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-7">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Sales Statistics</h5>
+                <div>
+                    <a class="text-dark font-size-20" nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="salesStatisticsDropDown">
+                        <i nz-icon nzType="ellipsis" theme="outline"></i>
+                    </a>
+                    <nz-dropdown-menu #salesStatisticsDropDown="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="printer" theme="outline"></i>
+                                <span class="m-l-5">Print</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="download" theme="outline"></i>
+                                <span class="m-l-5">Download</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="file-excel" theme="outline"></i>
+                                <span class="m-l-5">Export</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="copy" theme="outline"></i>
+                                <span class="m-l-5">Copy</span>
+                            </li>
+                        </ul>
+                    </nz-dropdown-menu>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <div class="d-inline-block m-r-30">
+                    <p class="m-b-0">
+                        <nz-badge nzStatus="default" [nzColor]="blue"></nz-badge>
+                        <span>Online</span>
+                    </p>
+                </div>
+                <div class="d-inline-block">
+                    <p class="m-b-0">
+                        <nz-badge nzStatus="default" [nzColor]="blueLight"></nz-badge>
+                        <span>Offline</span>
+                    </p>
+                </div>
+            </div>
+            <div class="m-t-50">
+                <canvas ngChartjs 
+                    style="height: 220px"
+                    [datasets]="salesChartData" 
+                    [labels]="salesChartLabels"
+                    [options]="salesChartOptions" 
+                    [colors]="salesChartColors"
+                    [legend]="false" 
+                    [chartType]="salesChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Revenue</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <div class="d-md-flex">
+                    <div class="p-r-30 m-v-10 border right border-hide-md">
+                        <p class="m-b-0">Net Revenue</p>
+                        <h3 class="m-b-0">
+                            <span>$58,323</span>
+                            <span class="text-success m-l-10 font-size-14">+6.71%</span>
+                        </h3>
+                    </div>
+                    <div class="p-h-30 m-v-10 border right border-hide-md">
+                        <p class="m-b-0">Selling</p>
+                        <h3 class="m-b-0">
+                            <span>$17,523</span>
+                            <span class="text-danger m-l-10 font-size-14">+1.82%</span>
+                        </h3>
+                    </div>
+                    <div class="p-l-30 m-v-10">
+                        <p class="m-b-0">Cost</p>
+                        <h3 class="m-b-0">
+                            <span>$8,217</span>
+                            <span class="text-success m-l-10 font-size-14">+11.2%</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="m-t-50" style="height: 290px">
+                <canvas ngChartjs 
+                    #myCanvas 
+                    [datasets]="revenueChartData" 
+                    [labels]="revenueChartLabels"
+                    [options]="revenueChartOptions" 
+                    [colors]="revenueChartColors" 
+                    [legend]="false"
+                    [chartType]="revenueChartType">
+                </canvas>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Top Products</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-list [nzDataSource]="productsList" [nzRenderItem]="products" [nzItemLayout]="'horizontal'">
+                    <ng-template #products let-item>
+                        <nz-list-item [nzContent]="productGrowth">
+                            <nz-list-item-meta
+                                [nzTitle]="productName"
+                                [nzAvatar]="item.avatar"
+                                [nzDescription]="productCategory">
+                                <ng-template #productName>
+                                    <a class="font-size-15">{{item.name}}</a>
+                                </ng-template>
+                                <ng-template #productCategory>
+                                    <span class="m-b-0 text-muted">{{item.category}}</span>
+                                </ng-template>
+                                <ng-template #productGrowth>
+                                    <nz-tag class="m-r-0 m-b-0" [nzColor]="'cyan'">
+                                        +{{item.growth}}%
+                                    </nz-tag>
+                                </ng-template>
+                            </nz-list-item-meta>
+                        </nz-list-item>
+                    </ng-template>
+                </nz-list>
+            </div>
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <nz-card>
+            <h5>Customers</h5>
+            <div class="m-v-45 text-center" style="height: 210px">
+                <canvas ngChartjs 
+                    [data]="customersChartData" 
+                    [labels]="customersChartLabels" 
+                    [chartType]="customersChartType"
+                    [colors]="customersChartColors"
+                    [options]="customersChartOptions"
+                    [legend]="false">
+                </canvas>
+            </div>
+            <div class="row p-t-25">
+                <div class="col-md-8 m-h-auto">
+                    <div class="d-flex justify-content-between align-items-center m-b-20">
+                        <p class="m-b-0 d-flex align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="gold"></nz-badge>
+                            <span>Direct</span>
+                        </p>
+                        <h5 class="m-b-0">350</h5>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center m-b-20">
+                        <p class="m-b-0 d-flex align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="blue" [nzStyle]="{'background-color': blue}"></nz-badge>
+                            <span>Referral</span>
+                        </p>
+                        <h5 class="m-b-0">450</h5>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center m-b-20">
+                        <p class="m-b-0 d-flex align-items-center">
+                            <nz-badge nzStatus="default" [nzColor]="red"></nz-badge>
+                            <span>Social Network</span>
+                        </p>
+                        <h5 class="m-b-0">100</h5>
+                    </div>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5>Recent Orders</h5>
+                <div>
+                    <a nz-button nzType="default" nzSize="small">View All</a>
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-table #ordersListTable [nzData]="ordersList"  [nzShowPagination]="false" class="no-border-last">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of ordersListTable.data">
+                            <td>#{{item.id}}</td>
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <nz-avatar [nzSize]="30" nzIcon="user" [nzSrc]="item.avatar"></nz-avatar>
+                                    <h6 class="m-l-10 m-b-0">{{item.name}}</h6>
+                                </div>
+                            </td>
+                            <td>{{item.date}}</td>
+                            <td>${{item.amount | number:'3.2-5'}}</td>
+                            <td>
+                                <nz-badge *ngIf="item.status == 'approved'" nzStatus="success"></nz-badge>
+                                <nz-badge *ngIf="item.status == 'rejected'" nzStatus="error"></nz-badge>
+                                <nz-badge *ngIf="item.status == 'pending'"  nzStatus="processing"></nz-badge> 
+                                <span class="text-capitalize">{{item.status}}</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+    </div>
+</div>

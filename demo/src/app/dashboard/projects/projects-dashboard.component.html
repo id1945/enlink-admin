@@ -1,0 +1,299 @@
+<div class="page-header">
+    <div class="d-md-flex align-items-md-center justify-content-between">
+        <div class="media m-v-10 align-items-center">
+            <nz-avatar nzIcon="user" [nzSize]="50" nzSrc="assets/images/avatars/thumb-3.jpg"></nz-avatar>
+            <div class="media-body m-l-15">
+                <h4 class="m-b-0">Welcome back, Nichols!</h4>
+                <span class="text-gray">Project Manager</span>
+            </div>
+        </div>
+        <div class="d-md-flex align-items-center d-none">
+            <div class="media align-items-center m-r-40 m-v-5">
+                <div class="font-size-27">
+                    <i class="text-primary" nz-icon nzType="profile" theme="outline"></i>
+                </div>
+                <div class="d-flex align-items-center m-l-10">
+                    <h2 class="m-b-0 m-r-5">78</h2>
+                    <span class="text-gray">Tasks</span>
+                </div>
+            </div>
+            <div class="media align-items-center m-r-40 m-v-5">
+                <div class="font-size-27">
+                    <i class="text-success" nz-icon nzType="appstore" theme="outline"></i>
+                </div>
+                <div class="d-flex align-items-center m-l-10">
+                    <h2 class="m-b-0 m-r-5">21</h2>
+                    <span class="text-gray">Projects</span>
+                </div>
+            </div>
+            <div class="media align-items-center m-v-5">
+                <div class="font-size-27">
+                    <i class="text-danger" nz-icon nzType="team" theme="outline"></i>
+                </div>
+                <div class="d-flex align-items-center m-l-10">
+                    <h2 class="m-b-0 m-r-5">39</h2>
+                    <span class="text-gray">Members</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Project Completion </h5>
+                <div>
+                    <a class="text-dark font-size-20" nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="projectCompletionDropDown">
+                        <i nz-icon nzType="ellipsis" theme="outline"></i>
+                    </a>
+                    <nz-dropdown-menu #projectCompletionDropDown="nzDropdownMenu">
+                        <ul nz-menu>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="printer" theme="outline"></i>
+                                <span class="m-l-5">Print</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="download" theme="outline"></i>
+                                <span class="m-l-5">Download</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="file-excel" theme="outline"></i>
+                                <span class="m-l-5">Export</span>
+                            </li>
+                            <li nz-menu-item>
+                                <i nz-icon nzType="reload" theme="outline"></i>
+                                <span class="m-l-5">Refresh</span>
+                            </li>
+                        </ul>
+                    </nz-dropdown-menu>
+                </div>
+            </div>
+            <div class="d-md-flex justify-content-space m-t-50">
+                <div class="completion-chart p-r-10" style="height: 330px">
+                    <canvas ngChartjs #completionChart
+                        [datasets]="completionChartData" 
+                        [labels]="completionChartLabels"
+                        [options]="completionChartOptions" 
+                        [colors]="completionChartColors" 
+                        [legend]="false"
+                        [chartType]="completionChartType">
+                    </canvas>
+                </div>
+                <div class="calendar-card border-0">
+                    <nz-calendar [nzFullscreen]="false"></nz-calendar> 
+                </div>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Team Members</h5>
+                <div>
+                    <a nz-button nzSize="small">View All</a> 
+                </div>
+            </div>
+            <div class="m-t-30">
+                <div class="avatar-text m-l-5">
+                    <a nz-tooltip [nzTooltipTitle]="item.name" *ngFor="let item of memberList">
+                        <nz-avatar [nzSize]="35" [nzSrc]="item.img" nzIcon="user"></nz-avatar>
+                    </a>
+                    <a nz-tooltip nzTooltipTitle="Add Member">
+                        <nz-avatar class="ant-avatar-blue" [nzSize]="35" nzIcon="plus"></nz-avatar>
+                    </a>
+                </div>
+            </div>
+        </nz-card>
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Upcoming Meeting</h5>
+                <div>
+                    <a nz-button nzSize="small">View All</a> 
+                </div>
+            </div>
+            <div class="m-t-30">
+                <div class="d-flex m-b-20">
+                    <div class="text-center">
+                        <nz-avatar nzText="17" class="ant-avatar-blue font-size-20" nzShape="square" nzSize="large"></nz-avatar>
+                    </div>
+                    <div class="m-l-20">
+                        <h5 class="m-b-0">
+                            <a class="text-dark">UI Discussion</a>
+                        </h5>
+                        <p class="m-b-0">Execute core that as result.</p>
+                    </div>
+                </div>
+                <div class="d-flex m-b-20">
+                    <div class="text-center">
+                        <nz-avatar nzText="21" class="ant-avatar-cyan font-size-20" nzShape="square" nzSize="large"></nz-avatar>
+                    </div>
+                    <div class="m-l-20">
+                        <h5 class="m-b-0">
+                            <a class="text-dark">Project Schdule</a>
+                        </h5>
+                        <p class="m-b-0">Special cloth alert always.</p>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <div class="text-center">
+                        <nz-avatar nzText="25" class="ant-avatar-gold font-size-20" nzShape="square" nzSize="large"></nz-avatar>
+                    </div>
+                    <div class="m-l-20">
+                        <h5 class="m-b-0">
+                            <a class="text-dark">Design Discussion</a>
+                        </h5>
+                        <p class="m-b-0">Let us wax poetic about.</p>
+                    </div>
+                </div>
+            </div> 
+        </nz-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Projects</h5>
+                <div>
+                    <a nz-button nzSize="small">View All</a> 
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-table #projectsTable [nzData]="projectList" [nzShowPagination]="false" class="no-border-last">
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Tasks</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of projectsTable.data">
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <nz-avatar nzShape="square"  nzIcon="picture" [nzSrc]="item.avatar"></nz-avatar>
+                                    <span class="m-l-10">{{item.project}}</span>
+                                </div>
+                            </td>
+                            <td>{{item.tasks}}</td>
+                            <td>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'In Progress'" [nzColor]="'blue'">{{item.status}}</nz-tag>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'Ready'" [nzColor]="'cyan'">{{item.status}}</nz-tag>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'Behind'" [nzColor]="'red'">{{item.status}}</nz-tag>
+                            </td>
+                            <td>
+                                <div class="w-90 p-r-10">
+                                    <nz-progress *ngIf="item.status !== 'Behind'" [nzPercent]="item.progress" nzSize="small"></nz-progress>
+                                    <nz-progress *ngIf="item.status == 'Behind'" [nzPercent]="item.progress" nzSize="small" nzStatus="exception"></nz-progress>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Assigned tasks</h5>
+                <div>
+                    <a nz-button nzSize="small">View All</a> 
+                </div>
+            </div>
+            <div class="m-t-30">
+                <nz-table #tasksTable [nzData]="tasksList" [nzShowPagination]="false" class="no-border-last">
+                    <thead>
+                        <tr>
+                            <th>Asignee</th>
+                            <th>Status</th>
+                            <th>Due Date</th>
+                            <th>Tasks</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tasksTable.data">
+                            <td>
+                                <div class="d-flex align-items-center">
+                                    <nz-avatar nzIcon="picture" [nzSrc]="item.avatar"></nz-avatar>
+                                    <span class="m-l-10">{{item.name}}</span>
+                                </div>
+                            </td>
+                            <td>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'Medium'" [nzColor]="'gold'">{{item.status}}</nz-tag>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'Low'" [nzColor]="'cyan'">{{item.status}}</nz-tag>
+                                <nz-tag class="m-b-0" *ngIf="item.status == 'High'" [nzColor]="'red'">{{item.status}}</nz-tag> 
+                            </td>
+                            <td>{{item.due}}</td>
+                            <td>
+                                <h5 class="m-b-0">{{item.title}}</h5>
+                                <p class="m-b-0 font-size-13">{{item.desc}}</p>
+                            </td>
+                            <td>
+                                <div>
+                                    <a class="text-dark font-size-20" nz-dropdown [nzTrigger]="'click'" [nzPlacement]="'bottomRight'" [nzDropdownMenu]="assignedTasksDropDown">
+                                        <i nz-icon nzType="ellipsis" theme="outline"></i>
+                                    </a>
+                                    <nz-dropdown-menu #assignedTasksDropDown="nzDropdownMenu">
+                                        <ul nz-menu>
+                                            <li nz-menu-item>
+                                                <i nz-icon nzType="edit" theme="outline"></i>
+                                                <span class="m-l-5">Edit</span>
+                                            </li>
+                                            <li nz-menu-item>
+                                                <i nz-icon nzType="delete" theme="outline"></i>
+                                                <span class="m-l-5">Delete</span>
+                                            </li>
+                                            <li nz-menu-item>
+                                                <i nz-icon nzType="check-square" theme="outline"></i>
+                                                <span class="m-l-5">Mark as Done</span>
+                                            </li>
+                                        </ul>
+                                    </nz-dropdown-menu>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </nz-table>
+            </div>
+        </nz-card>
+    </div>
+    <div class="col-lg-4">
+        <nz-card>
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">Activity</h5>
+                <div>
+                    <a nz-button nzSize="small">View All</a> 
+                </div>
+            </div>
+            <div class="m-t-40">
+                <div class="overflow-y-auto p-l-10 p-t-15" >
+                    <nz-timeline>
+                        <nz-timeline-item *ngFor="let item of activityList" [nzDot]="dotTemplate">
+                            <div class="m-l-20">
+                                <h5 class="m-b-5">{{item.name}}</h5>
+                                <p class="m-b-0">
+                                    <span class="font-weight-semibold">{{item.action}} </span> 
+                                    <span class="m-l-5"> {{item.target}}</span>
+                                </p>
+                                <span class="text-muted font-size-13">
+                                    <i nz-icon nzType="clock-circle" theme="outline"></i>
+                                    <span class="m-l-5">{{item.date}}</span>
+                                </span>
+                            </div>
+                            <ng-template #dotTemplate>
+                                <div class="font-size-20 p-5">
+                                    <i *ngIf="item.action == 'Complete task'" class="text-success" nz-icon nzType="check" theme="outline"></i>
+                                    <i *ngIf="item.action == 'Attached file'" class="text-info" nz-icon nzType="paper-clip" theme="outline"></i>
+                                    <i *ngIf="item.action == 'Commented'" class="text-info" nz-icon nzType="message" theme="outline"></i>
+                                    <i *ngIf="item.action == 'Removed'" class="text-danger" nz-icon nzType="close-circle" theme="outline"></i>
+                                </div>
+                            </ng-template>
+                        </nz-timeline-item>
+                    </nz-timeline>
+                </div>
+            </div>
+        </nz-card>
+    </div>
+</div>

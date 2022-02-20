@@ -1,0 +1,98 @@
+.ant-tag {
+    font-family: $font-family-base;
+    margin: 0 10px 10px 0;
+    display: inline-block;
+    line-height: $tag-line-height;
+    height: $tag-height;
+    padding: 0 10px;
+    border-radius: $border-radius-round;
+    border: 1px solid $border-color;
+    background: $tag-bg;
+    font-size: 12px;
+    color : $body-color;
+
+    .anticon-cross {
+        display: inline-block;
+        cursor: pointer;
+        margin-left: 3px;
+        transition: all .3s;
+        color: rgba($body-color,.45);
+        font-weight: 700;
+    }
+}
+
+.ant-tag-checkable {
+    background-color: transparent;
+    border-color: transparent;
+    
+    &:active {
+        background-color: darken($tag-theme-color, 10%);
+        color: $white;
+    }
+    
+    &:not(.ant-tag-checkable-checked){
+
+        &:hover { 
+            color: $tag-theme-color;
+        }
+    }
+}
+
+.ant-tag-checkable-checked {
+    background-color: $tag-theme-color;
+    color: $white
+}
+
+.ant-tag-has-color {
+    color: $white;
+
+    .anticon-cross,
+    a {
+        color: $white;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}    
+
+@each $tone in $tone-loop {
+
+    .ant-tag-#{nth($tone, 1)} {
+        color: #{nth($tone, 2)};
+        background: #{nth($tone, 3)};
+        border-color: transparent;
+        font-weight: 500;
+    }
+}    
+
+.m-b-0 {
+
+    .ant-tag {
+        margin-bottom: 0px;
+    }    
+}
+
+.m-r-0 {
+
+    .ant-tag {
+        margin-right: 0px;
+    }    
+}
+
+.editable-tag {
+
+    .ant-tag {
+        border-style: dashed;
+    }
+}
+
+
+
+
+
+
+
+
+
+

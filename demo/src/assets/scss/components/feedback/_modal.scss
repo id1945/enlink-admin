@@ -1,0 +1,118 @@
+.ant-modal-wrap {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: $zindex-modal;
+}
+
+.ant-modal {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    width: auto;
+    margin: 0 auto;
+    top: 6.25rem;
+    padding-bottom: 1.5rem;
+}    
+
+.ant-modal-content {
+    background-color: $white;
+    border-radius: $border-radius;
+    box-shadow: $modal-content-shadow;
+}
+
+.ant-modal-close {
+    z-index: 10;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    color: $body-color;
+}
+
+.ant-modal-header {
+    padding: $modal-header-padding;
+    border-radius: $modal-border-radius $modal-border-radius 0 0;
+    background: $modal-content-bg;
+    color: $gray-dark;
+    border-bottom: 1px solid $border-color;
+}
+
+.ant-modal-body {
+    padding: $modal-body-padding;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+}
+
+.ant-modal-footer {
+    border-top: 1px solid $border-color;
+    padding: $modal-footer-padding;
+    text-align: right;
+    border-radius: 0 0 $modal-border-radius $modal-border-radius;
+}
+
+.ant-confirm-body {
+
+    > .anticon {
+        font-size: 22px;
+        margin-right: 1rem;
+        float: left;
+    }
+
+    .ant-confirm-title {
+        color: $gray-dark;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: $line-height-base;
+    }
+
+    .ant-confirm-content {
+        margin-left: 38px;
+        font-size: $font-size-base;
+        color: $body-color;
+        margin-top: 8px;
+    }
+}
+
+.ant-confirm-success {
+
+    .ant-confirm-body {
+
+        > .anticon {
+            color: $state-success-text;
+        }
+    }
+}  
+
+.ant-confirm-error {
+
+    .ant-confirm-body {
+
+        > .anticon {
+            color: $state-danger-text;
+        }
+    }
+}  
+
+.ant-confirm-confirm,
+.ant-confirm-warning {
+
+    .ant-confirm-body > {
+
+        .anticon {
+            color: $state-warning-text;
+        }
+    }
+}
+
+.vertical-center-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-modal {
+        top: 0px;
+    }
+}

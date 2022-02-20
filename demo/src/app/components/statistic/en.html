@@ -1,0 +1,231 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-statistic-demo-basic" nzTitle="Basic Usage"></nz-link><nz-link nzHref="#components-statistic-demo-unit" nzTitle="Unit"></nz-link><nz-link nzHref="#components-statistic-demo-card" nzTitle="In Card"></nz-link><nz-link nzHref="#components-statistic-demo-countdown" nzTitle="Countdown"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Statistic<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Display statistic number.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When want to highlight some data.</li>
+<li>When want to display statistic data with description.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzStatisticModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/statistic'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic Usage"
+  [nzId]="'components-statistic-demo-basic'"
+  nzSelector="nz-demo-statistic-basic"
+  [nzLink]="'components-statistic-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-basic <name>"
+  nzComponentName="NzDemoStatisticBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/basic.md'">
+	<nz-demo-statistic-basic demo></nz-demo-statistic-basic>
+	<div intro ngNonBindable>
+		<p>Simplest Usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="In Card"
+  [nzId]="'components-statistic-demo-card'"
+  nzSelector="nz-demo-statistic-card"
+  [nzLink]="'components-statistic-demo-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-card <name>"
+  nzComponentName="NzDemoStatisticCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/card.md'">
+	<nz-demo-statistic-card demo></nz-demo-statistic-card>
+	<div intro ngNonBindable>
+		<p>Display statistic data in Card.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Unit"
+  [nzId]="'components-statistic-demo-unit'"
+  nzSelector="nz-demo-statistic-unit"
+  [nzLink]="'components-statistic-demo-unit'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-unit <name>"
+  nzComponentName="NzDemoStatisticUnitComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/unit.md'">
+	<nz-demo-statistic-unit demo></nz-demo-statistic-unit>
+	<div intro ngNonBindable>
+		<p>Add unit through <code>nzPrefix</code> and <code>nzSuffix</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Countdown"
+  [nzId]="'components-statistic-demo-countdown'"
+  nzSelector="nz-demo-statistic-countdown"
+  [nzLink]="'components-statistic-demo-countdown'"
+  nzGenerateCommand="ng g ng-zorro-antd:statistic-countdown <name>"
+  nzComponentName="NzDemoStatisticCountdownComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/statistic/demo/countdown.md'">
+	<nz-demo-statistic-countdown demo></nz-demo-statistic-countdown>
+	<div intro ngNonBindable>
+		<p>Countdown component.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-statistic"><span>nz-statistic</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-statistic'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzPrefix]</code></td>
+<td>Prefix of Value</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>Suffix of Value</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>Title</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>Value</td>
+<td><code>string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueStyle]</code></td>
+<td>Value CSS style</td>
+<td><code>Object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueTemplate]</code></td>
+<td>Custom template to render a number</td>
+<td><code>TemplateRef&lt;&#123; $implicit: string | number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-countdown"><span>nz-countdown</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-countdown'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzFormat]</code></td>
+<td>Format string</td>
+<td><code>string</code></td>
+<td><code>&quot;HH:mm:ss&quot;</code></td>
+</tr>
+<tr>
+<td><code>[nzPrefix]</code></td>
+<td>Prefix of Value</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>Suffix of Value</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>Title</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>Target time in timestamp form</td>
+<td><code>string | number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValueTemplate]</code></td>
+<td>Custom template to render a time</td>
+<td><code>TemplateRef&lt;&#123; $implicit: number &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzCountdownFinish)</code></td>
+<td>Emit when countdown finishes</td>
+<td><code>void</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nzformat"><span>nzFormat</span><a onclick="window.location.hash = 'nzformat'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Y</code></td>
+<td>Year</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Month</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Date</td>
+</tr>
+<tr>
+<td><code>H</code></td>
+<td>Hour</td>
+</tr>
+<tr>
+<td><code>m</code></td>
+<td>Minute</td>
+</tr>
+<tr>
+<td><code>s</code></td>
+<td>Second</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>Millisecond</td>
+</tr>
+</tbody></table>
+</section></article>

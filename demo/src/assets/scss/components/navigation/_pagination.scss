@@ -1,0 +1,201 @@
+.ant-pagination {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $gray-light;
+    
+    .ant-select {
+        color: $gray-light;
+    }
+    
+    .ant-select-selection--single,
+    .ant-select-selection--multiple {
+        height: $pagination-size;
+    }
+
+    .ant-select-selection__rendered {
+        line-height: $pagination-size;
+    }
+
+    .ant-select-selection-selected-value {
+        font-size: 13px;
+    }
+
+    .ant-select-sm {
+        .ant-select-selection--single,
+        .ant-select-selection--multiple {
+            height: $pagination-size-sm;
+        }
+
+        .ant-select-selection__rendered {
+            line-height: $pagination-size-sm;
+        }
+    }
+}
+
+.ant-pagination-item {
+    font-family: $font-family-base;
+    background-color: transparent;
+    min-width: $pagination-size;
+    height: $pagination-size;
+    border: 1px solid transparent;
+    border-radius: $border-radius-circle;
+
+    a {
+        color: $gray-light;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: transparent;
+
+        a {
+            color: $pagination-theme-color; 
+        }
+    }
+}
+
+.ant-pagination-item-active {
+    border-color: $pagination-theme-color;
+    font-weight: $font-weight-normal;
+    background-color: $pagination-theme-color;
+
+    a {
+        color: $white;
+    }
+
+    &:hover,
+    &:focus {
+
+        a {
+            color: $white; 
+        }
+    }
+}
+
+.ant-pagination-next,
+.ant-pagination-prev {
+    color: $gray-light;
+
+    .ant-pagination-item-link {
+        border-color: $border-color; 
+        border-radius: $border-radius-circle;
+        cursor: pointer;
+    }
+
+    a {
+        color: $gray-light;
+    }
+
+    &:focus,
+    &:hover {
+
+        .ant-pagination-item-link {
+            border-color: $pagination-theme-color;
+            color: $pagination-theme-color;
+        }
+    }
+}
+
+.ant-pagination-disabled {
+    .ant-pagination-item-link {
+        border-color: $border-color;
+        color: $gray;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    a {
+        border-color: $border-color;
+        color: $gray;
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    &:hover,
+    &:focus {
+
+        a,
+        .ant-pagination-item-link {
+            border-color: $border-color;
+            color: $gray;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    }
+}
+
+.ant-pagination-options-quick-jumper {
+
+    input {
+        padding: 4px 11px;
+        height: $pagination-size;
+        font-size: $font-size-base;
+        line-height: 1.5;
+        color: $gray-dark;
+        background-color: $white;
+        background-image: none;
+        border: 1px solid $border-color;
+        border-radius: $border-radius;
+        margin: 0 10px;
+        width: 50px;
+
+        &:hover,
+        &:focus {
+            border-color: $pagination-theme-color;
+        }
+
+        &:focus {
+            outline: 0;
+            box-shadow: 0 0 0 2px rgba($pagination-theme-color, .2);
+        }
+    }
+}
+
+.ant-pagination.mini {
+
+
+    .ant-pagination-options-quick-jumper {
+        height: $pagination-size-sm;
+        line-height: $pagination-size-sm;
+
+        input {
+            position: relative;
+            display: inline-block;
+            padding: 4px 11px;
+            height: $pagination-size-sm;
+            font-size: 13px;
+            line-height: 1.5;
+            color: $gray-dark;
+            background-color: $white;
+            border: 1px solid $border-color;
+            border-radius: $border-radius;
+
+            &:hover,
+            &:focus {
+                border-color: $pagination-theme-color;
+            }
+        }
+    }
+}
+
+.ant-pagination-simple {
+
+    .ant-pagination-simple-pager {
+
+        input {
+            margin-right: 8px;
+            background-color: $white;
+            border-radius: $border-radius;
+            border: 1px solid $border-color;
+            padding: 0 6px;
+            text-align: center;
+            color: $gray-dark;
+
+            &:hover,
+            &:focus {
+                border-color: $pagination-theme-color;
+            }
+        }
+    }
+}

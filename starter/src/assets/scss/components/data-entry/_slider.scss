@@ -1,0 +1,94 @@
+.ant-slider {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    color: $body-color;
+    height: $slider-height;
+    margin: $slider-gutter;
+    margin-bottom: 1.875rem;
+
+    &:hover {
+
+        .ant-slider-track {
+            background-color: $slider-theme-color;
+        }
+
+        .ant-slider-rail{
+            background-color: $slider-rail-bg;
+        }
+
+        .ant-slider-handle {
+
+            &:not(.ant-tooltip-open) {
+                border-color: $slider-theme-color;
+            }
+        }
+
+        .ant-slider-dot {
+            border-color: $slider-rail-bg;
+        }    
+
+        .ant-slider-dot-active {
+            border-color: $slider-theme-color;
+        }
+    }
+}
+
+.ant-slider-rail {
+    width: 100%;
+    height: $slider-rail-height;
+    border-radius: $slider-rail-radius;
+    background-color: rgba($slider-rail-bg, $slider-hover-opacity);
+}
+
+.ant-slider-track {
+    height: $slider-track-height;
+    border-radius: $slider-rail-radius;
+    background-color: rgba($slider-theme-color, $slider-hover-opacity);
+}
+
+.ant-slider-handle {
+    position: absolute;
+    margin-left: $slider-ticker-left-adjust;
+    margin-top: $slider-ticker-top-adjust;
+    width: $slider-ticker-size;
+    height: $slider-ticker-size;
+    border: 2px solid rgba($slider-theme-color, $slider-hover-opacity);
+}
+
+.ant-slider-dot {
+    position: absolute;
+    width: $slider-dot-size;
+    height: $slider-dot-size;
+    border: 2px solid rgba($slider-rail-bg, $slider-hover-opacity);
+    background-color: $white; 
+}
+
+.ant-slider-dot-active {
+    border: 2px solid rgba($slider-theme-color, $slider-hover-opacity);
+}
+
+.ant-slider-mark {
+    top: 1.25rem;
+}
+
+.ant-slider-mark-text {
+    color: $body-color;
+}
+
+.ant-slider-mark-text-active {
+    color: $gray-dark;
+}
+
+
+.ant-slider-vertical {
+    height: 100%;
+
+    .ant-slider-handle {
+        margin-left: $slider-ticker-left-adjust;
+        margin-bottom: $slider-ticker-top-adjust;
+    }
+
+    .ant-slider-mark-text {
+        left: 0.625rem;
+    }
+}

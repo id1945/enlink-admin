@@ -1,0 +1,335 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-steps-demo-simple" nzTitle="Basic"></nz-link><nz-link nzHref="#components-steps-demo-small-size" nzTitle="Mini version"></nz-link><nz-link nzHref="#components-steps-demo-start-index" nzTitle="Starting Index"></nz-link><nz-link nzHref="#components-steps-demo-icon" nzTitle="With icon"></nz-link><nz-link nzHref="#components-steps-demo-step-next" nzTitle="Switch Step"></nz-link><nz-link nzHref="#components-steps-demo-vertical" nzTitle="Vertical"></nz-link><nz-link nzHref="#components-steps-demo-vertical-small" nzTitle="Vertical mini version"></nz-link><nz-link nzHref="#components-steps-demo-error" nzTitle="Error status"></nz-link><nz-link nzHref="#components-steps-demo-progress-dot" nzTitle="Dot Style"></nz-link><nz-link nzHref="#components-steps-demo-customized-progress-dot" nzTitle="Customized Dot Style"></nz-link><nz-link nzHref="#components-steps-demo-clickable" nzTitle="Clickable"></nz-link><nz-link nzHref="#components-steps-demo-nav" nzTitle="Navigation Steps"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Steps<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p><code>Steps</code> is a navigation bar that guides users through the steps of a task.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When the task is complicated or has a certain sequence in the series of subtasks, we can decompose it into several steps to make things easier.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzStepsModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/steps'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-steps-demo-simple'"
+  nzSelector="nz-demo-steps-simple"
+  [nzLink]="'components-steps-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-simple <name>"
+  nzComponentName="NzDemoStepsSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/simple.md'">
+	<nz-demo-steps-simple demo></nz-demo-steps-simple>
+	<div intro ngNonBindable>
+		<p>The most basic step bar.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Mini version"
+  [nzId]="'components-steps-demo-small-size'"
+  nzSelector="nz-demo-steps-small-size"
+  [nzLink]="'components-steps-demo-small-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-small-size <name>"
+  nzComponentName="NzDemoStepsSmallSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/small-size.md'">
+	<nz-demo-steps-small-size demo></nz-demo-steps-small-size>
+	<div intro ngNonBindable>
+		<p>By setting like this: <code>&lt;nz-steps nzSize=&quot;small&quot;&gt;</code>, you can get a mini version.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Starting Index"
+  [nzId]="'components-steps-demo-start-index'"
+  nzSelector="nz-demo-steps-start-index"
+  [nzLink]="'components-steps-demo-start-index'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-start-index <name>"
+  nzComponentName="NzDemoStepsStartIndexComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/start-index.md'">
+	<nz-demo-steps-start-index demo></nz-demo-steps-start-index>
+	<div intro ngNonBindable>
+		<p>By setting <code>nzStartIndex</code> to change starting index of a step component. Be sure to add an offset to <code>nzCurrent</code> as well.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="With icon"
+  [nzId]="'components-steps-demo-icon'"
+  nzSelector="nz-demo-steps-icon"
+  [nzLink]="'components-steps-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-icon <name>"
+  nzComponentName="NzDemoStepsIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/icon.md'">
+	<nz-demo-steps-icon demo></nz-demo-steps-icon>
+	<div intro ngNonBindable>
+		<p>You can use your own custom icons by setting the property <code>nzIcon</code> for <code>nz-step</code>. Old API is still compatible but we strongly suggest the new API.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Switch Step"
+  [nzId]="'components-steps-demo-step-next'"
+  nzSelector="nz-demo-steps-step-next"
+  [nzLink]="'components-steps-demo-step-next'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-step-next <name>"
+  nzComponentName="NzDemoStepsStepNextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/step-next.md'">
+	<nz-demo-steps-step-next demo></nz-demo-steps-step-next>
+	<div intro ngNonBindable>
+		<p>Cooperate with the content and buttons, to represent the progress of a process.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical"
+  [nzId]="'components-steps-demo-vertical'"
+  nzSelector="nz-demo-steps-vertical"
+  [nzLink]="'components-steps-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-vertical <name>"
+  nzComponentName="NzDemoStepsVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/vertical.md'">
+	<nz-demo-steps-vertical demo></nz-demo-steps-vertical>
+	<div intro ngNonBindable>
+		<p>A simple step bar in the vertical direction.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical mini version"
+  [nzId]="'components-steps-demo-vertical-small'"
+  nzSelector="nz-demo-steps-vertical-small"
+  [nzLink]="'components-steps-demo-vertical-small'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-vertical-small <name>"
+  nzComponentName="NzDemoStepsVerticalSmallComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/vertical-small.md'">
+	<nz-demo-steps-vertical-small demo></nz-demo-steps-vertical-small>
+	<div intro ngNonBindable>
+		<p>A simple mini version step bar in the vertical direction.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Error status"
+  [nzId]="'components-steps-demo-error'"
+  nzSelector="nz-demo-steps-error"
+  [nzLink]="'components-steps-demo-error'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-error <name>"
+  nzComponentName="NzDemoStepsErrorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/error.md'">
+	<nz-demo-steps-error demo></nz-demo-steps-error>
+	<div intro ngNonBindable>
+		<p>By using <code>nzStatus</code> of <code>nz-steps</code>, you can specify the state for current step.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Dot Style"
+  [nzId]="'components-steps-demo-progress-dot'"
+  nzSelector="nz-demo-steps-progress-dot"
+  [nzLink]="'components-steps-demo-progress-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-progress-dot <name>"
+  nzComponentName="NzDemoStepsProgressDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/progress-dot.md'">
+	<nz-demo-steps-progress-dot demo></nz-demo-steps-progress-dot>
+	<div intro ngNonBindable>
+		<p>Steps with progress dot style.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized Dot Style"
+  [nzId]="'components-steps-demo-customized-progress-dot'"
+  nzSelector="nz-demo-steps-customized-progress-dot"
+  [nzLink]="'components-steps-demo-customized-progress-dot'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-customized-progress-dot <name>"
+  nzComponentName="NzDemoStepsCustomizedProgressDotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/customized-progress-dot.md'">
+	<nz-demo-steps-customized-progress-dot demo></nz-demo-steps-customized-progress-dot>
+	<div intro ngNonBindable>
+		<p>You can customize the display for Steps with progress dot style.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Clickable"
+  [nzId]="'components-steps-demo-clickable'"
+  nzSelector="nz-demo-steps-clickable"
+  [nzLink]="'components-steps-demo-clickable'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-clickable <name>"
+  nzComponentName="NzDemoStepsClickableComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/clickable.md'">
+	<nz-demo-steps-clickable demo></nz-demo-steps-clickable>
+	<div intro ngNonBindable>
+		<p>subscribe <code>(nzIndexChange)</code> makes Steps clickable.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Navigation Steps"
+  [nzId]="'components-steps-demo-nav'"
+  nzSelector="nz-demo-steps-nav"
+  [nzLink]="'components-steps-demo-nav'"
+  nzGenerateCommand="ng g ng-zorro-antd:steps-nav <name>"
+  nzComponentName="NzDemoStepsNavComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/steps/demo/nav.md'">
+	<nz-demo-steps-nav demo></nz-demo-steps-nav>
+	<div intro ngNonBindable>
+		<p>Navigation steps.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-steps</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>first step<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>second step<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-step</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>third step<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-step</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-steps</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-steps"><span>nz-steps</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-steps'" class="anchor">#</a></h3><p>The whole of the step bar.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzType]</code></td>
+<td>type of steps, can be set to one of the following values: <code>default</code>, <code>navigation</code></td>
+<td><code>&#39;default&#39; | &#39;navigation&#39;</code></td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td><code>[nzCurrent]</code></td>
+<td>To set the current step, counting from 0. You can overwrite this state by using <code>nzStatus</code> of <code>nz-step</code></td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>[nzDirection]</code></td>
+<td>To specify the direction of the step bar, <code>horizontal</code> and <code>vertical</code> are currently supported</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39;</code></td>
+<td><code>horizontal</code></td>
+</tr>
+<tr>
+<td><code>[nzLabelPlacement]</code></td>
+<td>Support vertical title and description</td>
+<td><code>&#39;vertical&#39; | &#39;horizontal&#39;</code></td>
+<td><code>horizontal</code></td>
+</tr>
+<tr>
+<td><code>[nzProgressDot]</code></td>
+<td>Steps with progress dot style, customize the progress dot by setting it with TemplateRef</td>
+<td><code>boolean | TemplateRef&lt;&#123; $implicit: TemplateRef&lt;void&gt;, status: string, index: number &#125;&gt;</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>To specify the size of the step bar, <code>default</code> and <code>small</code> are currently supported</td>
+<td><code>&#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>To specify the status of current step, can be set to one of the following values: <code>wait</code> <code>process</code> <code>finish</code> <code>error</code></td>
+<td><code>&#39;wait&#39; | &#39;process&#39; | &#39;finish&#39; | &#39;error&#39;</code></td>
+<td><code>&#39;process&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzStartIndex]</code></td>
+<td>To specify the starting number</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>(nzIndexChange)</code></td>
+<td>Trigger event when step click</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-step"><span>nz-step</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-step'" class="anchor">#</a></h3><p>A single step in the step bar.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDescription]</code></td>
+<td>description of the step, optional property</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzIcon]</code></td>
+<td>icon of the step, optional property</td>
+<td><code>string | string[] | Set&lt;string&gt; | &#123; [klass: string]: any; &#125;</code>  |  <code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzStatus]</code></td>
+<td>to specify the status. It will be automatically set by <code>nzCurrent</code> of <code>nz-steps</code> if not configured. Optional values are: <code>wait</code> <code>process</code> <code>finish</code> <code>error</code></td>
+<td><code>&#39;wait&#39; | &#39;process&#39; | &#39;finish&#39; | &#39;error&#39;</code></td>
+<td><code>&#39;wait&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>title of the step</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSubtitle]</code></td>
+<td>subTitle of the step</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>disable click</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+</section></article>

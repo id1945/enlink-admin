@@ -1,0 +1,74 @@
+<div class="container-fluid h-100">
+        <div class="d-flex h-100 p-v-15 flex-column justify-content-between">
+            <div class="d-none d-md-flex p-h-40">
+                <img src="assets/images/logo/logo.png" alt="">
+            </div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 d-none d-md-block">
+                        <img class="img-fluid" src="assets/images/others/sign-up-2.png" alt="">
+                    </div>
+                    <div class="m-l-auto col-md-5">
+                        <nz-card>
+                            <h2 class="m-t-20">Sign Up</h2>
+                            <p class="m-b-30">Create your account to get access</p>
+                            <form nz-form [formGroup]="signUpForm" class="login-form" nzLayout="vertical" (ngSubmit)="submitForm()">
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="userName">Username</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please input your username!">
+                                        <input type="text" nz-input formControlName="userName" placeholder="Username" id="userName">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="email">Email</nz-form-label>
+                                    <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                                        <input type="text" nz-input formControlName="email" placeholder="Username" id="email">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please input your Password!">
+                                        <input type="password" nz-input formControlName="password" placeholder="Password" id="password">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <nz-form-item>
+                                    <nz-form-label nzFor="checkPassword" nzRequired>Confirm Password</nz-form-label>
+                                    <nz-form-control nzErrorTip="Please confirm your password!">
+                                        <input nz-input type="password" formControlName="checkPassword"  placeholder="Confirm Password" id="checkPassword">
+                                    </nz-form-control>
+                                </nz-form-item>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <nz-form-item>
+                                        <nz-form-control>
+                                            <label nz-checkbox formControlName="agree">
+                                                <span>I have read the <a>agreement</a></span>
+                                            </label>
+                                        </nz-form-control>
+                                    </nz-form-item>
+                                    <nz-form-item>
+                                        <nz-form-control>
+                                            <div >
+                                                <button nz-button class="login-form-button" [nzType]="'primary'">Sign Up</button>
+                                            </div>
+                                        </nz-form-control>
+                                    </nz-form-item>   
+                                </div>
+                            </form>
+                        </nz-card>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-flex  p-h-40 justify-content-between">
+                <span class="">© 2019 ThemeNate</span>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="text-dark text-link" href="">Legal</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-dark text-link" href="">Privacy</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    

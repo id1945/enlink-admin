@@ -1,0 +1,75 @@
+.ant-timeline {
+    font-family: $font-family-sans-serif;
+    line-height: $line-height-base;
+    color: $body-color;
+}
+
+.ant-timeline-item {
+    position: relative;
+    padding-bottom: $timeline-gutter;
+}
+
+.ant-timeline,
+.ant-timeline-item {
+    font-size: $font-size-base;
+}
+
+.ant-timeline-item-tail {
+    position: absolute;
+    left: 4px;
+    top: .75em;
+    height: 100%;
+    border-left: 2px dashed $timeline-line-color;
+}
+
+.ant-timeline-item-head {
+    width: $timeline-dot-size;
+    height: $timeline-dot-size;
+    background-color: $timeline-dot-bg;
+    border-radius: 100px;
+    border: 2px solid $timeline-line-color;
+}
+
+.ant-timeline-item-head-primary {
+    border-color: $timeline-theme-color;
+    color: $timeline-theme-color;
+}
+
+.ant-timeline-item-head-blue,
+.ant-timeline-item-head-info {
+    border-color: $timeline-theme-color;
+    color: $timeline-theme-color;
+}
+
+.ant-timeline-item-head-green,
+.ant-timeline-item-head-success {
+    border-color: $brand-success;
+    color: $brand-success;
+}
+
+.ant-timeline-item-head-red,
+.ant-timeline-item-head-danger {
+    border-color: $brand-danger;
+    color: $brand-danger;
+}
+
+.ant-timeline-item-head-warning {
+    border-color: $brand-warning;
+    color: $brand-warning;
+}
+
+.ant-timeline-item-head-custom {
+    position: absolute;
+    text-align: center;
+    line-height: 1;
+    margin-top: 0;
+    border: 0;
+    height: auto;
+    border-radius: 0;
+    padding: 3px 1px;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    top: 5px;
+    left: 5px;
+    width: auto;
+}

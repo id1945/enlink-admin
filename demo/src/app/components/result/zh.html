@@ -1,0 +1,223 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-result-demo-success" nzTitle="Success"></nz-link><nz-link nzHref="#components-result-demo-info" nzTitle="Info"></nz-link><nz-link nzHref="#components-result-demo-warning" nzTitle="Warning"></nz-link><nz-link nzHref="#components-result-demo-fot" nzTitle="403"></nz-link><nz-link nzHref="#components-result-demo-fof" nzTitle="404"></nz-link><nz-link nzHref="#components-result-demo-foo" nzTitle="500"></nz-link><nz-link nzHref="#components-result-demo-error" nzTitle="Error"></nz-link><nz-link nzHref="#components-result-demo-custom" nzTitle="自定义 icon"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Result<span class="subtitle">结果</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>用于反馈一系列操作任务的处理结果。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当有重要操作需告知用户处理结果，且反馈内容较为复杂时使用。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzResultModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/result'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Success"
+  [nzId]="'components-result-demo-success'"
+  nzSelector="nz-demo-result-success"
+  [nzLink]="'components-result-demo-success'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-success <name>"
+  nzComponentName="NzDemoResultSuccessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/success.md'">
+	<nz-demo-result-success demo></nz-demo-result-success>
+	<div intro ngNonBindable>
+		<p>成功的结果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Info"
+  [nzId]="'components-result-demo-info'"
+  nzSelector="nz-demo-result-info"
+  [nzLink]="'components-result-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-info <name>"
+  nzComponentName="NzDemoResultInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/info.md'">
+	<nz-demo-result-info demo></nz-demo-result-info>
+	<div intro ngNonBindable>
+		<p>展示处理结果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Warning"
+  [nzId]="'components-result-demo-warning'"
+  nzSelector="nz-demo-result-warning"
+  [nzLink]="'components-result-demo-warning'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-warning <name>"
+  nzComponentName="NzDemoResultWarningComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/warning.md'">
+	<nz-demo-result-warning demo></nz-demo-result-warning>
+	<div intro ngNonBindable>
+		<p>警告类型的结果。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="403"
+  [nzId]="'components-result-demo-fot'"
+  nzSelector="nz-demo-result-fot"
+  [nzLink]="'components-result-demo-fot'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-fot <name>"
+  nzComponentName="NzDemoResultFotComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/fot.md'">
+	<nz-demo-result-fot demo></nz-demo-result-fot>
+	<div intro ngNonBindable>
+		<p>你没有此页面的访问权限。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="404"
+  [nzId]="'components-result-demo-fof'"
+  nzSelector="nz-demo-result-fof"
+  [nzLink]="'components-result-demo-fof'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-fof <name>"
+  nzComponentName="NzDemoResultFofComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/fof.md'">
+	<nz-demo-result-fof demo></nz-demo-result-fof>
+	<div intro ngNonBindable>
+		<p>此页面未找到。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="500"
+  [nzId]="'components-result-demo-foo'"
+  nzSelector="nz-demo-result-foo"
+  [nzLink]="'components-result-demo-foo'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-foo <name>"
+  nzComponentName="NzDemoResultFooComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/foo.md'">
+	<nz-demo-result-foo demo></nz-demo-result-foo>
+	<div intro ngNonBindable>
+		<p>服务器发生了错误。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Error"
+  [nzId]="'components-result-demo-error'"
+  nzSelector="nz-demo-result-error"
+  [nzLink]="'components-result-demo-error'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-error <name>"
+  nzComponentName="NzDemoResultErrorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/error.md'">
+	<nz-demo-result-error demo></nz-demo-result-error>
+	<div intro ngNonBindable>
+		<p>复杂的错误反馈。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义 icon"
+  [nzId]="'components-result-demo-custom'"
+  nzSelector="nz-demo-result-custom"
+  [nzLink]="'components-result-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:result-custom <name>"
+  nzComponentName="NzDemoResultCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/result/demo/custom.md'">
+	<nz-demo-result-custom demo></nz-demo-result-custom>
+	<div intro ngNonBindable>
+		<p>自定义 icon。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-result"><span>nz-result</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-result'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nzTitle</code></td>
+<td>标题</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzSubTitle</code></td>
+<td>副标题</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzStatus</code></td>
+<td>结果的状态，决定图标和颜色</td>
+<td><code>&#39;success&#39; | &#39;error&#39; | &#39;info&#39; | &#39;warning&#39;| &#39;404&#39; | &#39;403&#39; | &#39;500&#39;</code> | &#39;info&#39;</td>
+<td><code>&#39;info&#39;</code></td>
+</tr>
+<tr>
+<td><code>nzIcon</code></td>
+<td>自定义 icon</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>nzExtra</code></td>
+<td>操作区域</td>
+<td><code>TemplateRef&lt;void&gt;</code> | <code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="子元素"><span>子元素</span><a onclick="window.location.hash = '子元素'" class="anchor">#</a></h3><p>你可以在 nz-result 中加入如下指令，它们的优先级低于上面的参数。</p>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>i[nz-result-icon], div[nz-result-icon]</code></td>
+<td>在顶部展示的大图标</td>
+</tr>
+<tr>
+<td><code>div[nz-result-title]</code></td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>div[nz-result-subtitle]</code></td>
+<td>副标题</td>
+</tr>
+<tr>
+<td><code>div[nz-result-content]</code></td>
+<td>内容，可以展示详细的信息</td>
+</tr>
+<tr>
+<td><code>div[nz-result-extra]</code></td>
+<td>操作区域</td>
+</tr>
+</tbody></table>
+</section></article>

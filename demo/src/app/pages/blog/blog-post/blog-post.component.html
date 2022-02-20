@@ -1,0 +1,74 @@
+<nz-card>
+    <div class="container">
+        <nz-skeleton [nzLoading]="loading" [nzActive]="loading">
+            <h2 class="font-weight-normal m-b-10">Seven Clarifications On Hand</h2>
+            <div class="media align-items-center m-b-25">
+                <nz-avatar nzSrc="assets/images/avatars/thumb-6.jpg"></nz-avatar>
+                <div class="m-l-10">
+                    <h6 class="m-b-0">Riley Newman</h6>
+                    <span class="text-muted font-size-13">Jan 2, 2019</span>
+                </div>
+            </div>
+            <img class="img-fluid w-100" src="assets/images/others/img-8.jpg" alt="">
+            <div class="m-t-30 lh-1-8">
+                <p>Refuse to drink water except out of someone's glass rub face on owner plays league of legends, purr when being pet or bathe private parts with tongue then lick owner's face. Refuse to drink water except out of someone's glass you have cat to be kitten me right meow yet favor packaging over toy poop in litter box, scratch the walls but intently sniff hand, for love you, then bite you. Inspect anything brought into the house purrr purr littel cat, little cat purr purr, or meoooow who's the baby poop in litter box, scratch the walls howl uncontrollably for no reason toy mouse squeak roll over. Annoy kitten brother with poking. Lick human with sandpaper tongue sit on human. Stand in doorway, unwilling to chose whether to stay in or go out. Bite nose of your human destroy the blinds for really likes hummus floof tum, tickle bum, jellybean footies curly toes. </p>
+                <p>I like cats because they are fat and fluffy run in circles, and weigh eight pounds but take up a full-size bed but have my breakfast spaghetti yarn eat the fat cats food, fish i must find my red catnip fishy fish milk the cow. Lick master's hand at first then bite because im moody destroy couch why must they do that, yet who's the baby, so being gorgeous with belly side up. Throwup on your pillow lay on arms while you're using the keyboard. Bleghbleghvomit my furball really tie the room together. Need to check on human, have not seen in an hour might be dead oh look, human is alive, hiss at human, feed me if it smells like fish eat as much as you wish purr and jump five feet high and sideways when a shadow moves.</p>
+                <blockquote class="blockquote">
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+                <p>Love me! sit on human eat from dog's food and i heard this rumor where the humans are our owners, pfft, what do they know?! ptracy. Poop in litter box, scratch the walls shove bum in owner's face like camera lens. Annoy the old grumpy cat, start a fight and then retreat to wash when i lose get suspicious of own shadow then go play with toilette paper for cough furball into food bowl then scratch owner for a new one so i cry and cry and cry unless you pet me.</p>
+            </div>
+            <div class="d-flex m-t-40 align-items-center">
+                <span class="m-r-15">Share this post: </span>
+                <ul class="list-inline m-b-0">
+                    <li class="list-inline-item">
+                        <button class="font-size-16" nz-button nzType="link" nzShape="circle"><i nz-icon nzType="facebook"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="font-size-16" nz-button nzType="link" nzShape="circle"><i nz-icon nzType="twitter"></i></button>
+                    </li>
+                    <li class="list-inline-item">
+                        <button class="font-size-16" nz-button nzType="link" nzShape="circle"><i nz-icon nzType="instagram"></i></button>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+            <div class="m-t-40">
+                <h4>28 Comments</h4>
+                <nz-list [nzDataSource]="commentListData" [nzRenderItem]="comment" [nzItemLayout]="'vertical'" [nzPagination]="pagination">
+                    <ng-template #comment let-item>
+                        <nz-list-item class="d-block" [nzContent]="item.comment" [nzActions]="[action]">
+                            <ng-template #action>
+                                <ul class="list-inline">
+                                    <li class="d-inline-block m-r-20">
+                                        <a class="text-dark" href="javascript:void(0)">
+                                                <i class="m-r-5" nz-icon nzType="like" theme="outline"></i>
+                                                <span>{{item.likes}}</span>
+                                        </a>
+                                    </li>
+                                    <li class="d-inline-block m-r-30">
+                                        <a class="text-dark" href="javascript:void(0)">
+                                            <i class="m-r-5" nz-icon nzType="message" theme="outline"></i>
+                                            <span>Reply</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </ng-template>
+                            <nz-list-item-meta
+                                [nzTitle]="commentTitle"
+                                [nzAvatar]="item.img"
+                                [nzDescription]="item.date">
+                                <ng-template #commentTitle>
+                                    <a class="font-size-15" href="">{{item.name}}</a>
+                                </ng-template>
+                            </nz-list-item-meta>
+                        </nz-list-item>
+                    </ng-template>
+                    <ng-template #pagination>
+                        <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+                    </ng-template>
+                </nz-list>
+            </div>
+        </nz-skeleton>
+    </div>
+</nz-card>

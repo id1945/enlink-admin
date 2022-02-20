@@ -1,0 +1,203 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-spin-demo-basic" nzTitle="Basic Usage"></nz-link><nz-link nzHref="#components-spin-demo-size" nzTitle="Size"></nz-link><nz-link nzHref="#components-spin-demo-inside" nzTitle="Inside a container"></nz-link><nz-link nzHref="#components-spin-demo-nested" nzTitle="Embedded mode"></nz-link><nz-link nzHref="#components-spin-demo-tip" nzTitle="Customized description"></nz-link><nz-link nzHref="#components-spin-demo-delay-and-debounce" nzTitle="delay"></nz-link><nz-link nzHref="#components-spin-demo-custom-indicator" nzTitle="Custom spinning indicator"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Spin<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A spinner for displaying loading state of a page or a section.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>When part of the page is waiting for asynchronous data or during a rendering process, an appropriate loading animation can effectively alleviate users&#39; inquietude.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSpinModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/spin'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic Usage"
+  [nzId]="'components-spin-demo-basic'"
+  nzSelector="nz-demo-spin-basic"
+  [nzLink]="'components-spin-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-basic <name>"
+  nzComponentName="NzDemoSpinBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/basic.md'">
+	<nz-demo-spin-basic demo></nz-demo-spin-basic>
+	<div intro ngNonBindable>
+		<p>A simple loading status.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Inside a container"
+  [nzId]="'components-spin-demo-inside'"
+  nzSelector="nz-demo-spin-inside"
+  [nzLink]="'components-spin-demo-inside'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-inside <name>"
+  nzComponentName="NzDemoSpinInsideComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/inside.md'">
+	<nz-demo-spin-inside demo></nz-demo-spin-inside>
+	<div intro ngNonBindable>
+		<p>Spin in a container.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customized description"
+  [nzId]="'components-spin-demo-tip'"
+  nzSelector="nz-demo-spin-tip"
+  [nzLink]="'components-spin-demo-tip'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-tip <name>"
+  nzComponentName="NzDemoSpinTipComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/tip.md'">
+	<nz-demo-spin-tip demo></nz-demo-spin-tip>
+	<div intro ngNonBindable>
+		<p>Customized description content.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom spinning indicator"
+  [nzId]="'components-spin-demo-custom-indicator'"
+  nzSelector="nz-demo-spin-custom-indicator"
+  [nzLink]="'components-spin-demo-custom-indicator'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-custom-indicator <name>"
+  nzComponentName="NzDemoSpinCustomIndicatorComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/custom-indicator.md'">
+	<nz-demo-spin-custom-indicator demo></nz-demo-spin-custom-indicator>
+	<div intro ngNonBindable>
+		<p>Use custom loading indicator.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Size"
+  [nzId]="'components-spin-demo-size'"
+  nzSelector="nz-demo-spin-size"
+  [nzLink]="'components-spin-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-size <name>"
+  nzComponentName="NzDemoSpinSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/size.md'">
+	<nz-demo-spin-size demo></nz-demo-spin-size>
+	<div intro ngNonBindable>
+		<p>A small <code>Spin</code> use in loading text, default <code>Spin</code> use in loading card-level block, and large <code>Spin</code> use in loading <strong>page</strong>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Embedded mode"
+  [nzId]="'components-spin-demo-nested'"
+  nzSelector="nz-demo-spin-nested"
+  [nzLink]="'components-spin-demo-nested'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-nested <name>"
+  nzComponentName="NzDemoSpinNestedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/nested.md'">
+	<nz-demo-spin-nested demo></nz-demo-spin-nested>
+	<div intro ngNonBindable>
+		<p>Embedding content into <code>nz-spin</code> will alter it into loading state.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="delay"
+  [nzId]="'components-spin-demo-delay-and-debounce'"
+  nzSelector="nz-demo-spin-delay-and-debounce"
+  [nzLink]="'components-spin-demo-delay-and-debounce'"
+  nzGenerateCommand="ng g ng-zorro-antd:spin-delay-and-debounce <name>"
+  nzComponentName="NzDemoSpinDelayAndDebounceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/spin/demo/delay-and-debounce.md'">
+	<nz-demo-spin-delay-and-debounce demo></nz-demo-spin-delay-and-debounce>
+	<div intro ngNonBindable>
+		<p>Specifies a delay for loading state. If <code>spinning</code> ends during delay, loading status won&#39;t appear.</p>
+<pre class="language-css"><code><span class="token selector"><span class="token class">.example</span> </span><span class="token punctuation">&#123;</span>
+  <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>,<span class="token number">0</span>,<span class="token number">0</span>,<span class="token number">0.05</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">4</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin-bottom</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">30</span>px <span class="token number">50</span>px<span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">20</span>px <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-spin"><span>nz-spin</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-spin'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDelay]</code></td>
+<td>specifies a delay in milliseconds for loading state (prevent flush), unit: milliseconds</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzIndicator]</code></td>
+<td>the spinning indicator</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>size of Spin</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSpinning]</code></td>
+<td>whether Spin is spinning</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSimple]</code></td>
+<td>whether Spin has no children</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTip]</code></td>
+<td>customize description content when Spin has children</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,209 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-page-header-demo-basic" nzTitle="标准样式"></nz-link><nz-link nzHref="#components-page-header-demo-ghost" nzTitle="白底模式"></nz-link><nz-link nzHref="#components-page-header-demo-breadcrumb" nzTitle="带面包屑页头"></nz-link><nz-link nzHref="#components-page-header-demo-content" nzTitle="组合示例"></nz-link><nz-link nzHref="#components-page-header-demo-actions" nzTitle="多种形态的 PageHeader"></nz-link><nz-link nzHref="#components-page-header-demo-responsive" nzTitle="响应式"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>PageHeader<span class="subtitle">页头</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>页头位于页容器中，页容器顶部，起到了内容概览和引导页级操作的作用。包括由面包屑、标题、页面内容简介、页面级操作等、页面级导航组成。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当需要使用户快速理解当前页是什么以及方便用户使用页面功能时使用，通常也可被用作页面间导航。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzPageHeaderModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/page-header'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="标准样式"
+  [nzId]="'components-page-header-demo-basic'"
+  nzSelector="nz-demo-page-header-basic"
+  [nzLink]="'components-page-header-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-basic <name>"
+  nzComponentName="NzDemoPageHeaderBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/basic.md'">
+	<nz-demo-page-header-basic demo></nz-demo-page-header-basic>
+	<div intro ngNonBindable>
+		<p>标准页头，适合使用在需要简单描述的场景。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="白底模式"
+  [nzId]="'components-page-header-demo-ghost'"
+  nzSelector="nz-demo-page-header-ghost"
+  [nzLink]="'components-page-header-demo-ghost'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-ghost <name>"
+  nzComponentName="NzDemoPageHeaderGhostComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/ghost.md'">
+	<nz-demo-page-header-ghost demo></nz-demo-page-header-ghost>
+	<div intro ngNonBindable>
+		<p>默认 PageHeader 是透明底色的。在某些情况下，PageHeader 需要自己的背景颜色。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带面包屑页头"
+  [nzId]="'components-page-header-demo-breadcrumb'"
+  nzSelector="nz-demo-page-header-breadcrumb"
+  [nzLink]="'components-page-header-demo-breadcrumb'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-breadcrumb <name>"
+  nzComponentName="NzDemoPageHeaderBreadcrumbComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/breadcrumb.md'">
+	<nz-demo-page-header-breadcrumb demo></nz-demo-page-header-breadcrumb>
+	<div intro ngNonBindable>
+		<p>带面包屑页头，适合层级比较深的页面，让用户可以快速导航。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="组合示例"
+  [nzId]="'components-page-header-demo-content'"
+  nzSelector="nz-demo-page-header-content"
+  [nzLink]="'components-page-header-demo-content'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-content <name>"
+  nzComponentName="NzDemoPageHeaderContentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/content.md'">
+	<nz-demo-page-header-content demo></nz-demo-page-header-content>
+	<div intro ngNonBindable>
+		<p>使用了 PageHeader 提供的所有能力。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="多种形态的 PageHeader"
+  [nzId]="'components-page-header-demo-actions'"
+  nzSelector="nz-demo-page-header-actions"
+  [nzLink]="'components-page-header-demo-actions'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-actions <name>"
+  nzComponentName="NzDemoPageHeaderActionsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/actions.md'">
+	<nz-demo-page-header-actions demo></nz-demo-page-header-actions>
+	<div intro ngNonBindable>
+		<p>使用操作区，并自定义子节点，适合使用在需要展示一些复杂的信息，帮助用户快速了解这个页面的信息和操作。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应式"
+  [nzId]="'components-page-header-demo-responsive'"
+  nzSelector="nz-demo-page-header-responsive"
+  [nzLink]="'components-page-header-demo-responsive'"
+  nzGenerateCommand="ng g ng-zorro-antd:page-header-responsive <name>"
+  nzComponentName="NzDemoPageHeaderResponsiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/page-header/demo/responsive.md'">
+	<nz-demo-page-header-responsive demo></nz-demo-page-header-responsive>
+	<div intro ngNonBindable>
+		<p>在不同大小的屏幕下，应该有不同的表现</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-page-header</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Page Title<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-page-header</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-page-header"><span>nz-page-header</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-page-header'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzGhost]</code></td>
+<td>使背景色透明</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>title 文字</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSubtitle]</code></td>
+<td>subTitle 文字</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzBackIcon]</code></td>
+<td>自定义 back icon</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzBack)</code></td>
+<td>返回按钮的点击事件</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>未订阅该事件时默认调用 <a href="https://angular.cn/api/common/Location#back">Location[back]</a>（需要引入 <a href="https://angular.io/api/router/RouterModule">RouterModule</a> 或者注册 <a href="https://angular.io/api/common/Location">Location</a>)）</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="page-header-组成部分"><span>Page header 组成部分</span><a onclick="window.location.hash = 'page-header-组成部分'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>元素</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nz-page-header-title</code></td>
+<td>title 部分，<code>[nzTitle]</code> 优先级更高</td>
+</tr>
+<tr>
+<td><code>nz-page-header-subtitle</code></td>
+<td>subtitle 部分，<code>[nzSubtitle]</code> 优先级更高</td>
+</tr>
+<tr>
+<td><code>nz-page-header-content</code></td>
+<td>内容部分</td>
+</tr>
+<tr>
+<td><code>nz-page-header-footer</code></td>
+<td>底部部分</td>
+</tr>
+<tr>
+<td><code>nz-page-header-tags</code></td>
+<td>title 旁的 tag 列表容器</td>
+</tr>
+<tr>
+<td><code>nz-page-header-extra</code></td>
+<td>title 的行尾操作区部分</td>
+</tr>
+<tr>
+<td><code>nz-breadcrumb[nz-page-header-breadcrumb]</code></td>
+<td>面包屑部分</td>
+</tr>
+<tr>
+<td><code>nz-avatar[nz-page-header-avatar]</code></td>
+<td>头像部分</td>
+</tr>
+</tbody></table>
+</section></article>

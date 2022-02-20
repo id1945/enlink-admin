@@ -1,0 +1,164 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-empty-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-empty-demo-simple" nzTitle="选择图片"></nz-link><nz-link nzHref="#components-empty-demo-customize" nzTitle="自定义"></nz-link><nz-link nzHref="#components-empty-demo-config" nzTitle="全局化配置"></nz-link><nz-link nzHref="#components-empty-demo-description" nzTitle="无描述"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Empty<span class="subtitle">空状态</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>空状态时的展示占位图。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当目前没有数据时，用于显式的用户提示。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzEmptyModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/empty'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-empty-demo-basic'"
+  nzSelector="nz-demo-empty-basic"
+  [nzLink]="'components-empty-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-basic <name>"
+  nzComponentName="NzDemoEmptyBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/basic.md'">
+	<nz-demo-empty-basic demo></nz-demo-empty-basic>
+	<div intro ngNonBindable>
+		<p>简单的展示。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="选择图片"
+  [nzId]="'components-empty-demo-simple'"
+  nzSelector="nz-demo-empty-simple"
+  [nzLink]="'components-empty-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-simple <name>"
+  nzComponentName="NzDemoEmptySimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/simple.md'">
+	<nz-demo-empty-simple demo></nz-demo-empty-simple>
+	<div intro ngNonBindable>
+		<p>可以通过设置 <code>nzNotFoundImage</code> 为 <code>simple</code> 选择另一种风格的图片。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义"
+  [nzId]="'components-empty-demo-customize'"
+  nzSelector="nz-demo-empty-customize"
+  [nzLink]="'components-empty-demo-customize'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-customize <name>"
+  nzComponentName="NzDemoEmptyCustomizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/customize.md'">
+	<nz-demo-empty-customize demo></nz-demo-empty-customize>
+	<div intro ngNonBindable>
+		<p>自定义图片、描述、附属内容。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="全局化配置"
+  [nzId]="'components-empty-demo-config'"
+  nzSelector="nz-demo-empty-config"
+  [nzLink]="'components-empty-demo-config'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-config <name>"
+  nzComponentName="NzDemoEmptyConfigComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/config.md'">
+	<nz-demo-empty-config demo></nz-demo-empty-config>
+	<div intro ngNonBindable>
+		<p>自定义全局组件的 Empty 样式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="无描述"
+  [nzId]="'components-empty-demo-description'"
+  nzSelector="nz-demo-empty-description"
+  [nzLink]="'components-empty-demo-description'"
+  nzGenerateCommand="ng g ng-zorro-antd:empty-description <name>"
+  nzComponentName="NzDemoEmptyDescriptionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/empty/demo/description.md'">
+	<nz-demo-empty-description demo></nz-demo-empty-description>
+	<div intro ngNonBindable>
+		<p>无描述展示。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-empty"><span>nz-empty</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-empty'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzNotFoundImage]</code></td>
+<td>设置显示图片，为 <code>string</code> 时表示自定义图片地址</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>自定义描述内容</td>
+<td><code>string | TemplateRef&lt;void&gt; | null</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzNotFoundFooter]</code></td>
+<td>设置自定义 footer</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="<code>nz_config</code>"><span><code>NZ_CONFIG</code></span><a onclick="window.location.hash = '<code>nz_config</code>'" class="anchor">#</a></h3><p><code>nzEmpty</code> 接口有如下字段：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nzDefaultEmptyContent</code></td>
+<td>用户自定义的全局空组件，可通过 <code>undefined</code> 来取消自定义的全局空组件</td>
+<td><code>Type&lt;any&gt;|TemplateRef&lt;string&gt;|string|undefined</code></td>
+</tr>
+</tbody></table>
+<h3 id="injectiontoken"><span>InjectionToken</span><a onclick="window.location.hash = 'injectiontoken'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>NZ_EMPTY_COMPONENT_NAME</code></td>
+<td>将会被注入到用户的全局自定义空组件中，告诉该组件其所在组件的名称</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+<h3 id="全局自定义空组件"><span>全局自定义空组件</span><a onclick="window.location.hash = '全局自定义空组件'" class="anchor">#</a></h3><p>你或许知道或者用过一些类似 <code>nzNotFoundContent</code> 的属性来自定义组件数据为空时的内容，现在它们都会使用 <code>Empty</code> 组件。你可以通过在 <code>NZ_CONFIG</code> 中提供 <code>&#123; empty: &#123; nzDefaultEmptyContent: something &#125; &#125;</code> 来定义一个自定义的全局空组件。</p>
+</section></article>

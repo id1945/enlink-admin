@@ -1,0 +1,219 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-typography-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-typography-demo-title" nzTitle="Title Component"></nz-link><nz-link nzHref="#components-typography-demo-interactive" nzTitle="Interactive"></nz-link><nz-link nzHref="#components-typography-demo-text" nzTitle="Text Component"></nz-link><nz-link nzHref="#components-typography-demo-ellipsis" nzTitle="ellipsis"></nz-link><nz-link nzHref="#components-typography-demo-suffix" nzTitle="suffix"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Typography<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Basic text writing, including headings, body text, lists, and more.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When need to display title or paragraph contents in Articles/Blogs/Notes.</li>
+<li>When you need copyable/editable/ellipsis texts.</li>
+</ul>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-typography-demo-basic'"
+  nzSelector="nz-demo-typography-basic"
+  [nzLink]="'components-typography-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-basic <name>"
+  nzComponentName="NzDemoTypographyBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/basic.md'">
+	<nz-demo-typography-basic demo></nz-demo-typography-basic>
+	<div intro ngNonBindable>
+		<p>Display the document sample.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Title Component"
+  [nzId]="'components-typography-demo-title'"
+  nzSelector="nz-demo-typography-title"
+  [nzLink]="'components-typography-demo-title'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-title <name>"
+  nzComponentName="NzDemoTypographyTitleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/title.md'">
+	<nz-demo-typography-title demo></nz-demo-typography-title>
+	<div intro ngNonBindable>
+		<p>Display title in different level.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Interactive"
+  [nzId]="'components-typography-demo-interactive'"
+  nzSelector="nz-demo-typography-interactive"
+  [nzLink]="'components-typography-demo-interactive'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-interactive <name>"
+  nzComponentName="NzDemoTypographyInteractiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/interactive.md'">
+	<nz-demo-typography-interactive demo></nz-demo-typography-interactive>
+	<div intro ngNonBindable>
+		<p>Provide additional interactive capacity.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Text Component"
+  [nzId]="'components-typography-demo-text'"
+  nzSelector="nz-demo-typography-text"
+  [nzLink]="'components-typography-demo-text'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-text <name>"
+  nzComponentName="NzDemoTypographyTextComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/text.md'">
+	<nz-demo-typography-text demo></nz-demo-typography-text>
+	<div intro ngNonBindable>
+		<p>Provides multiple types of text.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="ellipsis"
+  [nzId]="'components-typography-demo-ellipsis'"
+  nzSelector="nz-demo-typography-ellipsis"
+  [nzLink]="'components-typography-demo-ellipsis'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-ellipsis <name>"
+  nzComponentName="NzDemoTypographyEllipsisComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/ellipsis.md'">
+	<nz-demo-typography-ellipsis demo></nz-demo-typography-ellipsis>
+	<div intro ngNonBindable>
+		<p>Multiple line ellipsis support.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="suffix"
+  [nzId]="'components-typography-demo-suffix'"
+  nzSelector="nz-demo-typography-suffix"
+  [nzLink]="'components-typography-demo-suffix'"
+  nzGenerateCommand="ng g ng-zorro-antd:typography-suffix <name>"
+  nzComponentName="NzDemoTypographySuffixComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/typography/demo/suffix.md'">
+	<nz-demo-typography-suffix demo></nz-demo-typography-suffix>
+	<div intro ngNonBindable>
+		<p>add suffix ellipsis support.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-typography]"><span>[nz-typography]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-typography]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzContent]</code></td>
+<td>Component content</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCopyable]</code></td>
+<td>Can copy, require use <code>[nzContent]</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEditable]</code></td>
+<td>Editable, require use <code>[nzContent]</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEllipsis]</code></td>
+<td>Display ellipsis when overflow, require use <code>[nzContent]</code> when dynamic content</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>The text suffix when used <code>nzEllipsis</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzCopyText]</code></td>
+<td>Customize the copy text</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable content</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExpandable]</code></td>
+<td>Expandable when ellipsis</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzEllipsisRows]</code></td>
+<td>Line number</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>Content type</td>
+<td><code>&#39;secondary&#39;｜&#39;warning&#39;｜&#39;danger&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzContentChange)</code></td>
+<td>Trigger when user edit the content</td>
+<td><code>EventEmitter&lt;string&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzExpandChange)</code></td>
+<td>Trigger when user expanded the content</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

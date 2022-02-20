@@ -1,0 +1,439 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-form-demo-horizontal-login" nzTitle="内联登录栏"></nz-link><nz-link nzHref="#components-form-demo-normal-login" nzTitle="登录框"></nz-link><nz-link nzHref="#components-form-demo-register" nzTitle="注册新用户"></nz-link><nz-link nzHref="#components-form-demo-advanced-search" nzTitle="高级搜索"></nz-link><nz-link nzHref="#components-form-demo-dynamic-form-item" nzTitle="动态增减表单项"></nz-link><nz-link nzHref="#components-form-demo-time-related-controls" nzTitle="时间类控件"></nz-link><nz-link nzHref="#components-form-demo-validate-reactive" nzTitle="响应式表单验证"></nz-link><nz-link nzHref="#components-form-demo-validate-template" nzTitle="模板驱动表单验证"></nz-link><nz-link nzHref="#components-form-demo-auto-tips" nzTitle="自动提示"></nz-link><nz-link nzHref="#components-form-demo-validate-static" nzTitle="手动指定表单状态"></nz-link><nz-link nzHref="#components-form-demo-coordinated" nzTitle="表单联动"></nz-link><nz-link nzHref="#components-form-demo-layout" nzTitle="表单布局"></nz-link><nz-link nzHref="#components-form-demo-dynamic-rule" nzTitle="动态校验规则"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Form<span class="subtitle">表单</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>具有数据收集、校验和提交功能的表单，包含复选框、单选框、输入框、下拉选择框等元素。</p>
+<p>该组件需要与 <a href="https://angular.io/guide/forms#forms">Angular表单</a> 结合使用，开发者根据需要可以自由选择 <a href="https://angular.io/guide/reactive-forms#reactive-forms">响应式表单</a> 或 <a href="https://angular.io/guide/forms#template-driven-forms">模板驱动表单</a>.</p>
+<blockquote>
+<p>使用该组件前请确保您已经阅读并掌握了 <a href="https://angular.io/guide/forms#forms">Forms</a> 的使用方式。</p>
+</blockquote>
+<h2 id="表单"><span>表单</span><a onclick="window.location.hash = '表单'" class="anchor">#</a></h2><p>我们提供了以下三种排列方式：</p>
+<ul>
+<li>水平排列：标签和表单控件水平排列；（默认）</li>
+<li>垂直排列：标签和表单控件上下垂直排列；</li>
+<li>行内排列：表单项水平行内排列。</li>
+</ul>
+<h3 id="表单项-nz-form-item"><span>表单项 nz-form-item</span><a onclick="window.location.hash = '表单项-nz-form-item'" class="anchor">#</a></h3><p>表单项用于区分表单中不同的区域，包含表单域和表单标签(可选)。</p>
+<h3 id="表单标签-nz-form-label"><span>表单标签 nz-form-label</span><a onclick="window.location.hash = '表单标签-nz-form-label'" class="anchor">#</a></h3><p>用于标示当前表单项的内容，可选。</p>
+<h3 id="表单域-nz-form-control"><span>表单域 nz-form-control</span><a onclick="window.location.hash = '表单域-nz-form-control'" class="anchor">#</a></h3><p>表单一定会包含表单域，表单域可以是输入控件，标准表单域，标签，下拉菜单，文本域等。</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">nz-form</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-label</span> <span class="token attr-name">[nzSpan]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>6<span class="token punctuation">"</span></span> <span class="token attr-name">nzFor</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>E-mail<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-label</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-form-control</span> <span class="token attr-name">[nzSpan]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>14<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">nz-input</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>email<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-control</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-form-item</span> <span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span></code></pre>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzFormModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/form'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="内联登录栏"
+  [nzId]="'components-form-demo-horizontal-login'"
+  nzSelector="nz-demo-form-horizontal-login"
+  [nzLink]="'components-form-demo-horizontal-login'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-horizontal-login <name>"
+  nzComponentName="NzDemoFormHorizontalLoginComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/horizontal-login.md'">
+	<nz-demo-form-horizontal-login demo></nz-demo-form-horizontal-login>
+	<div intro ngNonBindable>
+		<p>内联登录栏，常用在顶部导航栏中。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="登录框"
+  [nzId]="'components-form-demo-normal-login'"
+  nzSelector="nz-demo-form-normal-login"
+  [nzLink]="'components-form-demo-normal-login'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-normal-login <name>"
+  nzComponentName="NzDemoFormNormalLoginComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/normal-login.md'">
+	<nz-demo-form-normal-login demo></nz-demo-form-normal-login>
+	<div intro ngNonBindable>
+		<p>普通的登录框，可以容纳更多的元素。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="注册新用户"
+  [nzId]="'components-form-demo-register'"
+  nzSelector="nz-demo-form-register"
+  [nzLink]="'components-form-demo-register'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-register <name>"
+  nzComponentName="NzDemoFormRegisterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/register.md'">
+	<nz-demo-form-register demo></nz-demo-form-register>
+	<div intro ngNonBindable>
+		<p>用户填写必须的信息以注册新用户。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="高级搜索"
+  [nzId]="'components-form-demo-advanced-search'"
+  nzSelector="nz-demo-form-advanced-search"
+  [nzLink]="'components-form-demo-advanced-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-advanced-search <name>"
+  nzComponentName="NzDemoFormAdvancedSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/advanced-search.md'">
+	<nz-demo-form-advanced-search demo></nz-demo-form-advanced-search>
+	<div intro ngNonBindable>
+		<p>三列栅格式的表单排列方式，常用于数据表格的高级搜索。</p>
+<p>有部分定制的样式代码，由于输入标签长度不确定，需要根据具体情况自行调整。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态增减表单项"
+  [nzId]="'components-form-demo-dynamic-form-item'"
+  nzSelector="nz-demo-form-dynamic-form-item"
+  [nzLink]="'components-form-demo-dynamic-form-item'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-dynamic-form-item <name>"
+  nzComponentName="NzDemoFormDynamicFormItemComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/dynamic-form-item.md'">
+	<nz-demo-form-dynamic-form-item demo></nz-demo-form-dynamic-form-item>
+	<div intro ngNonBindable>
+		<p>动态增加、减少表单项。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="时间类控件"
+  [nzId]="'components-form-demo-time-related-controls'"
+  nzSelector="nz-demo-form-time-related-controls"
+  [nzLink]="'components-form-demo-time-related-controls'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-time-related-controls <name>"
+  nzComponentName="NzDemoFormTimeRelatedControlsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/time-related-controls.md'">
+	<nz-demo-form-time-related-controls demo></nz-demo-form-time-related-controls>
+	<div intro ngNonBindable>
+		<p>时间类组件的输入和输出类型均为 <code>Date</code> 类型，可以通过 <a href="https://date-fns.org/">date-fns</a> 工具库进行进一步的处理。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="响应式表单验证"
+  [nzId]="'components-form-demo-validate-reactive'"
+  nzSelector="nz-demo-form-validate-reactive"
+  [nzLink]="'components-form-demo-validate-reactive'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-reactive <name>"
+  nzComponentName="NzDemoFormValidateReactiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-reactive.md'">
+	<nz-demo-form-validate-reactive demo></nz-demo-form-validate-reactive>
+	<div intro ngNonBindable>
+		<p>我们在 <code>nz-form-control</code> 上 提供了 <code>nzValidateStatus</code> <code>nzHasFeedback</code> 等属性，当使用<a href="https://angular.io/guide/reactive-forms#reactive-forms">响应式表单</a>时，可以自己定义校验的时机和内容。</p>
+<ol>
+<li><code>nzValidateStatus</code>: 校验状态，默认自动从 <code>nz-form-control</code> 中的 <code>NgControl</code> 获得校验状态，也可以手动指定为特定的 <code>NgControl</code>。</li>
+<li><code>nzHasFeedback</code>：用于给输入框添加反馈图标。</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：设置不同状态校验文案。<blockquote>
+<p>当同一种状态下存在多种提示情况时，<code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code> 均支持传入 <code>TemplateRef&lt;&#123; $implicit: FormControl &#125;</code> 类型，可以通过<a href="(https://www.angular.cn/guide/template-syntax)">模板变量</a>导出 <code>FormControl</code> 后用于切换不同的提示信息。<br>当 FormControl.status 为 <code>INVALID</code> 并且错误包含 <code>&#123;warning：true&#125;</code> 时，<code>nz-form-control</code> 显示警告状态。</p>
+</blockquote>
+</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="模板驱动表单验证"
+  [nzId]="'components-form-demo-validate-template'"
+  nzSelector="nz-demo-form-validate-template"
+  [nzLink]="'components-form-demo-validate-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-template <name>"
+  nzComponentName="NzDemoFormValidateTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-template.md'">
+	<nz-demo-form-validate-template demo></nz-demo-form-validate-template>
+	<div intro ngNonBindable>
+		<p>当使用<a href="https://angular.io/guide/forms#template-driven-forms">模板驱动表单</a>时，模板可以根据模板设定自动进行校验。</p>
+<ol>
+<li><code>nzHasFeedback</code>：用于给输入框添加反馈图标。</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：设置不同状态校验文案。<blockquote>
+<p>当同一种状态下存在多种提示情况时，<code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code> 均支持传入 <code>TemplateRef&lt;&#123; $implicit: NgModel &#125;</code> 类型，可以通过<a href="(https://www.angular.cn/guide/template-syntax)">模板变量</a>导出 <code>NgModel</code> 后用于切换不同的提示信息。</p>
+</blockquote>
+</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自动提示"
+  [nzId]="'components-form-demo-auto-tips'"
+  nzSelector="nz-demo-form-auto-tips"
+  [nzLink]="'components-form-demo-auto-tips'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-auto-tips <name>"
+  nzComponentName="NzDemoFormAutoTipsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/auto-tips.md'">
+	<nz-demo-form-auto-tips demo></nz-demo-form-auto-tips>
+	<div intro ngNonBindable>
+		<p>让提示变得更简单。<br>需要预先自定义 <code>Validators</code> 和提供 <code>nzAutoTips</code>，它们优先级如下：</p>
+<ul>
+<li><code>Validators</code> &gt; <code>nzAutoTips</code></li>
+<li>通过 <code>@Input</code> 设置 <code>nzAutoTips</code></li>
+<li>通过全局配置设置 <code>nzAutoTips</code></li>
+</ul>
+<p>另外，你可以使用 <code>nzDisableAutoTips</code> 去禁用它。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="手动指定表单状态"
+  [nzId]="'components-form-demo-validate-static'"
+  nzSelector="nz-demo-form-validate-static"
+  [nzLink]="'components-form-demo-validate-static'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-validate-static <name>"
+  nzComponentName="NzDemoFormValidateStaticComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/validate-static.md'">
+	<nz-demo-form-validate-static demo></nz-demo-form-validate-static>
+	<div intro ngNonBindable>
+		<p>用户可以在通过 <code>nz-form-control</code> 的 <code>nzValidateStatus</code> 属性直接设定表单的状态。</p>
+<ol>
+<li><code>nzValidateStatus</code>: 校验状态，可选 &#39;success&#39;, &#39;warning&#39;, &#39;error&#39;, &#39;validating&#39;。</li>
+<li><code>nzHasFeedback</code>：用于给输入框添加反馈图标。</li>
+<li><code>nzSuccessTip</code> <code>nzWarningTip</code> <code>nzErrorTip</code> <code>nzValidatingTip</code>：设置不同状态校验文案。</li>
+</ol>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="表单联动"
+  [nzId]="'components-form-demo-coordinated'"
+  nzSelector="nz-demo-form-coordinated"
+  [nzLink]="'components-form-demo-coordinated'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-coordinated <name>"
+  nzComponentName="NzDemoFormCoordinatedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/coordinated.md'">
+	<nz-demo-form-coordinated demo></nz-demo-form-coordinated>
+	<div intro ngNonBindable>
+		<p>使用 <code>setValue</code> 来动态设置其他控件的值。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="表单布局"
+  [nzId]="'components-form-demo-layout'"
+  nzSelector="nz-demo-form-layout"
+  [nzLink]="'components-form-demo-layout'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-layout <name>"
+  nzComponentName="NzDemoFormLayoutComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/layout.md'">
+	<nz-demo-form-layout demo></nz-demo-form-layout>
+	<div intro ngNonBindable>
+		<p>表单有三种布局。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="动态校验规则"
+  [nzId]="'components-form-demo-dynamic-rule'"
+  nzSelector="nz-demo-form-dynamic-rule"
+  [nzLink]="'components-form-demo-dynamic-rule'"
+  nzGenerateCommand="ng g ng-zorro-antd:form-dynamic-rule <name>"
+  nzComponentName="NzDemoFormDynamicRuleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/form/demo/dynamic-rule.md'">
+	<nz-demo-form-dynamic-rule demo></nz-demo-form-dynamic-rule>
+	<div intro ngNonBindable>
+		<p>根据不同情况执行不同的校验规则。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-form]"><span>[nz-form]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-form]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzLayout]</code></td>
+<td>表单布局</td>
+<td><code>&#39;horizontal&#39; | &#39;vertical&#39; | &#39;inline&#39;</code></td>
+<td><code>&#39;horizontal&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzNoColon]</code></td>
+<td>配置 <code>nz-form-label</code> 的 <code>[nzNoColon]</code> 的默认值</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzAutoTips]</code></td>
+<td>配置 <code>nz-form-control</code> 的 <code>[nzAutoTips]</code> 的默认值, 具体用法请参考示例：<strong>自动提示</strong></td>
+<td><code>Record&lt;string, Record&lt;string, string&gt;&gt;</code></td>
+<td><code>&#123;&#125;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzDisableAutoTips]</code></td>
+<td>配置 <code>nz-form-control</code> 的 <code>[nzDisableAutoTips]</code> 的默认值</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-item"><span>nz-form-item</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-item'" class="anchor">#</a></h3><p>表单项用于区分表单中不同的区域，包含表单域和表单标签(可选)。</p>
+<blockquote>
+<p>所有 <a href="/components/grid/zh">nz-row</a> 的参数在 <code>nz-form-item</code> 上均可直接使用。</p>
+</blockquote>
+<h3 id="nz-form-label"><span>nz-form-label</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-label'" class="anchor">#</a></h3><p>用于标示当前表单项的内容，可选。</p>
+<blockquote>
+<p>所有 <a href="/components/grid/zh">nz-col</a> 的参数在 <code>nz-form-label</code> 上均可直接使用。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzRequired]</code></td>
+<td>当前项是否为必填，仅影响样式</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzNoColon]</code></td>
+<td>是否不显示 label 后面的冒号</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzFor]</code></td>
+<td>label 标签的 for 属性</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-control"><span>nz-form-control</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-control'" class="anchor">#</a></h3><blockquote>
+<p>注意：由于 Angular Form 目前提供的<a href="https://github.com/angular/angular/issues/10887">状态变更订阅</a>不完整。手动更改表单状态时，例如 <code>markAsDirty</code> 后，需要执行 <code>updateValueAndValidity</code> 通知 <code>nz-form-control</code> 进行状态变更。</p>
+</blockquote>
+<p>表单一定会包含表单域，表单域可以是输入控件，标准表单域，标签，下拉菜单，文本域等。</p>
+<blockquote>
+<p>所有 <a href="/components/grid/zh">nz-col</a> 的参数在 <code>nz-form-control</code> 上均可直接使用。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzValidateStatus]</code></td>
+<td>会根据传入的 <code>FormControl</code> 或 <code>NgModel</code> 自动生成校验状态，也可以直接指定状态，不传入时默认值为 <code>nz-form-control</code> 中包裹的第一个 <code>FormControl</code> 或 <code>NgModel</code></td>
+<td><code>&#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;validating&#39;  |  FormControl  |  NgModel</code></td>
+<td><code>nz-form-control</code> 中包裹的第一个 <code>FormControl</code> 或 <code>NgModel</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHasFeedback]</code></td>
+<td>配合 <code>nzValidateStatus</code> 属性使用，展示校验状态图标</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExtra]</code></td>
+<td>用于显示表单额外提示信息</td>
+<td><code>string  |  TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSuccessTip]</code></td>
+<td>校验状态 success 时提示信息</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzWarningTip]</code></td>
+<td>校验状态 warning 时提示信息</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzErrorTip]</code></td>
+<td>校验状态 error 时提示信息</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzValidatingTip]</code></td>
+<td>正在校验时提示信息</td>
+<td><code>string  |  TemplateRef&lt;&#123; $implicit: FormControl  |  NgModel &#125;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAutoTips]</code></td>
+<td>配置提示的对象, 具体用法请参考示例：<strong>自动提示</strong></td>
+<td><code>Record&lt;string, Record&lt;string, string&gt;&gt;</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDisableAutoTips]</code></td>
+<td>禁用自动提示</td>
+<td><code>boolean</code></td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-form-split"><span>nz-form-split</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-split'" class="anchor">#</a></h3><p>用于显示分隔符 <code>-</code></p>
+<h3 id="nz-form-text"><span>nz-form-text</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-form-text'" class="anchor">#</a></h3><p>在 <code>nz-form-control</code> 中直接显示文本</p>
+</section></article>

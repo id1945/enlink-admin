@@ -1,0 +1,115 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-divider-demo-horizontal" nzTitle="Horizontal"></nz-link><nz-link nzHref="#components-divider-demo-orientation" nzTitle="Orientation of title"></nz-link><nz-link nzHref="#components-divider-demo-vertical" nzTitle="Vertical"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Divider<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/divider/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A divider line separates different content.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>Divide sections of article.</li>
+<li>Divide inline text and links such as the operation column of table.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzDividerModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/divider'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Horizontal"
+  [nzId]="'components-divider-demo-horizontal'"
+  nzSelector="nz-demo-divider-horizontal"
+  [nzLink]="'components-divider-demo-horizontal'"
+  nzGenerateCommand="ng g ng-zorro-antd:divider-horizontal <name>"
+  nzComponentName="NzDemoDividerHorizontalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/divider/demo/horizontal.md'">
+	<nz-demo-divider-horizontal demo></nz-demo-divider-horizontal>
+	<div intro ngNonBindable>
+		<p>Divider default type is <code>horizontal</code>. Support inner text inside Divider.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical"
+  [nzId]="'components-divider-demo-vertical'"
+  nzSelector="nz-demo-divider-vertical"
+  [nzLink]="'components-divider-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:divider-vertical <name>"
+  nzComponentName="NzDemoDividerVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/divider/demo/vertical.md'">
+	<nz-demo-divider-vertical demo></nz-demo-divider-vertical>
+	<div intro ngNonBindable>
+		<p>Use <code>nzType=&quot;vertical&quot;</code> make it vertical.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Orientation of title"
+  [nzId]="'components-divider-demo-orientation'"
+  nzSelector="nz-demo-divider-orientation"
+  [nzLink]="'components-divider-demo-orientation'"
+  nzGenerateCommand="ng g ng-zorro-antd:divider-orientation <name>"
+  nzComponentName="NzDemoDividerOrientationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/divider/demo/orientation.md'">
+	<nz-demo-divider-orientation demo></nz-demo-divider-orientation>
+	<div intro ngNonBindable>
+		<p>Set orientation of divider to left or right.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-divider"><span>nz-divider</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-divider'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDashed]</code></td>
+<td>whether line is dasded</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>direction type of divider</td>
+<td><code>&#39;horizontal&#39; | &#39;vertical&#39;</code></td>
+<td><code>&#39;horizontal&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzText]</code></td>
+<td>inner text of divider</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOrientation]</code></td>
+<td>inner text orientation</td>
+<td><code>&#39;center&#39; | &#39;left&#39; | &#39;right&#39;</code></td>
+<td><code>&#39;center&#39;</code></td>
+</tr>
+</tbody></table>
+</section></article>

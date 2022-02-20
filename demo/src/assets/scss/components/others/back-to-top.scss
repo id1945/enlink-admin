@@ -1,0 +1,26 @@
+.ant-back-top {
+    font-family: $font-family-base;
+    bottom: 50px;
+    right: 50px;
+}
+
+.ant-back-top-content {
+    background-color: $brand-primary;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        background-color: darken($brand-primary, 10%)
+    }
+}
+
+.ant-back-top-inner {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    background-color: $brand-primary;
+    color: $white;
+    text-align: center;
+    font-size: 20px;
+}

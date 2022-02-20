@@ -1,0 +1,72 @@
+.ant-badge {
+    font-family: $font-family-sans-serif;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: $body-color;
+    position: relative;
+}
+
+.ant-badge-count {
+    height: $badge-count-height;
+    background: $badge-count-bg;
+    color: $white;
+    line-height: $badge-count-height;
+    padding: 0 5px;
+    font-size: $badge-count-font-size;
+    font-weight: $font-weight-normal;
+
+    p {
+        color: $white;
+        line-height: $badge-count-height;
+    }
+}    
+
+.ant-badge-status-text {
+    color: $body-color;
+    font-size: $font-size-base;
+    margin-left: 8px; 
+}
+
+.ant-badge-default {
+
+    p {
+        color: $gray-light;
+    }
+}
+
+.ant-badge-status-dot {
+    width: $badge-dot-size;
+    height: $badge-dot-size;
+    border-radius: $border-radius-circle;
+    top: -1px;
+}
+
+.ant-badge-status-default {
+    background-color: $gray-lighter;
+}
+
+.ant-badge-status-error {
+    background-color: $brand-danger;
+}
+
+.ant-badge-status-success {
+    background-color: $brand-success;
+}
+
+.ant-badge-status-warning {
+    background-color: $brand-warning;
+}
+
+.ant-badge-status-processing {
+    background-color: $badge-dot-processing-bg;
+
+    &:after {
+        border: 1px solid $badge-dot-processing-bg;
+    }
+}
+
+@each $badge in $tone-loop {
+    .ant-badge-status-#{nth($badge, 1)} {
+        background: #{nth($badge, 2)};
+    }
+}

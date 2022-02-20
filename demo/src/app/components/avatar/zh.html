@@ -1,0 +1,160 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-avatar-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-avatar-demo-type" nzTitle="类型"></nz-link><nz-link nzHref="#components-avatar-demo-dynamic" nzTitle="自动调整字符大小"></nz-link><nz-link nzHref="#components-avatar-demo-badge" nzTitle="带徽标的头像"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Avatar<span class="subtitle">头像</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>用来代表用户或事物，支持图片、图标或字符展示。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzAvatarModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/avatar'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-avatar-demo-basic'"
+  nzSelector="nz-demo-avatar-basic"
+  [nzLink]="'components-avatar-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-basic <name>"
+  nzComponentName="NzDemoAvatarBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/basic.md'">
+	<nz-demo-avatar-basic demo></nz-demo-avatar-basic>
+	<div intro ngNonBindable>
+		<p>头像有三种尺寸，两种形状可选。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自动调整字符大小"
+  [nzId]="'components-avatar-demo-dynamic'"
+  nzSelector="nz-demo-avatar-dynamic"
+  [nzLink]="'components-avatar-demo-dynamic'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-dynamic <name>"
+  nzComponentName="NzDemoAvatarDynamicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/dynamic.md'">
+	<nz-demo-avatar-dynamic demo></nz-demo-avatar-dynamic>
+	<div intro ngNonBindable>
+		<p>对于字符型的头像，当字符串较长时，字体大小可以根据头像宽度自动调整。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="类型"
+  [nzId]="'components-avatar-demo-type'"
+  nzSelector="nz-demo-avatar-type"
+  [nzLink]="'components-avatar-demo-type'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-type <name>"
+  nzComponentName="NzDemoAvatarTypeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/type.md'">
+	<nz-demo-avatar-type demo></nz-demo-avatar-type>
+	<div intro ngNonBindable>
+		<p>支持三种类型：图片、Icon 以及字符，其中 Icon 和字符型可以自定义图标颜色及背景色。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带徽标的头像"
+  [nzId]="'components-avatar-demo-badge'"
+  nzSelector="nz-demo-avatar-badge"
+  [nzLink]="'components-avatar-demo-badge'"
+  nzGenerateCommand="ng g ng-zorro-antd:avatar-badge <name>"
+  nzComponentName="NzDemoAvatarBadgeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/avatar/demo/badge.md'">
+	<nz-demo-avatar-badge demo></nz-demo-avatar-badge>
+	<div intro ngNonBindable>
+		<p>通常用于消息提示。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-avatar"><span>nz-avatar</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-avatar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzIcon]</code></td>
+<td>设置头像的图标类型，参考 <code>Icon</code></td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>指定头像的形状</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td><code>&#39;circle&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>设置头像的大小</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39; | number</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSrc]</code></td>
+<td>图片类头像的资源地址</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSrcSet]</code></td>
+<td>设置图片类头像响应式资源地址</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzAlt]</code></td>
+<td>图像无法显示时的替代文本</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzText]</code></td>
+<td>文本类头像</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzError)</code></td>
+<td>图片加载失败的事件，调用 <code>preventDefault</code> 方法会阻止组件默认的 fallback 行为</td>
+<td><code>EventEmitter&lt;Event&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

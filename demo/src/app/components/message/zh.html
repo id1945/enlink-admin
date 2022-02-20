@@ -1,0 +1,218 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-message-demo-info" nzTitle="普通提示"></nz-link><nz-link nzHref="#components-message-demo-other" nzTitle="其他提示类型"></nz-link><nz-link nzHref="#components-message-demo-duration" nzTitle="修改延时"></nz-link><nz-link nzHref="#components-message-demo-loading" nzTitle="加载中"></nz-link><nz-link nzHref="#components-message-demo-close" nzTitle="结束事件"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Message<span class="subtitle">全局提示</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>全局展示操作反馈信息。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>可提供成功、警告和错误等反馈信息。</li>
+<li>顶部居中显示并自动消失，是一种不打断用户操作的轻量级提示方式。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzMessageModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/message'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="普通提示"
+  [nzId]="'components-message-demo-info'"
+  nzSelector="nz-demo-message-info"
+  [nzLink]="'components-message-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-info <name>"
+  nzComponentName="NzDemoMessageInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/info.md'">
+	<nz-demo-message-info demo></nz-demo-message-info>
+	<div intro ngNonBindable>
+		<p>信息提醒反馈。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="修改延时"
+  [nzId]="'components-message-demo-duration'"
+  nzSelector="nz-demo-message-duration"
+  [nzLink]="'components-message-demo-duration'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-duration <name>"
+  nzComponentName="NzDemoMessageDurationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/duration.md'">
+	<nz-demo-message-duration demo></nz-demo-message-duration>
+	<div intro ngNonBindable>
+		<p>自定义时长 <code>10s</code>，默认时长为 <code>3s</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="结束事件"
+  [nzId]="'components-message-demo-close'"
+  nzSelector="nz-demo-message-close"
+  [nzLink]="'components-message-demo-close'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-close <name>"
+  nzComponentName="NzDemoMessageCloseComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/close.md'">
+	<nz-demo-message-close demo></nz-demo-message-close>
+	<div intro ngNonBindable>
+		<p>可通过订阅 <code>onClose</code> 事件在 message 关闭时做出某些操作。以上用例将依次打开三个 message。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="其他提示类型"
+  [nzId]="'components-message-demo-other'"
+  nzSelector="nz-demo-message-other"
+  [nzLink]="'components-message-demo-other'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-other <name>"
+  nzComponentName="NzDemoMessageOtherComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/other.md'">
+	<nz-demo-message-other demo></nz-demo-message-other>
+	<div intro ngNonBindable>
+		<p>包括成功、失败、警告。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="加载中"
+  [nzId]="'components-message-demo-loading'"
+  nzSelector="nz-demo-message-loading"
+  [nzLink]="'components-message-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:message-loading <name>"
+  nzComponentName="NzDemoMessageLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/message/demo/loading.md'">
+	<nz-demo-message-loading demo></nz-demo-message-loading>
+	<div intro ngNonBindable>
+		<p>进行全局 loading，异步自行移除。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nzmessageservice"><span>NzMessageService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzmessageservice'" class="anchor">#</a></h3><p>组件提供了一些服务方法，使用方式和参数如下：</p>
+<ul>
+<li><code>NzMessageService.success(content, [options])</code></li>
+<li><code>NzMessageService.error(content, [options])</code></li>
+<li><code>NzMessageService.info(content, [options])</code></li>
+<li><code>NzMessageService.warning(content, [options])</code></li>
+<li><code>NzMessageService.loading(content, [options])</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>content</td>
+<td>提示内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>options</td>
+<td>支持设置针对当前提示框的参数，见下方表格</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p><code>options</code> 支持设置的参数如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzDuration</td>
+<td>持续时间(毫秒)，当设置为0时不消失</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>鼠标移上时禁止自动移除</td>
+<td><code>boolean</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>开关动画效果</td>
+<td><code>boolean</code></td>
+</tr>
+</tbody></table>
+<p>还提供了全局销毁方法：</p>
+<ul>
+<li><code>NzMessageService.remove(id)</code> // 移除特定id的消息，当id为空时，移除所有消息（该消息id通过上述方法返回值中得到）</li>
+</ul>
+<h3 id="全局配置"><span>全局配置</span><a onclick="window.location.hash = '全局配置'" class="anchor">#</a></h3><p>可以通过 <code>NzConfigService</code> 进行全局配置，详情请见文档中“全局配置项”章节。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzDuration</td>
+<td>持续时间(毫秒)，当设置为 0 时不消失</td>
+<td><code>number</code></td>
+<td><code>3000</code></td>
+</tr>
+<tr>
+<td>nzMaxStack</td>
+<td>同一时间可展示的最大提示数量</td>
+<td><code>number</code></td>
+<td><code>7</code></td>
+</tr>
+<tr>
+<td>nzPauseOnHover</td>
+<td>鼠标移上时禁止自动移除</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzAnimate</td>
+<td>开关动画效果</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td>nzTop</td>
+<td>消息距离顶部的位置</td>
+<td><code>number | string</code></td>
+<td><code>24</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzmessageref"><span>NzMessageRef</span><a onclick="window.location.hash = 'nzmessageref'" class="anchor">#</a></h3><p>当你调用 <code>NzMessageService.success</code> 或其他方法时会返回该对象。</p>
+<pre class="language-ts"><code><span class="token keyword">export</span> <span class="token keyword">interface</span> <span class="token class-name">NzMessageRef</span> <span class="token punctuation">&#123;</span>
+  messageId<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span>
+  onClose<span class="token punctuation">:</span> Subject<span class="token operator">&lt;</span><span class="token keyword">false</span><span class="token operator">></span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 当 message 关闭时它会派发一个事件</span>
+<span class="token punctuation">&#125;</span></code></pre>
+</section></article>

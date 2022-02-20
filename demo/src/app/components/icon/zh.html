@@ -1,0 +1,297 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-icon-demo-basic" nzTitle="基本使用"></nz-link><nz-link nzHref="#components-icon-demo-twotone" nzTitle="多色图标"></nz-link><nz-link nzHref="#components-icon-demo-custom" nzTitle="自定义图标"></nz-link><nz-link nzHref="#components-icon-demo-iconfont" nzTitle="使用 Iconfont.cn"></nz-link><nz-link nzHref="#components-icon-demo-namespace" nzTitle="命名空间"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Icon<span class="subtitle">图标</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>语义化的矢量图形。</p>
+<h2 id="图标列表"><span>图标列表</span><a onclick="window.location.hash = '图标列表'" class="anchor">#</a></h2><p>新版图标可能略有缺失，我们将与 <a href="https://ant.design/components/icon-cn/">Ant Design</a> 同步保持图标的更新。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzIconModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/icon'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	<section class="page-demo"><nz-page-demo-icon-zh></nz-page-demo-icon-zh></section>
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本使用"
+  [nzId]="'components-icon-demo-basic'"
+  nzSelector="nz-demo-icon-basic"
+  [nzLink]="'components-icon-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-basic <name>"
+  nzComponentName="NzDemoIconBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/basic.md'">
+	<nz-demo-icon-basic demo></nz-demo-icon-basic>
+	<div intro ngNonBindable>
+		<p>使用 <code>&lt;i nz-icon&gt;&lt;/i&gt;</code> 标签声明组件，指定图标对应的 <code>nzType</code> 属性。可以通过 <code>nzTheme</code> 属性来设置不同的主题风格的图标，也可以通过设置 <code>nzSpin</code> 属性来实现动画旋转效果。对旧的 API <code>&lt;i class=&quot;anticon&quot;&gt;&lt;/i&gt;</code> 兼容。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义图标"
+  [nzId]="'components-icon-demo-custom'"
+  nzSelector="nz-demo-icon-custom"
+  [nzLink]="'components-icon-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-custom <name>"
+  nzComponentName="NzDemoIconCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/custom.md'">
+	<nz-demo-icon-custom demo></nz-demo-icon-custom>
+	<div intro ngNonBindable>
+		<p>你可以直接将 <code>svg</code> 标签放在 <code>nz-icon</code> 中来渲染自定义内容，我们会为你处理大小和颜色等问题。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="命名空间"
+  [nzId]="'components-icon-demo-namespace'"
+  nzSelector="nz-demo-icon-namespace"
+  [nzLink]="'components-icon-demo-namespace'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-namespace <name>"
+  nzComponentName="NzDemoIconNamespaceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/namespace.md'">
+	<nz-demo-icon-namespace demo></nz-demo-icon-namespace>
+	<div intro ngNonBindable>
+		<p>可以使用命名空间来添加自定义的 Icon，支持静态加载和动态加载。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="多色图标"
+  [nzId]="'components-icon-demo-twotone'"
+  nzSelector="nz-demo-icon-twotone"
+  [nzLink]="'components-icon-demo-twotone'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-twotone <name>"
+  nzComponentName="NzDemoIconTwotoneComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/twotone.md'">
+	<nz-demo-icon-twotone demo></nz-demo-icon-twotone>
+	<div intro ngNonBindable>
+		<p>可以通过设置 <code>nzTheme</code> 属性为 <code>twotone</code> 来渲染双色图标，并且可以设置主题色。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="使用 Iconfont.cn"
+  [nzId]="'components-icon-demo-iconfont'"
+  nzSelector="nz-demo-icon-iconfont"
+  [nzLink]="'components-icon-demo-iconfont'"
+  nzGenerateCommand="ng g ng-zorro-antd:icon-iconfont <name>"
+  nzComponentName="NzDemoIconIconfontComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/icon/demo/iconfont.md'">
+	<nz-demo-icon-iconfont demo></nz-demo-icon-iconfont>
+	<div intro ngNonBindable>
+		<p>对于使用 <a href="http://iconfont.cn/">iconfont.cn</a> 的用户，通过设置 <code>fetchFromIconfont</code> 方法参数对象中的 <code>scriptUrl</code> 字段，即可轻松地使用已有项目中的图标。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-icon]"><span>[nz-icon]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-icon]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzType]</code></td>
+<td>图标类型，遵循图标的命名规范</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTheme]</code></td>
+<td>图标主题风格。可选实心、描线、双色等主题风格，适用于官方图标</td>
+<td><code>&#39;fill&#39;丨&#39;outline&#39;丨&#39;twotone&#39;</code></td>
+<td><code>&#39;outline&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzSpin]</code></td>
+<td>是否有旋转动画</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTwotoneColor]</code></td>
+<td>仅适用双色图标，设置双色图标的主要颜色，默认为 Ant Design 蓝色</td>
+<td><code>string (十六进制颜色)</code></td>
+<td>-</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzIconfont]</code></td>
+<td>指定来自 IconFont 的图标类型</td>
+<td>string</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzRotate]</code></td>
+<td>图标旋转角度（7.0.0 开始支持）</td>
+<td><code>number</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nziconservice"><span>NzIconService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nziconservice'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>方法/属性</th>
+<th>说明</th>
+<th>参数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>addIcon()</code></td>
+<td>用于静态引入图标，可传入多个值（或者用数组解构赋值）</td>
+<td><code>IconDefinition</code></td>
+</tr>
+<tr>
+<td><code>addIconLiteral()</code></td>
+<td>用于静态引入用户自定义图标</td>
+<td><code>string</code>, <code>string (SVG)</code></td>
+</tr>
+<tr>
+<td><code>fetchFromIconfont()</code></td>
+<td>用于从 FontIcon 获取图标资源文件</td>
+<td><code>NzIconfontOption</code></td>
+</tr>
+<tr>
+<td><code>changeAssetypescriptSource()</code></td>
+<td>用于修改动态加载 icon 的资源前缀，使得你可以部署图标资源到你想要的任何位置，例如 cdn</td>
+<td><code>string</code></td>
+</tr>
+</tbody></table>
+<h3 id="svg-图标"><span>SVG 图标</span><a onclick="window.location.hash = 'svg-图标'" class="anchor">#</a></h3><p>我们与 Ant Design 同步，使用了 svg 图标替换了原先的 font 图标，从而带来了以下优势：</p>
+<ul>
+<li>完全离线化使用，不需要从支付宝 cdn 下载字体文件，图标不会因为网络问题呈现方块，同时还支持本地部署。</li>
+<li>在低端设备上 SVG 有更好的清晰度。</li>
+<li>支持多色图标。</li>
+<li>对于内建图标的更换可以提供更多 API，而不需要进行样式覆盖。</li>
+</ul>
+<p>可参与 Ant Design 的相关讨论：<a href="https://github.com/ant-design/ant-design/issues/10353">#10353</a>。</p>
+<p>NG-ZORRO 之前并没有图标组件，而是提供了基于字体文件的解决方案。新版本中我们提供了旧 API 兼容，如果你不修改既有的代码，所有的图标都会被动态加载成 <code>outline</code> 主题的图标，而最佳实践是使用新的指令 <code>nz-icon</code> 并传入 <code>theme</code> 以明确图标的主题风格，例如：</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[nzType]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>star<span class="token punctuation">'</span><span class="token punctuation">"</span></span> <span class="token attr-name">[nzTheme]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>fill<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<p>所有的图标都会以 <code>&lt;svg&gt;</code> 标签渲染，但是你还是可以用之前对 i 标签设置的样式和类来控制 svg 的样式，例如：</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[nzType]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>message<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span> <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#08c</span><span class="token punctuation">;</span></span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="静态加载与动态加载"><span>静态加载与动态加载</span><a onclick="window.location.hash = '静态加载与动态加载'" class="anchor">#</a></h3><p>对于 Ant Design 提供的图标，我们提供了两种方式来加载图标资源文件。</p>
+<p>静态加载，在 <code>AppModule</code> 里加入你需要的图标（推荐）或者是全部的图标，例如：</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> IconDefinition <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-angular'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzIconModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/icon'</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 引入你需要的图标，比如你需要 fill 主题的 AccountBook Alert 和 outline 主题的 Alert，推荐 ✔️</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> AccountBookFill<span class="token punctuation">,</span> AlertFill<span class="token punctuation">,</span> AlertOutline <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@ant-design/icons-angular/icons'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> icons<span class="token punctuation">:</span> IconDefinition<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span> AccountBookFill<span class="token punctuation">,</span> AlertOutline<span class="token punctuation">,</span> AlertFill <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// 引入全部的图标，不推荐 ❌</span>
+<span class="token comment" spellcheck="true">// import * as AllIcons from '@ant-design/icons-angular/icons';</span>
+
+<span class="token comment" spellcheck="true">// const antDesignIcons = AllIcons as &#123;</span>
+<span class="token comment" spellcheck="true">//   [key: string]: IconDefinition;</span>
+<span class="token comment" spellcheck="true">// &#125;;</span>
+<span class="token comment" spellcheck="true">// const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])</span>
+
+@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  declarations<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    AppComponent
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+    NzIconModule<span class="token punctuation">.</span><span class="token function">forRoot</span><span class="token punctuation">(</span>icons<span class="token punctuation">)</span>
+  <span class="token punctuation">]</span>
+  bootstrap<span class="token punctuation">:</span> <span class="token punctuation">[</span> AppComponent <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">export</span> <span class="token keyword">class</span> <span class="token class-name">AppModule</span> <span class="token punctuation">&#123;</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>本质上是调用了 <code>NzIconService</code> 的 <code>addIcon</code> 方法，引入后的文件会被打包到 <code>.js</code> 文件中。静态引入会增加包体积，所以我们建议尽可能地使用动态加载，如果要静态加载，也仅仅加载你需要用到的图标。</p>
+<blockquote>
+<p>为了加快渲染速度，NG-ZORRO 本身用到的 icon 是静态引入的。而官网的图标是动态引入的。</p>
+</blockquote>
+<p>动态加载，这是为了减少包体积而提供的方式。当 NG-ZORRO 检测用户想要渲染的图标还没有静态引入时，会发起 HTTP 请求动态引入。你只需要配置 <code>angular.json</code> 文件：</p>
+<pre class="language-json"><code><span class="token punctuation">&#123;</span>
+  <span class="token property">"assets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+      <span class="token property">"glob"</span><span class="token operator">:</span> <span class="token string">"**/*"</span><span class="token punctuation">,</span>
+      <span class="token property">"input"</span><span class="token operator">:</span> <span class="token string">"./node_modules/@ant-design/icons-angular/src/inline-svg/"</span><span class="token punctuation">,</span>
+      <span class="token property">"output"</span><span class="token operator">:</span> <span class="token string">"/assets/"</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<p>你可以通过 <code>NzIconService</code> 的 <code>changeAssetsSource()</code> 方法来修改图标资源的位置，这样你就可以部署这些资源到 cdn 上。你的参数会被直接添加到 <code>assets/</code> 的前面。</p>
+<p>例如，你在 <code>https://mycdn.somecdn.com/icons/assets</code> 目录下部署了静态资源文件，那么你就可以通过调用 <code>changeAssetsSource(&#39;https://mycdn.somecdn.com/icons&#39;)</code>，来告诉 NG-ZORRO 从这个位置动态加载图标资源。</p>
+<p>请在 constructor 里或者在 <code>AppInitService</code> 里调用这个方法。</p>
+<h3 id="在子模块中补充图标"><span>在子模块中补充图标</span><a onclick="window.location.hash = '在子模块中补充图标'" class="anchor">#</a></h3><p>有时候，为了避免增大 main.js 的体积，你可能想要从懒加载模块中引入图标，这时你就可以使用 <code>NzIconModule.forChild</code> 来追加图标。</p>
+<pre class="language-ts"><code>@<span class="token function">NgModule</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  imports<span class="token punctuation">:</span> <span class="token punctuation">[</span>CommonModule<span class="token punctuation">,</span> NzIconModule<span class="token punctuation">.</span><span class="token function">forChild</span><span class="token punctuation">(</span><span class="token punctuation">[</span>QuestionOutline<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">ChildModule</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span></code></pre>
+<p>这样，当 <code>ChildModule</code> 加载之后，整个应用都能够使用 QuestionOutline 图标。</p>
+<p>当然，不要忘记在 <code>NZ_ICONS</code> 中删除该图标。</p>
+<h3 id="双色图标主色"><span>双色图标主色</span><a onclick="window.location.hash = '双色图标主色'" class="anchor">#</a></h3><p>对于双色图标，可以通过提供全局配置 <code>&#123; nzIcon: &#123; nzTwotoneColor: &#39;xxx&#39; &#125; &#125;</code> 或 <code>NzConfigService</code> 的对应方法修改来全局设置图标主色。</p>
+<h3 id="自定义-font-图标"><span>自定义 font 图标</span><a onclick="window.location.hash = '自定义-font-图标'" class="anchor">#</a></h3><p>我们提供了一个 <code>fetchFromIconfont</code> 方法，方便开发者调用在 iconfont.cn 上自行管理的图标。</p>
+<pre class="language-typescript"><code><span class="token keyword">this</span><span class="token punctuation">.</span>_iconService<span class="token punctuation">.</span><span class="token function">fetchFromIconfont</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  scriptUrl<span class="token punctuation">:</span> <span class="token string">'https://at.alicdn.com/t/font_8d5l8fzk5b87iudi.js'</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>i</span> <span class="token attr-name">nz-icon</span> <span class="token attr-name">[iconfont]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><span class="token punctuation">'</span>icon-tuichu<span class="token punctuation">'</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>i</span><span class="token punctuation">></span></span></code></pre>
+<p>其本质上是创建了一个使用 <code>&lt;use&gt;</code> 标签渲染图标的组件。</p>
+<p><code>options</code> 的配置项如下：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>scriptUrl</code></td>
+<td><a href="http://iconfont.cn/">iconfont.cn</a> 项目在线生成的 <code>js</code> 地址，在 <code>namespace</code> 也设置的情况下有效</td>
+<td>string</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>在 scriptUrl 都设置有效的情况下，组件在渲染前会自动引入 <a href="http://iconfont.cn/">iconfont.cn</a> 项目中的图标符号集，无需手动引入。</p>
+<p>见 <a href="http://iconfont.cn/help/detail?spm=a313x.7781069.1998910419.15&amp;helptype=code">iconfont.cn</a> 使用帮助 查看如何生成 js 地址。</p>
+<h3 id="命名空间"><span>命名空间</span><a onclick="window.location.hash = '命名空间'" class="anchor">#</a></h3><p>用户可以使用该功能方便地添加自己的 icon。在渲染一个自定义 icon 时，只需要将 <code>type</code> 指定为 <code>namespace:name</code> 的形式，icon 组件就会在用户自行添加的图标中进行检索并渲染。同时支持静态和动态引入。</p>
+<p>静态引入，只需要调用 <code>NzIconService</code> 的 <code>addIconLiteral</code> 方法即可。</p>
+<p>动态引入，只需要保证 SVG 资源文件放到了相应的目录，即 <code>assets/$&#123;namespace&#125;</code> 即可。例如你在 <code>zoo</code> 命名空间下有一个 <code>panda</code> 图标，你需要做的就是将 <code>panda.svg</code> 放到 <code>assets/zoo</code> 目录底下。</p>
+<h2 id="常见问题"><span>常见问题</span><a onclick="window.location.hash = '常见问题'" class="anchor">#</a></h2><h3 id="图标都不见了！"><span>图标都不见了！</span><a onclick="window.location.hash = '图标都不见了！'" class="anchor">#</a></h3><p>你是不是没有阅读以上的文档？</p>
+<h3 id="我想静态引入全部的图标，该怎么做？"><span>我想静态引入全部的图标，该怎么做？</span><a onclick="window.location.hash = '我想静态引入全部的图标，该怎么做？'" class="anchor">#</a></h3><p>实际上我们已经在 <a href="/components/icon/zh#%E9%9D%99%E6%80%81%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8A%A8%E6%80%81%E5%8A%A0%E8%BD%BD">静态加载与动态加载</a> 部分演示过了：</p>
+<pre class="language-ts"><code><span class="token comment" spellcheck="true">// import * as AllIcons from '@ant-design/icons-angular/icons';</span>
+
+<span class="token comment" spellcheck="true">// const antDesignIcons = AllIcons as &#123;</span>
+<span class="token comment" spellcheck="true">//   [key: string]: IconDefinition;</span>
+<span class="token comment" spellcheck="true">// &#125;;</span>
+<span class="token comment" spellcheck="true">// const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])</span></code></pre>
+<p>然后通过 forRoot 或者 <code>NzIconService</code> 的 <code>addIcon</code> 方法引入。</p>
+<h3 id="动态加载会不会影响网页的性能？"><span>动态加载会不会影响网页的性能？</span><a onclick="window.location.hash = '动态加载会不会影响网页的性能？'" class="anchor">#</a></h3><p>我们用了多种手段来尽量减少动态请求，包括先静态后动态、缓存和相同 icon 的请求复用，用户很少能感知到 icon 是异步加载的。在网络环境尚可的情况下，即使是有三百多 icon 同时展示的 NG-ZORRO 官网，也基本没有卡顿。对于加载速度要求更高的用户，我们也支持 CDN。</p>
+<h3 id="我怎么知道一个-icon-的静态引入名？"><span>我怎么知道一个 icon 的静态引入名？</span><a onclick="window.location.hash = '我怎么知道一个-icon-的静态引入名？'" class="anchor">#</a></h3><p>很简单，大写驼峰加主题即为 icon 的引入名。比如，<code>alibaba</code> 的引入名就是 <code>AlibabaOutline</code>，事实上，编辑器的自动补全能帮助到你。</p>
+</section></article>

@@ -1,0 +1,627 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-select-demo-basic" nzTitle="Basic Usage"></nz-link><nz-link nzHref="#components-select-demo-search" nzTitle="Select with search field"></nz-link><nz-link nzHref="#components-select-demo-multiple" nzTitle="multiple selection"></nz-link><nz-link nzHref="#components-select-demo-size" nzTitle="Sizes"></nz-link><nz-link nzHref="#components-select-demo-tags" nzTitle="Tags"></nz-link><nz-link nzHref="#components-select-demo-optgroup" nzTitle="Option Group"></nz-link><nz-link nzHref="#components-select-demo-coordinate" nzTitle="coordinate"></nz-link><nz-link nzHref="#components-select-demo-search-box" nzTitle="Search Box"></nz-link><nz-link nzHref="#components-select-demo-label-in-value" nzTitle="Get option object of selected item"></nz-link><nz-link nzHref="#components-select-demo-automatic-tokenization" nzTitle="Automatic tokenization"></nz-link><nz-link nzHref="#components-select-demo-select-users" nzTitle="Search and Select Users"></nz-link><nz-link nzHref="#components-select-demo-custom-dropdown-menu" nzTitle="Custom dropdown"></nz-link><nz-link nzHref="#components-select-demo-hide-selected" nzTitle="Hide Already Selected"></nz-link><nz-link nzHref="#components-select-demo-custom-content" nzTitle="Custom Option Template"></nz-link><nz-link nzHref="#components-select-demo-scroll-load" nzTitle="Load Data on Scroll"></nz-link><nz-link nzHref="#components-select-demo-default-value" nzTitle="Default Value"></nz-link><nz-link nzHref="#components-select-demo-big-data" nzTitle="Large amounts of data"></nz-link><nz-link nzHref="#components-select-demo-border-less" nzTitle="Bordered-less"></nz-link><nz-link nzHref="#components-select-demo-custom-template" nzTitle="Custom Top Render"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Select<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Select component to select value from options.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>A dropdown menu for displaying choices - an elegant alternative to the native <code>&lt;select&gt;</code> element.</li>
+<li>Utilizing <a href="/components/radio/en">Radio</a> is recommended when there are fewer total options (less than 5).</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSelectModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/select'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic Usage"
+  [nzId]="'components-select-demo-basic'"
+  nzSelector="nz-demo-select-basic"
+  [nzLink]="'components-select-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-basic <name>"
+  nzComponentName="NzDemoSelectBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/basic.md'">
+	<nz-demo-select-basic demo></nz-demo-select-basic>
+	<div intro ngNonBindable>
+		<p>Basic Usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="multiple selection"
+  [nzId]="'components-select-demo-multiple'"
+  nzSelector="nz-demo-select-multiple"
+  [nzLink]="'components-select-demo-multiple'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-multiple <name>"
+  nzComponentName="NzDemoSelectMultipleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/multiple.md'">
+	<nz-demo-select-multiple demo></nz-demo-select-multiple>
+	<div intro ngNonBindable>
+		<p>Multiple selection, selecting from existing items, max 3 option will display at the same time by <code>nzMaxTagCount</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Tags"
+  [nzId]="'components-select-demo-tags'"
+  nzSelector="nz-demo-select-tags"
+  [nzLink]="'components-select-demo-tags'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-tags <name>"
+  nzComponentName="NzDemoSelectTagsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/tags.md'">
+	<nz-demo-select-tags demo></nz-demo-select-tags>
+	<div intro ngNonBindable>
+		<p>Select with tags, transform input to tag (scroll the menu)</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="coordinate"
+  [nzId]="'components-select-demo-coordinate'"
+  nzSelector="nz-demo-select-coordinate"
+  [nzLink]="'components-select-demo-coordinate'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-coordinate <name>"
+  nzComponentName="NzDemoSelectCoordinateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/coordinate.md'">
+	<nz-demo-select-coordinate demo></nz-demo-select-coordinate>
+	<div intro ngNonBindable>
+		<p>Coordinating the selection of provinces and cities is a common use case and demonstrates how selection can be coordinated.</p>
+<p>Using the <a href="/components/cascader/en">Cascader</a> component is strongly recommended instead as it is more flexible and capable.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Get option object of selected item"
+  [nzId]="'components-select-demo-label-in-value'"
+  nzSelector="nz-demo-select-label-in-value"
+  [nzLink]="'components-select-demo-label-in-value'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-label-in-value <name>"
+  nzComponentName="NzDemoSelectLabelInValueComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/label-in-value.md'">
+	<nz-demo-select-label-in-value demo></nz-demo-select-label-in-value>
+	<div intro ngNonBindable>
+		<p>The value of <code>ngModel</code> comes from the <code>nzValue</code> of <code>nz-option</code>, when the <code>nzValue</code> of <code>nz-option</code>  is an object, the <code>ngModel</code> will be an object too, the usage of <code>compareWith</code> is the same as <a href="https://angular.io/api/forms/SelectControlValueAccessor#caveat-option-selection">SelectControlValueAccessor</a>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Search and Select Users"
+  [nzId]="'components-select-demo-select-users'"
+  nzSelector="nz-demo-select-select-users"
+  [nzLink]="'components-select-demo-select-users'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-select-users <name>"
+  nzComponentName="NzDemoSelectSelectUsersComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/select-users.md'">
+	<nz-demo-select-select-users demo></nz-demo-select-select-users>
+	<div intro ngNonBindable>
+		<p>A complete multiple select sample with remote search, debounce fetch, ajax callback order flow, and loading state.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Hide Already Selected"
+  [nzId]="'components-select-demo-hide-selected'"
+  nzSelector="nz-demo-select-hide-selected"
+  [nzLink]="'components-select-demo-hide-selected'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-hide-selected <name>"
+  nzComponentName="NzDemoSelectHideSelectedComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/hide-selected.md'">
+	<nz-demo-select-hide-selected demo></nz-demo-select-hide-selected>
+	<div intro ngNonBindable>
+		<p>Hide already selected options in the dropdown via <code>nzHide</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Load Data on Scroll"
+  [nzId]="'components-select-demo-scroll-load'"
+  nzSelector="nz-demo-select-scroll-load"
+  [nzLink]="'components-select-demo-scroll-load'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-scroll-load <name>"
+  nzComponentName="NzDemoSelectScrollLoadComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/scroll-load.md'">
+	<nz-demo-select-scroll-load demo></nz-demo-select-scroll-load>
+	<div intro ngNonBindable>
+		<p>Load data on scroll.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Large amounts of data"
+  [nzId]="'components-select-demo-big-data'"
+  nzSelector="nz-demo-select-big-data"
+  [nzLink]="'components-select-demo-big-data'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-big-data <name>"
+  nzComponentName="NzDemoSelectBigDataComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/big-data.md'">
+	<nz-demo-select-big-data demo></nz-demo-select-big-data>
+	<div intro ngNonBindable>
+		<p>With the help of virtual scroll, select component can deal with Large amounts of data.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom Top Render"
+  [nzId]="'components-select-demo-custom-template'"
+  nzSelector="nz-demo-select-custom-template"
+  [nzLink]="'components-select-demo-custom-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-custom-template <name>"
+  nzComponentName="NzDemoSelectCustomTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/custom-template.md'">
+	<nz-demo-select-custom-template demo></nz-demo-select-custom-template>
+	<div intro ngNonBindable>
+		<p>Custom the content of nz-select via <code>nzCustomTemplate</code>.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Select with search field"
+  [nzId]="'components-select-demo-search'"
+  nzSelector="nz-demo-select-search"
+  [nzLink]="'components-select-demo-search'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-search <name>"
+  nzComponentName="NzDemoSelectSearchComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/search.md'">
+	<nz-demo-select-search demo></nz-demo-select-search>
+	<div intro ngNonBindable>
+		<p>Search the options while expanded.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Sizes"
+  [nzId]="'components-select-demo-size'"
+  nzSelector="nz-demo-select-size"
+  [nzLink]="'components-select-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-size <name>"
+  nzComponentName="NzDemoSelectSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/size.md'">
+	<nz-demo-select-size demo></nz-demo-select-size>
+	<div intro ngNonBindable>
+		<p>The height of the input field for the select defaults to 32px. If <code>nzSize</code> is set to large, the height will be 40px, and if set to small, 24px.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Option Group"
+  [nzId]="'components-select-demo-optgroup'"
+  nzSelector="nz-demo-select-optgroup"
+  [nzLink]="'components-select-demo-optgroup'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-optgroup <name>"
+  nzComponentName="NzDemoSelectOptgroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/optgroup.md'">
+	<nz-demo-select-optgroup demo></nz-demo-select-optgroup>
+	<div intro ngNonBindable>
+		<p>Using <code>nz-option-group</code> to group the options.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Search Box"
+  [nzId]="'components-select-demo-search-box'"
+  nzSelector="nz-demo-select-search-box"
+  [nzLink]="'components-select-demo-search-box'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-search-box <name>"
+  nzComponentName="NzDemoSelectSearchBoxComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/search-box.md'">
+	<nz-demo-select-search-box demo></nz-demo-select-search-box>
+	<div intro ngNonBindable>
+		<p>Search with remote data.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Automatic tokenization"
+  [nzId]="'components-select-demo-automatic-tokenization'"
+  nzSelector="nz-demo-select-automatic-tokenization"
+  [nzLink]="'components-select-demo-automatic-tokenization'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-automatic-tokenization <name>"
+  nzComponentName="NzDemoSelectAutomaticTokenizationComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/automatic-tokenization.md'">
+	<nz-demo-select-automatic-tokenization demo></nz-demo-select-automatic-tokenization>
+	<div intro ngNonBindable>
+		<p>Try to copy <code>Lucy,Jack</code> to the input. Only available in tags and multiple mode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom dropdown"
+  [nzId]="'components-select-demo-custom-dropdown-menu'"
+  nzSelector="nz-demo-select-custom-dropdown-menu"
+  [nzLink]="'components-select-demo-custom-dropdown-menu'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-custom-dropdown-menu <name>"
+  nzComponentName="NzDemoSelectCustomDropdownMenuComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/custom-dropdown-menu.md'">
+	<nz-demo-select-custom-dropdown-menu demo></nz-demo-select-custom-dropdown-menu>
+	<div intro ngNonBindable>
+		<p>Customize the dropdown menu via <code>nzDropdownRender</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Custom Option Template"
+  [nzId]="'components-select-demo-custom-content'"
+  nzSelector="nz-demo-select-custom-content"
+  [nzLink]="'components-select-demo-custom-content'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-custom-content <name>"
+  nzComponentName="NzDemoSelectCustomContentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/custom-content.md'">
+	<nz-demo-select-custom-content demo></nz-demo-select-custom-content>
+	<div intro ngNonBindable>
+		<p>Custom the content of nz-option via <code>nzCustomContent</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Default Value"
+  [nzId]="'components-select-demo-default-value'"
+  nzSelector="nz-demo-select-default-value"
+  [nzLink]="'components-select-demo-default-value'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-default-value <name>"
+  nzComponentName="NzDemoSelectDefaultValueComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/default-value.md'">
+	<nz-demo-select-default-value demo></nz-demo-select-default-value>
+	<div intro ngNonBindable>
+		<p>Display a default value that not in the option list with <code>nzHide</code> in <code>nz-option</code></p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Bordered-less"
+  [nzId]="'components-select-demo-border-less'"
+  nzSelector="nz-demo-select-border-less"
+  [nzLink]="'components-select-demo-border-less'"
+  nzGenerateCommand="ng g ng-zorro-antd:select-border-less <name>"
+  nzComponentName="NzDemoSelectBorderLessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/select/demo/border-less.md'">
+	<nz-demo-select-border-less demo></nz-demo-select-border-less>
+	<div intro ngNonBindable>
+		<p>Bordered-less style component.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-select</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-option</span> <span class="token attr-name">nzValue</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>lucy<span class="token punctuation">"</span></span> <span class="token attr-name">nzLabel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Lucy<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-option</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-select</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-select"><span>nz-select</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-select'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[ngModel]</code></td>
+<td>Current selected nz-option value, double binding.</td>
+<td><code>any | any[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[compareWith]</code></td>
+<td>Same as <a href="https://angular.io/api/forms/SelectControlValueAccessor#caveat-option-selection">SelectControlValueAccessor</a></td>
+<td><code>(o1: any, o2: any) =&gt; boolean</code></td>
+<td><code>(o1: any, o2: any) =&gt; o1===o2</code></td>
+</tr>
+<tr>
+<td><code>[nzAutoClearSearchValue]</code></td>
+<td>Whether the current search will be cleared on selecting an item. Only applies when <code>mode</code> is set to <code>multiple</code> or <code>tags</code>.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzAllowClear]</code></td>
+<td>Show clear button.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzOpen]</code></td>
+<td>dropdown expand state, double binding</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzAutoFocus]</code></td>
+<td>Get focus by default</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDisabled]</code></td>
+<td>Whether disabled select</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDropdownClassName]</code></td>
+<td>className of dropdown menu</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDropdownMatchSelectWidth]</code></td>
+<td>Whether dropdown&#39;s with is same with select.</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzDropdownStyle]</code></td>
+<td>style of dropdown menu</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzCustomTemplate]</code></td>
+<td>The custom template of select</td>
+<td><code>TemplateRef&lt;&#123; $implicit: NzOptionComponent &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzServerSearch]</code></td>
+<td>nz-option will not be filtered when set to true</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzFilterOption]</code></td>
+<td>Filter options against it. The function will receive two arguments, <code>inputValue</code> and <code>option</code>, if the function returns <code>true</code>, the option will be included in the filtered set; Otherwise, it will be excluded.</td>
+<td><code>(input?: string, option?: NzOptionComponent) =&gt; boolean;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMaxMultipleCount]</code></td>
+<td>Max selected option can be selected</td>
+<td><code>number</code></td>
+<td><code>Infinity</code></td>
+</tr>
+<tr>
+<td><code>[nzMode]</code></td>
+<td>Set mode of Select</td>
+<td><code>&#39;multiple&#39; | &#39;tags&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzNotFoundContent]</code></td>
+<td>Specify content to show when no result matches..</td>
+<td><code>string  |  TemplateRef&lt;void&gt;</code></td>
+<td><code>&#39;Not Found&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzPlaceHolder]</code></td>
+<td>Placeholder of select</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzShowArrow]</code></td>
+<td>Whether to show the drop-down arrow</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzShowSearch]</code></td>
+<td>Whether show search input in single mode.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Size of Select input</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzSuffixIcon]</code></td>
+<td>The custom suffix icon</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzRemoveIcon]</code></td>
+<td>The custom remove icon</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzClearIcon]</code></td>
+<td>The custom clear icon</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMenuItemSelectedIcon]</code></td>
+<td>The custom menuItemSelected icon</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTokenSeparators]</code></td>
+<td>Separator used to tokenize on tag/multiple mode</td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>indicate loading state</td>
+<td><code>boolean</code></td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>[nzMaxTagCount]</code></td>
+<td>Max tag count to show</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMaxTagPlaceholder]</code></td>
+<td>Placeholder for not showing tags</td>
+<td><code>TemplateRef&lt;&#123; $implicit: any[] &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>Current selected nz-option value change callback.</td>
+<td><code>EventEmitter&lt;any[]&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOpenChange)</code></td>
+<td>dropdown expand change callback</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(nzScrollToBottom)</code></td>
+<td>Called when dropdown scrolls to bottom</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzOnSearch)</code></td>
+<td>Callback function that is fired when input changed.</td>
+<td><code>EventEmitter&lt;string&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzFocus)</code></td>
+<td>focus callback</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzBlur)</code></td>
+<td>blur callback</td>
+<td><code>EventEmitter&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-option"><span>nz-option</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-option'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>Disable this option</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzLabel]</code></td>
+<td>The text show in nz-select and dropdown menu</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzValue]</code></td>
+<td>The value passed to ngModel of nz-select</td>
+<td><code>any</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzHide]</code></td>
+<td>Whether hide the option in the option list</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzCustomContent]</code></td>
+<td>Whether custom nz-option content in drodown menu, the ng-content in nz-option will relace nzLabel when it was set to true</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-option-group"><span>nz-option-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-option-group'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzLabel]</code></td>
+<td>Group label</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h2 id="methods"><span>Methods</span><a onclick="window.location.hash = 'methods'" class="anchor">#</a></h2><h3 id="nz-select"><span>nz-select</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-select'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>blur()</td>
+<td>Remove focus</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>Get focus</td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,141 @@
+.ant-typography {
+    color:$body-color;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-base;
+    color: $gray-dark;
+}
+
+h1,
+.h1 {
+    font-size: 30px;
+}
+
+h2,
+.h2{
+    font-size: 24px;
+}
+
+h3,
+.h3 {
+    font-size: 22px
+}
+
+h4,
+.h4 {
+    font-size: 19px
+}
+
+h5,
+.h5 {
+    font-size: 16px;
+}
+
+h6,
+.h6 {
+    font-size: 14px;
+}
+
+p {
+    color: $gray-light;
+    line-height: 1.8;
+}
+
+.display-1 {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: $line-height-base;
+}
+
+.display-2 {
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: $line-height-base;
+}
+
+.display-3 {
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: $line-height-base;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: $line-height-base;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none; 
+
+    .list-inline-item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }    
+}
+
+.ant-typography h1, 
+h1.ant-typography {
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    font-size: 30px;
+}
+
+.ant-typography h2, 
+h2.ant-typography {
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    font-size: 24px;
+}
+
+.ant-typography h3, 
+h3.ant-typography {
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    font-size: 22px
+}
+
+.ant-typography h4, 
+h4.ant-typography {
+    color: $gray-dark;
+    font-weight: $font-weight-semibold;
+    font-size: 19px
+}
+
+.ant-typography p, 
+p.ant-typography {
+    color: $gray-light;
+}
+
+.ant-typography {
+
+    strong {
+        font-weight: $font-weight-bold;
+    }
+
+    &.ant-typography-warning {
+        color: $brand-warning;
+    }
+
+    &.ant-typography-danger {
+        color: $brand-danger;
+    }
+}

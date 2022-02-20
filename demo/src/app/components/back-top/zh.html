@@ -1,0 +1,124 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-back-top-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-back-top-demo-custom" nzTitle="自定义样式"></nz-link><nz-link nzHref="#components-back-top-demo-target" nzTitle="滚动容器"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>BackTop<span class="subtitle">回到顶部</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/back-top/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>返回页面顶部的操作按钮。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><ul>
+<li>当页面内容区域比较长时；</li>
+<li>当用户需要频繁返回顶部查看相关内容时。</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzBackTopModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/back-top'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-back-top-demo-basic'"
+  nzSelector="nz-demo-back-top-basic"
+  [nzLink]="'components-back-top-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:back-top-basic <name>"
+  nzComponentName="NzDemoBackTopBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/back-top/demo/basic.md'">
+	<nz-demo-back-top-basic demo></nz-demo-back-top-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="滚动容器"
+  [nzId]="'components-back-top-demo-target'"
+  nzSelector="nz-demo-back-top-target"
+  [nzLink]="'components-back-top-demo-target'"
+  nzGenerateCommand="ng g ng-zorro-antd:back-top-target <name>"
+  nzComponentName="NzDemoBackTopTargetComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/back-top/demo/target.md'">
+	<nz-demo-back-top-target demo></nz-demo-back-top-target>
+	<div intro ngNonBindable>
+		<p>设置 <code>nzTarget</code> 参数，允许对某个容器返回顶部。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="自定义样式"
+  [nzId]="'components-back-top-demo-custom'"
+  nzSelector="nz-demo-back-top-custom"
+  [nzLink]="'components-back-top-demo-custom'"
+  nzGenerateCommand="ng g ng-zorro-antd:back-top-custom <name>"
+  nzComponentName="NzDemoBackTopCustomComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/back-top/demo/custom.md'">
+	<nz-demo-back-top-custom demo></nz-demo-back-top-custom>
+	<div intro ngNonBindable>
+		<p>可以自定义回到顶部按钮的样式，限制宽高：<code>40px * 40px</code>。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-back-top"><span>nz-back-top</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-back-top'" class="anchor">#</a></h3><blockquote>
+<p>有默认样式，距离底部 <code>50px</code>，可覆盖。
+自定义样式宽高不大于 <code>40px * 40px</code>。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>成员</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTemplate]</code></td>
+<td>自定义内容，见示例</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzVisibilityHeight]</code></td>
+<td>滚动高度达到此参数值才出现 <code>nz-back-top</code></td>
+<td><code>number</code></td>
+<td><code>400</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzTarget]</code></td>
+<td>设置需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数</td>
+<td><code>string | Element</code></td>
+<td><code>window</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzClick)</code></td>
+<td>点击按钮的回调函数</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+</section></article>

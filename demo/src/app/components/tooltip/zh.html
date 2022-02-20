@@ -1,0 +1,213 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-tooltip-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-tooltip-demo-placement" nzTitle="位置"></nz-link><nz-link nzHref="#components-tooltip-demo-arrow-point-at-center" nzTitle="箭头指向"></nz-link><nz-link nzHref="#components-tooltip-demo-template" nzTitle="模板渲染"></nz-link><nz-link nzHref="#components-tooltip-demo-origin" nzTitle="指定目标"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Tooltip<span class="subtitle">文字提示</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>简单的文字提示气泡框。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。</p>
+<p>可用来代替系统默认的 <code>title</code> 提示，提供一个<code>按钮/文字/操作</code>的文案解释。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzToolTipModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/tooltip'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-tooltip-demo-basic'"
+  nzSelector="nz-demo-tooltip-basic"
+  [nzLink]="'components-tooltip-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:tooltip-basic <name>"
+  nzComponentName="NzDemoTooltipBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/demo/basic.md'">
+	<nz-demo-tooltip-basic demo></nz-demo-tooltip-basic>
+	<div intro ngNonBindable>
+		<p>最简单的用法。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="箭头指向"
+  [nzId]="'components-tooltip-demo-arrow-point-at-center'"
+  nzSelector="nz-demo-tooltip-arrow-point-at-center"
+  [nzLink]="'components-tooltip-demo-arrow-point-at-center'"
+  nzGenerateCommand="ng g ng-zorro-antd:tooltip-arrow-point-at-center <name>"
+  nzComponentName="NzDemoTooltipArrowPointAtCenterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/demo/arrow-point-at-center.md'">
+	<nz-demo-tooltip-arrow-point-at-center demo></nz-demo-tooltip-arrow-point-at-center>
+	<div intro ngNonBindable>
+		<p>通过设置 <code>nzTooltipPlacement</code> ，可以箭头将指向目标元素的中心。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="指定目标"
+  [nzId]="'components-tooltip-demo-origin'"
+  nzSelector="nz-demo-tooltip-origin"
+  [nzLink]="'components-tooltip-demo-origin'"
+  nzGenerateCommand="ng g ng-zorro-antd:tooltip-origin <name>"
+  nzComponentName="NzDemoTooltipOriginComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/demo/origin.md'">
+	<nz-demo-tooltip-origin demo></nz-demo-tooltip-origin>
+	<div intro ngNonBindable>
+		<p>通过 <code>nzTooltipOrigin</code> 指定 tooltip 的锚定元素（可以使用我们提供的工具类 <code>import &#123; NzElementPatchModule &#125; from &#39;ng-zorro-antd/core/element-patch&#39;</code>）</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="位置"
+  [nzId]="'components-tooltip-demo-placement'"
+  nzSelector="nz-demo-tooltip-placement"
+  [nzLink]="'components-tooltip-demo-placement'"
+  nzGenerateCommand="ng g ng-zorro-antd:tooltip-placement <name>"
+  nzComponentName="NzDemoTooltipPlacementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/demo/placement.md'">
+	<nz-demo-tooltip-placement demo></nz-demo-tooltip-placement>
+	<div intro ngNonBindable>
+		<p>位置有 12 个方向。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="模板渲染"
+  [nzId]="'components-tooltip-demo-template'"
+  nzSelector="nz-demo-tooltip-template"
+  [nzLink]="'components-tooltip-demo-template'"
+  nzGenerateCommand="ng g ng-zorro-antd:tooltip-template <name>"
+  nzComponentName="NzDemoTooltipTemplateComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/tooltip/demo/template.md'">
+	<nz-demo-tooltip-template demo></nz-demo-tooltip-template>
+	<div intro ngNonBindable>
+		<p><code>nzTooltipTitle</code> 可以传入 <code>TemplateRef&lt;void&gt;</code> 模板渲染。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-tooltip]"><span>[nz-tooltip]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-tooltip]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzTooltipTitle]</code></td>
+<td>提示文字</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTooltipTrigger]</code></td>
+<td>触发行为，可选 <code>hover/focus/click</code>，为 <code>null</code> 时不响应光标事件</td>
+<td><code>&#39;click&#39; | &#39;focus&#39; | &#39;hover&#39; | null</code></td>
+<td><code>&#39;hover&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipPlacement]</code></td>
+<td>气泡框位置</td>
+<td><code>&#39;top&#39; | &#39;left&#39; | &#39;right&#39; | &#39;bottom&#39; | &#39;topLeft&#39; | &#39;topRight&#39; | &#39;bottomLeft&#39; | &#39;bottomRight&#39; | &#39;leftTop&#39; | &#39;leftBottom&#39; | &#39;rightTop&#39; | &#39;rightBottom&#39;</code></td>
+<td><code>&#39;top&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipOrigin]</code></td>
+<td>气泡框定位元素</td>
+<td><code>ElementRef</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="共同的-api"><span>共同的 API</span><a onclick="window.location.hash = '共同的-api'" class="anchor">#</a></h3><p>以下 API 为 <code>nz-tooltip</code>、<code>nz-popconfirm</code>、<code>nz-popover</code> 共享的 API。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzMouseEnterDelay]</code></td>
+<td>鼠标移入后延时多少才显示 Tooltip，单位：秒</td>
+<td><code>number</code></td>
+<td><code>0.15</code></td>
+</tr>
+<tr>
+<td><code>[nzMouseLeaveDelay]</code></td>
+<td>鼠标移出后延时多少才隐藏 Tooltip，单位：秒</td>
+<td><code>number</code></td>
+<td><code>0.1</code></td>
+</tr>
+<tr>
+<td><code>[nzOverlayClassName]</code></td>
+<td>卡片类名</td>
+<td><code>string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzOverlayStyle]</code></td>
+<td>卡片样式</td>
+<td><code>object</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzVisible]</code></td>
+<td>用于手动控制浮层显隐</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>(nzVisibleChange)</code></td>
+<td>显示隐藏的回调</td>
+<td><code>EventEmitter&lt;boolean&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>show</code></td>
+<td>打开</td>
+</tr>
+<tr>
+<td><code>hide</code></td>
+<td>隐藏</td>
+</tr>
+<tr>
+<td><code>updatePosition</code></td>
+<td>调整位置</td>
+</tr>
+</tbody></table>
+<h2 id="注意"><span>注意</span><a onclick="window.location.hash = '注意'" class="anchor">#</a></h2><p>请确保 <code>nz-tooltip</code> 的子元素能接受 <code>onMouseEnter</code>、<code>onMouseLeave</code>、<code>onFocus</code>、<code>onClick</code> 事件。</p>
+</section></article>

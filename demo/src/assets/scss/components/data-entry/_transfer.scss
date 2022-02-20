@@ -1,0 +1,145 @@
+.ant-transfer {
+    color: $body-color;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}    
+
+.ant-transfer-list {
+    width: $transfer-width;
+    height: $transfer-height;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+}
+
+.ant-transfer-list-content-item {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 12px 15px;
+    min-height: 40px;
+
+    &:not(.ant-transfer-list-content-item-disabled) {
+        &:hover {
+            cursor: pointer;
+            background-color: rgba($transfer-theme-color, 0.1);
+            
+            .ant-checkbox-wrapper {
+                color: $transfer-theme-color;
+
+                .ant-checkbox-input + .ant-checkbox-inner {
+                    border-color: $transfer-theme-color;
+                }
+            }
+        }
+    }
+}
+
+.ant-transfer-list-header {
+    padding: 12px 15px;
+    border-radius: $border-radius $border-radius 0 0;
+    background: $white;
+    color: $body-color;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
+}
+
+// .ant-transfer-list {
+//     border: 1px solid $border-color;
+//     display: inline-block;
+//     border-radius: $border-radius;
+//     vertical-align: middle;
+//     position: relative;
+//     width: $transfer-width;
+//     height: $transfer-height;
+//     padding-top: 45px;
+// }
+
+// .ant-transfer-list-header {
+//     padding: 12px 15px;
+//     border-radius: $border-radius $border-radius 0 0;
+//     background: $white;
+//     color: $body-color;
+//     border-bottom: 1px solid $border-color;
+//     width: 100%;
+// }
+
+// .ant-transfer-list-footer {
+//     border-top: 1px solid $border-color;
+//     background-color: $white
+// }    
+
+// .ant-transfer-list-with-footer {
+//     padding-bottom: 45px;
+// }
+
+// .ant-transfer-list-body-not-found {
+//     padding-top: 0;
+//     color: rgba($body-color, 0.25);
+//     text-align: center;
+//     position: absolute;
+//     top: 50%;
+//     width: 100%;
+//     margin-top: -10px;
+// }
+
+// .ant-transfer-list-content-item {
+//     overflow: hidden;
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+//     padding: 12px 15px;
+//     min-height: 40px;
+
+//     &:not(.ant-transfer-list-content-item-disabled) {
+//         &:hover {
+//             cursor: pointer;
+//             background-color: rgba($transfer-theme-color, 0.1);
+            
+//             .ant-checkbox-wrapper {
+//                 color: $transfer-theme-color;
+
+//                 .ant-checkbox-input + .ant-checkbox-inner {
+//                     border-color: $transfer-theme-color;
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .ant-transfer-operation {
+
+//     .ant-btn {
+
+//         &:first-child {
+//             margin-bottom: 10px;
+//         }
+//     }
+// }
+
+// .ant-transfer-list-body-with-search {
+//     padding-top: 55px;
+// }
+
+// .ant-transfer-list-body-search-wrapper  {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     padding: 10px;
+//     width: 100%;
+
+//     .ant-input {
+//         padding: $input-padding-y-sm $input-padding-x-sm;
+//         height: auto;
+//     }
+// }
+
+// .ant-transfer-list-search-action {
+//     color: $body-color;
+//     position: absolute;
+//     top: calc(14px - 3px);
+//     right: 14px;
+//     bottom: 14px;
+//     width: 28px;
+//     line-height: $select-height-sm;
+//     text-align: center;
+// }

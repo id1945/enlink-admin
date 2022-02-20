@@ -1,0 +1,282 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-input-demo-basic" nzTitle="Basic usage"></nz-link><nz-link nzHref="#components-input-demo-size" nzTitle="Three sizes of Input"></nz-link><nz-link nzHref="#components-input-demo-addon" nzTitle="Pre / Post tab"></nz-link><nz-link nzHref="#components-input-demo-group" nzTitle="Input Group"></nz-link><nz-link nzHref="#components-input-demo-search-input" nzTitle="Search box"></nz-link><nz-link nzHref="#components-input-demo-textarea" nzTitle="TextArea"></nz-link><nz-link nzHref="#components-input-demo-autosize-textarea" nzTitle="Autosizing the height to fit the content"></nz-link><nz-link nzHref="#components-input-demo-tooltip" nzTitle="Format Tooltip Input"></nz-link><nz-link nzHref="#components-input-demo-presuffix" nzTitle="prefix and suffix"></nz-link><nz-link nzHref="#components-input-demo-password-input" nzTitle="Password box"></nz-link><nz-link nzHref="#components-input-demo-allow-clear" nzTitle="With clear icon"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Input<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A basic widget for getting the user input is a text field.
+Keyboard and mouse can be used for providing or changing data.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>A user input in a form field is needed.</li>
+<li>A search input is required.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzInputModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/input'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic usage"
+  [nzId]="'components-input-demo-basic'"
+  nzSelector="nz-demo-input-basic"
+  [nzLink]="'components-input-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-basic <name>"
+  nzComponentName="NzDemoInputBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/basic.md'">
+	<nz-demo-input-basic demo></nz-demo-input-basic>
+	<div intro ngNonBindable>
+		<p>Basic usage example.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Pre / Post tab"
+  [nzId]="'components-input-demo-addon'"
+  nzSelector="nz-demo-input-addon"
+  [nzLink]="'components-input-demo-addon'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-addon <name>"
+  nzComponentName="NzDemoInputAddonComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/addon.md'">
+	<nz-demo-input-addon demo></nz-demo-input-addon>
+	<div intro ngNonBindable>
+		<p>Using pre &amp; post tabs example.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Search box"
+  [nzId]="'components-input-demo-search-input'"
+  nzSelector="nz-demo-input-search-input"
+  [nzLink]="'components-input-demo-search-input'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-search-input <name>"
+  nzComponentName="NzDemoInputSearchInputComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/search-input.md'">
+	<nz-demo-input-search-input demo></nz-demo-input-search-input>
+	<div intro ngNonBindable>
+		<p>Example of creating a search box by grouping a standard input with a search button.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Autosizing the height to fit the content"
+  [nzId]="'components-input-demo-autosize-textarea'"
+  nzSelector="nz-demo-input-autosize-textarea"
+  [nzLink]="'components-input-demo-autosize-textarea'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-autosize-textarea <name>"
+  nzComponentName="NzDemoInputAutosizeTextareaComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/autosize-textarea.md'">
+	<nz-demo-input-autosize-textarea demo></nz-demo-input-autosize-textarea>
+	<div intro ngNonBindable>
+		<p><code>nzAutosize</code> prop for a <code>textarea</code> type of <code>nz-input</code> makes the height to automatically adjust based on the content.
+An options object can be provided to <code>nzAutosize</code> to specify the minimum and maximum number of lines the textarea will automatically adjust.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="prefix and suffix"
+  [nzId]="'components-input-demo-presuffix'"
+  nzSelector="nz-demo-input-presuffix"
+  [nzLink]="'components-input-demo-presuffix'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-presuffix <name>"
+  nzComponentName="NzDemoInputPresuffixComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/presuffix.md'">
+	<nz-demo-input-presuffix demo></nz-demo-input-presuffix>
+	<div intro ngNonBindable>
+		<p>Add prefix or suffix icons inside input.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="With clear icon"
+  [nzId]="'components-input-demo-allow-clear'"
+  nzSelector="nz-demo-input-allow-clear"
+  [nzLink]="'components-input-demo-allow-clear'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-allow-clear <name>"
+  nzComponentName="NzDemoInputAllowClearComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/allow-clear.md'">
+	<nz-demo-input-allow-clear demo></nz-demo-input-allow-clear>
+	<div intro ngNonBindable>
+		<p>Input with clear icon.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Three sizes of Input"
+  [nzId]="'components-input-demo-size'"
+  nzSelector="nz-demo-input-size"
+  [nzLink]="'components-input-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-size <name>"
+  nzComponentName="NzDemoInputSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/size.md'">
+	<nz-demo-input-size demo></nz-demo-input-size>
+	<div intro ngNonBindable>
+		<p>There are three sizes of an Input box: <code>large</code> (40px)、<code>default</code> (32px) and <code>small</code> (24px).</p>
+<p>Note: Inside of forms, only the large size is used.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Input Group"
+  [nzId]="'components-input-demo-group'"
+  nzSelector="nz-demo-input-group"
+  [nzLink]="'components-input-demo-group'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-group <name>"
+  nzComponentName="NzDemoInputGroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/group.md'">
+	<nz-demo-input-group demo></nz-demo-input-group>
+	<div intro ngNonBindable>
+		<p>Input.Group example</p>
+<p>Note: You don&#39;t need <code>nz-col</code> to control the width in the <code>nzCompact</code> mode.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="TextArea"
+  [nzId]="'components-input-demo-textarea'"
+  nzSelector="nz-demo-input-textarea"
+  [nzLink]="'components-input-demo-textarea'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-textarea <name>"
+  nzComponentName="NzDemoInputTextareaComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/textarea.md'">
+	<nz-demo-input-textarea demo></nz-demo-input-textarea>
+	<div intro ngNonBindable>
+		<p>For multi-line input.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Format Tooltip Input"
+  [nzId]="'components-input-demo-tooltip'"
+  nzSelector="nz-demo-input-tooltip"
+  [nzLink]="'components-input-demo-tooltip'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-tooltip <name>"
+  nzComponentName="NzDemoInputTooltipComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/tooltip.md'">
+	<nz-demo-input-tooltip demo></nz-demo-input-tooltip>
+	<div intro ngNonBindable>
+		<p>You can use the Input in conjunction with <a href="/components/tooltip/en">Tooltip</a> component to create a Numeric Input, which can provide a good experience for extra-long content display.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Password box"
+  [nzId]="'components-input-demo-password-input'"
+  nzSelector="nz-demo-input-password-input"
+  [nzLink]="'components-input-demo-password-input'"
+  nzGenerateCommand="ng g ng-zorro-antd:input-password-input <name>"
+  nzComponentName="NzDemoInputPasswordInputComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/input/demo/password-input.md'">
+	<nz-demo-input-password-input demo></nz-demo-input-password-input>
+	<div intro ngNonBindable>
+		<p>Input type of password.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-input]"><span>[nz-input]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-input]'" class="anchor">#</a></h3><p>All props of input supported by <a href="https://www.w3schools.com/tags/tag_input.asp">w3c standards</a> and Angular can used in <code>nz-input</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSize]</code></td>
+<td>The size of the input box. Note: in the context of a form, the <code>large</code> size is used.</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzAutosize]</code></td>
+<td>Only used for <code>textarea</code>, height autosize feature, can be set to <code>boolean</code> or an object <code>&#123; minRows: 2, maxRows: 6 &#125;</code></td>
+<td><code>boolean | &#123; minRows: number, maxRows: number &#125;</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-input-group"><span>nz-input-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-input-group'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAddOnAfter]</code></td>
+<td>The label text displayed after (on the right side of) the input field, can work with <code>nzAddOnBefore</code></td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzAddOnBefore]</code></td>
+<td>The label text displayed before (on the left side of) the input field, can work with <code>nzAddOnAfter</code></td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzPrefix]</code></td>
+<td>The prefix icon for the Input, can work with <code>nzSuffix</code></td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzSuffix]</code></td>
+<td>The suffix icon for the Input, can work with <code>nzPrefix</code></td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzCompact]</code></td>
+<td>Whether use compact style</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>The size of <code>nz-input-group</code> specifies the size of the included <code>nz-input</code> fields</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+</tbody></table>
+</section></article>

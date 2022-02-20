@@ -1,0 +1,258 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-slider-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-slider-demo-input-number" nzTitle="Slider with InputNumber"></nz-link><nz-link nzHref="#components-slider-demo-icon-slider" nzTitle="Slider with icon"></nz-link><nz-link nzHref="#components-slider-demo-tip-formatter" nzTitle="Customerize tooltip"></nz-link><nz-link nzHref="#components-slider-demo-event" nzTitle="Event"></nz-link><nz-link nzHref="#components-slider-demo-mark" nzTitle="Graduated slider"></nz-link><nz-link nzHref="#components-slider-demo-vertical" nzTitle="Vertical"></nz-link><nz-link nzHref="#components-slider-demo-tooltip" nzTitle="Control visibility of Tooltip"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Slider<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>A Slider component for displaying current value and intervals in range.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>To input a value in a range.</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSliderModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/slider'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-slider-demo-basic'"
+  nzSelector="nz-demo-slider-basic"
+  [nzLink]="'components-slider-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-basic <name>"
+  nzComponentName="NzDemoSliderBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/basic.md'">
+	<nz-demo-slider-basic demo></nz-demo-slider-basic>
+	<div intro ngNonBindable>
+		<p>Basic slider. When <code>nzRange</code> is <code>true</code>, display as dual thumb mode. When <code>nzDisabled</code> is <code>true</code>, the slider will not be interactive.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Slider with icon"
+  [nzId]="'components-slider-demo-icon-slider'"
+  nzSelector="nz-demo-slider-icon-slider"
+  [nzLink]="'components-slider-demo-icon-slider'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-icon-slider <name>"
+  nzComponentName="NzDemoSliderIconSliderComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/icon-slider.md'">
+	<nz-demo-slider-icon-slider demo></nz-demo-slider-icon-slider>
+	<div intro ngNonBindable>
+		<p>You can add an icon beside the slider to make it meaningful.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Event"
+  [nzId]="'components-slider-demo-event'"
+  nzSelector="nz-demo-slider-event"
+  [nzLink]="'components-slider-demo-event'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-event <name>"
+  nzComponentName="NzDemoSliderEventComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/event.md'">
+	<nz-demo-slider-event demo></nz-demo-slider-event>
+	<div intro ngNonBindable>
+		<p>The <code>nzOnChange</code> callback function will fire when the user changes the slider&#39;s value. The <code>nzOnAfterChange</code> callback function will fire when <code>onmouseup</code> fired.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Vertical"
+  [nzId]="'components-slider-demo-vertical'"
+  nzSelector="nz-demo-slider-vertical"
+  [nzLink]="'components-slider-demo-vertical'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-vertical <name>"
+  nzComponentName="NzDemoSliderVerticalComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/vertical.md'">
+	<nz-demo-slider-vertical demo></nz-demo-slider-vertical>
+	<div intro ngNonBindable>
+		<p>The vertical Slider.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Slider with InputNumber"
+  [nzId]="'components-slider-demo-input-number'"
+  nzSelector="nz-demo-slider-input-number"
+  [nzLink]="'components-slider-demo-input-number'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-input-number <name>"
+  nzComponentName="NzDemoSliderInputNumberComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/input-number.md'">
+	<nz-demo-slider-input-number demo></nz-demo-slider-input-number>
+	<div intro ngNonBindable>
+		<p>Synchronize with <a href="/components/input-number/">InptNumber</a> component.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Customerize tooltip"
+  [nzId]="'components-slider-demo-tip-formatter'"
+  nzSelector="nz-demo-slider-tip-formatter"
+  [nzLink]="'components-slider-demo-tip-formatter'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-tip-formatter <name>"
+  nzComponentName="NzDemoSliderTipFormatterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/tip-formatter.md'">
+	<nz-demo-slider-tip-formatter demo></nz-demo-slider-tip-formatter>
+	<div intro ngNonBindable>
+		<p>Use <code>nzTipFormatter</code> to format content of <code>Toolip</code>. If <code>nzTipFormatter</code> is null, hide it.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Graduated slider"
+  [nzId]="'components-slider-demo-mark'"
+  nzSelector="nz-demo-slider-mark"
+  [nzLink]="'components-slider-demo-mark'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-mark <name>"
+  nzComponentName="NzDemoSliderMarkComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/mark.md'">
+	<nz-demo-slider-mark demo></nz-demo-slider-mark>
+	<div intro ngNonBindable>
+		<p>Using <code>nzMarks</code> property to mark a graduated slider, use <code>ngModel</code> to specify the position of thumb. When <code>nzIncluded</code> is false, means that different thumbs are coordinated. When <code>nzStep</code> is null, users can only slide the thumbs onto marks.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Control visibility of Tooltip"
+  [nzId]="'components-slider-demo-tooltip'"
+  nzSelector="nz-demo-slider-tooltip"
+  [nzLink]="'components-slider-demo-tooltip'"
+  nzGenerateCommand="ng g ng-zorro-antd:slider-tooltip <name>"
+  nzComponentName="NzDemoSliderTooltipComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/slider/demo/tooltip.md'">
+	<nz-demo-slider-tooltip demo></nz-demo-slider-tooltip>
+	<div intro ngNonBindable>
+		<p>When <code>nzTooltipVisible</code> is <code>always</code>, Tooltip will show always. And set to <code>never</code>, tooltip would never show, even when user is dragging or hovering.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-slider"><span>nz-slider</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-slider'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzDisabled]</code></td>
+<td>If true, the slider will not be interactable.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzDots]</code></td>
+<td>Whether the thumb can drag over tick only.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzIncluded]</code></td>
+<td>Make effect when <code>marks</code> not null，<code>true</code> means containment and <code>false</code> means coordinative</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzMarks]</code></td>
+<td>Tick mark of Slider, type of key must be <code>number</code>, and must in closed interval [min, max] ，each mark can declare its own style.</td>
+<td><code>object</code></td>
+<td>&#123; number: string/HTML &#125; or &#123; number: &#123; style: object, label: string/HTML &#125; &#125;</td>
+</tr>
+<tr>
+<td><code>[nzMax]</code></td>
+<td>The maximum value the slider can slide to</td>
+<td><code>number</code></td>
+<td><code>100</code></td>
+</tr>
+<tr>
+<td><code>[nzMin]</code></td>
+<td>The minimum value the slider can slide to.</td>
+<td><code>number</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>[nzRange]</code></td>
+<td>dual thumb mode</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzStep]</code></td>
+<td>The granularity the slider can step through values. Must greater than 0, and be divided by (max - min) . When  <code>marks</code> no null, <code>step</code> can be <code>null</code>.</td>
+<td><code>number | null</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>[nzTipFormatter]</code></td>
+<td>Slider will pass its value to <code>tipFormatter</code>, and display its value in Tooltip, and hide Tooltip when return value is null.</td>
+<td><code>(value: number) =&gt; string</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[ngModel]</code></td>
+<td>The value of slider. When <code>range</code> is <code>false</code>, use <code>number</code>, otherwise, use <code>[number, number]</code></td>
+<td><code>number | number[]</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzVertical]</code></td>
+<td>If true, the slider will be vertical.</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipVisible]</code></td>
+<td>When set to <code>always</code> tooltips are always displayed. When set to <code>never</code> they are never displayed</td>
+<td><code>&#39;default&#39; | &#39;always&#39; | &#39;never&#39;</code></td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td><code>[nzTooltipPlacement]</code></td>
+<td>Set the default placement of Tooltip</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>(nzOnAfterChange)</code></td>
+<td>Fire when <code>onmouseup</code> is fired.</td>
+<td><code>EventEmitter&lt;number[]  |  number&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(ngModelChange)</code></td>
+<td>Callback function that is fired when the user changes the slider&#39;s value.</td>
+<td><code>EventEmitter&lt;number[]  |  number&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

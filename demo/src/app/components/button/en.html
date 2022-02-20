@@ -1,0 +1,288 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-button-demo-basic" nzTitle="Type"></nz-link><nz-link nzHref="#components-button-demo-icon" nzTitle="Icon"></nz-link><nz-link nzHref="#components-button-demo-size" nzTitle="Size"></nz-link><nz-link nzHref="#components-button-demo-disabled" nzTitle="Disabled"></nz-link><nz-link nzHref="#components-button-demo-loading" nzTitle="Loading"></nz-link><nz-link nzHref="#components-button-demo-multiple" nzTitle="Multiple Buttons"></nz-link><nz-link nzHref="#components-button-demo-button-group" nzTitle="Button Group"></nz-link><nz-link nzHref="#components-button-demo-ghost" nzTitle="Ghost Button"></nz-link><nz-link nzHref="#components-button-demo-block" nzTitle="Block Button"></nz-link><nz-link nzHref="#components-button-demo-danger" nzTitle="Danger Buttons"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Button<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>To trigger an operation.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><p>A button means an operation (or a series of operations). Clicking a button will trigger corresponding business logic.</p>
+<p>In Ant Design we provide 4 types of button.</p>
+<ul>
+<li>Primary button: indicate the main action, one primary button at most in one section.</li>
+<li>Default button: indicate a series of actions without priority.</li>
+<li>Dashed button: used for adding action commonly.</li>
+<li>Link button: used for external links.</li>
+</ul>
+<p>And 4 other properties additionally.</p>
+<ul>
+<li><code>danger</code>: used for actions of risk, like deletion or authorization.</li>
+<li><code>ghost</code>: used in situations with complex background, home pages usually.</li>
+<li><code>disabled</code>: when actions is not available.</li>
+<li><code>loading</code>: add loading spinner in button, avoiding multiple submits too.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzButtonModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/button'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Type"
+  [nzId]="'components-button-demo-basic'"
+  nzSelector="nz-demo-button-basic"
+  [nzLink]="'components-button-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-basic <name>"
+  nzComponentName="NzDemoButtonBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/basic.md'">
+	<nz-demo-button-basic demo></nz-demo-button-basic>
+	<div intro ngNonBindable>
+		<p>There are <code>primary</code> button, <code>default</code> button, <code>dashed</code> button and <code>link</code> button in antd.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Size"
+  [nzId]="'components-button-demo-size'"
+  nzSelector="nz-demo-button-size"
+  [nzLink]="'components-button-demo-size'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-size <name>"
+  nzComponentName="NzDemoButtonSizeComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/size.md'">
+	<nz-demo-button-size demo></nz-demo-button-size>
+	<div intro ngNonBindable>
+		<p>Ant Design supports a default button size as well as a large and small size.</p>
+<p>If a large or small button is desired, set the <code>nzSize</code> property to either <code>large</code> or <code>small</code> respectively. Omit the <code>nzSize</code> property for a button with the default size.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Loading"
+  [nzId]="'components-button-demo-loading'"
+  nzSelector="nz-demo-button-loading"
+  [nzLink]="'components-button-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-loading <name>"
+  nzComponentName="NzDemoButtonLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/loading.md'">
+	<nz-demo-button-loading demo></nz-demo-button-loading>
+	<div intro ngNonBindable>
+		<p>A loading indicator can be added to a button by setting the <code>nzLoading</code> property on the <code>nz-button</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Button Group"
+  [nzId]="'components-button-demo-button-group'"
+  nzSelector="nz-demo-button-button-group"
+  [nzLink]="'components-button-demo-button-group'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-button-group <name>"
+  nzComponentName="NzDemoButtonButtonGroupComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/button-group.md'">
+	<nz-demo-button-button-group demo></nz-demo-button-button-group>
+	<div intro ngNonBindable>
+		<p>Buttons can be grouped by placing multiple <code>nz-button</code> components into a <code>nz-button-group</code>.</p>
+<p>The <code>nzSize</code> can be set to <code>large</code>, <code>small</code> or left unset resulting in a default size.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Block Button"
+  [nzId]="'components-button-demo-block'"
+  nzSelector="nz-demo-button-block"
+  [nzLink]="'components-button-demo-block'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-block <name>"
+  nzComponentName="NzDemoButtonBlockComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/block.md'">
+	<nz-demo-button-block demo></nz-demo-button-block>
+	<div intro ngNonBindable>
+		<p><code>nzBlock</code> property will make the button fit to its parent width.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Icon"
+  [nzId]="'components-button-demo-icon'"
+  nzSelector="nz-demo-button-icon"
+  [nzLink]="'components-button-demo-icon'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-icon <name>"
+  nzComponentName="NzDemoButtonIconComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/icon.md'">
+	<nz-demo-button-icon demo></nz-demo-button-icon>
+	<div intro ngNonBindable>
+		<p><code>nz-button</code> components can contain an <code>icon</code>. Just placing an <code>icon</code> within the <code>nz-button</code></p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Disabled"
+  [nzId]="'components-button-demo-disabled'"
+  nzSelector="nz-demo-button-disabled"
+  [nzLink]="'components-button-demo-disabled'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-disabled <name>"
+  nzComponentName="NzDemoButtonDisabledComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/disabled.md'">
+	<nz-demo-button-disabled demo></nz-demo-button-disabled>
+	<div intro ngNonBindable>
+		<p>To mark a button as disabled, add the <code>disabled</code> property to the <code>Button</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Multiple Buttons"
+  [nzId]="'components-button-demo-multiple'"
+  nzSelector="nz-demo-button-multiple"
+  [nzLink]="'components-button-demo-multiple'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-multiple <name>"
+  nzComponentName="NzDemoButtonMultipleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/multiple.md'">
+	<nz-demo-button-multiple demo></nz-demo-button-multiple>
+	<div intro ngNonBindable>
+		<p>If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into <code>nz-dropdown</code>.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Ghost Button"
+  [nzId]="'components-button-demo-ghost'"
+  nzSelector="nz-demo-button-ghost"
+  [nzLink]="'components-button-demo-ghost'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-ghost <name>"
+  nzComponentName="NzDemoButtonGhostComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/ghost.md'">
+	<nz-demo-button-ghost demo></nz-demo-button-ghost>
+	<div intro ngNonBindable>
+		<p><code>nzGhost</code> property will make button&#39;s background transparent, it is common used in colored background.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Danger Buttons"
+  [nzId]="'components-button-demo-danger'"
+  nzSelector="nz-demo-button-danger"
+  [nzLink]="'components-button-demo-danger'"
+  nzGenerateCommand="ng g ng-zorro-antd:button-danger <name>"
+  nzComponentName="NzDemoButtonDangerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/button/demo/danger.md'">
+	<nz-demo-button-danger demo></nz-demo-button-danger>
+	<div intro ngNonBindable>
+		<p>You can use <code>nzDanger</code> to mark button as danger status.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="[nz-button]"><span>[nz-button]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-button]'" class="anchor">#</a></h3><blockquote>
+<p>Note：nz-button is Directive, it accepts all props which native button <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">support</a>.</p>
+</blockquote>
+<p>To get a customized button, just set <code>nzType</code>/<code>nzShape</code>/<code>nzSize</code>/<code>nzLoading</code>/<code>disabled</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzGhost]</code></td>
+<td>make background transparent and invert text and border colors</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>set the loading status of button</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>can be set to <code>circle</code> <code>round</code> or omitted</td>
+<td><code>&#39;circle&#39;|&#39;round&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>can be set to <code>small</code> <code>large</code> or omitted</td>
+<td><code>&#39;large&#39;|&#39;small&#39;|&#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>can be set to <code>primary</code> <code>dashed</code> <code>link</code> or omitted (meaning <code>default</code>)</td>
+<td><code>&#39;primary&#39;|&#39;dashed&#39;|&#39;link&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBlock]</code></td>
+<td>option to fit button width to its parent width</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzDanger]</code></td>
+<td>set the danger status of button</td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nz-button-group"><span>nz-button-group</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-button-group'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th>Global Config</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzSize]</code></td>
+<td>can be set to <code>small</code> <code>large</code> or omitted</td>
+<td><code>&#39;large&#39;|&#39;small&#39;|&#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

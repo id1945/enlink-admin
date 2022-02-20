@@ -1,0 +1,601 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-modal-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-modal-demo-async" nzTitle="异步关闭"></nz-link><nz-link nzHref="#components-modal-demo-footer" nzTitle="自定义页脚"></nz-link><nz-link nzHref="#components-modal-demo-footer2" nzTitle="自定义页脚(2)"></nz-link><nz-link nzHref="#components-modal-demo-confirm" nzTitle="确认对话框"></nz-link><nz-link nzHref="#components-modal-demo-confirm-promise" nzTitle="确认对话框"></nz-link><nz-link nzHref="#components-modal-demo-info" nzTitle="信息提示"></nz-link><nz-link nzHref="#components-modal-demo-locale" nzTitle="国际化"></nz-link><nz-link nzHref="#components-modal-demo-manual" nzTitle="手动移除"></nz-link><nz-link nzHref="#components-modal-demo-position" nzTitle="自定义位置"></nz-link><nz-link nzHref="#components-modal-demo-service" nzTitle="服务方式创建"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Modal<span class="subtitle">对话框</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>模态对话框。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>需要用户处理事务，又不希望跳转页面以致打断工作流程时，可以使用 <code>Modal</code> 在当前页面正中打开一个浮层，承载相应的操作。</p>
+<p>另外当需要一个简洁的确认框询问用户时，可以使用精心封装好的 <code>NzModalService.confirm()</code> 等方法。</p>
+<p>推荐使用加载Component的方式弹出Modal，这样弹出层的Component逻辑可以与外层Component完全隔离，并且做到可以随时复用，</p>
+<p>在弹出层Component中可以通过依赖注入<code>NzModalRef</code>方式直接获取模态框的组件实例，用于控制在弹出层组件中控制模态框行为。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzModalModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/modal'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="16">
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-modal-demo-basic'"
+  nzSelector="nz-demo-modal-basic"
+  [nzLink]="'components-modal-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-basic <name>"
+  nzComponentName="NzDemoModalBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/basic.md'">
+	<nz-demo-modal-basic demo></nz-demo-modal-basic>
+	<div intro ngNonBindable>
+		<p>第一个对话框。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义页脚"
+  [nzId]="'components-modal-demo-footer'"
+  nzSelector="nz-demo-modal-footer"
+  [nzLink]="'components-modal-demo-footer'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-footer <name>"
+  nzComponentName="NzDemoModalFooterComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/footer.md'">
+	<nz-demo-modal-footer demo></nz-demo-modal-footer>
+	<div intro ngNonBindable>
+		<p>更复杂的例子，自定义了页脚的按钮，点击提交后进入 loading 状态，完成后关闭。</p>
+<p>不需要默认确定取消按钮时，你可以把 <code>nzFooter</code> 设为 <code>null</code>。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="确认对话框"
+  [nzId]="'components-modal-demo-confirm'"
+  nzSelector="nz-demo-modal-confirm"
+  [nzLink]="'components-modal-demo-confirm'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-confirm <name>"
+  nzComponentName="NzDemoModalConfirmComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/confirm.md'">
+	<nz-demo-modal-confirm demo></nz-demo-modal-confirm>
+	<div intro ngNonBindable>
+		<p>使用 <code>NzModalService.confirm()</code> 可以快捷地弹出确认框。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="信息提示"
+  [nzId]="'components-modal-demo-info'"
+  nzSelector="nz-demo-modal-info"
+  [nzLink]="'components-modal-demo-info'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-info <name>"
+  nzComponentName="NzDemoModalInfoComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/info.md'">
+	<nz-demo-modal-info demo></nz-demo-modal-info>
+	<div intro ngNonBindable>
+		<p>各种类型的信息提示，只提供一个按钮用于关闭。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="手动移除"
+  [nzId]="'components-modal-demo-manual'"
+  nzSelector="nz-demo-modal-manual"
+  [nzLink]="'components-modal-demo-manual'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-manual <name>"
+  nzComponentName="NzDemoModalManualComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/manual.md'">
+	<nz-demo-modal-manual demo></nz-demo-modal-manual>
+	<div intro ngNonBindable>
+		<p>手动关闭modal。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="服务方式创建"
+  [nzId]="'components-modal-demo-service'"
+  nzSelector="nz-demo-modal-service"
+  [nzLink]="'components-modal-demo-service'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-service <name>"
+  nzComponentName="NzDemoModalServiceComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/service.md'">
+	<nz-demo-modal-service demo></nz-demo-modal-service>
+	<div intro ngNonBindable>
+		<p>Modal的service用法，示例中演示了用户自定义模板、自定义component、以及注入模态框实例的方法。</p>
+<p>使用模版作为内容时上下文为 <code>&#123; $implicit: nzComponentParams, modalRef: NzModalRef &#125;</code></p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+	<div nz-col [nzXl]="12" [nzSpan]="24">
+		<nz-code-box
+  nzTitle="异步关闭"
+  [nzId]="'components-modal-demo-async'"
+  nzSelector="nz-demo-modal-async"
+  [nzLink]="'components-modal-demo-async'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-async <name>"
+  nzComponentName="NzDemoModalAsyncComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/async.md'">
+	<nz-demo-modal-async demo></nz-demo-modal-async>
+	<div intro ngNonBindable>
+		<p>点击确定后异步关闭对话框，例如提交表单。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义页脚(2)"
+  [nzId]="'components-modal-demo-footer2'"
+  nzSelector="nz-demo-modal-footer2"
+  [nzLink]="'components-modal-demo-footer2'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-footer2 <name>"
+  nzComponentName="NzDemoModalFooter2Component"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/footer2.md'">
+	<nz-demo-modal-footer2 demo></nz-demo-modal-footer2>
+	<div intro ngNonBindable>
+		<p>使用 <code>nzModalFooter</code> 指令自定义了页脚的按钮。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="确认对话框"
+  [nzId]="'components-modal-demo-confirm-promise'"
+  nzSelector="nz-demo-modal-confirm-promise"
+  [nzLink]="'components-modal-demo-confirm-promise'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-confirm-promise <name>"
+  nzComponentName="NzDemoModalConfirmPromiseComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/confirm-promise.md'">
+	<nz-demo-modal-confirm-promise demo></nz-demo-modal-confirm-promise>
+	<div intro ngNonBindable>
+		<p>使用 <code>NzModalService.confirm()</code> 可以快捷地弹出确认框。NzOnCancel/NzOnOk 返回 promise 可以延迟关闭</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="国际化"
+  [nzId]="'components-modal-demo-locale'"
+  nzSelector="nz-demo-modal-locale"
+  [nzLink]="'components-modal-demo-locale'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-locale <name>"
+  nzComponentName="NzDemoModalLocaleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/locale.md'">
+	<nz-demo-modal-locale demo></nz-demo-modal-locale>
+	<div intro ngNonBindable>
+		<p>设置 <code>nzOkText</code> 与 <code>nzCancelText</code> 以自定义按钮文字。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="自定义位置"
+  [nzId]="'components-modal-demo-position'"
+  nzSelector="nz-demo-modal-position"
+  [nzLink]="'components-modal-demo-position'"
+  nzGenerateCommand="ng g ng-zorro-antd:modal-position <name>"
+  nzComponentName="NzDemoModalPositionComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/modal/demo/position.md'">
+	<nz-demo-modal-position demo></nz-demo-modal-position>
+	<div intro ngNonBindable>
+		<p>您可以直接使用 <code>nzStyle.top</code> 或配合其他样式来设置对话框位置。</p>
+<blockquote>
+<p><strong>注意</strong> 由于Angular的样式隔离，若在Component中没有加入<code>encapsulation: ViewEncapsulation.None</code>，则您可能需要在自定义样式内采用<code>::ng-deep</code>来覆盖NgZorro的样式</p>
+</blockquote>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div>
+<section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nzmodalservice"><span>NzModalService</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzmodalservice'" class="anchor">#</a></h3><p>对话框当前分为2种模式，<code>普通模式</code> 和 <code>确认框模式</code>（即<code>Confirm</code>对话框，通过调用<code>confirm/info/success/error/warning</code>弹出），两种模式对API的支持程度稍有不同。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzAfterOpen</td>
+<td>Modal 打开后的回调</td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzAfterClose</td>
+<td>Modal 完全关闭后的回调，可监听close/destroy方法传入的参数</td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzBodyStyle</td>
+<td>Modal body 样式</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelText</td>
+<td>取消按钮文字。<i>设为 null 表示不显示取消按钮（若在普通模式下使用了 nzFooter 参数，则该值无效）</i></td>
+<td><code>string</code></td>
+<td>取消</td>
+<td></td>
+</tr>
+<tr>
+<td>nzClosable</td>
+<td>是否显示右上角的关闭按钮。<i>确认框模式下该值无效（默认会被隐藏）</i></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkLoading</td>
+<td>确定按钮 loading</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelLoading</td>
+<td>取消按钮 loading</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkDisabled</td>
+<td>是否禁用确定按钮</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzCancelDisabled</td>
+<td>是否禁用取消按钮</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzFooter</td>
+<td>底部内容。<i>1. 仅在普通模式下有效。<br>2. 可通过传入 ModalButtonOptions 来最大程度自定义按钮（详见案例或下方说明）。<br>3. 当不需要底部时，可以设为 null</i></td>
+<td>string<br>TemplateRef<br>ModalButtonOptions</td>
+<td>默认的确定取消按钮</td>
+<td></td>
+</tr>
+<tr>
+<td>nzGetContainer</td>
+<td>指定 Modal 挂载的 HTML 节点</td>
+<td>HTMLElement<br>() =&gt; HTMLElement</td>
+<td>默认容器</td>
+<td></td>
+</tr>
+<tr>
+<td>nzKeyboard</td>
+<td>是否支持键盘esc关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzMask</td>
+<td>是否展示遮罩</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>点击蒙层是否允许关闭</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>nzMaskStyle</td>
+<td>遮罩样式</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkText</td>
+<td>确认按钮文字。<i>设为 null 表示不显示确认按钮（若在普通模式下使用了 nzFooter 参数，则该值无效）</i></td>
+<td><code>string</code></td>
+<td>确定</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOkType</td>
+<td>确认按钮类型。<i>与button的type类型值一致</i></td>
+<td><code>string</code></td>
+<td>primary</td>
+<td></td>
+</tr>
+<tr>
+<td>nzStyle</td>
+<td>可用于设置浮层的样式，调整浮层位置等</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzTitle</td>
+<td>标题。<i>留空表示不展示标题。TemplateRef的使用方法可参考案例</i></td>
+<td>string<br>TemplateRef</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzCloseIcon</td>
+<td>自定义关闭图标</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzVisible</td>
+<td>对话框是否可见。<i>当以 <code>&lt;nz-modal&gt;</code> 标签使用时，请务必使用双向绑定，例如：<code>[(nzVisible)]=&quot;visible&quot;</code></i></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>宽度。<i>使用数字时，默认单位为px</i></td>
+<td>string<br>number</td>
+<td>520</td>
+<td></td>
+</tr>
+<tr>
+<td>nzClassName</td>
+<td>对话框的类名</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzWrapClassName</td>
+<td>对话框外层容器的类名</td>
+<td><code>string</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzZIndex</td>
+<td>设置 Modal 的 <code>z-index</code></td>
+<td><code>number</code></td>
+<td>1000</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>点击遮罩层或右上角叉或取消按钮的回调（若nzContent为Component，则将会以该Component实例作为参数）。<i>注：当以<code>NzModalService.create</code>创建时，此参数应传入function（回调函数）。该函数可返回promise，待执行完毕或promise结束时，将自动关闭对话框（返回false可阻止关闭）</i></td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzOnOk</td>
+<td>点击确定回调（若nzContent为Component，则将会以该Component实例作为参数）。<i>注：当以<code>NzModalService.create</code>创建时，此参数应传入function（回调函数）。该函数可返回promise，待执行完毕或promise结束时，将自动关闭对话框（返回false可阻止关闭）</i></td>
+<td>EventEmitter</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzContent</td>
+<td>内容</td>
+<td>string<br>TemplateRef<br>Component<br>ng-content</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzComponentParams</td>
+<td>当nzContent为组件类(Component)时，该参数中的属性将传入nzContent实例中</td>
+<td><code>object</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>nzIconType</td>
+<td>图标 Icon 类型。<i>仅 确认框模式 下有效</i></td>
+<td><code>string</code></td>
+<td><code>&#39;question-circle&#39;</code></td>
+<td></td>
+</tr>
+<tr>
+<td>nzAutofocus</td>
+<td>自动聚焦及聚焦位置，为 <code>null</code> 时禁用</td>
+<td><code>&#39;ok&#39; | &#39;cancel&#39; | &#39;auto&#39; | null</code></td>
+<td><code>&#39;auto&#39;</code></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="注意"><span>注意</span><a onclick="window.location.hash = '注意'" class="anchor">#</a></h4><blockquote>
+<p><code>&lt;nz-modal&gt;</code> 默认关闭后状态不会自动清空, 如果希望每次打开都是新内容，请采用 <code>NzModalService</code> 服务方式创建对话框（当以服务方式创建时，默认会监听 <code>nzAfterClose</code> 并销毁对话框）。</p>
+</blockquote>
+<blockquote>
+<p>通过 <code>NzModalService</code> 服务方式创建的对话框需要自行管理其生命周期。比如你在页面路由切换时，服务方式创建的对话框并不会被销毁，你需要使用对话框引用来手动销毁（<code>NzModalRef.close()</code> 或 <code>NzModalRef.destroy()</code>）。</p>
+</blockquote>
+<h4 id="采用服务方式创建普通模式对话框"><span>采用服务方式创建普通模式对话框</span><a onclick="window.location.hash = '采用服务方式创建普通模式对话框'" class="anchor">#</a></h4><blockquote>
+<p>您可调用 <code>NzModalService.create(options)</code> 来动态创建<strong>普通模式</strong>对话框，这里的 <code>options</code> 是一个对象，支持上方API中给出的支持 <strong>普通模式</strong> 的参数</p>
+</blockquote>
+<h3 id="确认框模式---nzmodalservice-method()"><span>确认框模式 - NzModalService.method()</span><a onclick="window.location.hash = '确认框模式---nzmodalservice-method()'" class="anchor">#</a></h3><p>包括：</p>
+<ul>
+<li><code>NzModalService.info</code></li>
+<li><code>NzModalService.success</code></li>
+<li><code>NzModalService.error</code></li>
+<li><code>NzModalService.warning</code></li>
+<li><code>NzModalService.confirm</code></li>
+</ul>
+<p>以上均为一个函数，参数为 object，与上方API一致。部分属性类型或初始值有所不同，已列在下方：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>nzOnOk</td>
+<td>点击确定按钮时将执行的回调函数（若nzContent为Component，则将会以该Component实例作为参数）。<i>该函数可返回promise，待执行完毕或promise结束时，将自动关闭对话框（返回false可阻止关闭）</i></td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzOnCancel</td>
+<td>点击遮罩层或右上角叉或取消按钮的回调（若nzContent为Component，则将会以该Component实例作为参数）。<i>该函数可返回promise，待执行完毕或promise结束时，将自动关闭对话框（返回false可阻止关闭）</i></td>
+<td>function</td>
+<td>-</td>
+</tr>
+<tr>
+<td>nzWidth</td>
+<td>宽度</td>
+<td>string<br>number</td>
+<td>416</td>
+</tr>
+<tr>
+<td>nzMaskClosable</td>
+<td>点击蒙层是否允许关闭</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+</tbody></table>
+<p>以上函数调用后，会返回一个引用，可以通过该引用关闭弹窗。</p>
+<pre class="language-ts"><code><span class="token keyword">constructor</span><span class="token punctuation">(</span>modal<span class="token punctuation">:</span> NzModalService<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> ref<span class="token punctuation">:</span> NzModalRef <span class="token operator">=</span> modal<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  ref<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 或 ref.destroy(); 将直接销毁对话框</span>
+<span class="token punctuation">&#125;</span></code></pre>
+<h3 id="相关类型定义"><span>相关类型定义</span><a onclick="window.location.hash = '相关类型定义'" class="anchor">#</a></h3><h4 id="nzmodalservice的其他方法/属性"><span>NzModalService的其他方法/属性</span><label class="api-type-label service">service</label><a onclick="window.location.hash = 'nzmodalservice的其他方法/属性'" class="anchor">#</a></h4><table>
+<thead>
+<tr>
+<th>方法/属性</th>
+<th>说明</th>
+<th>类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>openModals</td>
+<td>当前打开的所有Modal引用列表</td>
+<td>NzModalRef[]</td>
+</tr>
+<tr>
+<td>afterAllClose</td>
+<td>所有Modal完全关闭后的回调</td>
+<td>Observable&lt;void&gt;</td>
+</tr>
+<tr>
+<td>closeAll()</td>
+<td>关闭所有模态框</td>
+<td>function</td>
+</tr>
+</tbody></table>
+<h4 id="nzmodalref"><span>NzModalRef</span><a onclick="window.location.hash = 'nzmodalref'" class="anchor">#</a></h4><blockquote>
+<p>NzModalRef 对象用于控制对话框以及进行内容间的通信</p>
+</blockquote>
+<p>通过服务方式 <code>NzModalService.xxx()</code> 创建的对话框，都会返回一个 <code>NzModalRef</code> 对象，用于操控该对话框（若使用nzContent为Component时，也可通过依赖注入 <code>NzModalRef</code> 方式获得此对象），该对象具有以下方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法/属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>afterOpen</td>
+<td>同nzAfterOpen，但类型为Observable&lt;void&gt;</td>
+</tr>
+<tr>
+<td>afterClose</td>
+<td>同nzAfterClose，但类型为Observable&lt;result:any&gt;</td>
+</tr>
+<tr>
+<td>open()</td>
+<td>打开(显示)对话框。<i>若对话框已销毁，则调用此函数将失效</i></td>
+</tr>
+<tr>
+<td>close(result: any)</td>
+<td>关闭(隐藏)对话框。<i>注：当用于以服务方式创建的对话框，此方法将直接 销毁 对话框（同destroy方法）</i></td>
+</tr>
+<tr>
+<td>destroy(result: any)</td>
+<td>销毁对话框。<i>注：仅用于服务方式创建的对话框（非服务方式创建的对话框，此方法只会隐藏对话框）</i></td>
+</tr>
+<tr>
+<td>getContentComponent()</td>
+<td>获取对话框内容中<code>nzContent</code>的Component实例instance。<i>注：当对话框还未初始化完毕（<code>ngOnInit</code>未执行）时，此函数将返回<code>undefined</code></i></td>
+</tr>
+<tr>
+<td>triggerOk()</td>
+<td>手动触发nzOnOk</td>
+</tr>
+<tr>
+<td>triggerCancel()</td>
+<td>手动触发nzOnCancel</td>
+</tr>
+</tbody></table>
+<h3 id="modalbuttonoptions（用于自定义底部按钮）"><span>ModalButtonOptions（用于自定义底部按钮）</span><a onclick="window.location.hash = 'modalbuttonoptions（用于自定义底部按钮）'" class="anchor">#</a></h3><p>可将此类型数组传入 <code>nzFooter</code>，用于自定义底部按钮。</p>
+<p>按钮配置项如下（与button组件保持一致）：</p>
+<pre class="language-ts"><code>nzFooter<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">&#123;</span>
+  label<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 按钮文本</span>
+  type<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 类型</span>
+  shape<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 形状</span>
+  ghost<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 是否ghost</span>
+  size<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 大小</span>
+  autoLoading<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 默认为true，若为true时，当onClick返回promise时此按钮将自动置为loading状态</span>
+
+  <span class="token comment" spellcheck="true">// 提示：下方方法的this指向该配置对象自身。当nzContent为组件类时，下方方法传入的contentComponentInstance参数为该组件类的实例</span>
+  <span class="token comment" spellcheck="true">// 是否显示该按钮</span>
+  show<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 是否显示为loading</span>
+  loading<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 是否禁用</span>
+  disabled<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token keyword">boolean</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token keyword">boolean</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment" spellcheck="true">// 按钮点击回调</span>
+  onClick<span class="token operator">?</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">:</span> ModalButtonOptions<span class="token punctuation">,</span> contentComponentInstance<span class="token operator">?</span><span class="token punctuation">:</span> object<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">void</span> <span class="token operator">|</span> Promise<span class="token operator">&amp;</span>lt<span class="token punctuation">;</span><span class="token keyword">void</span><span class="token operator">&amp;</span>gt<span class="token punctuation">;</span> <span class="token operator">|</span> <span class="token keyword">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">]</span></code></pre>
+<p>以上配置项也可在运行态实时改变，来触发按钮行为改变。</p>
+<h3 id="[nzmodalfooter]"><span>[nzModalFooter]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nzmodalfooter]'" class="anchor">#</a></h3><p>另一种自定义页脚按钮的方式。</p>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">*nzModalFooter</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleCancel()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Callback<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleOk()<span class="token punctuation">"</span></span> <span class="token attr-name">[nzLoading]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isConfirmLoading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+<span class="token comment" spellcheck="true">&lt;!-- or --></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">[nzModalFooter]</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>default<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleCancel()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Callback<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">nz-button</span> <span class="token attr-name">nzType</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">(click)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleOk()<span class="token punctuation">"</span></span> <span class="token attr-name">[nzLoading]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>isConfirmLoading<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Custom Submit<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+</section></article>

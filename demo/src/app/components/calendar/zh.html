@@ -1,0 +1,170 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-calendar-demo-basic" nzTitle="基本"></nz-link><nz-link nzHref="#components-calendar-demo-notice-calendar" nzTitle="通知事项日历"></nz-link><nz-link nzHref="#components-calendar-demo-card" nzTitle="卡片模式"></nz-link><nz-link nzHref="#components-calendar-demo-select" nzTitle="选择功能"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Calendar<span class="subtitle">日历</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>按照日历形式展示数据的容器。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>当数据是日期或按照日期划分时，例如日程、课表、价格日历等，农历等。目前支持年/月切换。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCalendarModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/calendar'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="基本"
+  [nzId]="'components-calendar-demo-basic'"
+  nzSelector="nz-demo-calendar-basic"
+  [nzLink]="'components-calendar-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-basic <name>"
+  nzComponentName="NzDemoCalendarBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/basic.md'">
+	<nz-demo-calendar-basic demo></nz-demo-calendar-basic>
+	<div intro ngNonBindable>
+		<p>一个通用的日历面板，支持年/月切换。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="通知事项日历"
+  [nzId]="'components-calendar-demo-notice-calendar'"
+  nzSelector="nz-demo-calendar-notice-calendar"
+  [nzLink]="'components-calendar-demo-notice-calendar'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-notice-calendar <name>"
+  nzComponentName="NzDemoCalendarNoticeCalendarComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/notice-calendar.md'">
+	<nz-demo-calendar-notice-calendar demo></nz-demo-calendar-notice-calendar>
+	<div intro ngNonBindable>
+		<p>一个复杂的应用示例，用 <code>nzDateCell</code> 和 <code>nzMonthCell</code> 模版来自定义需要渲染的数据。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="卡片模式"
+  [nzId]="'components-calendar-demo-card'"
+  nzSelector="nz-demo-calendar-card"
+  [nzLink]="'components-calendar-demo-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-card <name>"
+  nzComponentName="NzDemoCalendarCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/card.md'">
+	<nz-demo-calendar-card demo></nz-demo-calendar-card>
+	<div intro ngNonBindable>
+		<p>用于嵌套在空间有限的容器中。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="选择功能"
+  [nzId]="'components-calendar-demo-select'"
+  nzSelector="nz-demo-calendar-select"
+  [nzLink]="'components-calendar-demo-select'"
+  nzGenerateCommand="ng g ng-zorro-antd:calendar-select <name>"
+  nzComponentName="NzDemoCalendarSelectComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/calendar/demo/select.md'">
+	<nz-demo-calendar-select demo></nz-demo-calendar-select>
+	<div intro ngNonBindable>
+		<p>一个通用的日历面板，支持年/月切换。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><p><strong>注意：</strong>Calendar 的部分 locale 来自于 Angular 自身的国际化支持，需要在 app.module.ts 文件中 引入相应的 Angular 语言包。</p>
+<p>例如：</p>
+<pre class="language-typescript"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> registerLocaleData <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@angular/common'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> zh <span class="token keyword">from</span> <span class="token string">'@angular/common/locales/zh'</span><span class="token punctuation">;</span>
+<span class="token function">registerLocaleData</span><span class="token punctuation">(</span>zh<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-calendar</span>
+  <span class="token attr-name">[nzDateCell]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dateCellTpl<span class="token punctuation">"</span></span>
+  <span class="token attr-name">[(ngModel)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectedDate<span class="token punctuation">"</span></span>
+  <span class="token attr-name">[(nzMode)]</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mode<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(nzPanelChange)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>panelChange($event)<span class="token punctuation">"</span></span>
+  <span class="token attr-name">(nzSelectChange)</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectChange($event)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token comment" spellcheck="true">&lt;!-- 定义 Cell 的另一种方式 --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">*dateCell</span><span class="token punctuation">></span></span>Foo<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-calendar</span><span class="token punctuation">></span></span>
+<span class="token comment" spellcheck="true">&lt;!-- 传入 TemplateRef 的方式 --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ng-template</span> <span class="token attr-name">#dateCellTpl</span> <span class="token attr-name">let-date</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>&#123;&#123; date | date:'d'&#125;&#125;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ng-template</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-calendar"><span>nz-calendar</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-calendar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[(ngModel)]</code></td>
+<td>（可双向绑定）展示日期</td>
+<td><code>Date</code></td>
+<td>当前日期</td>
+</tr>
+<tr>
+<td><code>[(nzMode)]</code></td>
+<td>（可双向绑定）显示模式</td>
+<td><code>&#39;month&#39; | &#39;year&#39;</code></td>
+<td><code>&#39;month&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzFullscreen]</code></td>
+<td>是否全屏显示</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzDateCell]</code></td>
+<td>（可作为内容）自定义渲染日期单元格，模版内容会被追加到单元格</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDateFullCell]</code></td>
+<td>（可作为内容）自定义渲染日期单元格，模版内容覆盖单元格</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMonthCell]</code></td>
+<td>（可作为内容）自定义渲染月单元格，模版内容会被追加到单元格</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzMonthFullCell]</code></td>
+<td>（可作为内容）自定义渲染月单元格，模版内容覆盖单元格</td>
+<td><code>TemplateRef&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzPanelChange)</code></td>
+<td>面板变化的回调</td>
+<td><code>EventEmitter&lt;&#123; date: Date, mode: &#39;month&#39; | &#39;year&#39; &#125;&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>(nzSelectChange)</code></td>
+<td>选择日期的回调</td>
+<td><code>EventEmitter&lt;Date&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,316 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-card-demo-basic" nzTitle="典型卡片"></nz-link><nz-link nzHref="#components-card-demo-border-less" nzTitle="无边框"></nz-link><nz-link nzHref="#components-card-demo-simple" nzTitle="简洁卡片"></nz-link><nz-link nzHref="#components-card-demo-flexible-content" nzTitle="更灵活的内容展示"></nz-link><nz-link nzHref="#components-card-demo-in-column" nzTitle="栅格卡片"></nz-link><nz-link nzHref="#components-card-demo-loading" nzTitle="预加载的卡片"></nz-link><nz-link nzHref="#components-card-demo-grid-card" nzTitle="网格型内嵌卡片"></nz-link><nz-link nzHref="#components-card-demo-inner" nzTitle="内部卡片"></nz-link><nz-link nzHref="#components-card-demo-tabs" nzTitle="带页签的卡片"></nz-link><nz-link nzHref="#components-card-demo-meta" nzTitle="支持更多内容配置"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Card<span class="subtitle">卡片</span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/doc/index.zh-CN.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>通用卡片容器。</p>
+<h2 id="何时使用"><span>何时使用</span><a onclick="window.location.hash = '何时使用'" class="anchor">#</a></h2><p>最基础的卡片容器，可承载文字、列表、图片、段落，常用于后台概览页面。</p>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzCardModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/card'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>代码演示</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="展开全部代码" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="典型卡片"
+  [nzId]="'components-card-demo-basic'"
+  nzSelector="nz-demo-card-basic"
+  [nzLink]="'components-card-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-basic <name>"
+  nzComponentName="NzDemoCardBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/basic.md'">
+	<nz-demo-card-basic demo></nz-demo-card-basic>
+	<div intro ngNonBindable>
+		<p>包含标题、内容、操作区域。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="无边框"
+  [nzId]="'components-card-demo-border-less'"
+  nzSelector="nz-demo-card-border-less"
+  [nzLink]="'components-card-demo-border-less'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-border-less <name>"
+  nzComponentName="NzDemoCardBorderLessComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/border-less.md'">
+	<nz-demo-card-border-less demo></nz-demo-card-border-less>
+	<div intro ngNonBindable>
+		<p>在灰色背景上使用无边框的卡片。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="简洁卡片"
+  [nzId]="'components-card-demo-simple'"
+  nzSelector="nz-demo-card-simple"
+  [nzLink]="'components-card-demo-simple'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-simple <name>"
+  nzComponentName="NzDemoCardSimpleComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/simple.md'">
+	<nz-demo-card-simple demo></nz-demo-card-simple>
+	<div intro ngNonBindable>
+		<p>只包含内容区域。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="更灵活的内容展示"
+  [nzId]="'components-card-demo-flexible-content'"
+  nzSelector="nz-demo-card-flexible-content"
+  [nzLink]="'components-card-demo-flexible-content'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-flexible-content <name>"
+  nzComponentName="NzDemoCardFlexibleContentComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/flexible-content.md'">
+	<nz-demo-card-flexible-content demo></nz-demo-card-flexible-content>
+	<div intro ngNonBindable>
+		<p>可以利用 <code>nz-card-meta</code> 支持更灵活的内容。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="栅格卡片"
+  [nzId]="'components-card-demo-in-column'"
+  nzSelector="nz-demo-card-in-column"
+  [nzLink]="'components-card-demo-in-column'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-in-column <name>"
+  nzComponentName="NzDemoCardInColumnComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/in-column.md'">
+	<nz-demo-card-in-column demo></nz-demo-card-in-column>
+	<div intro ngNonBindable>
+		<p>在系统概览页面常常和栅格进行配合。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="预加载的卡片"
+  [nzId]="'components-card-demo-loading'"
+  nzSelector="nz-demo-card-loading"
+  [nzLink]="'components-card-demo-loading'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-loading <name>"
+  nzComponentName="NzDemoCardLoadingComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/loading.md'">
+	<nz-demo-card-loading demo></nz-demo-card-loading>
+	<div intro ngNonBindable>
+		<p>数据读入前会有文本块样式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="网格型内嵌卡片"
+  [nzId]="'components-card-demo-grid-card'"
+  nzSelector="nz-demo-card-grid-card"
+  [nzLink]="'components-card-demo-grid-card'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-grid-card <name>"
+  nzComponentName="NzDemoCardGridCardComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/grid-card.md'">
+	<nz-demo-card-grid-card demo></nz-demo-card-grid-card>
+	<div intro ngNonBindable>
+		<p>一种常见的卡片内容区隔模式。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="内部卡片"
+  [nzId]="'components-card-demo-inner'"
+  nzSelector="nz-demo-card-inner"
+  [nzLink]="'components-card-demo-inner'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-inner <name>"
+  nzComponentName="NzDemoCardInnerComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/inner.md'">
+	<nz-demo-card-inner demo></nz-demo-card-inner>
+	<div intro ngNonBindable>
+		<p>可以放在普通卡片内部，展示多层级结构的信息。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="带页签的卡片"
+  [nzId]="'components-card-demo-tabs'"
+  nzSelector="nz-demo-card-tabs"
+  [nzLink]="'components-card-demo-tabs'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-tabs <name>"
+  nzComponentName="NzDemoCardTabsComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/tabs.md'">
+	<nz-demo-card-tabs demo></nz-demo-card-tabs>
+	<div intro ngNonBindable>
+		<p>可承载更多内容。</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="支持更多内容配置"
+  [nzId]="'components-card-demo-meta'"
+  nzSelector="nz-demo-card-meta"
+  [nzLink]="'components-card-demo-meta'"
+  nzGenerateCommand="ng g ng-zorro-antd:card-meta <name>"
+  nzComponentName="NzDemoCardMetaComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/card/demo/meta.md'">
+	<nz-demo-card-meta demo></nz-demo-card-meta>
+	<div intro ngNonBindable>
+		<p>一种支持封面、头像、标题和描述信息的卡片。</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nz-card</span> <span class="token attr-name">nzTitle</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>卡片标题<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>卡片内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nz-card</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="nz-card"><span>nz-card</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActions]</code></td>
+<td>卡片操作组，位置在卡片底部</td>
+<td><code>Array&lt;TemplateRef&lt;void&gt;&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBodyStyle]</code></td>
+<td>内容区域自定义样式</td>
+<td><code>&#123; [key: string]: string &#125;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzBordered]</code></td>
+<td>是否有边框</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzCover]</code></td>
+<td>卡片封面</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzExtra]</code></td>
+<td>卡片右上角的操作区域</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzHoverable]</code></td>
+<td>鼠标移过时可浮起</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>✅</td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>当卡片内容还在加载中时，可以用 loading 展示一个占位</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>卡片标题</td>
+<td><code>string|TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzType]</code></td>
+<td>卡片类型，可设置为 <code>inner</code> 或 不设置</td>
+<td><code>&#39;inner&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>卡片的尺寸</td>
+<td><code>&#39;default&#39;|&#39;small&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<h3 id="nz-card-meta"><span>nz-card-meta</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card-meta'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzAvatar]</code></td>
+<td>头像/图标</td>
+<td><code>TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzDescription]</code></td>
+<td>描述内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>标题内容</td>
+<td><code>string | TemplateRef&lt;void&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="[nz-card-grid]"><span>[nz-card-grid]</span><label class="api-type-label directive">directive</label><a onclick="window.location.hash = '[nz-card-grid]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+<th>类型</th>
+<th>默认值</th>
+<th>支持全局配置</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzHoverable]</code></td>
+<td>鼠标移过时可浮起</td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<p>分隔卡片内容区域</p>
+<h3 id="nz-card-tab"><span>nz-card-tab</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-card-tab'" class="anchor">#</a></h3><p>分隔页签标题区域</p>
+</section></article>

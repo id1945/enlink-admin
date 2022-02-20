@@ -1,0 +1,308 @@
+<article>
+<nz-affix class="toc-affix" [nzOffsetTop]="16">
+    <nz-anchor [nzAffix]="false" nzShowInkInFixed (nzClick)="goLink($event)">
+        <nz-link nzHref="#components-skeleton-demo-basic" nzTitle="Basic"></nz-link><nz-link nzHref="#components-skeleton-demo-complex" nzTitle="Complex combination"></nz-link><nz-link nzHref="#components-skeleton-demo-active" nzTitle="Active Animation"></nz-link><nz-link nzHref="#components-skeleton-demo-element" nzTitle="Skeleton button, avatar and input"></nz-link><nz-link nzHref="#components-skeleton-demo-children" nzTitle="Contains sub component"></nz-link><nz-link nzHref="#components-skeleton-demo-list" nzTitle="List Sample"></nz-link><nz-link nzHref="#api" nzTitle="API"></nz-link>
+    </nz-anchor>
+</nz-affix><section class="markdown">
+	<h1>Skeleton<span class="subtitle"></span><span class="widget"></span>
+	<a class="edit-button" href="https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/doc/index.en-US.md" target="_blank" rel="noopener noreferrer">
+		<i nz-icon nzType="edit"></i></a>
+</h1>
+	<section class="markdown" ngNonBindable>
+		<p>Provide a placeholder while you wait for content to load, or to visualise content that doesn&#39;t exist yet.</p>
+<h2 id="when-to-use"><span>When To Use</span><a onclick="window.location.hash = 'when-to-use'" class="anchor">#</a></h2><ul>
+<li>When resource need long time loading, like low network speed.</li>
+<li>The component contains much information, such as List or Card.</li>
+<li>Only works when loading data for the first time.</li>
+<li>Could be replaced by Spin in any situation, but can provide a better user experience.</li>
+</ul>
+<pre class="language-ts"><code><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> NzSkeletonModule <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'ng-zorro-antd/skeleton'</span><span class="token punctuation">;</span></code></pre>
+
+	</section>
+	
+	<h2>
+		<span>Examples</span>
+		<i nz-icon nzType="appstore" class="code-box-expand-trigger" nz-tooltip nzTooltipTitle="Expand All Code" (click)="expandAllCode()"></i>
+	</h2>
+</section><div nz-row [nzGutter]="8">
+	<div nz-col [nzSpan]="24">
+		<nz-code-box
+  nzTitle="Basic"
+  [nzId]="'components-skeleton-demo-basic'"
+  nzSelector="nz-demo-skeleton-basic"
+  [nzLink]="'components-skeleton-demo-basic'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-basic <name>"
+  nzComponentName="NzDemoSkeletonBasicComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/basic.md'">
+	<nz-demo-skeleton-basic demo></nz-demo-skeleton-basic>
+	<div intro ngNonBindable>
+		<p>Basic usage.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Complex combination"
+  [nzId]="'components-skeleton-demo-complex'"
+  nzSelector="nz-demo-skeleton-complex"
+  [nzLink]="'components-skeleton-demo-complex'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-complex <name>"
+  nzComponentName="NzDemoSkeletonComplexComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/complex.md'">
+	<nz-demo-skeleton-complex demo></nz-demo-skeleton-complex>
+	<div intro ngNonBindable>
+		<p>Complex combination with avatar and multiple paragraphs.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Active Animation"
+  [nzId]="'components-skeleton-demo-active'"
+  nzSelector="nz-demo-skeleton-active"
+  [nzLink]="'components-skeleton-demo-active'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-active <name>"
+  nzComponentName="NzDemoSkeletonActiveComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/active.md'">
+	<nz-demo-skeleton-active demo></nz-demo-skeleton-active>
+	<div intro ngNonBindable>
+		<p> Display active animation.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Skeleton button, avatar and input"
+  [nzId]="'components-skeleton-demo-element'"
+  nzSelector="nz-demo-skeleton-element"
+  [nzLink]="'components-skeleton-demo-element'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-element <name>"
+  nzComponentName="NzDemoSkeletonElementComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/element.md'">
+	<nz-demo-skeleton-element demo></nz-demo-skeleton-element>
+	<div intro ngNonBindable>
+		<p>Skeleton button, avatar and input.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="Contains sub component"
+  [nzId]="'components-skeleton-demo-children'"
+  nzSelector="nz-demo-skeleton-children"
+  [nzLink]="'components-skeleton-demo-children'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-children <name>"
+  nzComponentName="NzDemoSkeletonChildrenComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/children.md'">
+	<nz-demo-skeleton-children demo></nz-demo-skeleton-children>
+	<div intro ngNonBindable>
+		<p> Skeleton contains sub component.</p>
+
+	</div>
+</nz-code-box>
+<nz-code-box
+  nzTitle="List Sample"
+  [nzId]="'components-skeleton-demo-list'"
+  nzSelector="nz-demo-skeleton-list"
+  [nzLink]="'components-skeleton-demo-list'"
+  nzGenerateCommand="ng g ng-zorro-antd:skeleton-list <name>"
+  nzComponentName="NzDemoSkeletonListComponent"
+  nzIframeSource="null"
+  nzIframeHeight="null"
+  [nzHref]="'https://github.com/NG-ZORRO/ng-zorro-antd/edit/master/components/skeleton/demo/list.md'">
+	<nz-demo-skeleton-list demo></nz-demo-skeleton-list>
+	<div intro ngNonBindable>
+		<p>Use skeleton in list component.</p>
+
+	</div>
+</nz-code-box>
+
+	</div>
+</div><section class="markdown api-container" ngNonBindable><h2 id="api"><span>API</span><a onclick="window.location.hash = 'api'" class="anchor">#</a></h2><h3 id="nz-skeleton"><span>nz-skeleton</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>Show animation effect</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzAvatar]</code></td>
+<td>Show avatar placeholder</td>
+<td><code>boolean | NzSkeletonAvatar</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzLoading]</code></td>
+<td>Display the skeleton when <code>true</code></td>
+<td><code>boolean</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>[nzParagraph]</code></td>
+<td>Show paragraph placeholder</td>
+<td><code>boolean | NzSkeletonParagraph</code></td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>[nzTitle]</code></td>
+<td>Show title placeholder</td>
+<td><code>boolean | NzSkeletonTitle</code></td>
+<td><code>true</code></td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletonavatar"><span>NzSkeletonAvatar</span><a onclick="window.location.hash = 'nzskeletonavatar'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>size</code></td>
+<td>Set the size of avatar</td>
+<td>`number</td>
+<td>\ &#39;large&#39; | &#39;small&#39; | &#39;default&#39;`</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>shape</code></td>
+<td>Set the shape of avatar</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td>-</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletontitle"><span>NzSkeletonTitle</span><a onclick="window.location.hash = 'nzskeletontitle'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>width</code></td>
+<td>Set the width of title</td>
+<td><code>number | string</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nzskeletonparagraph"><span>NzSkeletonParagraph</span><a onclick="window.location.hash = 'nzskeletonparagraph'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>rows</code></td>
+<td>Set the row count of paragraph</td>
+<td><code>number</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td>Set the width of paragraph. When width is an Array, it can set the width of each row. Otherwise only set the last row width</td>
+<td><code>number | string | Array&lt;number | string&gt;</code></td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;button&quot;]"><span>nz-skeleton-element [nzType=&quot;button&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;button&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>Show animation effect</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Set the size</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>Set the shape</td>
+<td><code>&#39;circle&#39; | &#39;round&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;avatar&quot;]"><span>nz-skeleton-element [nzType=&quot;avatar&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;avatar&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>Show animation effect</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Set the size</td>
+<td><code>number | &#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+<tr>
+<td><code>[nzShape]</code></td>
+<td>Set the shape</td>
+<td><code>&#39;circle&#39; | &#39;square&#39;</code></td>
+<td><code>&#39;square&#39;</code></td>
+</tr>
+</tbody></table>
+<h3 id="nz-skeleton-element-[nztype=&quot;input&quot;]"><span>nz-skeleton-element [nzType=&quot;input&quot;]</span><label class="api-type-label component">component</label><a onclick="window.location.hash = 'nz-skeleton-element-[nztype=&quot;input&quot;]'" class="anchor">#</a></h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>[nzActive]</code></td>
+<td>Show animation effect</td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>[nzSize]</code></td>
+<td>Set the size</td>
+<td><code>&#39;large&#39; | &#39;small&#39; | &#39;default&#39;</code></td>
+<td><code>&#39;default&#39;</code></td>
+</tr>
+</tbody></table>
+</section></article>

@@ -1,0 +1,171 @@
+<div class="container">
+    <nz-card>
+        <div class="row align-items-center">
+            <div class="col-md-7">
+                <div class="d-md-flex align-items-center">
+                    <div class="text-center text-sm-left ">
+                        <nz-avatar class="shadow-sm m-v-15" [nzSize]="150" nzSrc="assets/images/avatars/thumb-3.jpg"></nz-avatar>
+                    </div>
+                    <div class="text-center text-sm-left m-v-15 p-l-30">
+                        <h2 class="m-b-5">Marshall Nichols</h2>
+                        <p class="text-opacity font-size-13">@Marshallnich</p>
+                        <p class="text-dark m-b-20">Frontend Developer, UI/UX Designer</p>
+                        <button nz-button nzType="primary">Contact</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="d-md-block d-none border-left col-1"></div>
+                    <div class="col">
+                        <ul class="list-unstyled m-t-10">
+                            <li class="row">
+                                <p class="col-sm-3 col-4 font-weight-semibold text-dark m-b-5">
+                                    <i class="m-r-10 text-primary" nz-icon nzType="mail" theme="outline"></i>
+                                    <span>Email: </span> 
+                                </p>
+                                <p class="col font-weight-semibold"> Marshall123@gmail.com</p>
+                            </li>
+                            <li class="row">
+                                <p class="col-sm-3 col-4 font-weight-semibold text-dark m-b-5">
+                                    <i class="m-r-10 text-primary" nz-icon nzType="phone" theme="outline"></i>
+                                    <span>Phone: </span> 
+                                </p>
+                                <p class="col font-weight-semibold"> +12-123-1234</p>
+                            </li>
+                            <li class="row">
+                                <p class="col-sm-3 col-4 font-weight-semibold text-dark m-b-5">
+                                    <i class="m-r-10 text-primary" nz-icon nzType="compass" theme="outline"></i>
+                                    <span>Place: </span> 
+                                </p>
+                                <p class="col font-weight-semibold"> Los Angeles, CA</p>
+                            </li>
+                        </ul>
+                        <div class="d-flex font-size-22">
+                            <a href="" class="text-gray p-r-20">
+                                <i nz-icon nzType="facebook" theme="outline"></i>
+                            </a>        
+                            <a href="" class="text-gray p-r-20">    
+                                <i nz-icon nzType="twitter" theme="outline"></i>
+                            </a>
+                            <a href="" class="text-gray p-r-20">
+                                <i nz-icon nzType="behance" theme="outline"></i>
+                            </a> 
+                            <a href="" class="text-gray p-r-20">   
+                                <i nz-icon nzType="dribbble" theme="outline"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nz-card>
+    <div class="row">
+        <div class="col-md-8">
+            <nz-card>
+                <h5>Bio</h5>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.</p>
+                <hr>
+                <h5>Specialilty</h5>
+                <div class="m-t-20">
+                    <nz-tag *ngFor="let item of skillListData">{{item}}</nz-tag>
+                </div>
+                <hr>
+                <h5>Experices</h5>
+                <div class="m-t-20">
+                    <div class="media m-b-30" *ngFor="let item of expListData">
+                        <nz-avatar class="shadow-sm" [nzSrc]="item.img"></nz-avatar>
+                        <div class="media-body m-l-20">
+                            <h6 class="m-b-0">{{item.title}}<span *ngIf="item.title">,</span> {{item.company}} </h6>
+                            <span class="font-size-13 text-gray">{{item.date}}</span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <h5>Education</h5>
+                <div class="m-t-20">
+                    <div class="media m-b-30" *ngFor="let item of eduListData">
+                        <nz-avatar class="shadow-sm" [nzSrc]="item.img"></nz-avatar>
+                        <div class="media-body m-l-20">
+                            <h6 class="m-b-0">{{item.degree}}<span *ngIf="item.title">,</span> {{item.school}} </h6>
+                            <span class="font-size-13 text-gray">{{item.date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </nz-card>
+            <nz-card>
+                <h5>Reviews (18)</h5>
+                <div class="m-t-20">
+                    <nz-list [nzDataSource]="reviewListData" [nzRenderItem]="review" [nzItemLayout]="'vertical'" [nzPagination]="pagination">
+                        <ng-template #review let-item>
+                            <nz-list-item class="d-block" [nzContent]="item.review" [nzActions]="[rating]">
+                                <ng-template #rating>
+                                    <nz-rate [ngModel]="item.rating" nzDisabled></nz-rate>
+                                </ng-template>
+                                <nz-list-item-meta
+                                    [nzTitle]="reviewTitle"
+                                    [nzAvatar]="item.img"
+                                    [nzDescription]="item.date">
+                                    <ng-template #reviewTitle>
+                                        <a class="font-size-15" href="">{{item.name}}</a>
+                                    </ng-template>
+                                </nz-list-item-meta>
+                            </nz-list-item>
+                        </ng-template>
+                        <ng-template #pagination>
+                            <nz-pagination [nzPageIndex]="1" [nzTotal]="50"></nz-pagination>
+                        </ng-template>
+                    </nz-list>
+                </div>
+            </nz-card>    
+        </div>
+        <div class="col-md-4">
+            <nz-card>
+                <h5>Connected</h5>
+                <div class="m-t-20">
+                    <nz-list [nzDataSource]="connectedListData" [nzRenderItem]="item" [nzItemLayout]="'horizontal'">
+                        <ng-template #item let-item>
+                            <nz-list-item class="border-bottom-0">
+                                <nz-list-item-meta
+                                    [nzTitle]="nzTitle"
+                                    [nzAvatar]="item.src"
+                                    [nzDescription]="item.title">
+                                    <ng-template #nzTitle>
+                                        <a class="font-size-15" href="">{{item.name}}</a>
+                                    </ng-template>
+                                </nz-list-item-meta>
+                            </nz-list-item>
+                        </ng-template>
+                    </nz-list>
+                </div>
+            </nz-card>
+            <nz-card>
+                <h5>Projects</h5>
+                <div class="m-t-20">
+                    <div class="m-b-20 p-b-20 border-bottom" *ngFor="let item of projectListData">
+                        <div class="media align-items-center m-b-15">
+                            <nz-avatar class="shadow-sm" [nzSrc]="item.img"></nz-avatar>
+                            <div class="media-body m-l-20">
+                                <h5 class="m-b-0">
+                                    <a href="" class="text-dark">{{item.name}}</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <p>{{item.desc}}</p>
+                        <div class="d-inline-block">
+                            <span *ngFor="let item of item.participate; let i = index;">
+                                <a class="m-r-5" nz-tooltip [nzTooltipTitle]="item.name" href="">
+                                    <nz-avatar class="shadow-sm" nzSize="small" [nzSrc]="item.img"></nz-avatar>
+                                </a>
+                            </span>
+                        </div>
+                        <div class="float-right">
+                            <nz-tag *ngIf="item.status == 'In Progress'" [nzColor]="'blue'">{{item.status}}</nz-tag>
+                            <nz-tag *ngIf="item.status == 'Completed'" [nzColor]="'cyan'">{{item.status}}</nz-tag>
+                        </div>
+                    </div>
+                </div>    
+            </nz-card>        
+        </div>
+    </div>
+</div>
